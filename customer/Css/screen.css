@@ -1,0 +1,451 @@
+/* Hàm dùng để điều chỉnh sản phẩm hiện thị khi kích thước hiển thị nhỏ hơn kích thước dự kiến */
+/*  điện thoại thuộc diện mini */
+@media (max-width: 399px) {
+  .product {
+    grid-template-columns: 1fr;
+  }
+  .product-game {
+    grid-template-columns: 1fr 1fr;
+  }
+  .product-top {
+    font-size: 15px;
+  }
+  .product-top-tilte {
+    padding: 10px 10px;
+  }
+  .main-content {
+    width: 90%;
+    margin-top: 50px;
+  }
+  .header {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 90%;
+  }
+  .Logo_website {
+    height: calc(80px - 20px);
+  }
+  .name-wallpaper {
+    height: 90px;
+  }
+  /* chuyển đổi thanh menu */
+  .main-menu {
+    flex-direction: column;
+    justify-content: left;
+  }
+  .name-wallpaper {
+    height: 90px;
+  }
+  .header-wallpaper {
+    height: 180px;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .middle-selection {
+    transition: 0.5s;
+    position: relative;
+    top: 50px;
+    right: 30px;
+  }
+  .right-selection {
+    position: relative;
+    left: 130px;
+    top: -70px;
+  }
+  .Logo_website {
+    transition: 0.5s;
+    height: 70px;
+    position: relative;
+    right: 30px;
+    top: 20px;
+  }
+  nav {
+    display: none;
+    position: relative;
+    top: -21px;
+  }
+  #toggle {
+    display: inline-block;
+    position: relative;
+    top: -115px;
+    left: 0px;
+  }
+  .search-bar {
+    flex: 1;
+    width: 280px;
+  }
+  .cart-wallpaper {
+    display: none;
+  }
+  .cart_wallpaper_2 {
+    display: block;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+    column-gap: 10px;
+  }
+  .home-banner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "banner_1"
+      "banner_1"
+      "banner_2"
+      "banner_3"
+      "banner_4"
+      "banner_5"
+      "banner_6"
+      "banner_7"
+      "banner_8";
+    column-gap: 10px;
+    row-gap: 10px;
+    transition: 0.5s;
+  }
+  .banner_1 {
+    grid-area: banner_1;
+  }
+
+  .banner_2 {
+    grid-area: banner_2;
+  }
+
+  .banner_3 {
+    grid-area: banner_3;
+  }
+
+  .banner_4 {
+    grid-area: banner_4;
+  }
+
+  .banner_5 {
+    grid-area: banner_5;
+  }
+  .banner_6 {
+    grid-area: banner_6;
+  }
+
+  .banner_7 {
+    grid-area: banner_7;
+  }
+  .banner_8 {
+    grid-area: banner_8;
+  }
+}
+/* Điện thoại phổ thông */
+@media (min-width: 400px) and (max-width: 480px) {
+  .product {
+    grid-template-columns: 1fr;
+  }
+  .product-game {
+    grid-template-columns: 1fr 1fr;
+  }
+  .product-top {
+    font-size: 15px;
+  }
+  .product-top-tilte {
+    padding: 10px 10px;
+  }
+  .main-content {
+    width: 90%;
+  }
+  .header {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 90%;
+  }
+  .Logo_website {
+    height: calc(80px - 20px);
+  }
+  .name-wallpaper {
+    height: 70px;
+  }
+  /* chuyển đổi thanh menu */
+  .main-menu {
+    flex-direction: column;
+    justify-content: left;
+  }
+  .name-wallpaper {
+    height: 70px;
+  }
+  .header-wallpaper {
+    height: 180px;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .middle-selection {
+    transition: 0.5s;
+    position: relative;
+    top: 50px;
+    right: 30px;
+  }
+  .right-selection {
+    transition: 0.5s;
+    position: relative;
+    left: 150px;
+    top: -75px;
+  }
+  .Logo_website {
+    transition: 0.5s;
+    height: 80px;
+    position: relative;
+    right: 30px;
+    top: 20px;
+  }
+  nav {
+    display: none;
+    position: relative;
+    top: -31px;
+  }
+  #toggle {
+    display: inline-block;
+    position: relative;
+    top: -115px;
+    left: 10px;
+  }
+  .search-bar {
+    flex: 1;
+    width: 300px;
+  }
+
+  .cart-wallpaper {
+    display: none;
+  }
+  .cart_wallpaper_2 {
+    display: block;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+    column-gap: 10px;
+  }
+  .home-banner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "banner_1"
+      "banner_1"
+      "banner_2"
+      "banner_3"
+      "banner_4"
+      "banner_5"
+      "banner_6"
+      "banner_7"
+      "banner_8";
+    column-gap: 10px;
+    row-gap: 10px;
+    transition: 0.5s;
+  }
+  .banner_1 {
+    grid-area: banner_1;
+  }
+
+  .banner_2 {
+    grid-area: banner_2;
+  }
+
+  .banner_3 {
+    grid-area: banner_3;
+  }
+
+  .banner_4 {
+    grid-area: banner_4;
+  }
+
+  .banner_5 {
+    grid-area: banner_5;
+  }
+  .banner_6 {
+    grid-area: banner_6;
+  }
+
+  .banner_7 {
+    grid-area: banner_7;
+  }
+  .banner_8 {
+    grid-area: banner_8;
+  }
+}
+/* Kích thước của tablet nhỏ */
+@media (min-width: 481px) and (max-width: 767px) {
+  .product {
+    grid-template-columns: 1fr 1fr;
+  }
+  .product-game {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .main-content {
+    width: 90%;
+  }
+  .product-top {
+    font-size: 15px;
+  }
+  /* chuyển đổi thanh menu */
+  .main-menu {
+    flex-direction: column;
+    justify-content: left;
+  }
+  .name-wallpaper {
+    height: 70px;
+  }
+  .header-wallpaper {
+    height: 180px;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .middle-selection {
+    transition: 0.5s;
+    position: relative;
+    top: 50px;
+    right: 30px;
+  }
+  .right-selection {
+    position: relative;
+    left: 200px;
+    top: -75px;
+  }
+  .Logo_website {
+    /* transition: 0.5s; */
+    height: 80px;
+    position: relative;
+    right: 30px;
+    top: 20px;
+  }
+  nav {
+    display: none;
+    position: relative;
+    top: -31px;
+  }
+  #toggle {
+    display: inline-block;
+    position: relative;
+    top: -115px;
+    left: 10px;
+  }
+  .search-bar {
+    flex: 1;
+    width: 400px;
+  }
+  .cart-wallpaper {
+    display: none;
+  }
+  .cart_wallpaper_2 {
+    display: block;
+  }
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  .main-content {
+    margin: 50px auto;
+  }
+  .home-banner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "banner_1"
+      "banner_1"
+      "banner_2"
+      "banner_3"
+      "banner_4"
+      "banner_5"
+      "banner_6"
+      "banner_7"
+      "banner_8";
+    column-gap: 10px;
+    row-gap: 10px;
+    transition: 0.5s;
+  }
+  .banner_1 {
+    grid-area: banner_1;
+  }
+
+  .banner_2 {
+    grid-area: banner_2;
+  }
+
+  .banner_3 {
+    grid-area: banner_3;
+  }
+
+  .banner_4 {
+    grid-area: banner_4;
+  }
+
+  .banner_5 {
+    grid-area: banner_5;
+  }
+  .banner_6 {
+    grid-area: banner_6;
+  }
+
+  .banner_7 {
+    grid-area: banner_7;
+  }
+  .banner_8 {
+    grid-area: banner_8;
+  }
+}
+
+/* Kích thước tablet phổ phông */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .product {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .product-game {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .main-content {
+    width: 90%;
+  }
+  .product-top {
+    font-size: 18px;
+  }
+  /* chuyển đổi thanh menu */
+  .main-menu {
+    flex-direction: column;
+    justify-content: left;
+  }
+  .header-wallpaper {
+    height: 120px;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .middle-selection {
+    transition: 0.5s;
+    position: relative;
+    top: -50px;
+    left: 35px;
+  }
+  .right-selection {
+    /* position: fixed; */
+    left: 300px;
+    top: -85px;
+    position: relative;
+    /* top: 40px;
+    right: 30px; */
+  }
+  .Logo_website {
+    transition: 0.5s;
+    height: 80px;
+    position: relative;
+    right: 200px;
+  }
+  nav {
+    display: none;
+    position: relative;
+    top: -100px;
+  }
+  #toggle {
+    display: inline-block;
+    position: relative;
+    top: -135px;
+    left: 10px;
+  }
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+  }
+  .main-content {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 1025px) {
+}
