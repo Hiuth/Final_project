@@ -1,3 +1,4 @@
+/* Giỏ hàng không có hàng */
 .cart-none-product {
   height: 320px;
 }
@@ -32,4 +33,54 @@
   background-color: #eb412f;
   border: 2px solid white;
   color: white;
+}
+
+/* Giỏ hàng có hàng */
+.cart-have-product {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  column-gap: 10px;
+}
+.product-list {
+  height: 30px;
+  border: 2px solid black;
+}
+.product-total {
+}
+
+/* BẢNG SẢN PHẨM*/
+
+.list {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.product-name-in-cart {
+  width: 50%;
+  text-align: left;
+}
+
+.product-price {
+  width: 20%;
+}
+
+.product-quanity {
+  width: 10%;
+  text-align: left;
+}
+
+.product-subtotal {
+  width: 30%;
+  text-align: right;
+}
+tr {
+  height: 30px;
+}
+
+th {
+  height: 30px;
+}
+
+td {
+  height: 30px;
 }
