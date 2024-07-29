@@ -1,0 +1,35 @@
+.cart-none-product {
+  height: 320px;
+}
+
+.main-content {
+  margin: 80px auto;
+}
+
+.cart-tilte {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  padding-top: 125px;
+}
+
+.return-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 20px;
+}
+.return-home > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  width: 300px;
+  height: 40px;
+  padding: 20px 0px;
+  background-color: #eb412f;
+  border: 2px solid white;
+  color: white;
+}

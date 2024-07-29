@@ -32,6 +32,12 @@ body {
   justify-content: center;
 }
 
+.left-selection a img {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
 .middle-selection {
   flex: 1;
   margin-left: 155px;
