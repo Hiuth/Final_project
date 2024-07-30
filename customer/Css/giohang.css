@@ -1,10 +1,10 @@
-/* Giỏ hàng không có hàng */
 .cart-none-product {
   height: 320px;
 }
 
 .main-content {
   margin: 80px auto;
+  max-width: 85%;
 }
 
 .cart-tilte {
@@ -34,53 +34,75 @@
   border: 2px solid white;
   color: white;
 }
-
 /* Giỏ hàng có hàng */
 .cart-have-product {
+  /* display: flex;
+  justify-content: center; */
   display: grid;
   grid-template-columns: 3fr 2fr;
+  font-size: 15p1x;
   column-gap: 10px;
 }
 .product-list {
-  height: 30px;
-  border: 2px solid black;
-}
-.product-total {
+  padding-right: 20px;
 }
 
-/* BẢNG SẢN PHẨM*/
-
-.list {
-  font-weight: 700;
-  font-size: 15px;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+thead {
+  font-weight: 600;
+  border-bottom: 3px solid rgb(217, 215, 215);
 }
 
-.product-name-in-cart {
-  width: 50%;
-  text-align: left;
-}
-
-.product-price {
-  width: 20%;
-}
-
-.product-quanity {
-  width: 10%;
-  text-align: left;
-}
-
-.product-subtotal {
-  width: 30%;
-  text-align: right;
-}
 tr {
   height: 30px;
-}
-
-th {
-  height: 30px;
+  border-bottom: 1px solid rgb(217, 215, 215);
 }
 
 td {
-  height: 30px;
+  margin-right: 20px;
+}
+.product-name-in-cart,
+.product-price {
+  text-align: left;
+}
+
+.product-quantity {
+  text-align: center;
+}
+.product-subtotal {
+  text-align: right;
+}
+.product-in-cart {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.img-cart {
+  width: 80px;
+  margin-right: 10px;
+}
+
+.but {
+  display: flex;
+  margin: 0 20px;
+}
+
+.quantity-button #quanity {
+  width: 40px;
+  text-align: center;
+}
+
+.product-total {
+  padding-left: 20px;
+  text-align: left;
+  border-left: 0.8px solid gainsboro;
+}
+
+.delivery {
 }
