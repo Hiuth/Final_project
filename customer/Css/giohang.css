@@ -33,3 +33,50 @@
   border: 2px solid white;
   color: white;
 }
+/* Giỏ hàng có hàng */
+.cart-have-product {
+  font-size: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+th {
+  border-bottom: 2px solid rgb(217, 215, 215);
+  font-weight: 600;
+}
+
+tr {
+  border-bottom: 1px solid rgb(217, 215, 215);
+}
+
+.product-name-in-cart {
+  text-align: left;
+}
+
+.product-price {
+  text-align: left;
+}
+
+.product-quantity {
+  text-align: left;
+}
+
+.product-subtotal {
+  text-align: right;
+}
+.product-in-cart {
+  display: flex;
+  align-items: center;
+}
+.img-cart {
+  width: 80px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.product-in-cart > div {
+  display: inline;
+}

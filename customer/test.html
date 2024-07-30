@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      th,
+      td {
+        border-bottom: 1px solid #e0e0e0;
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #f9f9f9;
+      }
+      .product-img {
+        width: 100px;
+      }
+      .product-details {
+        display: flex;
+        align-items: center;
+      }
+      .product-details img {
+        width: 80px;
+        margin-right: 10px;
+      }
+      .product-details .remove-btn {
+        margin-left: 10px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: red;
+        font-size: 16px;
+      }
+      .quantity-input {
+        display: flex;
+        align-items: center;
+      }
+      .quantity-input input {
+        width: 40px;
+        text-align: center;
+        margin: 0 5px;
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+      }
+      .buttons button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #f0f0f0;
+        cursor: pointer;
+      }
+      .buttons button:hover {
+        background-color: #d8d8d8;
+      }
+    </style>
+    <title>Giỏ hàng</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>SẢN PHẨM</th>
+          <th>GIÁ</th>
+          <th>SỐ LƯỢNG</th>
+          <th>TẠM TÍNH</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="product-details">
+            <button class="remove-btn">✕</button>
+            <img src="Picture/ps5_slim.jpg" alt="PS5" />
+
+            <div>
+              Máy PS5 Slim Cũ Standard Edition Phiên Bản Ổ Đĩa - CFI 2000 (Like
+              New 99%)
+            </div>
+          </td>
+          <td>11.590.000VND</td>
+          <td>
+            <div class="quantity-input">
+              <button>-</button>
+              <input type="text" value="1" />
+              <button>+</button>
+            </div>
+          </td>
+          <td>11.590.000VND</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="buttons">
+      <button>← TIẾP TỤC XEM SẢN PHẨM</button>
+      <button>CẬP NHẬT GIỎ HÀNG</button>
+    </div>
+  </body>
+</html>

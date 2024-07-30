@@ -4,10 +4,12 @@
 
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 body {
   font-size: 1.6rem;
   font-family: arial;
+  height: 100%;
 }
 /* Header */
 .header-wallpaper {
