@@ -4,6 +4,7 @@
 
 .main-content {
   margin: 80px auto;
+  max-width: 85%;
 }
 
 .cart-tilte {
@@ -74,7 +75,7 @@ td {
   display: flex;
   align-items: center;
   margin-right: 20px;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .img-cart {
