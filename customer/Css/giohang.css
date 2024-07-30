@@ -65,6 +65,11 @@ tr {
 td {
   margin-right: 20px;
 }
+
+.product-price,
+.product-subtotal {
+  font-weight: 550;
+}
 .product-name-in-cart,
 .product-price {
   text-align: left;
@@ -102,7 +107,37 @@ td {
   padding-left: 20px;
   text-align: left;
   border-left: 0.8px solid gainsboro;
+  font-size: 16px;
 }
 
-.delivery {
+.product-total tbody td {
+  text-align: right;
+}
+
+.product-total tbody th {
+  padding: 20px 0px;
+}
+
+.delivery p {
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+}
+.add-cart-button {
+  padding-top: 20px;
+}
+.add-payment-button > a {
+  display: flex;
+  justify-content: center;
+  background-color: #eb412f;
+  border: 1px solid white;
+  color: white;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.add-payment-button > a:hover {
+  background-color: #f2ddbe;
+  color: black;
+  transition: 0.5s;
 }
