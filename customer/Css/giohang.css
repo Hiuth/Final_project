@@ -40,8 +40,11 @@
   justify-content: center; */
   display: grid;
   grid-template-columns: 3fr 2fr;
-  font-size: 15px;
+  font-size: 15p1x;
   column-gap: 10px;
+}
+.product-list {
+  padding-right: 20px;
 }
 
 table {
@@ -49,11 +52,13 @@ table {
   border-collapse: collapse;
   margin-bottom: 20px;
 }
-th {
+thead {
   font-weight: 600;
+  border-bottom: 3px solid rgb(217, 215, 215);
 }
 
 tr {
+  height: 30px;
   border-bottom: 1px solid rgb(217, 215, 215);
 }
 
@@ -94,4 +99,10 @@ td {
 }
 
 .product-total {
+  padding-left: 20px;
+  text-align: left;
+  border-left: 0.8px solid gainsboro;
+}
+
+.delivery {
 }
