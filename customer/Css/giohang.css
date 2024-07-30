@@ -35,6 +35,8 @@
 }
 /* Giỏ hàng có hàng */
 .cart-have-product {
+  display: grid;
+  grid-template-columns: 1fr;
   font-size: 15px;
 }
 
@@ -52,14 +54,8 @@ tr {
   border-bottom: 1px solid rgb(217, 215, 215);
 }
 
-.product-name-in-cart {
-  text-align: left;
-}
-
-.product-price {
-  text-align: left;
-}
-
+.product-name-in-cart,
+.product-price,
 .product-quantity {
   text-align: left;
 }
@@ -74,9 +70,12 @@ tr {
 .img-cart {
   width: 80px;
   margin-right: 10px;
-  display: inline-block;
+}
+.quantity-button {
+  display: flex;
 }
 
-.product-in-cart > div {
-  display: inline;
+.quantity-button #quanity {
+  width: 40px;
+  text-align: center;
 }
