@@ -383,7 +383,7 @@
 }
 
 /* Kích thước tablet phổ phông */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1025px) {
   .product {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -444,6 +444,10 @@
   }
   .main-content {
     margin-top: 50px;
+  }
+  .cart-have-product {
+    grid-template-columns: 1fr;
+    grid-area: "banner_1" "banner_2";
   }
 }
 

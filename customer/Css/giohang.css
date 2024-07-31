@@ -40,7 +40,7 @@
   justify-content: center; */
   display: grid;
   grid-template-columns: 3fr 2fr;
-  font-size: 15p1x;
+  font-size: 15px;
   column-gap: 10px;
 }
 .product-list {
@@ -131,7 +131,9 @@ td {
 }
 .add-payment-button > a {
   display: flex;
+  flex: 2;
   justify-content: center;
+  align-items: center;
   background-color: #eb412f;
   border: 1px solid white;
   color: white;
