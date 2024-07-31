@@ -145,4 +145,8 @@ td {
 .price-wallpaper {
   justify-content: flex-end;
 }
+
+.first {
+  display: none;
+}
 /*  */
