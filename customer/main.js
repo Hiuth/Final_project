@@ -6,6 +6,7 @@ const addIntoCart = document.querySelectorAll(".add-cart-button");
 
 var productList = JSON.parse(sessionStorage.getItem("productList")) || [];
 
+//thêm sản phẩm vào giỏ hàng
 addIntoCart.forEach(function (button, index) {
   //tạo ra sự kiện nhấn vào nút thêm giỏ hàng
   button.addEventListener("click", function (event) {
