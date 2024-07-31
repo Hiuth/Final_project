@@ -142,4 +142,7 @@ td {
   transition: 0.5s;
 }
 
+.price-wallpaper {
+  justify-content: flex-end;
+}
 /*  */
