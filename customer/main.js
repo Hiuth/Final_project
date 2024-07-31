@@ -1,3 +1,5 @@
+// nút tăng giảm số lượng mặt hàng trong giỏ hàng
+
 // đưa mặt hàng vào giỏ hàng
 const addIntoCart = document.querySelectorAll(".add-cart-button");
 //console.log(addIntoCart);
@@ -8,7 +10,6 @@ addIntoCart.forEach(function (button, index) {
   //tạo ra sự kiện nhấn vào nút thêm giỏ hàng
   button.addEventListener("click", function (event) {
     {
-      event.preventDefault();
       var btnItem = event.target; //xác định đúng phần tử đang click vào
       var product = btnItem.closest(".product-img"); //chọn thẻ cha đang chưa cái nút thêm vào
       var productImg = product.querySelector("img").src;
@@ -46,4 +47,12 @@ function ShowCart() {
       '</p><p class="unit-price">VND </p> </div> </td> </tr>';
   }
   document.getElementById("List").innerHTML = myCart;
+}
+
+function ShowTotal() {
+  var addCart = sessionStorage.getItem("productList");
+  var cartList = JSON.parse(addCart);
+  var total = 0;
+  for (let i = 0; i < cartList.length; i++) {}
+  total += cartList[i][2];
 }
