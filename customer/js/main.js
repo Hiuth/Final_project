@@ -4,6 +4,22 @@
 
 var productList = JSON.parse(localStorage.getItem("productList")) || [];
 
+//
+function check(name) {
+  if (productList.length === 0) {
+    return false;
+  } else {
+    for (var i = 0; i < productList.length; i++) {
+      if (productList[i][1] == name) {
+        productList[i][2]++;
+        localStorage.setItem("productList", JSON.stringify(productList));
+        return true;
+      }
+    }
+    return false;
+  }
+}
+
 //thêm sản phẩm vào giỏ hàng
 const addIntoCart = document.querySelectorAll(".add-cart-button");
 addIntoCart.forEach(function (button, index) {
@@ -25,8 +41,10 @@ addIntoCart.forEach(function (button, index) {
         productQuantity,
         productPrice
       );
-      productList.push(list);
-      localStorage.setItem("productList", JSON.stringify(productList));
+      if (check(productName) == false) {
+        productList.push(list);
+        localStorage.setItem("productList", JSON.stringify(productList));
+      }
     } //stringify chuyển hết tất cả kiểu hết về string
     window.location.assign("Gio_Hang_Co_Hang.html");
   });
