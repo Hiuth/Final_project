@@ -32,6 +32,20 @@ addIntoCart.forEach(function (button, index) {
   });
 });
 
+function del(x) {
+  //xoá hàng
+  var del = x.parentElement.parentElement;
+  var pro_Name = del.children[0].querySelector("p").innerText;
+  del.remove();
+  for (var i = 0; i < productList.length; i++) {
+    if (productList[i][1] == pro_Name) {
+      productList.splice(i, 1); //xoá đơn hàng trong local
+    }
+  }
+  localStorage.setItem("productList", JSON.stringify(productList));
+  location.reload();
+}
+
 function ShowCart() {
   var addCart = localStorage.getItem("productList");
   var cartList = JSON.parse(addCart); //chuyển từ string về các kiểu dữ liệu mặc định
@@ -42,7 +56,7 @@ function ShowCart() {
     var quantity = parseInt(cartList[i][2], 10);
     total = unitPrice * quantity;
     myCart +=
-      '<tr> <td class="product-in-cart"> <button class="delete">X</button> <a href=""> <img class="img-cart" src="' +
+      '<tr> <td class="product-in-cart"> <button class="delete" onclick="del(this)">X</button> <a href=""> <img class="img-cart" src="' +
       cartList[i][0] +
       '"></a><p> ' +
       cartList[i][1] +
