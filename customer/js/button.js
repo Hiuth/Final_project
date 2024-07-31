@@ -1,3 +1,4 @@
+//xử lý tăng giảm đơn hàng
 function handlePlus(x, i) {
   var parent = x.parentElement; //i dùng để định vị xem nút tăng số lượng đang ở chỗ nào
 
