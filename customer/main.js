@@ -2,7 +2,7 @@
 const addIntoCart = document.querySelectorAll(".add-cart-button");
 //console.log(addIntoCart);
 
-var productList = new Array(); //tạo mảng
+var productList = JSON.parse(sessionStorage.getItem("productList")) || [];
 
 addIntoCart.forEach(function (button, index) {
   //tạo ra sự kiện nhấn vào nút thêm giỏ hàng
@@ -26,4 +26,24 @@ addIntoCart.forEach(function (button, index) {
 function ShowCart() {
   var addCart = sessionStorage.getItem("productList");
   var cartList = JSON.parse(addCart); //chuyển từ string về các kiểu dữ liệu mặc định
+  var myCart = "";
+  for (var i = 0; i < cartList.length; i++) {
+    myCart +=
+      '<tr> <td class="product-in-cart"> <button class="delete">X</button> <a href=""> <img class="img-cart" src="' +
+      cartList[i][0] +
+      '"></a><p> ' +
+      cartList[i][1] +
+      ' </p></td> <td class="product-price"> <div class="price-wallpaper"> <p class="price"> ' +
+      cartList[i][2] +
+      '</p> <p class="unit-price">VND</p> </div></td>' +
+      '<td class="quantity-button">' +
+      '<div class="but"> <button>-</button>' +
+      '<input type="text" name="" id="quantity" value="1"> <button>+</button> </div> </td>' +
+      '<td class="product-subtotal">' +
+      '<div class="price-wallpaper">' +
+      '<p class="price">' +
+      cartList[i][2] +
+      '</p><p class="unit-price">VND </p> </div> </td> </tr>';
+  }
+  document.getElementById("List").innerHTML = myCart;
 }
