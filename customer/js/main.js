@@ -43,7 +43,11 @@ function del(x) {
     }
   }
   localStorage.setItem("productList", JSON.stringify(productList));
-  location.reload();
+  if (productList.length > 0) {
+    location.reload();
+  } else {
+    window.location.assign("Gio_Hang.html");
+  }
 }
 
 function ShowCart() {
