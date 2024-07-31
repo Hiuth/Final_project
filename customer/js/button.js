@@ -1,3 +1,18 @@
+//xử lý chuyển đổi giữa file giỏ hàng
+document.addEventListener("DOMContentLoaded", function () {
+  function handleClick(event) {
+    var url;
+    var productList = JSON.parse(localStorage.getItem("productList")) || [];
+    if (productList.length > 0) {
+      window.location.assign("Gio_Hang_Co_Hang.html");
+    } else {
+      window.location.assign("Gio_Hang.html");
+    }
+  }
+  document.getElementById("cart-1").addEventListener("click", handleClick);
+  document.getElementById("cart-2").addEventListener("click", handleClick);
+});
+
 //xử lý tăng giảm đơn hàng
 function handlePlus(x, i) {
   var parent = x.parentElement; //i dùng để định vị xem nút tăng số lượng đang ở chỗ nào

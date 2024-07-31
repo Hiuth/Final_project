@@ -1,10 +1,11 @@
 // đưa mặt hàng vào giỏ hàng
-const addIntoCart = document.querySelectorAll(".add-cart-button");
+
 //console.log(addIntoCart);
 
 var productList = JSON.parse(localStorage.getItem("productList")) || [];
 
 //thêm sản phẩm vào giỏ hàng
+const addIntoCart = document.querySelectorAll(".add-cart-button");
 addIntoCart.forEach(function (button, index) {
   //tạo ra sự kiện nhấn vào nút thêm giỏ hàng
   button.addEventListener("click", function (event) {
