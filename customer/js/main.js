@@ -4,8 +4,6 @@ const addIntoCart = document.querySelectorAll(".add-cart-button");
 
 var productList = JSON.parse(localStorage.getItem("productList")) || [];
 
-var productList = getProductList();
-
 //thêm sản phẩm vào giỏ hàng
 addIntoCart.forEach(function (button, index) {
   //tạo ra sự kiện nhấn vào nút thêm giỏ hàng
@@ -48,13 +46,16 @@ function ShowCart() {
       '"></a><p> ' +
       cartList[i][1] +
       ' </p></td> <td class="product-price"> <div class="price-wallpaper"> <p class="price"> ' +
-      cartList[i][2] +
+      cartList[i][3] +
       '</p> <p class="unit-price">VND</p> </div></td>' +
       '<td class="quantity-button">' +
-      '<div class="but"> <button class="minus-btn" onclick="handleMinus(this)">-</button>' +
-      '<input type="text" name="quantity" id="quantity" value="' +
-      cartList[i][3] +
-      '"> <button class="plus-btn" onclick="handlePlus(this)">+</button> </div> </td>' +
+      '<div class="but"> <button class="minus-btn" onclick="handleMinus(this,' +
+      i +
+      ')">-</button> <span>' +
+      cartList[i][2] +
+      '</span> <button class="plus-btn" onclick="handlePlus(this,' +
+      i +
+      ')">+</button> </div> </td>' +
       '<td class="product-subtotal">' +
       '<div class="price-wallpaper">' +
       '<p class="price">' +
@@ -70,7 +71,9 @@ function ShowTotal() {
   var pro_total = 0;
   var cartTotal = "";
   for (var i = 0; i < cartList.length; i++) {
-    pro_total += parseInt(cartList[i][2].replace(/\./g, ""), 10);
+    var unitPrice = parseInt(cartList[i][3].replace(/\./g, ""), 10);
+    var quantity = parseInt(cartList[i][2], 10);
+    pro_total += unitPrice * quantity;
   }
   var Unit_change = pro_total.toLocaleString("de-DE");
   cartTotal +=
@@ -82,4 +85,31 @@ function ShowTotal() {
     Unit_change +
     '</p> <p class="unit-price">VND</p> </div></td></tr>';
   document.getElementById("total").innerHTML = cartTotal;
+}
+
+function handlePlus(x, i) {
+  var parent = x.parentElement; //i dùng để định vị xem nút tăng số lượng đang ở chỗ nào
+
+  var quantity = parseInt(parent.childNodes[3].innerHTML);
+  // td = x.parentElement; sẽ đi tới vị trí cha của thằng handlePlus nhờ this (div class =but).
+  // sau đó bằng thuộc tính childNodes mà chúng ta có thể lấy được số lượng hiện tại
+  var new_quantity = quantity + 1;
+  parent.childNodes[3].innerHTML = new_quantity;
+  //cập nhật lại số lượng trong mảng
+  productList[i][2] = new_quantity;
+  localStorage.setItem("productList", JSON.stringify(productList));
+}
+
+function handleMinus(x, i) {
+  var parent = x.parentElement; //i dùng để định vị xem nút tăng số lượng đang ở chỗ nào
+
+  var quantity = parseInt(parent.childNodes[3].innerHTML);
+  // td = x.parentElement; sẽ đi tới vị trí cha của thằng handlePlus nhờ this (div class =but).
+  // sau đó bằng thuộc tính childNodes mà chúng ta có thể lấy được số lượng hiện tại
+  if (quantity > 1) {
+    var new_quantity = quantity - 1;
+    parent.childNodes[3].innerHTML = new_quantity;
+    productList[i][2] = new_quantity;
+    localStorage.setItem("productList", JSON.stringify(productList));
+  }
 }

@@ -98,9 +98,12 @@ td {
   margin: 0 20px;
 }
 
-.quantity-button #quantity {
+.quantity-button span {
   width: 40px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
 }
 
 .product-total {
@@ -146,7 +149,4 @@ td {
   justify-content: flex-end;
 }
 
-.first {
-  display: none;
-}
 /*  */
