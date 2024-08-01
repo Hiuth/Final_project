@@ -314,7 +314,7 @@
     grid-template-columns: 1fr;
     grid-area: "banner_1" "banner_2";
   }
-  .Cart > i::after {
+  .Cart::after {
     top: -5px;
   }
 }
@@ -369,7 +369,7 @@
     grid-area: banner_8;
   }
 
-  .Cart_2 > i::after {
-    top: -8px;
+  .Cart_2::after {
+    top: -9px;
   }
 }

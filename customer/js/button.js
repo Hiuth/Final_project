@@ -1,8 +1,20 @@
+var productList = JSON.parse(localStorage.getItem("productList")) || [];
 //xử lý chuyển đổi giữa file giỏ hàng
 document.addEventListener("DOMContentLoaded", function () {
+  // cập nhật số lượng sản phẩm có trong giỏ hàng
+  function updateCartCount() {
+    var count = productList.length;
+    var links = document.querySelectorAll(".Cart, .Cart_2");
+    links.forEach(function (links) {
+      links.setAttribute("count", count);
+    });
+  }
+
+  updateCartCount();
+
   function handleClick(event) {
     var url;
-    var productList = JSON.parse(localStorage.getItem("productList")) || [];
+
     if (productList.length > 0) {
       window.location.assign("Gio_Hang_Co_Hang.html");
     } else {
