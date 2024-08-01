@@ -84,51 +84,6 @@
     grid-template-columns: 1fr;
     column-gap: 10px;
   }
-  .home-banner {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "banner_1"
-      "banner_1"
-      "banner_2"
-      "banner_3"
-      "banner_4"
-      "banner_5"
-      "banner_6"
-      "banner_7"
-      "banner_8";
-    column-gap: 10px;
-    row-gap: 10px;
-    transition: 0.5s;
-  }
-  .banner_1 {
-    grid-area: banner_1;
-  }
-
-  .banner_2 {
-    grid-area: banner_2;
-  }
-
-  .banner_3 {
-    grid-area: banner_3;
-  }
-
-  .banner_4 {
-    grid-area: banner_4;
-  }
-
-  .banner_5 {
-    grid-area: banner_5;
-  }
-  .banner_6 {
-    grid-area: banner_6;
-  }
-
-  .banner_7 {
-    grid-area: banner_7;
-  }
-  .banner_8 {
-    grid-area: banner_8;
-  }
 }
 /* Điện thoại phổ thông */
 @media (min-width: 400px) and (max-width: 480px) {
@@ -216,51 +171,6 @@
     grid-template-columns: 1fr;
     column-gap: 10px;
   }
-  .home-banner {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "banner_1"
-      "banner_1"
-      "banner_2"
-      "banner_3"
-      "banner_4"
-      "banner_5"
-      "banner_6"
-      "banner_7"
-      "banner_8";
-    column-gap: 10px;
-    row-gap: 10px;
-    transition: 0.5s;
-  }
-  .banner_1 {
-    grid-area: banner_1;
-  }
-
-  .banner_2 {
-    grid-area: banner_2;
-  }
-
-  .banner_3 {
-    grid-area: banner_3;
-  }
-
-  .banner_4 {
-    grid-area: banner_4;
-  }
-
-  .banner_5 {
-    grid-area: banner_5;
-  }
-  .banner_6 {
-    grid-area: banner_6;
-  }
-
-  .banner_7 {
-    grid-area: banner_7;
-  }
-  .banner_8 {
-    grid-area: banner_8;
-  }
 }
 /* Kích thước của tablet nhỏ */
 @media (min-width: 481px) and (max-width: 767px) {
@@ -335,55 +245,10 @@
   .main-content {
     margin: 50px auto;
   }
-  .home-banner {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "banner_1"
-      "banner_1"
-      "banner_2"
-      "banner_3"
-      "banner_4"
-      "banner_5"
-      "banner_6"
-      "banner_7"
-      "banner_8";
-    column-gap: 10px;
-    row-gap: 10px;
-    transition: 0.5s;
-  }
-  .banner_1 {
-    grid-area: banner_1;
-  }
-
-  .banner_2 {
-    grid-area: banner_2;
-  }
-
-  .banner_3 {
-    grid-area: banner_3;
-  }
-
-  .banner_4 {
-    grid-area: banner_4;
-  }
-
-  .banner_5 {
-    grid-area: banner_5;
-  }
-  .banner_6 {
-    grid-area: banner_6;
-  }
-
-  .banner_7 {
-    grid-area: banner_7;
-  }
-  .banner_8 {
-    grid-area: banner_8;
-  }
 }
 
 /* Kích thước tablet phổ phông */
-@media (min-width: 768px) and (max-width: 1025px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .product {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -449,7 +314,62 @@
     grid-template-columns: 1fr;
     grid-area: "banner_1" "banner_2";
   }
+  .Cart > i::after {
+    top: -5px;
+  }
 }
 
 @media (max-width: 1025px) {
+}
+
+@media (max-width: 767px) {
+  .home-banner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "banner_1"
+      "banner_1"
+      "banner_2"
+      "banner_3"
+      "banner_4"
+      "banner_5"
+      "banner_6"
+      "banner_7"
+      "banner_8";
+    column-gap: 10px;
+    row-gap: 10px;
+    transition: 0.5s;
+  }
+  .banner_1 {
+    grid-area: banner_1;
+  }
+
+  .banner_2 {
+    grid-area: banner_2;
+  }
+
+  .banner_3 {
+    grid-area: banner_3;
+  }
+
+  .banner_4 {
+    grid-area: banner_4;
+  }
+
+  .banner_5 {
+    grid-area: banner_5;
+  }
+  .banner_6 {
+    grid-area: banner_6;
+  }
+
+  .banner_7 {
+    grid-area: banner_7;
+  }
+  .banner_8 {
+    grid-area: banner_8;
+  }
+
+  .Cart_2 > i::after {
+    top: -8px;
+  }
 }

@@ -98,6 +98,30 @@ body {
   display: none;
 }
 
+/* thông báo số lượng sản phẩm đang có trong giỏ hàng */
+
+.Cart > i::after,
+.Cart_2 > i::after {
+  content: attr(count);
+  border: 1px solid #f2ddbe;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 10px;
+  font-weight: 550;
+  position: absolute;
+  top: 35px;
+  color: black;
+  background-color: #f2ddbe;
+  display: none;
+}
+
+/* Nếu biến count =0 thì không xuất hiện và ngược lại */
+.Cart > i[count]:not([count="0"])::after,
+.Cart_2 > i[count]:not([count="0"])::after {
+  display: inline-block;
+}
+
+/*  */
 .text-header {
   padding-right: 10px;
   font-weight: 500;
