@@ -116,29 +116,29 @@
 
     <!-- Thân trang -->
         <div class="main-content">
-          <form class="input-form">
+          <form class="input-form" id="customer_form">
             <h2>THÔNG TIN KHÁCH MUA HÀNG</h2>
             <div class="form-content">
               <div class="input-info">
                 <label for="name">Họ và tên*</label>
-                <input type="text" name="name" id="name" />
+                <input type="text" name="name" id="name" required/>
               </div>
               <div class="input-info">
                 <label for="sex">Giới Tính* :</label>
-                <input name="gender" type="radio" checked /> Nam
-                <input name="gender" type="radio" /> Nữ
+                <input name="gender" type="radio" value="Nam" checked /> Nam
+                <input name="gender" type="radio" value="Nữ" /> Nữ
               </div>
               <div class="input-info">
                 <label for="phone_nubmer">Số điện thoại*</label>
-                <input type="tel" name="phone" id="phone" />
+                <input type="tel" name="phone" id="phone" required/>
               </div>
               <div class="input-info">
                 <label for="address">Địa chỉ*</label>
-                <input type="text" name="address" id="address" />
+                <input type="text" name="address" id="address" required />
               </div>
               <div class="input-info">
                 <label for="email_address">Địa chỉ email*</label>
-                <input type="email" name="email" id="email" />
+                <input type="email" name="email" id="email" required/>
               </div>
     
               <div class="input-info">
@@ -151,8 +151,8 @@
                 <div class="add-order-title" id="or-total">
 
                     </div>
-                    <div class="add-order-bottom">
-                        <a href="#">ĐẶT HÀNG NGAY</a>
+                    <div class="add-order-bottom" >
+                        <a  href="#" id="order_button">ĐẶT HÀNG NGAY</a>
                     </div>
           </form>
     

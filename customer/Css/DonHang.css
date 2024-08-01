@@ -87,3 +87,7 @@ label {
 .unit-price {
   color: #eb412f;
 }
+
+.input-error {
+  border: 2px solid #eb412f;
+}
