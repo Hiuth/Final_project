@@ -7,6 +7,9 @@
   max-width: 85%;
 }
 
+.h2 {
+  padding-bottom: 10px;
+}
 .cart-tilte {
   display: flex;
   justify-content: center;
@@ -42,6 +45,7 @@
   grid-template-columns: 3fr 2fr;
   font-size: 15px;
   column-gap: 10px;
+  margin-top: 10px;
 }
 .product-list {
   padding-right: 20px;
@@ -151,4 +155,18 @@ td {
   justify-content: flex-end;
 }
 
+.Return-button {
+  padding-top: 10px;
+}
+.Return-button > a {
+  border: 2px solid black;
+  padding: 5px 10px;
+  font-weight: 550;
+}
+
+.Return-button > a:hover {
+  background-color: black;
+  color: white;
+  transition: 0.8s;
+}
 /*  */

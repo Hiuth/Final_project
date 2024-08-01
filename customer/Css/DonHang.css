@@ -75,7 +75,10 @@ label {
   font-size: 18px;
   font-weight: 700;
 }
-
+#note {
+  max-width: 100%;
+  min-height: 60px;
+}
 .order-total {
   color: #eb412f;
   font-size: 20px;
