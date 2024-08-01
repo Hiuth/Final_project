@@ -107,6 +107,7 @@ function ShowTotal() {
   var cartList = JSON.parse(addCart);
   var pro_total = 0;
   var cartTotal = "";
+  var order_total = "";
   for (var i = 0; i < cartList.length; i++) {
     var unitPrice = parseInt(cartList[i][3].replace(/\./g, ""), 10);
     var quantity = parseInt(cartList[i][2], 10);
@@ -121,5 +122,29 @@ function ShowTotal() {
     '</td></tr><tr> <th>Tổng</th> <td class="product-price"> <div class="price-wallpaper"><p class="price">' +
     Unit_change +
     '</p> <p class="unit-price">VND</p> </div></td></tr>';
+
   document.getElementById("total").innerHTML = cartTotal;
 }
+
+function ShowTotal_2() {
+  var addCart = localStorage.getItem("productList");
+  var cartList = JSON.parse(addCart);
+  var pro_total = 0;
+  var order_total = "";
+  for (var i = 0; i < cartList.length; i++) {
+    var unitPrice = parseInt(cartList[i][3].replace(/\./g, ""), 10);
+    var quantity = parseInt(cartList[i][2], 10);
+    pro_total += unitPrice * quantity;
+  }
+  var Unit_change = pro_total.toLocaleString("de-DE");
+  order_total +=
+    '<span class="order-but-tilte">Tổng tiền</span><span class="order-total">' +
+    Unit_change +
+    '<span class="unit-price">VND</span>';
+  document.getElementById("or-total").innerHTML = order_total;
+}
+
+//Thêm đợt đặt hàng
+//Lấy dữ liệu từ form
+
+var Customer_info = [];
