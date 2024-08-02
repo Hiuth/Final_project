@@ -116,7 +116,7 @@
 
     <!-- Thân trang -->
         <div class="main-content">
-          <form class="input-form" id="customer_form">
+          <form class="input-form" id="customer_form" >
             <h2>THÔNG TIN KHÁCH MUA HÀNG</h2>
             <div class="form-content">
               <div class="input-info">
