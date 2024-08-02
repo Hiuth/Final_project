@@ -17,31 +17,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="Css/style.css" />
     <link rel="stylesheet" href="Css/screen.css" />
-    <link rel="stylesheet" href="css/DonHang.css" />
+    <link rel="stylesheet" href="css/giohang.css" />
     <title>2004'S Store</title>
-    <style>
-    #order_button {
-        border: 1px solid #eb412f;
-        /* display: flex;
-      justify-content: center;
-      align-items: center; */
-        display: inline-block;
-        text-align: c;
-        padding: 15px 30px;
-        color: white;
-        background-color: #eb412f;
-        font-weight: 700;
-        width: 100%;
-        cursor: pointer;
-    }
-
-    #order_button:hover {
-        background-color: #f2ddbe;
-        border: 1px solid #f2ddbe;
-        color: black;
-        transition: 0.6s;
-    }
-    </style>
 </head>
 
 <body>
@@ -112,47 +89,17 @@
         </nav>
     </div>
 
-    <!-- Thân trang -->
+    <!-- Thân trang -->`
+
     <div class="main-content">
-        <form class="input-form" id="customer_form" action="HoanTatDonHang.php" method="post">
-            <h2>THÔNG TIN KHÁCH MUA HÀNG</h2>
-            <div class="form-content">
-                <div class="input-info">
-                    <label for="name">Họ và tên*</label>
-                    <input type="text" name="name" id="name" required />
-                </div>
-                <div class="input-info">
-                    <label for="sex">Giới Tính* :</label>
-                    <input name="gender" type="radio" value="Nam" checked /> Nam
-                    <input name="gender" type="radio" value="Nữ" /> Nữ
-                </div>
-                <div class="input-info">
-                    <label for="phone_nubmer">Số điện thoại*</label>
-                    <input type="tel" name="phone" id="phone" required />
-                </div>
-                <div class="input-info">
-                    <label for="address">Địa chỉ*</label>
-                    <input type="text" name="address" id="address" required />
-                </div>
-                <div class="input-info">
-                    <label for="email_address">Địa chỉ email*</label>
-                    <input type="email" name="email" id="email" required />
-                </div>
-
-                <div class="input-info">
-                    <label for="notes">Ghi chú đơn hàng*</label>
-                    <textarea name="note" id="note"></textarea>
-                </div>
+        <div class="cart-none-product">
+            <div class="cart-tilte">
+                <span>CẢM ƠN BẠN ĐÃ ĐẶT HÀNG. CHÚNG TÔI SẼ LIÊN HỆ ĐỂ XÁC NHẬN ĐƠN HÀNG TRONG THỜI GIAN SỚM NHẤT.</span>
             </div>
-            <div class="add-order-button">
-                <div class="add-order-title" id="or-total">
-                </div>
-                <div class="add-order-bottom">
-                    <input type="submit" name="btn-submit" value="ĐẶT HÀNG NGAY" id="order_button">
-                </div>
-        </form>
-
-    </div>
+            <div class="return-home">
+                <a href="index.html">QUAY TRỞ LẠI CỬA HÀNG </a>
+            </div>
+        </div>
     </div>
     <!-- Chân trang -->
     <footer class="footer">
@@ -206,9 +153,29 @@
     </footer>
     <script src="js/main.js"></script>
     <script src="js/button.js"></script>
-    <script>
-    ShowTotal_2();
-    </script>
+
+    <?php
+     require 'connect.php';
+     if (isset($_POST['btn-submit'])) {
+        $username=$_POST['name'];
+        $gender=$_POST['gender'];
+        $email=$_POST['email'];
+        $phone_number= $_POST['phone'];
+        $address=$_POST['address'];
+        $note=$_POST['note'];
+        
+        if(!empty($username) && !empty($gender) && !empty($email) && !empty($phone_number) && !empty($addres)) {
+            $sql="INSERT INTO `2004'sstore_database` (`Customer_name`,`Customer_sex`,`Customer_phone`,`Customer_address`,`Customer_email`)
+            VALUES('$username','$gender',$phone_number',''$address','$email')";
+           if($conn->query($sql)===TRUE) {
+            echo "Lưu dữ liệu thành công";
+        }else{
+             echo "Lỗi {$sql}".$conn->error;
+        }
+        
+     }
+    }
+    ?>
 </body>
 
 </html>
