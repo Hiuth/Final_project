@@ -111,10 +111,9 @@
             </ul>
         </nav>
     </div>
-
     <!-- Thân trang -->
     <div class="main-content">
-        <form class="input-form" id="customer_form" action="HoanTatDonHang.php" method="post">
+        <form class="input-form" id="customer_form" action="HoanTatDatHang.php" method="post">
             <h2>THÔNG TIN KHÁCH MUA HÀNG</h2>
             <div class="form-content">
                 <div class="input-info">
