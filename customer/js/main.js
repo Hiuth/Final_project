@@ -146,57 +146,57 @@ function ShowTotal_2() {
 
 //Thêm đợt đặt hàng
 //Lấy dữ liệu từ form
-var Customer_info = [];
+// var Customer_info = [];
 
-document.addEventListener("DOMContentLoaded", function () {
-  function take_info(event) {
-    event.preventDefault();
-    var info = document.getElementById("customer_form");
-    // var isFormTrue = true;
-    // var info_data = {
-    //   name: info.name.value,
-    //   gender: info.querySelector('input[name="gender"]:checked').value,
-    //   phone: info.phone.value,
-    //   address: info.address.value,
-    //   email: info.email.value,
-    //   note: info.note.value,
-    // };
-    var name = document.getElementById("name");
-    var gender = document.querySelector('input[name="gender"]:checked');
-    var phone = document.getElementById("phone");
-    var address = document.getElementById("address");
-    var email = document.getElementById("email");
-    var note = document.getElementById("note");
+// document.addEventListener("DOMContentLoaded", function () {
+//   function take_info(event) {
+//     event.preventDefault();
+//     var info = document.getElementById("customer_form");
+//     // var isFormTrue = true;
+//     // var info_data = {
+//     //   name: info.name.value,
+//     //   gender: info.querySelector('input[name="gender"]:checked').value,
+//     //   phone: info.phone.value,
+//     //   address: info.address.value,
+//     //   email: info.email.value,
+//     //   note: info.note.value,
+//     // };
+//     var name = document.getElementById("name");
+//     var gender = document.querySelector('input[name="gender"]:checked');
+//     var phone = document.getElementById("phone");
+//     var address = document.getElementById("address");
+//     var email = document.getElementById("email");
+//     var note = document.getElementById("note");
 
-    var isFormTrue = true;
+//     var isFormTrue = true;
 
-    var info_data = {
-      name: name.value,
-      gender: gender ? gender.value : "", // Gender might be null if none is selected
-      phone: phone.value,
-      address: address.value,
-      email: email.value,
-      note: note.value,
-    };
-    var checkPhone = document.getElementById("phone");
-    var checkEmail = document.getElementById("email");
-    if (info.phone.value.length !== 10) {
-      checkPhone.classList.add("input-error");
-      isFormTrue = false;
-    } else {
-      checkPhone.classList.remove("input-error");
-    }
+//     var info_data = {
+//       name: name.value,
+//       gender: gender ? gender.value : "", // Gender might be null if none is selected
+//       phone: phone.value,
+//       address: address.value,
+//       email: email.value,
+//       note: note.value,
+//     };
+//     var checkPhone = document.getElementById("phone");
+//     var checkEmail = document.getElementById("email");
+//     if (info.phone.value.length !== 10) {
+//       checkPhone.classList.add("input-error");
+//       isFormTrue = false;
+//     } else {
+//       checkPhone.classList.remove("input-error");
+//     }
 
-    if (!info.email.value.endsWith("@gmail.com")) {
-      checkPhone.classList.add("input-error");
-      isFormTrue = false;
-    } else {
-      checkPhone.classList.remove("input-error");
-    }
+//     if (!info.email.value.endsWith("@gmail.com")) {
+//       checkPhone.classList.add("input-error");
+//       isFormTrue = false;
+//     } else {
+//       checkPhone.classList.remove("input-error");
+//     }
 
-    if (isFormTrue) {
-      console.log(info_data);
-    }
-  }
-  document.getElementById("order_button").addEventListener("click", take_info);
-});
+//     if (isFormTrue) {
+//       console.log(info_data);
+//     }
+//   }
+//   document.getElementById("order_button").addEventListener("click", take_info);
+// });
