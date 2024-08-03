@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Reset default styles -->
+    <link rel="stylesheet" href="Css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css"
+      integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" href="Css/style.css" />
+    <link rel="stylesheet" href="Css/screen.css" />
+
+    <link rel="stylesheet" href="Css/chitiethang.css" />
+    <title>2004'S Store</title>
+  </head>
+  <body>
+    <!-- JS for menu toggle -->
+    <script>
+      $(document).ready(function () {
+        $("#toggle").click(function () {
+          $("nav").slideToggle();
+        });
+      });
+    </script>
+    <!-- Header -->
+    <div class="header-wallpaper">
+      <div class="header">
+        <div class="left-selection">
+          <img
+            class="Logo_website"
+            src="Picture/Logo_web_3.png"
+            alt="logo_web"
+          />
+        </div>
+        <!-- Search bar -->
+        <div class="middle-selection">
+          <input
+            class="search-bar"
+            type="search"
+            placeholder="Tìm kiếm sản phẩm ..."
+          />
+          <button class="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+        <div class="right-selection">
+          <div class="cart-wallpaper">
+            <a class="Cart" href=""
+              ><span class="text-header">Giỏ Hàng /</span
+              ><i class="fa-solid fa-cart-shopping"></i
+            ></a>
+          </div>
+          <div class="cart_wallpaper_2">
+            <a class="Cart_2" href=""
+              ><i class="fa-solid fa-cart-shopping"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <!-- Navigation Menu -->
+      <div id="toggle">
+        <!-- Menu toggle button -->
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <nav>
+        <ul class="main-menu">
+          <li>
+            <a href=""
+              ><i class="fa-brands fa-playstation"></i
+              ><span>PLAYSTATION</span></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><i class="fab fa-nintendo-switch"></i
+              ><span>NITENDO SWITCH</span></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME</span></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="main-content">
+      <div class="content-wallpaper">
+        <div class="container">
+          <div class="product">
+            <div class="product-image">
+              <img
+                class="img-console"
+                src="Picture/ps5_slim_2.jpg"
+                alt="PS5 Slim"
+              />
+              <div class="product-thumbnails">
+                <img src="Picture/ps5_slim_3.jpg" alt="PS5 Thumbnail 3" />
+                <img src="Picture/ps5_slim_4.jpg" alt="PS5 Thumbnail 4" />
+                <img src="Picture/ps5_slim_5.jpg" alt="PS5 Thumbnail 5" />
+              </div>
+            </div>
+            <div class="product-details">
+              <h1>MÁY PS5 SLIM / PLAYSTATION 5 DIGITAL EDITION PHIÊN BẢN CÓ Ổ ĐĨA</h1>
+              <div class="price-wallpaper">
+                <p class="price">10.490.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <a class="add-to-cart">Thêm vào giỏ hàng</a>
+              <ul class="product-info">
+                <li>• Bán Máy PS5 Slim Digital Edition chính hãng tại TPHCM</li>
+                <li>• Ship COD toàn quốc</li>
+                <li>• Trả góp lãi suất 0% qua thẻ tín dụng</li>
+                <li>• Bảo hành: 06 tháng</li>
+                <li>
+                  • CPU: AMD Zen 2 8 nhân với xung nhịp trong khoảng 3.5 Ghz
+                </li>
+                <li>
+                  • GPU: 10.28 TFLOPs, 36 đơn vị tính toán (CU) ở tốc độ 2.23GHz
+                </li>
+                <li>• RAM/Giao diện: 16GB GDDR6/256-bit</li>
+                <li>• Băng thông bộ nhớ: 448GB/s</li>
+                <li>• Bộ nhớ trong: SSD 1TB</li>
+                <li>• Lưu trữ mở rộng: SSD NVMe</li>
+                <li>• Bộ nhớ ngoài: Hỗ trợ USB HDD</li>
+              </ul>
+              <div class="guarantee">
+                <h2>Bảo đảm 100% chính hãng</h2>
+                <p>
+                  - 2004'S Store chỉ làm việc trực tiếp với các thương hiệu và
+                  nhà phân phối chính thức
+                </p>
+                <p>
+                  - 2004'S Store kiểm soát chặt chẽ quy trình hàng hóa được chấp
+                  thuận pháp giao dịch, nhập khẩu và khai thuế
+                </p>
+                <p>
+                  - Hỗ trợ mua máy trả góp lãi xuất 0% qua thẻ tín dụng, nhanh
+                  hơn, tiết kiệm hơn
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="product-description">
+            <h2>
+              Tổng quan Sản Phẩm PS5 Slim Standard Edition – Phiên bản ổ đĩa
+            </h2>
+            <p>
+              <strong
+                >Máy PS5 Slim Digital Edition – Phiên bản ổ đĩa</strong
+              >
+              sẽ được trang bị CPU 8 nhân trên kiến trúc Zen 2 của AMD, xung nhịp dao động trong
+               khoảng 3.5 Ghz. Về xử lý đồ họa, PS5 sẽ sử dụng GPU tùy biến dựa theo kiến trúc RDNA 2 của AMD. Với xung nhịp 2,23Ghz, hiệu suất PS5 đạt 10,28 teraflops cùng 36 đơn vị tính toán (Compute units).
+
+              PS5 hoàn toàn có thể cân được các tựa game có đồ họa khủng ở độ phân giải 4k. PS5 cũng hỗ trợ công nghệ Ray-traycing, tương tự như dòng card RTX mới nhất của NVIDIA trên PC.<br>
+            </p>
+            <p>
+              PS5 hoàn toàn có thể cân được các tựa game có đồ họa khủng ở độ
+              phân giải 4k. PS5 cũng hỗ trợ công nghệ Ray-traycing, tương tự như
+              dòng card RTX mới nhất của NVIDIA trên PC.
+            </p>
+            <div class="video-container">
+              <iframe width="800" height="450" src="https://www.youtube.com/embed/RkC0l4iekYo?start=54" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+            <figure>
+              <img
+              class="img-console"
+              src="Picture/1-2.jpg"
+              alt="Cấu hình Máy PS5 Slim Digital Edition – Phiên bản ổ đĩa"
+            />
+              <img
+                class="img-console"
+                src="Picture/bba871cc55f605295d5b69ce23665175.jpg"
+                alt="Cấu hình Máy PS5 Slim Digital Edition – Phiên bản không đĩa 2"
+              />
+              <figcaption>
+                Cấu hình Máy PS5 Slim Digital Edition – Phiên bản không ổ đĩa
+              </figcaption>
+            </figure>
+            <h3>
+              Mô tả chi tiết Máy PS5 Slim Digital Edition – Phiên bản không ổ
+              đĩa
+            </h3>
+            <p>
+              PS5 cũng được nâng cấp đáng kể về dung lượng và tốc độ RAM so với thế hệ PS4. Được trang bị RAM 16GB GDDR5, ổ SSD tùy chỉnh có dung lượng cực lớn lên tới 825GB. PS5 hứa hẹn đem đến cho người dùng trải nghiệm load game cực nhanh.<br>
+
+              Nếu PS4 chỉ tải đươc 1 GB dữ liệu trong 20 giây thì PS5 tối đa lên tới 5,5 GB/s. Như vậy, PS5 sẽ giúp rút ngắn thời gian load game chỉ còn vài giây. Chưa kể hãng còn cho phép người dùng có thể tự nâng cấp, thay thế ổ SSD khác với dung lượng lớn hơn.<br>
+              
+              Sony cũng xác nhận hệ máy chơi game tiếp theo này có khả năng tương thích ngược với các game đã phát hành trên PS4. Hãng cũng thử nghiệm hơn 100 game hàng đầu của PS4 trên PS5 và đã thành công.<br>
+              
+              So với Xbox , PS5 Slim Digital Edition – Phiên bản ổ đĩa vẫn có phần yếu thế hơn về thông số. Mặc dù có cùng kiến trúc AMD, xung nhịp CPU 8 nhân kiến trúc Zen 2 của AMD trên Xbox Series X lại cao hơn PS5 (3,8 Ghz so với 3,5 Ghz).<br>
+              
+              Hiệu suất xử lý GPU của Xbox Series X cao hơn nhiều so với PS5 (52 CU với 36 CU). Dung lượng lưu trữ trên chiếc console của Microsoft cũng nhỉnh hơn đôi chút khi trang bị ổ cứng SSD 1 TB.<br>
+            </p>
+            <img
+                class="img-console"
+                src="Picture/4.jpg"
+                alt="Cấu hình Máy PS5 Slim Digital Edition – Phiên bản không ổ đĩa"
+              />
+            <p>
+              Nhìn chung, Xbox Series X có lợi thế hơn về mặt thông số kỹ thuật. Nhưng Sony lại có thư viện game đa dạng và nhiều tựa game độc quyền chất lượng cao.<br>
+
+              Phần đông hiện nay, thư viện game đa dạng là yếu tố quyết định trong việc mua console mới. Nên PS5 vẫn chiếm ưu thế hơn khi SONY đang sở hữu một loạt dòng game độc quyền đáng giá.
+            </p>
+            <h4>
+              So sánh cấu hình của Máy PS5 Slim Digital Edition – Phiên bản không ổ đĩa và Xbox Seri X
+            </h4>
+            <img
+                class="img-console"
+                src="Picture/sosanhcauhinhps5.jpg"
+                alt="Cấu hình Máy PS5 Slim Digital Edition – Phiên bản không ổ đĩa"
+              />
+          </div>
+        </div>
+        <aside class="sidebar">
+          <h2>Gợi ý cho bạn</h2>
+          <div class="product-img">
+            <a href=""
+              ><img
+                class="img-game"
+                src="Picture/ps5_game_AterlierRyza3_1.jpg"
+                alt="elden-ring"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="">ATER lIER RYZA 3 – ĐĨA GAME PS5 </a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.080.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-img">
+            <a href=""
+              ><img
+                class="img-game"
+                src="Picture/ps5_game_Persona5_1.jpg"
+                alt="PERSONA 5"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="">PERSONA 5 ROYAL STEELBOOK– Đĩa Game PS5 </a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.550.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-img">
+            <a href=""
+              ><img
+                class="img-game"
+                src="Picture/ps5_game_SpiderMan2_1.jpg"
+                alt="SPIDER-MAN2"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="">MARVEL’S SPIDER-MAN 2 – ĐĨA GAME PS5 </a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.500.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-img">
+            <a href=""
+              ><img
+                class="img-game"
+                src="Picture/ps5_game_HelldriversII_1.jpg"
+                alt="HelldriversII"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="">HelldriversII PS5 – Đĩa Game PS5 </a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.500.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>
+ <!-- Chân trang -->
+ <footer class="footer">
+  <div class="footer-content">
+    <div class="about">
+      <span class="footer-text-title">Giới Thiệu</span>
+      <p>
+        - 2004’S Store là đơn vị bán lẻ các sản phẩm máy chơi game, tay cầm,
+        đĩa game Sony PS4, PS5, Nintendo Switch, Microsoft Xbox One uy tín.
+      </p>
+      <br />
+      <span class="footer-text-title">ĐỊA CHỈ</span>
+      <p>- 02 Võ Oanh, Phường 25, Bình Thạnh, Hồ Chí Minh</p>
+      <p>- 9 Nguyễn Thị Định, An Phú, Quận 2, Thành phố Hồ Chí Minh</p>
+    </div>
+    <div class="contact">
+      <span class="footer-text-title">LIÊN HỆ</span>
+      <p>- Hotline: 0898.176.914 (Hồ Chí Minh)</p>
+      <p>- 0901.497.185 (TP.HCM)</p>
+      <p>- Email: 2004’sstore@gmail.com</p>
+      <br />
+      <span class="footer-text-title">THỜI GIAN LÀM VIỆC</span>
+      <p>- 9h00 Sáng – 22h00 Tối</p>
+    </div>
+    <div class="follow-us">
+      <span class="footer-text-title">Theo dõi 2004'S Store tại</span>
+      <a
+        href="https://www.youtube.com/watch?v=bv__9O5CZok"
+        target="_blank"
+      >
+        <img src="Picture\Logo_youtube.png" alt="YouTube" width="180px" />
+      </a>
+      <a href="https://www.tiktok.com" target="_blank">
+        <img src="Picture\Logo_tiktok.png" alt="TikTok" width="180px" />
+      </a>
+      <a href="https://www.facebook.com" target="_blank">
+        <img src="Picture\Logo_facebook.png" alt="Facebook" width="180px" />
+      </a>
+      <a href="https://www.facebook.com/groups/ps5vietnam">
+        <img
+          src="Picture\Logo_Ps5_Group.png"
+          alt="Hội PS5 Việt Nam"
+          width="180px"
+        />
+      </a>
+    </div>
+    <div class="info">
+      <span class="footer-text-title">Thông tin</span>
+      <p>- Quy định chung</p>
+      <p>- Quy định đặt cọc</p>
+      <p>- Quy định bảo hành</p>
+      <p>- Chính sách vận chuyển</p>
+      <p>- Chính sách đổi trả</p>
+      <br />
+      <img
+        src="Picture\Logo_BoCongthuong.png"
+        alt="Đã thông báo bộ công thương"
+        width="200"
+      />
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/button.js"></script>
+</body>
+</html>
