@@ -1,4 +1,5 @@
 <?php
+require_once 'connect.php';
 session_start();
 if (isset($_POST['data'])) {
     // Xử lý dữ liệu sản phẩm
@@ -16,7 +17,7 @@ if (isset($_POST['data'])) {
 
 
 
-if (isset($_POST['btn-submit'])) {
+if (isset($_POST['btn-submit'])&&$_POST['btn-submit']) {
     $username=$_POST['name'];
     $gender=$_POST['gender'];
     $email=$_POST['email'];
@@ -24,6 +25,12 @@ if (isset($_POST['btn-submit'])) {
     $address=$_POST['address'];
     $note=$_POST['note'];
     
+echo "tên: {$username}";
+echo "tên: {$gender}";
+echo "tên: { $email}";
+echo "tên: {$phone_number}";
+echo "tên: {$note}";
+
     if(!empty($username) && !empty($gender) && !empty($email) && !empty($phone_number) && !empty($address)) {
         // $sql="INSERT INTO `Customer` (`Customer_name`,`Customer_sex`,`Customer_phone`,`Customer_address`,`Customer_email`)
         // VALUES('$username','$gender',$phone_number',''$address','$email')";
@@ -31,29 +38,34 @@ if (isset($_POST['btn-submit'])) {
         //         VALUES ('$username', '$gender', '$phone_number', '$address', '$email')";
         //         $conn->query($sql);
         $conn=connect();
-        $stmt = $conn->prepare("SELECT Customer_id FROM Customer WHERE Customer_phone = ? OR Customer_email = ? OR Customer_name=? OR Customer_sex=? OR Customer_address = ?");
-        $stmt->bind_param("issss", $phone_number, $email,$username,$gender,$address);
+        $stmt = $conn->prepare("SELECT Customer_id FROM Customer WHERE Customer_name=? AND Customer_phone = ?  AND Customer_sex=? AND Customer_address = ? AND Customer_email = ?");
+        $stmt->bind_param("sisss", $username, $phone_number,$gender,$address,$email);
         $stmt->execute();
         $result = $stmt->get_result();  
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $customer_id = $row['Customer_id'];
-            //echo "Khách hàng đã tồn tại với ID: " . $customer_id;
-        } else {
-            //echo "Khách hàng không tồn tại trong cơ sở dữ liệu.";
-        }
-
-        $stmt = $conn->prepare("SELECT Product_id FROM product WHERE Product_name = ? ");
-        $stmt->bind_param("s", $product_name);
-        $stmt->execute();
-        $result = $stmt->get_result();  
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $customer_id = $row['Product_id'];
-            echo "sản phẩm đã tồn tại với ID: " . $customer_id;
+            echo "Khách hàng đã tồn tại với ID: " . $customer_id;
         } else {
             echo "Khách hàng không tồn tại trong cơ sở dữ liệu.";
+            $sql = "INSERT INTO Customer (Customer_name, Customer_sex, Customer_phone, Customer_address, Customer_email)
+            VALUES ('$username', '$gender', '$phone_number', '$address', '$email')";
+            $conn->query($sql);
+            $last_id = $conn->insert_id;
+            $conn =null;
         }
+
+        // $stmt = $conn->prepare("SELECT Product_id FROM product WHERE Product_name = ? ");
+        // $stmt->bind_param("s", $product_name);
+        // $stmt->execute();
+        // $result = $stmt->get_result();  
+        // if ($result->num_rows > 0) {
+        //     $row = $result->fetch_assoc();
+        //     $customer_id = $row['Product_id'];
+        //     echo "sản phẩm đã tồn tại với ID: " . $customer_id;
+        // } else {
+        //     echo "Khách hàng không tồn tại trong cơ sở dữ liệu.";
+        // }
  }else{
     
  }

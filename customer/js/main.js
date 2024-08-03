@@ -201,6 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
           console.error("Lỗi khi gửi yêu cầu:", error);
         });
       localStorage.clear();
+      location.reload();
     }
   }
   document.getElementById("order_button").addEventListener("click", sendCart);

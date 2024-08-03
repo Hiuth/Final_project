@@ -8,7 +8,7 @@
         $_SESSION['productList'] = $receivedData;
     } 
 
-     if (isset($_POST['btn-submit'])) {
+     if (isset($_POST['btn-submit'])&&$_POST['btn-submit']) {
          $username=$_POST['name'];
          $gender=$_POST['gender'];
          $email=$_POST['email'];
