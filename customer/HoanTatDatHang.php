@@ -1,3 +1,35 @@
+<?php
+     require_once 'connect.php';
+     session_start();
+     include "Thuvien.php";
+     // xử lý dữ liệu được gửi từ js sang php
+     if (isset($_POST['data'])) {
+        $receivedData = json_decode($_POST['data'], true);
+        $_SESSION['productList'] = $receivedData;
+    } 
+
+     if (isset($_POST['btn-submit'])) {
+         $username=$_POST['name'];
+         $gender=$_POST['gender'];
+         $email=$_POST['email'];
+         $phone_number= $_POST['phone'];
+         $address=$_POST['address'];
+         $note=$_POST['note'];
+         $total =Cart_total();
+         if(!empty($username) && !empty($gender) && !empty($email) && !empty($phone_number) && !empty($address)) {
+            $customer_id=Create_Customer_Info($username, $gender, $phone_number, $address, $email);
+            //tạo đơn hàng
+            $orders_id = Create_orders($customer_id,$total,$note,$address);
+            //tạo chi tiết đơn hàng
+            Create_orders_details($orders_id);
+         }
+    }
+     
+     
+  
+?>
+
+
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -154,28 +186,7 @@
     <script src="js/main.js"></script>
     <script src="js/button.js"></script>
 
-    <?php
-     require 'connect.php';
-     if (isset($_POST['btn-submit'])) {
-        $username=$_POST['name'];
-        $gender=$_POST['gender'];
-        $email=$_POST['email'];
-        $phone_number= $_POST['phone'];
-        $address=$_POST['address'];
-        $note=$_POST['note'];
-        
-        if(!empty($username) && !empty($gender) && !empty($email) && !empty($phone_number) && !empty($addres)) {
-            $sql="INSERT INTO `2004'sstore_database` (`Customer_name`,`Customer_sex`,`Customer_phone`,`Customer_address`,`Customer_email`)
-            VALUES('$username','$gender',$phone_number',''$address','$email')";
-           if($conn->query($sql)===TRUE) {
-            echo "Lưu dữ liệu thành công";
-        }else{
-             echo "Lỗi {$sql}".$conn->error;
-        }
-        
-     }
-    }
-    ?>
+
 </body>
 
 </html>

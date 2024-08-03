@@ -148,55 +148,67 @@ function ShowTotal_2() {
 //Lấy dữ liệu từ form
 // var Customer_info = [];
 
+document.addEventListener("DOMContentLoaded", function () {
+  function sendCart(event) {
+    var info = document.getElementById("customer_form");
+    var isFormTrue = true;
+    var info_data = {
+      name: info.name.value,
+      gender: info.querySelector('input[name="gender"]:checked').value,
+      phone: info.phone.value,
+      address: info.address.value,
+      email: info.email.value,
+      note: info.note.value,
+    };
+    var checkPhone = document.getElementById("phone");
+    var checkEmail = document.getElementById("email");
+    if (info.phone.value.length !== 10) {
+      checkPhone.classList.add("input-error");
+      isFormTrue = false;
+    } else {
+      checkPhone.classList.remove("input-error");
+    }
+
+    if (!info.email.value.endsWith("@gmail.com")) {
+      checkPhone.classList.add("input-error");
+      isFormTrue = false;
+    } else {
+      checkPhone.classList.remove("input-error");
+    }
+
+    if (isFormTrue) {
+      // hàm gửi dữ liệu từ local storage sang php
+      var localStorageData = localStorage.getItem("productList");
+      var url = "test.php";
+      var options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: "data=" + encodeURIComponent(localStorageData), // hàm mã hoá chuỗi
+      };
+
+      fetch(url, options)
+        .then((response) => response.text()) // Đổi từ json sang text
+        .then((data) => {
+          console.log("Phản hồi từ server:", data);
+          return JSON.parse(data);
+        })
+        .then((parsedData) => {
+          console.log(":", parsedData);
+        })
+        .catch((error) => {
+          console.error("Lỗi khi gửi yêu cầu:", error);
+        });
+      localStorage.clear();
+    }
+  }
+  document.getElementById("order_button").addEventListener("click", sendCart);
+});
+
 // document.addEventListener("DOMContentLoaded", function () {
-//   function take_info(event) {
-//     event.preventDefault();
-//     var info = document.getElementById("customer_form");
-//     // var isFormTrue = true;
-//     // var info_data = {
-//     //   name: info.name.value,
-//     //   gender: info.querySelector('input[name="gender"]:checked').value,
-//     //   phone: info.phone.value,
-//     //   address: info.address.value,
-//     //   email: info.email.value,
-//     //   note: info.note.value,
-//     // };
-//     var name = document.getElementById("name");
-//     var gender = document.querySelector('input[name="gender"]:checked');
-//     var phone = document.getElementById("phone");
-//     var address = document.getElementById("address");
-//     var email = document.getElementById("email");
-//     var note = document.getElementById("note");
-
-//     var isFormTrue = true;
-
-//     var info_data = {
-//       name: name.value,
-//       gender: gender ? gender.value : "", // Gender might be null if none is selected
-//       phone: phone.value,
-//       address: address.value,
-//       email: email.value,
-//       note: note.value,
-//     };
-//     var checkPhone = document.getElementById("phone");
-//     var checkEmail = document.getElementById("email");
-//     if (info.phone.value.length !== 10) {
-//       checkPhone.classList.add("input-error");
-//       isFormTrue = false;
-//     } else {
-//       checkPhone.classList.remove("input-error");
-//     }
-
-//     if (!info.email.value.endsWith("@gmail.com")) {
-//       checkPhone.classList.add("input-error");
-//       isFormTrue = false;
-//     } else {
-//       checkPhone.classList.remove("input-error");
-//     }
-
-//     if (isFormTrue) {
-//       console.log(info_data);
-//     }
+//   function sendCart(event) {
+//     // Ngăn chặn hành vi mặc định của nút submit (nếu có)
 //   }
-//   document.getElementById("order_button").addEventListener("click", take_info);
+//   document.getElementById("order_button").addEventListener("click", sendCart);
 // });
