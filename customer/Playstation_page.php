@@ -128,16 +128,6 @@
         </div>
         <div class="main-product">
             <?php
-            // $category_id = "PlayStation5";
-            // $category_id_2 = "PlayStation4";
-            // $category_id_3 = "Đĩa game PS5";
-            // $category_id_4 = "Đĩa game PS4";
-            // $category_id_5 = "Tay cầm Ps5";
-            // ShowProduct($category_id);
-            // ShowProduct($category_id_2);
-            // ShowProduct($category_id_3);
-            // ShowProduct($category_id_4);
-            // ShowProduct($category_id_5);
             $category_id =["NintendoSwtich","Thẻ game Nintendo","Tay cầm xbox","Tay cầm Nintendo","Xbox"];
             ShowProduct($category_id)
             
