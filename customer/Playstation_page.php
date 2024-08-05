@@ -107,6 +107,7 @@
                         <option value="price-asc"
                             <?php echo isset($_GET['sort']) && $_GET['sort'] == 'price-asc' ? 'selected' : ''; ?>>Thứ tự
                             theo giá: thấp đến cao</option>
+                        <!-- ? toán tử điều kiện -->
                         <option value="price-desc"
                             <?php echo isset($_GET['sort']) && $_GET['sort'] == 'price-desc' ? 'selected' : ''; ?>>Thứ
                             tự theo giá: cao đến thấp</option>

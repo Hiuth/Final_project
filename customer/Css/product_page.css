@@ -16,14 +16,7 @@
   font-size: 20px;
 }
 
-.page-title .left-title {
-  display: block;
-}
-
-.right-selection {
-  display: block;
-}
-.right-title #select {
+.right-title #sort {
   font-size: 15px;
   border-radius: 50px;
   line-height: 20px;
