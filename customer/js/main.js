@@ -1,7 +1,6 @@
+//thanh nav di chuyển theo màn ảnh
+
 // đưa mặt hàng vào giỏ hàng
-
-//console.log(addIntoCart);
-
 var productList = JSON.parse(localStorage.getItem("productList")) || [];
 
 //
