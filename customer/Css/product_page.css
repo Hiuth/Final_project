@@ -36,20 +36,23 @@
   column-gap: 10px;
 }
 .main-product {
-  max-width: 80%;
+  max-width: 70%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 20px;
 }
 
 .sidebar {
+  max-width: 28%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.sidebar .price-wallpaper {
+  width: 120px;
+}
 .sidebar .product-img {
   max-width: 70%;
   display: flex;

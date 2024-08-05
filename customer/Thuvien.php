@@ -86,11 +86,77 @@
         $conn =null;
     }
 
-    function ShowProduct($category_id){
+    function ShowProduct($category_id=[]){
         $conn= connect();
-        $sql = "SELECT Product_img, Product_name, Product_price FROM product WHERE Category_id= ?";
+        $sort='';
+        if(isset($_GET['sort'])){
+            $sort=$_GET['sort'];
+        }
+        $placeholders = implode(',', array_fill(0, count($category_id), '?'));
+        $sql = "SELECT Product_img, Product_name, Product_price FROM product";
+        
+
+        if (!empty($category_id)) {
+            $sql .= " WHERE Category_id NOT IN ($placeholders)";
+        }
+
+
+        if($sort == "price-asc"){
+            $sql .= " ORDER BY Product_price ASC";
+        }elseif ($sort == "price-desc"){
+            $sql .= " ORDER BY Product_price DESC";
+        }
+
+        // $sql = "SELECT Product_img, Product_name, Product_price FROM product WHERE Category_id = ? ORDER BY Product_price ASC ";
+ 
+        
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $category_id);
+
+        if (!empty($category_id)) {
+            // Xác định kiểu dữ liệu cho các tham số
+            $types = str_repeat('s', count($category_id));
+            // Gán các tham số vào câu lệnh SQL
+            $stmt->bind_param($types, ...$category_id);
+        }
+
+
+        // $stmt->bind_param("s", $category_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo '<div class="product-img">
+                <a href=""><img class="img-console" src="'.$row["Product_img"].'" alt="ps5_slim" /></a>
+                <div class="product-name">
+                    <div class="name-wallpaper">
+                        <p class="name">
+                            <a href="">'.$row["Product_name"].'
+                            </a>
+                        </p>
+                    </div>
+                    <div class="price-wallpaper">
+                        <p class="price">'.number_format($row["Product_price"],0,',','.').'</p>
+                        <p class="unit-price">VND</p>
+                    </div>
+                    <!-- <button class="add-cart-button">Thêm vào giỏ hàng</button> -->
+                    <div class="add-cart-button">
+                        <a href="#">THÊM VÀO GIỎ HÀNG</a>
+                    </div>
+                </div>
+            </div>';
+            }
+        }
+        $conn = null;
+        
+    }
+
+
+    function ShowRandomProduct($category_id,$limit){ 
+        //limit là số lượng sản phẩm muốn lấy ngẫu nhiên
+        $conn= connect();
+        $sql = "SELECT Product_img, Product_name, Product_price FROM product WHERE Category_id= ? ORDER BY RAND() LIMIT ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("si", $category_id, $limit);
         $stmt->execute();
         $result = $stmt->get_result();
         if ($result->num_rows > 0) {

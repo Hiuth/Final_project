@@ -100,96 +100,47 @@
                 <h1>PlayStation (PS)</h1>
             </div>
             <div class="right-title">
-                <form action="">
-                    <select name="" id="select">
-                        <option value="price">Thứ tự theo giá: thấp đến cao</option>
-                        <option value="price-desc">Thứ tự theo giá: cao đến thấp</option>
+                <form action="Playstation_page.php" method="GET">
+                    <select name="sort" id="sort" onchange="this.form.submit()">
+                        <!-- khi select-box thay đổi, form sẽ tự động được gửi lệnh -->
+                        <option value="default">Mặc định</option>
+                        <option value="price-asc"
+                            <?php echo isset($_GET['sort']) && $_GET['sort'] == 'price-asc' ? 'selected' : ''; ?>>Thứ tự
+                            theo giá: thấp đến cao</option>
+                        <option value="price-desc"
+                            <?php echo isset($_GET['sort']) && $_GET['sort'] == 'price-desc' ? 'selected' : ''; ?>>Thứ
+                            tự theo giá: cao đến thấp</option>
                     </select>
                 </form>
             </div>
         </div>
     </div>
     <div class="main-content">
-        <aside class="sidebar">
+        <div class="sidebar">
             <h2>Gợi ý cho bạn</h2>
-            <div class="product-img">
-                <a href=""><img class="img-game" src="./Picture/ps4_game_GhostOfTsushima_1.jpg"
-                        alt="GhostOfTsushima" /></a>
-                <div class="product-name">
-                    <div class="name-wallpaper">
-                        <p class="name">
-                            <a href="">GHOST OF TSUSHIMA – ĐĨA GAME PS4 </a>
-                        </p>
-                    </div>
-                    <div class="price-wallpaper">
-                        <p class="price">1.680.000</p>
-                        <p class="unit-price">VND</p>
-                    </div>
-                    <div class="add-cart-button">
-                        <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                    </div>
-                </div>
-            </div>
-            <div class="product-img">
-                <a href=""><img class="img-game" src="./Picture/ps4_game_ShinMegamiTenseiV_1.jpg"
-                        alt="ShinMegamiTenseiV" /></a>
-                <div class="product-name">
-                    <div class="name-wallpaper">
-                        <p class="name">
-                            <a href="">ShinMegamiTenseiV – ĐĨA GAME PS4</a>
-                        </p>
-                    </div>
-                    <div class="price-wallpaper">
-                        <p class="price">1.550.000</p>
-                        <p class="unit-price">VND</p>
-                    </div>
-                    <div class="add-cart-button">
-                        <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                    </div>
-                </div>
-            </div>
-            <div class="product-img">
-                <a href=""><img class="img-game" src="./Picture/ps4_game_GodOfWar_1.jpg" alt="God Of War" /></a>
-                <div class="product-name">
-                    <div class="name-wallpaper">
-                        <p class="name">
-                            <a href="">GOD OF WAR: RAGNAROK - Đĩa Game PS4</a>
-                        </p>
-                    </div>
-                    <div class="price-wallpaper">
-                        <p class="price">1.400.000</p>
-                        <p class="unit-price">VND</p>
-                    </div>
-                    <div class="add-cart-button">
-                        <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                    </div>
-                </div>
-            </div>
-            <div class="product-img">
-                <a href=""><img class="img-game" src="./Picture/ps4_game_Batman_1.jpg" alt="Batman 1" /></a>
-                <div class="product-name">
-                    <div class="name-wallpaper">
-                        <p class="name">
-                            <a href="">BATMAN:ARKHAM KNIGHT – ĐĨA GAME PS4</a>
-                        </p>
-                    </div>
-                    <div class="price-wallpaper">
-                        <p class="price">630.000</p>
-                        <p class="unit-price">VND</p>
-                    </div>
-                    <div class="add-cart-button">
-                        <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                    </div>
-                </div>
-            </div>
+            <?php
+              $category_id = "Đĩa game PS5";
+              ShowRandomProduct($category_id,4);
+              $category_id_2 = "Đĩa game PS4";
+              ShowRandomProduct($category_id_2,4);
+            ?>
 
-        </aside>
+        </div>
         <div class="main-product">
             <?php
-            $category_id = "PlayStation5";
-            $category_id_2 = "PlayStation4";
-            ShowProduct($category_id);
-            ShowProduct($category_id_2);
+            // $category_id = "PlayStation5";
+            // $category_id_2 = "PlayStation4";
+            // $category_id_3 = "Đĩa game PS5";
+            // $category_id_4 = "Đĩa game PS4";
+            // $category_id_5 = "Tay cầm Ps5";
+            // ShowProduct($category_id);
+            // ShowProduct($category_id_2);
+            // ShowProduct($category_id_3);
+            // ShowProduct($category_id_4);
+            // ShowProduct($category_id_5);
+            $category_id =["NintendoSwtich","Thẻ game Nintendo","Tay cầm xbox","Tay cầm Nintendo","Xbox"];
+            ShowProduct($category_id)
+            
             ?>
         </div>
     </div>
