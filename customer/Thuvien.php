@@ -85,4 +85,38 @@
         }
         $conn =null;
     }
+
+    function ShowProduct($category_id){
+        $conn= connect();
+        $sql = "SELECT Product_img, Product_name, Product_price FROM product WHERE Category_id= ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $category_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo '<div class="product-img">
+                <a href=""><img class="img-console" src="'.$row["Product_img"].'" alt="ps5_slim" /></a>
+                <div class="product-name">
+                    <div class="name-wallpaper">
+                        <p class="name">
+                            <a href="">'.$row["Product_name"].'
+                            </a>
+                        </p>
+                    </div>
+                    <div class="price-wallpaper">
+                        <p class="price">'.number_format($row["Product_price"],0,',','.').'</p>
+                        <p class="unit-price">VND</p>
+                    </div>
+                    <!-- <button class="add-cart-button">Thêm vào giỏ hàng</button> -->
+                    <div class="add-cart-button">
+                        <a href="#">THÊM VÀO GIỎ HÀNG</a>
+                    </div>
+                </div>
+            </div>';
+            }
+        }
+        $conn = null;
+        
+    }
 ?>
