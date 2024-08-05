@@ -137,8 +137,9 @@ nav .main-menu li a {
   padding: 10px 20px;
 }
 
-nav .main-menu li:hover a {
+nav .main-menu li:hover > a {
   background-color: #eb412f;
+  color: white;
   transition: 0.5s;
 }
 
@@ -163,6 +164,40 @@ ul {
 a {
   text-decoration: none;
   color: black;
+}
+
+.main-menu li {
+  position: relative;
+}
+
+#icon-down {
+  padding-left: 5px;
+  font-size: 14px;
+}
+
+.menu-child {
+  position: absolute;
+  font-size: 14px;
+  background-color: #f2ddbe;
+  width: 240px;
+  display: none;
+}
+
+.main-menu li:hover .menu-child {
+  display: block;
+}
+
+.menu-child > li {
+  display: block;
+  padding: 5px 0;
+  justify-content: center;
+  height: 45px;
+}
+
+.menu-child li:hover {
+  background-color: #eb412f;
+  color: white;
+  transition: 0.2s;
 }
 
 #toggle {
