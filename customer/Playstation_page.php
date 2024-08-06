@@ -39,7 +39,7 @@
     <header class="header-wallpaper">
         <div class="header">
             <div class="left-selection">
-                <a href="index.html">
+                <a href="index.php">
                     <img class="Logo_website" src="Picture\Logo_web_3.png" alt="logo_web" /></a>
             </div>
             <!-- search bar -->
