@@ -94,13 +94,13 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="./Controller\Cotroller_page.php">
                         <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
                                 id="icon-down"></i></span></i></a>
                     <ul class="menu-child">
-                        <li><a href="">TAY CẦM PS5</a></li>
-                        <li><a href="">TAY CẦM NINTENDO SWITCH</a></li>
-                        <li><a href="">TAY CẦM XBOX</a></li>
+                        <li><a href="./Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                        <li><a href="./Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                        <li><a href="./Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
                     </ul>
                 </li>
                 <li>

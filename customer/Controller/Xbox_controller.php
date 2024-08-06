@@ -112,14 +112,15 @@
             </nav>
         </header>
 
+
         <!-- Thân trang -->
         <div class="page-title-wall">
             <div class="page-title">
                 <div class="left-title">
-                    <h1>NINTENDO SWITCH</h1>
+                    <h1>TAY CẦM CHƠI GAME XBOX</h1>
                 </div>
                 <div class="right-title">
-                    <form action="Nintendo_page.php" method="GET">
+                    <form action="./Controller/Xbox_cotroller.php" method="GET">
                         <select name="sort" id="sort" onchange="this.form.submit()">
                             <!-- khi select-box thay đổi, form sẽ tự động được gửi lệnh -->
                             <option value="default">Mặc định</option>
@@ -151,9 +152,8 @@
             <div class="main-product">
                 <?php
             //show dữ liệu theo phương pháp loại trừ
-            $category_id =["Tay cầm xbox","Xbox","Playstation4","Playstation5","Tay cầm Ps5","Đĩa game Ps4","Đĩa game Ps5"];
+            $category_id =["Thẻ game nintendo","Xbox","Playstation4","Playstation5","Đĩa game Ps4","Đĩa game Ps5","NintendoSwtich","Tay cầm Nintendo","Tay cầm Ps5"];
             ShowProduct($category_id);
-            
             ?>
             </div>
         </div>

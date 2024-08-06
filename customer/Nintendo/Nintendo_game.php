@@ -37,10 +37,10 @@
         </script>
         <!-- check -->
         <!-- Header -->
-        <div class="header-wallpaper">
+        <header class="header-wallpaper">
             <div class="header">
                 <div class="left-selection">
-                    <a href="../index.php">
+                    <a href="index.php">
                         <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
                 </div>
                 <!-- search bar -->
@@ -69,22 +69,40 @@
             <nav>
                 <ul class="main-menu">
                     <li>
-                        <a href="">
+                        <a href="./PlayStation/Playstation_page.php">
                             <i class="fa-brands fa-playstation"></i>
-                            <span>PLAYSTATION</span></a>
+                            <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
+                        <ul class="menu-child">
+                            <li><a href="./PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                            <li><a href="./PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                            <li><a href="./PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                            <li><a href="./PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="./Xbox/Xbox_page.php">
                             <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
                     </li>
                     <li>
-                        <a href="">
+                        <!--  -->
+                        <a href="./Nintendo/Nintendo_page.php">
                             <i class="fab fa-nintendo-switch"></i>
-                            <span>NITENDO SWITCH</span></a>
+                            <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
+                            </i></a>
+                        <ul class="menu-child">
+                            <li><a href="./Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                            <li><a href="./Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="">
-                            <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME</span></a>
+                        <a href="./Controller\Cotroller_page.php">
+                            <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
+                                    id="icon-down"></i></span></i></a>
+                        <ul class="menu-child">
+                            <li><a href="./Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                            <li><a href="./Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                            <li><a href="./Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="">
@@ -92,7 +110,7 @@
                     </li>
                 </ul>
             </nav>
-        </div>
+        </header>
 
         <!-- Thân trang -->
         <div class="page-title-wall">
