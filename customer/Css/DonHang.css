@@ -10,6 +10,10 @@ body {
   border-radius: 5px;
 }
 
+.main-content {
+  margin-top: 200px;
+}
+
 h2 {
   font-size: 20px;
   font-weight: 550;
