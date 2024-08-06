@@ -79,12 +79,12 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="./Xbox/Xbox_page.php">
                         <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
                 </li>
                 <li>
                     <!--  -->
-                    <a href="./Nintendo\Nintendo_page.php">
+                    <a href="./Nintendo/Nintendo_page.php">
                         <i class="fab fa-nintendo-switch"></i>
                         <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
                         </i></a>
