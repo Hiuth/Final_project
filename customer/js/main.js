@@ -18,6 +18,12 @@ function check(name) {
     return false;
   }
 }
+window.addEventListener("pageshow", function (event) {
+  if (event.persisted) {
+    // Nếu trang được tải từ cache, làm mới trang
+    window.location.reload();
+  }
+});
 
 //thêm sản phẩm vào giỏ hàng
 const addIntoCart = document.querySelectorAll(".add-cart-button");
@@ -32,7 +38,7 @@ addIntoCart.forEach(function (button, index) {
       var productName = product.querySelector(".name").children[0].innerText;
       var productQuantity = 1;
       var productPrice = product.querySelector(".price").innerText;
-      //console.log(productImg, productName, productPrice);
+      console.log(productImg, productName, productPrice);
       //lưu giỏ hàng lên sessionStorage
       var list = new Array(
         productImg,
@@ -45,9 +51,22 @@ addIntoCart.forEach(function (button, index) {
         localStorage.setItem("productList", JSON.stringify(productList));
       }
     } //stringify chuyển hết tất cả kiểu hết về string
-    window.location.assign("Gio_Hang_Co_Hang.html");
+    window.location.assign("/Final_project/customer/Gio_Hang_Co_Hang.html");
   });
 });
+
+//bỏ hàng vô giỏ khi đang ở trong chi tiết sản phẩm
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   function addIntoCart_2(event) {
+//     event.preventDefault();
+//     var addItem = event.target;
+//     var product = addItem.closest(".product");
+//     var productImg = product.querySelector(".product-image").children[0].src;
+//     console.log(productImg);
+//   }
+//   document.getElementById("add-cart").addEventListener("click", addIntoCart_2);
+// });
 
 function del(x) {
   //xoá hàng
@@ -205,10 +224,3 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   document.getElementById("order_button").addEventListener("click", sendCart);
 });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   function sendCart(event) {
-//     // Ngăn chặn hành vi mặc định của nút submit (nếu có)
-//   }
-//   document.getElementById("order_button").addEventListener("click", sendCart);
-// });

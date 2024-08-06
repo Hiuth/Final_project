@@ -1,6 +1,6 @@
-var productList = JSON.parse(localStorage.getItem("productList")) || [];
-//xử lý chuyển đổi giữa file giỏ hàng
 document.addEventListener("DOMContentLoaded", function () {
+  var productList = JSON.parse(localStorage.getItem("productList")) || [];
+  //xử lý chuyển đổi giữa file giỏ hàng
   // cập nhật số lượng sản phẩm có trong giỏ hàng
   function updateCartCount() {
     var count = productList.length;
@@ -9,22 +9,21 @@ document.addEventListener("DOMContentLoaded", function () {
       links.setAttribute("count", count);
     });
   }
-
   updateCartCount();
-
   function handleClick(event) {
-    var url;
-
+    console.log(productList.length);
     if (productList.length > 0) {
-      window.location.assign("Gio_Hang_Co_Hang.html");
+      window.location.assign("/Final_project/customer/Gio_Hang_Co_Hang.html");
     } else {
-      window.location.assign("Gio_Hang.html");
+      window.location.assign("/Final_project/customer/Gio_Hang.html");
     }
   }
   document.getElementById("cart-1").addEventListener("click", handleClick);
   document.getElementById("cart-2").addEventListener("click", handleClick);
 });
 
+var productList = JSON.parse(localStorage.getItem("productList")) || [];
+//xử lý chuyển đổi giữa file giỏ hàng
 //xử lý tăng giảm đơn hàng
 function handlePlus(x, i) {
   var parent = x.parentElement; //i dùng để định vị xem nút tăng số lượng đang ở chỗ nào

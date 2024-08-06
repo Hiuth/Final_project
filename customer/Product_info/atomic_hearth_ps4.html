@@ -43,13 +43,14 @@
     <div class="header-wallpaper">
       <div class="header">
         <div class="left-selection">
-          <img
-            class="Logo_website"
-            src="../Picture/Logo_web_3.png"
-            alt="logo_web"
-          />
+          <a href="../index.html">
+            <img
+              class="Logo_website"
+              src="../Picture\Logo_web_3.png"
+              alt="logo_web"
+          /></a>
         </div>
-        <!-- Search bar -->
+        <!-- search bar -->
         <div class="middle-selection">
           <input
             class="search-bar"
@@ -61,55 +62,74 @@
           </button>
         </div>
         <div class="right-selection">
-          <div class="cart-wallpaper">
-            <a class="Cart" href=""
+          <div class="cart-wallpaper" id="cart-1">
+            <a class="Cart" href="#"
               ><span class="text-header">Giỏ Hàng /</span
               ><i class="fa-solid fa-cart-shopping"></i
             ></a>
           </div>
-          <div class="cart_wallpaper_2">
-            <a class="Cart_2" href=""
-              ><i class="fa-solid fa-cart-shopping"></i
+          <div class="cart_wallpaper_2" id="cart-2">
+            <a class="Cart_2" href="#">
+              <i class="fa-solid fa-cart-shopping"></i
             ></a>
           </div>
         </div>
       </div>
-      <!-- Navigation Menu -->
-      <div id="toggle">
-        <!-- Menu toggle button -->
-        <i class="fa-solid fa-bars"></i>
-      </div>
-      <nav>
-        <ul class="main-menu">
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-playstation"></i
-              ><span>PLAYSTATION</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fab fa-nintendo-switch"></i
-              ><span>NITENDO SWITCH</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a
-            >
-          </li>
-        </ul>
-      </nav>
+      <!-- Thanh điều hướng (menu) -->
+        <div id="toggle">
+          <!-- cái nút menu 3 gạch -->
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <nav>
+          <ul class="main-menu">
+            <li>
+              <a href="../Playstation_page.php">
+                <i class="fa-brands fa-playstation"></i>
+                <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span
+                ></i
+              ></a>
+              <ul class="menu-child">
+                <li><a href="">PLAYSTATION 5</a></li>
+                <li><a href="">ĐĨA GAME PS5</a></li>
+                <li><a href="">PLAYSTATION 4</a></li>
+                <li><a href="">ĐĨA GAME PS4</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">
+                <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a
+              >
+            </li>
+            <li>
+              <!--  -->
+              <a href="">
+                <i class="fab fa-nintendo-switch"></i>
+                <span>NITENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
+                </i
+              ></a>
+              <ul class="menu-child">
+                <li><a href="">MÁY NINTENDO SWITCH</a></li>
+                <li><a href="">GAME NINTENDO SWITCH</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">
+                <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down" id="icon-down"></i></span
+                ></i
+              ></a>
+              <ul class="menu-child">
+                <li><a href="">TAY CẦM PS5</a></li>
+                <li><a href="">TAY CẦM NINTENDO SWITCH</a></li>
+                <li><a href="">TAY CẦM XBOX</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">
+                <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a
+              >
+            </li>
+          </ul>
+        </nav>
     </div>
     <div class="main-content">
       <div class="content-wallpaper">
@@ -128,7 +148,7 @@
                 <p class="price">1.300.000</p>
                 <p class="unit-price">VND</p>
               </div>
-              <a class="add-to-cart">Thêm vào giỏ hàng</a>
+              <a href="#" class="add-to-cart" id="add-cart">Thêm vào giỏ hàng</a>
               <div class="guarantee">
                 <h2>Bảo đảm 100% chính hãng</h2>
                 <p>
@@ -191,7 +211,7 @@
         <p>Phần âm thanh của game cũng thực sự được đầu tư với những bản nhạc Nga đầy quen thuộc. Cùng những âm thanh vũ khi súng nổ đều rất thật, xây dựng nên một bầu không chí chiến trường đầy gay cấn, khốc liệt. Đánh giá tổng thể đồ hoạ âm thanh của tựa game này là một sự kết hợp rất hoàn hảo, tạo nên một con game đẹp lẫn về phần hình đến phần tiếng. </p>
         </div>
         </div>
-        <aside class="sidebar">
+        <div class="sidebar">
             <h2>Gợi ý cho bạn</h2>
             <div class="product-img">
               <a href=""
@@ -281,12 +301,10 @@
                 </div>
               </div>
             </div>
-            </div>
-          </aside>
+          </div>
         </div>
       </div>
-    </body>
-  </html>
+
    <!-- Chân trang -->
    <footer class="footer">
     <div class="footer-content">
@@ -348,8 +366,8 @@
       </div>
     </div>
   </footer>
-  <script src="js/main.js"></script>
-  <script src="js/button.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/button.js"></script>
   </body>
-  </html>
+</html>
   

@@ -93,7 +93,7 @@
             $sort=$_GET['sort'];
         }
         $placeholders = implode(',', array_fill(0, count($category_id), '?'));
-        $sql = "SELECT Product_img, Product_name, Product_price FROM product";
+        $sql = "SELECT Product_img, Product_name, Product_price, Product_link FROM product";
         
 
         if (!empty($category_id)) {
@@ -126,11 +126,11 @@
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 echo '<div class="product-img">
-                <a href=""><img class="img-console" src="'.$row["Product_img"].'" alt="ps5_slim" /></a>
+                <a href="'.$row["Product_link"].'"><img class="img-console" src="'.$row["Product_img"].'" alt="ps5_slim" /></a>
                 <div class="product-name">
                     <div class="name-wallpaper">
                         <p class="name">
-                            <a href="">'.$row["Product_name"].'
+                            <a href="'.$row["Product_link"].'">'.$row["Product_name"].'
                             </a>
                         </p>
                     </div>
@@ -154,7 +154,7 @@
     function ShowRandomProduct($category_id,$limit){ 
         //limit là số lượng sản phẩm muốn lấy ngẫu nhiên
         $conn= connect();
-        $sql = "SELECT Product_img, Product_name, Product_price FROM product WHERE Category_id= ? ORDER BY RAND() LIMIT ?";
+        $sql = "SELECT Product_img, Product_name, Product_price, Product_link FROM product WHERE Category_id= ? ORDER BY RAND() LIMIT ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("si", $category_id, $limit);
         $stmt->execute();
@@ -162,11 +162,11 @@
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 echo '<div class="product-img">
-                <a href=""><img class="img-console" src="'.$row["Product_img"].'" alt="ps5_slim" /></a>
+                <a href="'.$row["Product_link"].'"><img class="img-console" src="'.$row["Product_img"].'" alt="ps5_slim" /></a>
                 <div class="product-name">
                     <div class="name-wallpaper">
                         <p class="name">
-                            <a href="">'.$row["Product_name"].'
+                            <a href="'.$row["Product_link"].'">'.$row["Product_name"].'
                             </a>
                         </p>
                     </div>
