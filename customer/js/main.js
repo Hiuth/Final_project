@@ -57,16 +57,33 @@ addIntoCart.forEach(function (button, index) {
 
 //bỏ hàng vô giỏ khi đang ở trong chi tiết sản phẩm
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   function addIntoCart_2(event) {
-//     event.preventDefault();
-//     var addItem = event.target;
-//     var product = addItem.closest(".product");
-//     var productImg = product.querySelector(".product-image").children[0].src;
-//     console.log(productImg);
-//   }
-//   document.getElementById("add-cart").addEventListener("click", addIntoCart_2);
-// });
+document.addEventListener("DOMContentLoaded", function () {
+  function addIntoCart_2(event) {
+    event.preventDefault();
+    var addItem = event.target;
+    var product = addItem.closest(".product");
+    var productImg = product.querySelector(".product-image").children[0].src;
+    var productName =
+      product.querySelector(".product-details").children[0].innerText;
+    var productPrice = product.querySelector(".price").innerText;
+    var productQuantity = 1;
+    // console.log(productImg, productName, productPrice);
+
+    var list = new Array(
+      productImg,
+      productName,
+      productQuantity,
+      productPrice
+    );
+
+    if (check(productName) == false) {
+      productList.push(list);
+      localStorage.setItem("productList", JSON.stringify(productList));
+    }
+    window.location.assign("/Final_project/customer/Gio_Hang_Co_Hang.html");
+  }
+  document.getElementById("add-cart").addEventListener("click", addIntoCart_2);
+});
 
 function del(x) {
   //xoá hàng
