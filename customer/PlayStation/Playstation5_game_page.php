@@ -131,7 +131,7 @@
             <?php
             //show dữ liệu theo phương pháp loại trừ
             $category_id =["NintendoSwtich","Thẻ game Nintendo","Tay cầm xbox","Tay cầm Nintendo","Xbox","Playstation4","Đĩa game Ps4","Playstation5","Tay cầm Ps5"];
-            ShowProduct($category_id)
+            ShowProduct($category_id);
             
             ?>
         </div>

@@ -130,7 +130,7 @@
         <div class="main-product">
             <?php
             $category_id =["NintendoSwtich","Thẻ game Nintendo","Tay cầm xbox","Tay cầm Nintendo","Xbox"];
-            ShowProduct($category_id)
+            ShowProduct($category_id);
             
             ?>
         </div>

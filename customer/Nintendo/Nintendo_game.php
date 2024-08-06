@@ -98,10 +98,10 @@
         <div class="page-title-wall">
             <div class="page-title">
                 <div class="left-title">
-                    <h1>PlayStation (PS)</h1>
+                    <h1>THẺ GAME NINTENDO</h1>
                 </div>
                 <div class="right-title">
-                    <form action="Playstation_page.php" method="GET">
+                    <form action="Nintendo_game.php" method="GET">
                         <select name="sort" id="sort" onchange="this.form.submit()">
                             <!-- khi select-box thay đổi, form sẽ tự động được gửi lệnh -->
                             <option value="default">Mặc định</option>
@@ -133,9 +133,8 @@
             <div class="main-product">
                 <?php
             //show dữ liệu theo phương pháp loại trừ
-            $category_id =["NintendoSwtich","Thẻ game Nintendo","Tay cầm xbox","Tay cầm Nintendo","Xbox","Playstation4","Đĩa game Ps4","Đĩa game Ps5"];
+            $category_id =["Tay cầm xbox","Xbox","Playstation4","Playstation5","Tay cầm Ps5","Đĩa game Ps4","Đĩa game Ps5","Tay cầm Nintendo","NintendoSwtich"];
             ShowProduct($category_id);
-            
             ?>
             </div>
         </div>

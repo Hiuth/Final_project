@@ -84,13 +84,13 @@
                 </li>
                 <li>
                     <!--  -->
-                    <a href="">
+                    <a href="./Nintendo\Nintendo_page.php">
                         <i class="fab fa-nintendo-switch"></i>
                         <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
                         </i></a>
                     <ul class="menu-child">
-                        <li><a href="">MÁY NINTENDO SWITCH</a></li>
-                        <li><a href="">GAME NINTENDO SWITCH</a></li>
+                        <li><a href="./Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                        <li><a href="./Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
                     </ul>
                 </li>
                 <li>
