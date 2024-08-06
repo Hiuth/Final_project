@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isFormTrue) {
       // hàm gửi dữ liệu từ local storage sang php
       var localStorageData = localStorage.getItem("productList");
-      var url = "test.php";
+      var url = "HoanTatDatHang.php";
       var options = {
         method: "POST",
         headers: {
