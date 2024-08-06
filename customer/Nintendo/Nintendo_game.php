@@ -40,7 +40,7 @@
         <header class="header-wallpaper">
             <div class="header">
                 <div class="left-selection">
-                    <a href="index.php">
+                    <a href="../index.php">
                         <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
                 </div>
                 <!-- search bar -->
@@ -69,43 +69,43 @@
             <nav>
                 <ul class="main-menu">
                     <li>
-                        <a href="./PlayStation/Playstation_page.php">
+                        <a href="../PlayStation/Playstation_page.php">
                             <i class="fa-brands fa-playstation"></i>
                             <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
                         <ul class="menu-child">
-                            <li><a href="./PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
-                            <li><a href="./PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
-                            <li><a href="./PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
-                            <li><a href="./PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                            <li><a href="../PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                            <li><a href="../PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                            <li><a href="../PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                            <li><a href="../PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="./Xbox/Xbox_page.php">
+                        <a href="../Xbox/Xbox_page.php">
                             <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
                     </li>
                     <li>
                         <!--  -->
-                        <a href="./Nintendo/Nintendo_page.php">
+                        <a href="../Nintendo/Nintendo_page.php">
                             <i class="fab fa-nintendo-switch"></i>
                             <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
                             </i></a>
                         <ul class="menu-child">
-                            <li><a href="./Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
-                            <li><a href="./Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
+                            <li><a href="../Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                            <li><a href="../Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="./Controller\Cotroller_page.php">
+                        <a href="../Controller\Cotroller_page.php">
                             <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
                                     id="icon-down"></i></span></i></a>
                         <ul class="menu-child">
-                            <li><a href="./Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
-                            <li><a href="./Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
-                            <li><a href="./Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
+                            <li><a href="../Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                            <li><a href="../Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                            <li><a href="../Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="../Contact.html">
                             <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a>
                     </li>
                 </ul>
@@ -184,16 +184,16 @@
             <div class="follow-us">
                 <span class="footer-text-title">Theo dõi 2004'S Store tại</span>
                 <a href="https://youtu.be/dQw4w9WgXcQ?si=QiFbp9tAmNxaVkpt" target="_blank">
-                    <img src="Picture\Logo_youtube.png" alt="YouTube" width="180px" />
+                    <img src="/Final_project/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
                 </a>
                 <a href="https://www.tiktok.com" target="_blank">
-                    <img src="Picture\Logo_tiktok.png" alt="TikTok" width="180px" />
+                    <img src="/Final_project/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
                 </a>
                 <a href="https://www.facebook.com" target="_blank">
-                    <img src="Picture\Logo_facebook.png" alt="Facebook" width="180px" />
+                    <img src="/Final_project/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
                 </a>
                 <a href="https://www.facebook.com/groups/ps5vietnam">
-                    <img src="Picture\Logo_Ps5_Group.png" alt="Hội PS5 Việt Nam" width="180px" />
+                    <img src="/Final_project/Picture/Logo_Ps5_Group.png" alt="Hội PS5 Việt Nam" width="180px" />
                 </a>
             </div>
             <div class="info">
@@ -204,7 +204,7 @@
                 <p>- Chính sách vận chuyển</p>
                 <p>- Chính sách đổi trả</p>
                 <br />
-                <img src="Picture\Logo_BoCongthuong.png" alt="Đã thông báo bộ công thương" width="200" />
+                <img src="/Final_project/Picture/Logo_BoCongthuong.png" alt="Đã thông báo bộ công thương" width="200" />
             </div>
         </div>
     </footer>

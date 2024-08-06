@@ -184,16 +184,16 @@
             <div class="follow-us">
                 <span class="footer-text-title">Theo dõi 2004'S Store tại</span>
                 <a href="https://youtu.be/dQw4w9WgXcQ?si=QiFbp9tAmNxaVkpt" target="_blank">
-                    <img src="Picture\Logo_youtube.png" alt="YouTube" width="180px" />
+                    <img src="/Final_project/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
                 </a>
                 <a href="https://www.tiktok.com" target="_blank">
-                    <img src="Picture\Logo_tiktok.png" alt="TikTok" width="180px" />
+                    <img src="/Final_project/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
                 </a>
                 <a href="https://www.facebook.com" target="_blank">
-                    <img src="Picture\Logo_facebook.png" alt="Facebook" width="180px" />
+                    <img src="/Final_project/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
                 </a>
                 <a href="https://www.facebook.com/groups/ps5vietnam">
-                    <img src="Picture\Logo_Ps5_Group.png" alt="Hội PS5 Việt Nam" width="180px" />
+                    <img src="/Final_project/Picture/Logo_Ps5_Group.png" alt="Hội PS5 Việt Nam" width="180px" />
                 </a>
             </div>
             <div class="info">
@@ -204,7 +204,7 @@
                 <p>- Chính sách vận chuyển</p>
                 <p>- Chính sách đổi trả</p>
                 <br />
-                <img src="Picture\Logo_BoCongthuong.png" alt="Đã thông báo bộ công thương" width="200" />
+                <img src="/Final_project/Picture/Logo_BoCongthuong.png" alt="Đã thông báo bộ công thương" width="200" />
             </div>
         </div>
     </footer>
