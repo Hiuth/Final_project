@@ -120,16 +120,17 @@
         <div class="sidebar">
             <h2>Gợi ý cho bạn</h2>
             <?php
-              $category_id = "Đĩa game PS5";
+              $category_id = "Đĩa game Ps5";
               ShowRandomProduct($category_id,4);
-              $category_id_2 = "Đĩa game PS4";
+              $category_id_2="Đĩa game Ps4";
               ShowRandomProduct($category_id_2,4);
             ?>
 
         </div>
         <div class="main-product">
             <?php
-            $category_id =["NintendoSwtich","Thẻ game Nintendo","Tay cầm xbox","Tay cầm Nintendo","Xbox"];
+            //show dữ liệu theo phương pháp loại trừ
+            $category_id =["NintendoSwtich","Thẻ game Nintendo","Tay cầm xbox","Tay cầm Nintendo","Xbox","Playstation4","Đĩa game Ps4","Đĩa game Ps5"];
             ShowProduct($category_id)
             
             ?>

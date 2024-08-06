@@ -36,7 +36,7 @@
     </script>
     <!-- check -->
     <!-- Header -->
-    <div class="header-wallpaper">
+    <header class="header-wallpaper">
         <div class="header">
             <div class="left-selection">
                 <a href="index.php">
@@ -72,10 +72,10 @@
                         <i class="fa-brands fa-playstation"></i>
                         <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
                     <ul class="menu-child">
-                        <li><a href="">PLAYSTATION 5</a></li>
-                        <li><a href="">ĐĨA GAME PS5</a></li>
-                        <li><a href="">PLAYSTATION 4</a></li>
-                        <li><a href="">ĐĨA GAME PS4</a></li>
+                        <li><a href="Playstation5_page.php">PLAYSTATION 5</a></li>
+                        <li><a href="Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                        <li><a href="Playstation4_page.php">PLAYSTATION 4</a></li>
+                        <li><a href="Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
                     </ul>
                 </li>
                 <li>
@@ -86,7 +86,7 @@
                     <!--  -->
                     <a href="">
                         <i class="fab fa-nintendo-switch"></i>
-                        <span>NITENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
+                        <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
                         </i></a>
                     <ul class="menu-child">
                         <li><a href="">MÁY NINTENDO SWITCH</a></li>
@@ -109,14 +109,15 @@
                 </li>
             </ul>
         </nav>
-    </div>
+    </header>
 
     <!-- Thân trang -->
     <div class="main-content">
         <!-- Banner_quảng cáo -->
         <div class="home-banner">
             <div class="banner_1">
-                <a href=""><img class="img-banner" src="Picture\Home_Banner_Ps5.webp" alt="banner_1" /></a>
+                <a href="Product_info\mayps5slimstandardeditionkoodien.html"><img class="img-banner"
+                        src="Picture\Home_Banner_Ps5.webp" alt="banner_1" /></a>
             </div>
             <div class="banner_2">
                 <a href="">
@@ -128,7 +129,7 @@
                     <img class="img-banner" src="Picture\Home_Banner_Nintendo.png" alt="Nintendo2_banner" /></a>
             </div>
             <div class="banner_4">
-                <a href="">
+                <a href="Product_info\may_xbox_series_s.html">
                     <img class="img-banner" src="Picture\Home_banner_xbox_white.jpg" alt="Xbox_banner" /></a>
             </div>
             <div class="banner_5">

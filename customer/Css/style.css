@@ -22,8 +22,10 @@ body {
   height: 120px;
   background-color: #eb412f;
   max-width: 100%;
-  position: sticky;
-  top: 0px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 .header {
   display: flex;
@@ -226,7 +228,7 @@ a {
 }
 /* Tạo lưới cho phần quảng cáo đầu trang */
 .home-banner {
-  padding-top: 30px;
+  padding-top: 100px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
