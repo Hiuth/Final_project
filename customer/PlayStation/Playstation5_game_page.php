@@ -1,6 +1,6 @@
 <?php
-  require_once 'connect.php';
-  include "Thuvien.php";
+  require_once '../connect.php';
+  include "../Thuvien.php";
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -9,7 +9,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- reset các định dạng mặc định -->
-    <link rel="stylesheet" href="Css/reset.css" />
+    <link rel="stylesheet" href="../Css/reset.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,10 +19,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="Css/style.css" />
-    <link rel="stylesheet" href="Css/screen.css" />
-    <link rel="stylesheet" href="Css/giohang.css" />
-    <link rel="stylesheet" href="Css/product_page.css" />
+    <link rel="stylesheet" href="../Css/style.css" />
+    <link rel="stylesheet" href="../Css/screen.css" />
+    <link rel="stylesheet" href="../Css/giohang.css" />
+    <link rel="stylesheet" href="../Css/product_page.css" />
     <title>2004'S Store</title>
 </head>
 <div>
@@ -39,8 +39,8 @@
     <div class="header-wallpaper">
         <div class="header">
             <div class="left-selection">
-                <a href="index.php">
-                    <img class="Logo_website" src="Picture\Logo_web_3.png" alt="logo_web" /></a>
+                <a href="../index.php">
+                    <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
             </div>
             <!-- search bar -->
             <div class="middle-selection">
@@ -130,7 +130,7 @@
         <div class="main-product">
             <?php
             //show dữ liệu theo phương pháp loại trừ
-            $category_id =["NintendoSwtich","Thẻ game Nintendo","Tay cầm xbox","Tay cầm Nintendo","Xbox","Playstation4","Đĩa game Ps5","Playstation5","Tay cầm Ps5"];
+            $category_id =["NintendoSwtich","Thẻ game Nintendo","Tay cầm xbox","Tay cầm Nintendo","Xbox","Playstation4","Đĩa game Ps4","Playstation5","Tay cầm Ps5"];
             ShowProduct($category_id)
             
             ?>
@@ -188,8 +188,8 @@
         </div>
     </div>
 </footer>
-<script src="js/main.js"></script>
-<script src="js/button.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/button.js"></script>
 </body>
 
 </html>

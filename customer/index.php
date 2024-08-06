@@ -40,7 +40,7 @@
         <div class="header">
             <div class="left-selection">
                 <a href="index.php">
-                    <img class="Logo_website" src="Picture\Logo_web_3.png" alt="logo_web" /></a>
+                    <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
             </div>
             <!-- search bar -->
             <div class="middle-selection">
@@ -68,14 +68,14 @@
         <nav>
             <ul class="main-menu">
                 <li>
-                    <a href="Playstation_page.php">
+                    <a href="./PlayStation/Playstation_page.php">
                         <i class="fa-brands fa-playstation"></i>
                         <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
                     <ul class="menu-child">
-                        <li><a href="Playstation5_page.php">PLAYSTATION 5</a></li>
-                        <li><a href="Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
-                        <li><a href="Playstation4_page.php">PLAYSTATION 4</a></li>
-                        <li><a href="Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                        <li><a href="./PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                        <li><a href="./PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                        <li><a href="./PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                        <li><a href="./PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
                     </ul>
                 </li>
                 <li>
@@ -117,35 +117,38 @@
         <div class="home-banner">
             <div class="banner_1">
                 <a href="Product_info\mayps5slimstandardeditionkoodien.html"><img class="img-banner"
-                        src="Picture\Home_Banner_Ps5.webp" alt="banner_1" /></a>
+                        src="/Final_project/Picture\Home_Banner_Ps5.webp" alt="banner_1" /></a>
             </div>
             <div class="banner_2">
                 <a href="">
-                    <img class="img-banner" src="Picture\Home_Banner_Nintendo_lite.png"
+                    <img class="img-banner" src="/Final_project/Picture\Home_Banner_Nintendo_lite.png"
                         alt="Nintendo_lite_banner" /></a>
             </div>
             <div class="banner_3">
                 <a href="">
-                    <img class="img-banner" src="Picture\Home_Banner_Nintendo.png" alt="Nintendo2_banner" /></a>
+                    <img class="img-banner" src="/Final_project/Picture\Home_Banner_Nintendo.png"
+                        alt="Nintendo2_banner" /></a>
             </div>
             <div class="banner_4">
                 <a href="Product_info\may_xbox_series_s.html">
-                    <img class="img-banner" src="Picture\Home_banner_xbox_white.jpg" alt="Xbox_banner" /></a>
+                    <img class="img-banner" src="/Final_project/Picture\Home_banner_xbox_white.jpg"
+                        alt="Xbox_banner" /></a>
             </div>
             <div class="banner_5">
                 <a href="">
-                    <img class="img-banner" src="Picture/Home_Banner_game_2.jpg" alt="" /></a>
+                    <img class="img-banner" src="/Final_project/Picture/Home_Banner_game_2.jpg" alt="" /></a>
             </div>
             <div class="banner_6">
-                <a href=""><img class="img-banner" src="Picture/Home_Banner_game_4.jpg" alt="" /></a>
+                <a href=""><img class="img-banner" src="/Final_project/Picture/Home_Banner_game_4.jpg" alt="" /></a>
             </div>
             <div class="banner_7">
                 <a href="">
-                    <img class="img-banner" src="Picture/Home_Banner_game_5.jpg" alt="service_center_banner" /></a>
+                    <img class="img-banner" src="/Final_project/Picture/Home_Banner_game_5.jpg"
+                        alt="service_center_banner" /></a>
             </div>
             <div class="banner_8">
                 <a href="">
-                    <img class="img-banner" src="Picture\Home_banner_nhansu.jpg" alt="Tuyen_dung" /></a>
+                    <img class="img-banner" src="/Final_project/Picture\Home_banner_nhansu.jpg" alt="Tuyen_dung" /></a>
             </div>
         </div>
         <div class="Text-content">PLAYSATION 5</div>
@@ -165,7 +168,7 @@
 
             <!-- Đĩa game ps5 -->
             <div class="product-banner">
-                <img class="img-banner" src="Picture\Ps5_banner.png" alt="ps5_banner" />
+                <img class="img-banner" src="/Final_project/Picture\Ps5_banner.png" alt="ps5_banner" />
             </div>
             <div class="product-in-home-page">
                 <div class="product-top">
@@ -199,7 +202,7 @@
             </div>
             <!-- Đĩa game ps4 -->
             <div class="product-banner">
-                <img class="img-banner" src="Picture\Ps4_banner.png" alt="ps5_banner" />
+                <img class="img-banner" src="/Final_project/Picture\Ps4_banner.png" alt="ps5_banner" />
             </div>
             <div class="product-in-home-page">
                 <div class="product-top">
@@ -234,7 +237,7 @@
             </div>
             <!-- Đĩa game Nintendo -->
             <div class="product-banner">
-                <img class="img-banner" src="Picture\Nitendo_banner.png" alt="Nintendo_banner" />
+                <img class="img-banner" src="/Final_project/Picture\Nitendo_banner.png" alt="Nintendo_banner" />
             </div>
             <div class="product-in-home-page">
                 <div class="product-top">
