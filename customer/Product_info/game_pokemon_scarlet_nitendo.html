@@ -40,77 +40,80 @@
       });
     </script>
     <!-- Header -->
-    <div class="header-wallpaper">
+    <header class="header-wallpaper">
       <div class="header">
-        <div class="left-selection">
-          <img
-            class="Logo_website"
-            src="../Picture/Logo_web_3.png"
-            alt="logo_web"
-          />
-        </div>
-        <!-- Search bar -->
-        <div class="middle-selection">
-          <input
-            class="search-bar"
-            type="search"
-            placeholder="Tìm kiếm sản phẩm ..."
-          />
-          <button class="search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
-        <div class="right-selection">
-          <div class="cart-wallpaper">
-            <a class="Cart" href=""
-              ><span class="text-header">Giỏ Hàng /</span
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <div class="left-selection">
+              <a href="../index.php">
+                  <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
           </div>
-          <div class="cart_wallpaper_2">
-            <a class="Cart_2" href=""
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <!-- search bar -->
+          <div class="middle-selection">
+              <input class="search-bar" type="search" placeholder="Tìm kiếm sản phẩm ..." />
+              <button class="search-button">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
           </div>
-        </div>
+          <div class="right-selection">
+              <div class="cart-wallpaper" id="cart-1">
+                  <a class="Cart" href="#"><span class="text-header">Giỏ Hàng /</span><i
+                          class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+              <div class="cart_wallpaper_2" id="cart-2">
+                  <a class="Cart_2" href="#">
+                      <i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+          </div>
       </div>
-      <!-- Navigation Menu -->
+      <!-- Thanh điều hướng (menu) -->
       <div id="toggle">
-        <!-- Menu toggle button -->
-        <i class="fa-solid fa-bars"></i>
+          <!-- cái nút menu 3 gạch -->
+          <i class="fa-solid fa-bars"></i>
       </div>
       <nav>
-        <ul class="main-menu">
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-playstation"></i
-              ><span>PLAYSTATION</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fab fa-nintendo-switch"></i
-              ><span>NITENDO SWITCH</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a
-            >
-          </li>
-        </ul>
+          <ul class="main-menu">
+              <li>
+                  <a href="../PlayStation/Playstation_page.php">
+                      <i class="fa-brands fa-playstation"></i>
+                      <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                      <li><a href="../PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                      <li><a href="../PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                      <li><a href="../PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Xbox/Xbox_page.php">
+                      <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
+              </li>
+              <li>
+                  <!--  -->
+                  <a href="../Nintendo/Nintendo_page.php">
+                      <i class="fab fa-nintendo-switch"></i>
+                      <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
+                      </i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                      <li><a href="../Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Controller\Cotroller_page.php">
+                      <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
+                              id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                      <li><a href="../Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                      <li><a href="../Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Contact.html">
+                      <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a>
+              </li>
+          </ul>
       </nav>
-    </div>
+  </header>
     <div class="main-content">
       <div class="content-wallpaper">
         <div class="container">
@@ -118,7 +121,7 @@
             <div class="product-image">
               <img
                 class="img-console"
-                src="../Picture/Nitendo_game_PokemonScarlet_1.jpg"
+                src="/Final_project/Picture/Nitendo_game_PokemonScarlet_1.jpg"
                 alt="Ảnh game Pokemon Scarlet + DLC"
               />
             </div>
@@ -128,7 +131,7 @@
                 <p class="price">1.150.000</p>
                 <p class="unit-price">VND</p>
               </div>
-              <a class="add-to-cart">Thêm vào giỏ hàng</a>
+              <a href="#" class="add-to-cart" id="add-cart">Thêm vào giỏ hàng</a>
               <div class="guarantee">
                 <h2>Bảo đảm 100% chính hãng</h2>
                 <p>
@@ -154,7 +157,7 @@
           <h2>Chào mừng đến với thế giới rộng mở của vùng Paldea</h2>
             <img
             class="img-console"
-            src="../Picture/pokemon-scarlet-dlc-1.jpg"
+            src="/Final_project/Picture/pokemon-scarlet-dlc-1.jpg"
             alt="Ảnh chi tiết Pokemon Scarlet + DLC 1"
           />
           <p>Bắt, chiến đấu và huấn luyện Pokémon trong Vùng Paldea, một vùng đất rộng lớn chứa đầy hồ nước, đỉnh núi cao chót vót, đất hoang, thị trấn nhỏ và thành phố rộng lớn. Khám phá một thế giới rộng lớn theo tốc độ của riêng bạn và băng qua đất, nước và không khí bằng cách cưỡi trên Pokémon Huyền thoại biến hình — Koraidon trong Pokémon Scarlet và Miraidon trong Pokémon Violet . Chọn Sprigatito, Fuecoco hoặc Quaxly, trở thành Pokémon đồng hành đầu tiên của bạn trước khi bắt đầu hành trình xuyên Paldea.</p>
@@ -162,38 +165,38 @@
           <p>Không có con đường cố định nào trong cuộc phiêu lưu ở Paldea của bạn, vì vậy bạn có thể tự do thuê dệt qua ba câu chuyện lớn.</p>
           <img
           class="img-console"
-          src="../Picture/pokemon-scarlet-dlc-2.jpg"
+          src="/Final_project/Picture/pokemon-scarlet-dlc-2.jpg"
           alt="Ảnh chi tiết Pokemon Scarlet + DLC 2"
         />
                <p>Dọc theo Victory Road, bạn sẽ thách thức các Phòng tập thể dục ở các địa điểm khác nhau và nhằm đạt được Xếp hạng Quán quân.</p>                
                <img
             class="img-console"
-            src="../Picture/pokemon-scarlet-dlc-3.jpg"
+            src="/Final_project/Picture/pokemon-scarlet-dlc-3.jpg"
             alt="Ảnh chi tiết Pokemon Scarlet + DLC 3"
           />
           <p>Trên Con đường Huyền thoại, tiếp nhận Pokémon Titan khổng lồ canh giữ các nguyên liệu quý hiếm.</p>
           <img
           class="img-console"
-          src="../Picture/pokemon-scarlet-dlc-4.jpg"
+          src="/Final_project/Picture/pokemon-scarlet-dlc-4.jpg"
           alt="Ảnh chi tiết Pokemon Scarlet + DLC 4"
         />
         <p>Trong ★ Starfall Street ★, bạn sẽ sử dụng tính năng Tự động Chiến đấu mới để đối mặt với những lời thách đấu của Team Star từ trường học của bạn để tiếp cận ông chủ của họ.</p>
                 <h2>Bạn sẽ chọn Pokémon nào đầu tiên cho chuyến đi?</h2>
               <img
               class="img-console"
-              src="../Picture/pokemon-scarlet-dlc-5.jpg"
+              src="/Final_project/Picture/pokemon-scarlet-dlc-5.jpg"
               alt="Ảnh chi tiết Pokemon Scarlet + DLC 5"
             />
             <p>Sprigatito – The Grass Cat Pokémon Có sức thu hút và tìm kiếm sự chú ý, nó có thể hờn dỗi nếu thấy Người huấn luyện của nó chú ý đến một Pokémon không phải là chính nó.</p>
             <img
             class="img-console"
-            src="../Picture/pokemon-scarlet-dlc-6.jpg"
+            src="/Final_project/Picture/pokemon-scarlet-dlc-6.jpg"
             alt="Ảnh chi tiết Pokemon Scarlet + DLC 6"
           />
           <p>Fuecoco – The Fire Croc Pokémon Fuecoco thoải mái và làm mọi thứ theo tốc độ của riêng mình. Nó thích ăn, và nó sẽ chạy nhanh về phía bất kỳ thức ăn nào nó tìm thấy với ánh mắt lấp lánh. </p>
           <img
           class="img-console"
-          src="../Picture/pokemon-scarlet-dlc-7.jpg"
+          src="/Final_project/Picture/pokemon-scarlet-dlc-7.jpg"
           alt="Ảnh chi tiết Pokemon Scarlet + DLC 7"
         />
         <p>Quaxly – The Duckling Pokémon Pokémon có tính cách nghiêm túc này sẽ theo sau khi Người huấn luyện của nó đánh thức. Nó gọn gàng và nó đặc biệt không thích làm bẩn đầu.</p>
@@ -201,57 +204,57 @@
     <h3>Khu vực Paldea tràn ngập các Pokémon mới và thú vị — bao gồm một cặp Pokémon Huyền thoại có thể biến đổi hình dạng có thể mang bạn qua đất, nước và trên không!</h3>
     <img
           class="img-console"
-          src="../Picture/pokemon-scarlet-dlc-8.jpg"
+          src="/Final_project/Picture/pokemon-scarlet-dlc-8.jpg"
           alt="Ảnh chi tiết Pokemon Scarlet + DLC 8"
         />
         <p>Koraidon Một Pokémon huyền thoại bạn có thể gặp trong Pokémon Scarlet .</p>
         <img
         class="img-console"
-        src="../Picture/pokemon-scarlet-dlc-9.jpg"
+        src="/Final_project/Picture/pokemon-scarlet-dlc-9.jpg"
         alt="Ảnh chi tiết Pokemon Scarlet + DLC 9"
       />
       <p>Pokémon mới Kiểm tra các Pokémon mới như Lechonk, Pawmi và Cyclizar!</p>
       <img
       class="img-console"
-      src="../Picture/pokemon-scarlet-dlc-10.jpg"
+      src="/Final_project/Picture/pokemon-scarlet-dlc-10.jpg"
       alt="Ảnh chi tiết Pokemon Scarlet + DLC 10"
     />
     <p>Độc quyền Một số Pokémon chỉ xuất hiện trong Pokémon Scarlet — như Larvatar và Stonjourner!</p>
     <img
       class="img-console"
-      src="../Picture/pokemon-scarlet-dlc-11.jpg"
+      src="/Final_project/Picture/pokemon-scarlet-dlc-11.jpg"
       alt="Ảnh chi tiết Pokemon Scarlet + DLC 11"
     />
     <p>Gặp gỡ những Pokémon tỏa sáng và lấp lánh nhờ Hiện tượng Terastal Pokémon ở vùng Paldea có khả năng Terastallize để có được sức mạnh đặc biệt. Terastallizing nắm giữ chìa khóa dẫn đến chiến thắng hoặc thất bại trong các trận chiến ở vùng Paldea.</p>
          <h2>Những người bạn mới để gặp gỡ</h2> 
          <img
          class="img-console"
-         src="../Picture/pokemon-scarlet-dlc-12.jpg"
+         src="/Final_project/Picture/pokemon-scarlet-dlc-12.jpg"
          alt="Ảnh chi tiết Pokemon Scarlet + DLC 12"
        />
        <p>Nhân vật chính – Bạn sẽ bắt đầu cuộc phiêu lưu của mình với tư cách là một trong những nhân vật chính</p>
        <img
          class="img-console"
-         src="../Picture/pokemon-scarlet-dlc-13.jpg"
+         src="/Final_project/Picture/pokemon-scarlet-dlc-13.jpg"
          alt="Ảnh chi tiết Pokemon Scarlet + DLC 13"
        />
        <p>Giáo Sư Sada Lần đầu tiên xuất hiện trong series, một trong hai giáo sư sẽ xuất hiện trong trò chơi của bạn tùy thuộc vào phiên bản bạn chọn chơi. Trong Pokémon Scarlet, bạn sẽ gặp giáo sư Sada</p>
        <img
        class="img-console"
-       src="../Picture/pokemon-scarlet-dlc-14.jpg"
+       src="/Final_project/Picture/pokemon-scarlet-dlc-14.jpg"
        alt="Ảnh chi tiết Pokemon Scarlet + DLC 14"
      />
      <p>Nemona Bạn của bạn, Nemona là 1 huấn luyện viên Pokémon giàu kinh nghiệm và là người hướng dẫn đáng tin cậy cho bạn trong chuyến phiêu lưu của mình</p>
      <img
        class="img-console"
-       src="../Picture/pokemon-scarlet-dlc-15.jpg"
+       src="/Final_project/Picture/pokemon-scarlet-dlc-15.jpg"
        alt="Ảnh chi tiết Pokemon Scarlet + DLC 15"
      />
      <p>Clavell Anh ấy đóng vai trò là giám đốc của học viện và vì bạn là học sinh mới nên anh ấy sẽ dạy cho bạn nhiều điều về trường học của bạn </p>
     <h2>Vật phẩm thưởng</h2>
     <img
     class="img-console"
-    src="../Picture/pokemon-scarlet-dlc-16.jpg"
+    src="/Final_project/Picture/pokemon-scarlet-dlc-16.jpg"
     alt="Ảnh chi tiết Pokemon Scarlet + DLC 16"
   />
   <p>Nhận một Pikachu đặc biệt như một phần thưởng khi mua hàng sớm!</p>
@@ -265,16 +268,16 @@
         <aside class="sidebar">
           <h2>Gợi ý cho bạn</h2>
           <div class="product-img">
-            <a href=""
+            <a href="/Final_project/customer/Product_info\game_the_legend_of_zelda_breath_of_the_wild_nitendo.html"
               ><img
                 class="img-game"
-                src="../Picture/Nitendo_game_Zelda_BreathOfTheWild_1.jpg"
+                src="/Final_project/Picture/Nitendo_game_Zelda_BreathOfTheWild_1.jpg"
                 alt="Zelda Breath Of The Wild"
             /></a>
             <div class="product-name">
               <div class="name-wallpaper">
                 <p class="name">
-                  <a href="">THE LEGEND OF ZELDA BREATH OF THE WILD - Nintendo Switch</a>
+                  <a href="/Final_project/customer/Product_info\game_the_legend_of_zelda_breath_of_the_wild_nitendo.html">THE LEGEND OF ZELDA BREATH OF THE WILD - Nintendo Switch</a>
                 </p>
               </div>
               <div class="price-wallpaper">
@@ -287,16 +290,16 @@
             </div>
           </div>
           <div class="product-img">
-            <a href=""
+            <a href="/Final_project/customer/Product_info\game_kirby_return_to_dreamland_nitendo.html"
               ><img
                 class="img-game"
-                src="../Picture/Nitendo_game_Kirby_1.jpg"
+                src="/Final_project/Picture/Nitendo_game_Kirby_1.jpg"
                 alt="Kirby"
             /></a>
             <div class="product-name">
               <div class="name-wallpaper">
                 <p class="name">
-                  <a href="">KIRBY’S RETURN TO DREAMLAND - Nintendo Switch</a>
+                  <a href="/Final_project/customer/Product_info\game_kirby_return_to_dreamland_nitendo.html">KIRBY’S RETURN TO DREAMLAND - Nintendo Switch</a>
                 </p>
               </div>
               <div class="price-wallpaper">
@@ -309,16 +312,16 @@
             </div>
           </div>
           <div class="product-img">
-            <a href=""
+            <a href="/Final_project/customer/Product_info\game_the_witcher_3_nitendo.html"
               ><img
                 class="img-game"
-                src="../Picture/Nitendo_game_theWitcher3_!.webp"
+                src="/Final_project/Picture/Nitendo_game_theWitcher3_!.webp"
                 alt="The Wichcher3"
             /></a>
             <div class="product-name">
               <div class="name-wallpaper">
                 <p class="name">
-                  <a href="">THE WITCHER 3 WILD HUNT - Nintendo Switch</a>
+                  <a href="/Final_project/customer/Product_info\game_the_witcher_3_nitendo.html">THE WITCHER 3 WILD HUNT - Nintendo Switch</a>
                 </p>
               </div>
               <div class="price-wallpaper">
@@ -331,16 +334,16 @@
             </div>
           </div>
           <div class="product-img">
-            <a href=""
+            <a href="/Final_project/customer/Product_info\game_octopath_traveler_2_nitendo.html"
               ><img
                 class="img-game"
-                src="../Picture/Nitendo_game_OctopathTravelerII_1.jpg"
+                src="/Final_project/Picture/Nitendo_game_OctopathTravelerII_1.jpg"
                 alt="OctopathTravelerII"
             /></a>
             <div class="product-name">
               <div class="name-wallpaper">
                 <p class="name">
-                  <a href="">OCTOPATH TRAVELER II - Nintendo Switch</a>
+                  <a href="/Final_project/customer/Product_info\game_octopath_traveler_2_nitendo.html">OCTOPATH TRAVELER II - Nintendo Switch</a>
                 </p>
               </div>
               <div class="price-wallpaper">
@@ -386,17 +389,17 @@
         href="https://www.youtube.com/watch?v=bv__9O5CZok"
         target="_blank"
       >
-        <img src="../Picture/Logo_youtube.png" alt="YouTube" width="180px" />
+        <img src="/Final_project/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
       </a>
       <a href="https://www.tiktok.com" target="_blank">
-        <img src="../Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
+        <img src="/Final_project/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
       </a>
       <a href="https://www.facebook.com" target="_blank">
-        <img src="../Picture/Logo_facebook.png" alt="Facebook" width="180px" />
+        <img src="/Final_project/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
       </a>
       <a href="https://www.facebook.com/groups/ps5vietnam">
         <img
-          src="../Picture/Logo_Ps5_Group.png"
+          src="/Final_project/Picture/Logo_Ps5_Group.png"
           alt="Hội PS5 Việt Nam"
           width="180px"
         />
@@ -411,14 +414,14 @@
       <p>- Chính sách đổi trả</p>
       <br />
       <img
-        src="../Picture/Logo_BoCongthuong.png"
+        src="/Final_project/Picture/Logo_BoCongthuong.png"
         alt="Đã thông báo bộ công thương"
         width="200"
       />
     </div>
   </div>
 </footer>
-<script src="js/main.js"></script>
-<script src="js/button.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/button.js"></script>
 </body>
 </html>

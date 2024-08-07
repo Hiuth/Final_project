@@ -40,77 +40,80 @@
       });
     </script>
     <!-- Header -->
-    <div class="header-wallpaper">
+    <header class="header-wallpaper">
       <div class="header">
-        <div class="left-selection">
-          <img
-            class="Logo_website"
-            src="../Picture/Logo_web_3.png"
-            alt="logo_web"
-          />
-        </div>
-        <!-- Search bar -->
-        <div class="middle-selection">
-          <input
-            class="search-bar"
-            type="search"
-            placeholder="Tìm kiếm sản phẩm ..."
-          />
-          <button class="search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
-        <div class="right-selection">
-          <div class="cart-wallpaper">
-            <a class="Cart" href=""
-              ><span class="text-header">Giỏ Hàng /</span
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <div class="left-selection">
+              <a href="../index.php">
+                  <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
           </div>
-          <div class="cart_wallpaper_2">
-            <a class="Cart_2" href=""
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <!-- search bar -->
+          <div class="middle-selection">
+              <input class="search-bar" type="search" placeholder="Tìm kiếm sản phẩm ..." />
+              <button class="search-button">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
           </div>
-        </div>
+          <div class="right-selection">
+              <div class="cart-wallpaper" id="cart-1">
+                  <a class="Cart" href="#"><span class="text-header">Giỏ Hàng /</span><i
+                          class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+              <div class="cart_wallpaper_2" id="cart-2">
+                  <a class="Cart_2" href="#">
+                      <i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+          </div>
       </div>
-      <!-- Navigation Menu -->
+      <!-- Thanh điều hướng (menu) -->
       <div id="toggle">
-        <!-- Menu toggle button -->
-        <i class="fa-solid fa-bars"></i>
+          <!-- cái nút menu 3 gạch -->
+          <i class="fa-solid fa-bars"></i>
       </div>
       <nav>
-        <ul class="main-menu">
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-playstation"></i
-              ><span>PLAYSTATION</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fab fa-nintendo-switch"></i
-              ><span>NITENDO SWITCH</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a
-            >
-          </li>
-        </ul>
+          <ul class="main-menu">
+              <li>
+                  <a href="../PlayStation/Playstation_page.php">
+                      <i class="fa-brands fa-playstation"></i>
+                      <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                      <li><a href="../PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                      <li><a href="../PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                      <li><a href="../PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Xbox/Xbox_page.php">
+                      <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
+              </li>
+              <li>
+                  <!--  -->
+                  <a href="../Nintendo/Nintendo_page.php">
+                      <i class="fab fa-nintendo-switch"></i>
+                      <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
+                      </i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                      <li><a href="../Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Controller\Cotroller_page.php">
+                      <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
+                              id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                      <li><a href="../Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                      <li><a href="../Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Contact.html">
+                      <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a>
+              </li>
+          </ul>
       </nav>
-    </div>
+  </header>
     <div class="main-content">
       <div class="content-wallpaper">
         <div class="container">
@@ -118,7 +121,7 @@
             <div class="product-image">
               <img
                 class="img-console"
-                src="../Picture/ps5_game_elderRing_1.jpg"
+                src="/Final_project/Picture/ps5_game_elderRing_1.jpg"
                 alt="Game Elden Ring 1"
               />
             </div>
@@ -128,7 +131,7 @@
                 <p class="price">1.690.000</p>
                 <p class="unit-price">VND</p>
               </div>
-              <a class="add-to-cart">Thêm vào giỏ hàng</a>
+              <a href="#" class="add-to-cart" id="add-cart">Thêm vào giỏ hàng</a>
               <div class="guarantee">
                 <h2>Bảo đảm 100% chính hãng</h2>
                 <p>
@@ -157,7 +160,7 @@
             <p>Shadow of the Erdtree đưa người chơi đến với Land of Shadow, một vùng đất mới bí ẩn với những bí mật đen tối đang chờ được khám phá. Cốt truyện xoay quanh nhân vật Miquella, một demigod mang trong mình nhiều bí ẩn và vai trò quan trọng trong Elden Ring. Land of Shadow là một khu vực rộng lớn với nhiều địa điểm mới để khám phá, bao gồm những khu rừng rậm rạp, những tàn tích cổ xưa và những hang động nguy hiểm.</p>
             <img
             class="img-console"
-            src="../Picture/ps5_game_elderRing_2.jpg"
+            src="/Final_project/Picture/ps5_game_elderRing_2.jpg"
             alt="Ảnh chi tiết elden ring 1"
           />
           <p>Elden Ring Shadow of the Erdtree giới thiệu nhiều kẻ thù mới, bao gồm cả những con boss hùng mạnh và độc đáo. Không chỉ vậy, bản mở rộng bổ sung thêm nhiều loại vũ khí và vật phẩm mới để người chơi thu thập và sử dụng.
@@ -165,7 +168,7 @@
             Phản diện chính trong bản mở rộng lần này sẽ là Messmer – The Impaler. Là một nhân vật cuốn hút với thiết kế cực chất và nguy hiểm, sở hữu ngọn lửa phép thuật rực cháy như giống như những tên Giant trong game, cùng với chiếc cánh nhỏ phía sau và những con rắn bò quanh người.</p>
             <img
             class="img-console"
-            src="../Picture/maxresdefault.jpg"
+            src="/Final_project/Picture/maxresdefault.jpg"
             alt="Ảnh chi tiết elden ring 2"
           />
           <p>Trong lời thoại của Messmer các bạn có thể thấy hắn nhắc đến “mother”, có thể đây là ngụ ý rằng hắn ta chính là một trong những đứa con á thần của Marika. Hidetaka Miyazaki nói rằng ngai vàng mà Messmer đang ngồi ở cuối trailer có ngụ ý rằng sức mạnh của hắn ta ngang ngửa với những á thần khác mà người chơi đã đối đầu ở Elden Ring.
@@ -173,7 +176,7 @@
             Elden Ring Shadow of the Erdtree sẽ đem đến cốt truyện hấp dẫn, khu vực mới đẹp mắt, kẻ thù mới đầy thử thách và lối chơi hấp dẫn hơn cho tựa game gốc. DLC Shadow of the Erdtree là một bản mở rộng tuyệt vời dành cho người hâm mộ Elden Ring và là một trải nghiệm không thể bỏ qua đối với những ai yêu thích dòng game Souls nói riêng va game nhập vai nói chung.</p>
             <img
             class="img-console"
-            src="../Picture/elden-ring-shadow-of-the-erdtree-release-date-trailer-screen_vz3c.jpg"
+            src="/Final_project/Picture/elden-ring-shadow-of-the-erdtree-release-date-trailer-screen_vz3c.jpg"
             alt="Ảnh chi tiết elden ring 3"
           />
         </div>
@@ -181,16 +184,16 @@
         <aside class="sidebar">
             <h2>Gợi ý cho bạn</h2>
             <div class="product-img">
-              <a href=""
+              <a href="/Final_project/customer/Product_info\game_atelier_ryza_3_ps5.html"
                 ><img
                   class="img-game"
-                  src="../Picture/ps5_game_AterlierRyza3_1.jpg"
+                  src="/Final_project/Picture/ps5_game_AterlierRyza3_1.jpg"
                   alt="elden-ring"
               /></a>
               <div class="product-name">
                 <div class="name-wallpaper">
                   <p class="name">
-                    <a href="">ATER lIER RYZA 3 – ĐĨA GAME PS5 </a>
+                    <a href="/Final_project/customer/Product_info\game_atelier_ryza_3_ps5.html">ATER lIER RYZA 3 – ĐĨA GAME PS5 </a>
                   </p>
                 </div>
                 <div class="price-wallpaper">
@@ -203,16 +206,16 @@
               </div>
             </div>
             <div class="product-img">
-              <a href=""
+              <a href="/Final_project/customer/Product_info\game_persona5_ps5.html"
                 ><img
                   class="img-game"
-                  src="../Picture/ps5_game_Persona5_1.jpg"
+                  src="/Final_project/Picture/ps5_game_Persona5_1.jpg"
                   alt="PERSONA 5"
               /></a>
               <div class="product-name">
                 <div class="name-wallpaper">
                   <p class="name">
-                    <a href="">PERSONA 5 ROYAL STEELBOOK– Đĩa Game PS5 </a>
+                    <a href="/Final_project/customer/Product_info\game_persona5_ps5.html">PERSONA 5 ROYAL STEELBOOK– Đĩa Game PS5 </a>
                   </p>
                 </div>
                 <div class="price-wallpaper">
@@ -225,16 +228,16 @@
               </div>
             </div>
             <div class="product-img">
-              <a href=""
+              <a href="/Final_project/customer/Product_info\marvel_spiderman2.html"
                 ><img
                   class="img-game"
-                  src="../Picture/ps5_game_SpiderMan2_1.jpg"
+                  src="/Final_project/Picture/ps5_game_SpiderMan2_1.jpg"
                   alt="SPIDER-MAN2"
               /></a>
               <div class="product-name">
                 <div class="name-wallpaper">
                   <p class="name">
-                    <a href="">MARVEL’S SPIDER-MAN 2 – ĐĨA GAME PS5 </a>
+                    <a href="/Final_project/customer/Product_info\marvel_spiderman2.html">MARVEL’S SPIDER-MAN 2 – ĐĨA GAME PS5 </a>
                   </p>
                 </div>
                 <div class="price-wallpaper">
@@ -247,16 +250,16 @@
               </div>
             </div>
             <div class="product-img">
-              <a href=""
+              <a href="/Final_project/customer/Product_info\game_helldiver2_ps5.html"
                 ><img
                   class="img-game"
-                  src="../Picture/ps5_game_HelldriversII_1.jpg"
+                  src="/Final_project/Picture/ps5_game_HelldriversII_1.jpg"
                   alt="HelldriversII"
               /></a>
               <div class="product-name">
                 <div class="name-wallpaper">
                   <p class="name">
-                    <a href="">HelldriversII PS5 – Đĩa Game PS5 </a>
+                    <a href="/Final_project/customer/Product_info\game_helldiver2_ps5.html">HelldriversII PS5 – Đĩa Game PS5 </a>
                   </p>
                 </div>
                 <div class="price-wallpaper">
@@ -302,17 +305,17 @@
           href="https://www.youtube.com/watch?v=bv__9O5CZok"
           target="_blank"
         >
-          <img src="../Picture/Logo_youtube.png" alt="YouTube" width="180px" />
+          <img src="/Final_project/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
         </a>
         <a href="https://www.tiktok.com" target="_blank">
-          <img src="../Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
+          <img src="/Final_project/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
         </a>
         <a href="https://www.facebook.com" target="_blank">
-          <img src="../Picture/Logo_facebook.png" alt="Facebook" width="180px" />
+          <img src="/Final_project/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
         </a>
         <a href="https://www.facebook.com/groups/ps5vietnam">
           <img
-            src="../Picture/Logo_Ps5_Group.png"
+            src="/Final_project/Picture/Logo_Ps5_Group.png"
             alt="Hội PS5 Việt Nam"
             width="180px"
           />
@@ -327,14 +330,14 @@
         <p>- Chính sách đổi trả</p>
         <br />
         <img
-          src="../../Picture/Logo_BoCongthuong.png"
+          src="..//Final_project/Picture/Logo_BoCongthuong.png"
           alt="Đã thông báo bộ công thương"
           width="200"
         />
       </div>
     </div>
   </footer>
-  <script src="js/main.js"></script>
-  <script src="js/button.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/button.js"></script>
   </body>
   </html>

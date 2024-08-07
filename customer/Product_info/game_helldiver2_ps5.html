@@ -40,77 +40,80 @@
       });
     </script>
     <!-- Header -->
-    <div class="header-wallpaper">
+    <header class="header-wallpaper">
       <div class="header">
-        <div class="left-selection">
-          <img
-            class="Logo_website"
-            src="../Picture/Logo_web_3.png"
-            alt="logo_web"
-          />
-        </div>
-        <!-- Search bar -->
-        <div class="middle-selection">
-          <input
-            class="search-bar"
-            type="search"
-            placeholder="Tìm kiếm sản phẩm ..."
-          />
-          <button class="search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
-        <div class="right-selection">
-          <div class="cart-wallpaper">
-            <a class="Cart" href=""
-              ><span class="text-header">Giỏ Hàng /</span
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <div class="left-selection">
+              <a href="../index.php">
+                  <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
           </div>
-          <div class="cart_wallpaper_2">
-            <a class="Cart_2" href=""
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <!-- search bar -->
+          <div class="middle-selection">
+              <input class="search-bar" type="search" placeholder="Tìm kiếm sản phẩm ..." />
+              <button class="search-button">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
           </div>
-        </div>
+          <div class="right-selection">
+              <div class="cart-wallpaper" id="cart-1">
+                  <a class="Cart" href="#"><span class="text-header">Giỏ Hàng /</span><i
+                          class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+              <div class="cart_wallpaper_2" id="cart-2">
+                  <a class="Cart_2" href="#">
+                      <i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+          </div>
       </div>
-      <!-- Navigation Menu -->
+      <!-- Thanh điều hướng (menu) -->
       <div id="toggle">
-        <!-- Menu toggle button -->
-        <i class="fa-solid fa-bars"></i>
+          <!-- cái nút menu 3 gạch -->
+          <i class="fa-solid fa-bars"></i>
       </div>
       <nav>
-        <ul class="main-menu">
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-playstation"></i
-              ><span>PLAYSTATION</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fab fa-nintendo-switch"></i
-              ><span>NITENDO SWITCH</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a
-            >
-          </li>
-        </ul>
+          <ul class="main-menu">
+              <li>
+                  <a href="../PlayStation/Playstation_page.php">
+                      <i class="fa-brands fa-playstation"></i>
+                      <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                      <li><a href="../PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                      <li><a href="../PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                      <li><a href="../PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Xbox/Xbox_page.php">
+                      <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
+              </li>
+              <li>
+                  <!--  -->
+                  <a href="../Nintendo/Nintendo_page.php">
+                      <i class="fab fa-nintendo-switch"></i>
+                      <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
+                      </i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                      <li><a href="../Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Controller\Cotroller_page.php">
+                      <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
+                              id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                      <li><a href="../Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                      <li><a href="../Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Contact.html">
+                      <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a>
+              </li>
+          </ul>
       </nav>
-    </div>
+  </header>
     <div class="main-content">
       <div class="content-wallpaper">
         <div class="container">
@@ -118,7 +121,7 @@
             <div class="product-image">
               <img
                 class="img-console"
-                src="../Picture/ps5_game_HelldriversII_1.jpg"
+                src="/Final_project/Picture/ps5_game_HelldriversII_1.jpg"
                 alt="Game HelldriversII"
               />
             </div>
@@ -128,7 +131,7 @@
                 <p class="price">1.200.000</p>
                 <p class="unit-price">VND</p>
               </div>
-              <a class="add-to-cart">Thêm vào giỏ hàng</a>
+              <a href="#" class="add-to-cart" id="add-cart">Thêm vào giỏ hàng</a>
               <div class="guarantee">
                 <h2>Bảo đảm 100% chính hãng</h2>
                 <p>
@@ -159,7 +162,7 @@
             <p>Mọi chuyện bắt đầu trở nên căng thẳng khi Super Earth bị hai thế lực ngoài hành tinh mạnh mẽ đe dọa: loài bọ Terminid và các robot Automaton. Những kẻ thù này không chỉ tấn công các hành tinh mới khai phá mà còn tiến sâu vào không gian nhằm đe dọa trực tiếp đến sự an toàn của Trái Đất.</p>
             <img
             class="img-console"
-            src="../Picture/hell-divers-2.jpg"
+            src="/Final_project/Picture/hell-divers-2.jpg"
             alt="Ảnh chi tiết HelldriversII "
           />
           <p>Để đối phó, chính phủ của Super Earth đã phát động chiến dịch tuyển mộ quân sự rầm rộ, nhằm thu hút người dân gia nhập vào đội quân đặc biệt gọi là Helldivers. Đây là những chiến binh được đào tạo bài bản, sẵn sàng chiến đấu tại các tiền tuyến để bảo vệ nhân loại khỏi những mối nguy hiểm đang rình rập.</p>
@@ -169,14 +172,14 @@
           <p>Helldivers 2 mang đến cho người chơi một trải nghiệm hành động bắn súng đầy thử thách và sự phối hợp nhóm tinh tế. Lối chơi của trò chơi này được xây dựng trên nền tảng rogue-like, mỗi nhiệm vụ mang đến những yêu cầu và thử thách mới mẻ.</p>
           <img
             class="img-console"
-            src="../Picture/hell-divers-2-2.jpg"
+            src="/Final_project/Picture/hell-divers-2-2.jpg"
             alt="Ảnh chi tiết HelldriversII"
           />
           <p>Trong Hell Divers 2, bạn sẽ tham gia vào một trong bốn nhóm nhiệm vụ chính: Defend Freedom, Bug Extermination, Destroy Automatons, và Protect Liberty. Mỗi loại nhiệm vụ đều có mục tiêu cụ thể như triệt tiêu đài phát sóng lậu, phá hủy sân bay, hoặc tiếp nhiên liệu cho tên lửa. Người chơi có thể lựa chọn thực hiện nhiệm vụ một mình hoặc cùng với ba người bạn khác để tạo thành một đội nhóm bốn người.</p>
           <p>Khi bắt đầu một nhiệm vụ, bạn và đồng đội sẽ được thả xuống một khu vực trên hành tinh đã chọn. Ngoài việc hoàn thành nhiệm vụ chính, bạn còn có thể thực hiện các tác vụ phụ để nhận thêm phần thưởng, chẳng hạn như tiêu diệt căn cứ địch hoặc khám phá kho hàng bị bỏ quên.</p>
             <img
             class="img-console"
-            src="../Picture/hell-divers-2-3.jpg"
+            src="/Final_project/Picture/hell-divers-2-3.jpg"
             alt="Ảnh chi tiết HelldriversII"
           />
           <p>Sau khi nhiệm vụ chính được hoàn thành, quá trình trở về bắt đầu. Bạn cần quay lại điểm đổ bộ ban đầu, kích hoạt tín hiệu và bảo vệ vị trí này trong vòng hai phút chờ đợi tàu đến đón. Phần này đòi hỏi sự phối hợp chặt chẽ và chiến thuật hợp lý giữa các thành viên trong đội để đảm bảo an toàn cho đến khi được giải cứu. Nhìn chung, lối chơi của Hell Divers 2 không chỉ đòi hỏi kỹ năng cá nhân mà còn cần sự hợp tác nhịp nhàng giữa các thành viên.</p>
@@ -184,7 +187,7 @@
           <P>Helldivers 2 đã thể hiện một sự cải tiến đáng kể về mặt đồ họa và âm thanh, mang lại trải nghiệm chơi game ấn tượng và sâu sắc. Đồ họa của trò chơi này không cần phô trương về mức độ chân thực tuyệt đối, nhưng lại cực kỳ hiệu quả trong việc truyền tải bầu không khí chiến tranh khốc liệt thông qua hình ảnh sắc nét và mượt mà. Dù trong những tình huống chiến đấu cường độ cao, nơi thường thấy các trò chơi khác gặp vấn đề về lag khung hình, Helldivers 2 vẫn duy trì được sự ổn định.</P>
           <img
           class="img-console"
-          src="../Picture/hell-divers-5.jpg"
+          src="/Final_project/Picture/hell-divers-5.jpg"
           alt="Ảnh chi tiết HelldriversII"
         />
           <P>Về phần âm thanh, Hell Divers 2 thực sự tạo ấn tượng mạnh với người chơi. Nhạc nền theo phong cách quân đội hùng tráng được điều chỉnh khéo léo để phù hợp với từng tình huống cụ thể trong game. Khi người chơi chiến thắng hay phá hủy căn cứ địch, âm nhạc sẽ được tăng lên, tạo cảm giác hào hùng và kích động. Điều này góp phần làm tăng thêm sự hứng khởi khi trải nghiệm.</P>
@@ -194,96 +197,96 @@
         </div>
         </div>
         <aside class="sidebar">
-            <h2>Gợi ý cho bạn</h2>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps5_game_AterlierRyza3_1.jpg"
-                  alt="elden-ring"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">ATER lIER RYZA 3 – ĐĨA GAME PS5 </a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.080.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          <h2>Gợi ý cho bạn</h2>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_atelier_ryza_3_ps5.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps5_game_AterlierRyza3_1.jpg"
+                alt="elden-ring"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_atelier_ryza_3_ps5.html">ATER lIER RYZA 3 – ĐĨA GAME PS5 </a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.080.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps5_game_Persona5_1.jpg"
-                  alt="PERSONA 5"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">PERSONA 5 ROYAL STEELBOOK– Đĩa Game PS5 </a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.550.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          </div>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_persona5_ps5.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps5_game_Persona5_1.jpg"
+                alt="PERSONA 5"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_persona5_ps5.html">PERSONA 5 ROYAL STEELBOOK– Đĩa Game PS5 </a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.550.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps5_game_SpiderMan2_1.jpg"
-                  alt="SPIDER-MAN2"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">MARVEL’S SPIDER-MAN 2 – ĐĨA GAME PS5 </a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.500.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          </div>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\marvel_spiderman2.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps5_game_SpiderMan2_1.jpg"
+                alt="SPIDER-MAN2"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\marvel_spiderman2.html">MARVEL’S SPIDER-MAN 2 – ĐĨA GAME PS5 </a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.500.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps5_game_HelldriversII_1.jpg"
-                  alt="HelldriversII"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">HelldriversII PS5 – Đĩa Game PS5 </a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.500.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          </div>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_final_fantasy_7_ps5.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps5_game_FinalFantasyVII_1.jpg"
+                alt="FinalFantasyVII"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_final_fantasy_7_ps5.html">FINAL FANTASY VII REBIRTH – ĐĨA GAME PS5</a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.650.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-          </aside>
+          </div>
+        </aside>
         </div>
       </div>
     </body>
@@ -317,17 +320,17 @@
           href="https://www.youtube.com/watch?v=bv__9O5CZok"
           target="_blank"
         >
-          <img src="../Picture/Logo_youtube.png" alt="YouTube" width="180px" />
+          <img src="/Final_project/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
         </a>
         <a href="https://www.tiktok.com" target="_blank">
-          <img src="../Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
+          <img src="/Final_project/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
         </a>
         <a href="https://www.facebook.com" target="_blank">
-          <img src="../Picture/Logo_facebook.png" alt="Facebook" width="180px" />
+          <img src="/Final_project/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
         </a>
         <a href="https://www.facebook.com/groups/ps5vietnam">
           <img
-            src="../Picture/Logo_Ps5_Group.png"
+            src="/Final_project/Picture/Logo_Ps5_Group.png"
             alt="Hội PS5 Việt Nam"
             width="180px"
           />
@@ -342,14 +345,14 @@
         <p>- Chính sách đổi trả</p>
         <br />
         <img
-          src="../Picture/Logo_BoCongthuong.png"
+          src="/Final_project/Picture/Logo_BoCongthuong.png"
           alt="Đã thông báo bộ công thương"
           width="200"
         />
       </div>
     </div>
   </footer>
-  <script src="js/main.js"></script>
-  <script src="js/button.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/button.js"></script>
   </body>
   </html>

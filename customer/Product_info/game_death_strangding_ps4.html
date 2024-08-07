@@ -40,77 +40,80 @@
       });
     </script>
     <!-- Header -->
-    <div class="header-wallpaper">
+    <header class="header-wallpaper">
       <div class="header">
-        <div class="left-selection">
-          <img
-            class="Logo_website"
-            src="../Picture/Logo_web_3.png"
-            alt="logo_web"
-          />
-        </div>
-        <!-- Search bar -->
-        <div class="middle-selection">
-          <input
-            class="search-bar"
-            type="search"
-            placeholder="Tìm kiếm sản phẩm ..."
-          />
-          <button class="search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
-        <div class="right-selection">
-          <div class="cart-wallpaper">
-            <a class="Cart" href=""
-              ><span class="text-header">Giỏ Hàng /</span
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <div class="left-selection">
+              <a href="../index.php">
+                  <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
           </div>
-          <div class="cart_wallpaper_2">
-            <a class="Cart_2" href=""
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <!-- search bar -->
+          <div class="middle-selection">
+              <input class="search-bar" type="search" placeholder="Tìm kiếm sản phẩm ..." />
+              <button class="search-button">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
           </div>
-        </div>
+          <div class="right-selection">
+              <div class="cart-wallpaper" id="cart-1">
+                  <a class="Cart" href="#"><span class="text-header">Giỏ Hàng /</span><i
+                          class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+              <div class="cart_wallpaper_2" id="cart-2">
+                  <a class="Cart_2" href="#">
+                      <i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+          </div>
       </div>
-      <!-- Navigation Menu -->
+      <!-- Thanh điều hướng (menu) -->
       <div id="toggle">
-        <!-- Menu toggle button -->
-        <i class="fa-solid fa-bars"></i>
+          <!-- cái nút menu 3 gạch -->
+          <i class="fa-solid fa-bars"></i>
       </div>
       <nav>
-        <ul class="main-menu">
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-playstation"></i
-              ><span>PLAYSTATION</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fab fa-nintendo-switch"></i
-              ><span>NITENDO SWITCH</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a
-            >
-          </li>
-        </ul>
+          <ul class="main-menu">
+              <li>
+                  <a href="../PlayStation/Playstation_page.php">
+                      <i class="fa-brands fa-playstation"></i>
+                      <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                      <li><a href="../PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                      <li><a href="../PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                      <li><a href="../PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Xbox/Xbox_page.php">
+                      <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
+              </li>
+              <li>
+                  <!--  -->
+                  <a href="../Nintendo/Nintendo_page.php">
+                      <i class="fab fa-nintendo-switch"></i>
+                      <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
+                      </i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                      <li><a href="../Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Controller\Cotroller_page.php">
+                      <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
+                              id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                      <li><a href="../Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                      <li><a href="../Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Contact.html">
+                      <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a>
+              </li>
+          </ul>
       </nav>
-    </div>
+  </header>
     <div class="main-content">
       <div class="content-wallpaper">
         <div class="container">
@@ -118,7 +121,7 @@
             <div class="product-image">
               <img
                 class="img-console"
-                src="../Picture/ps4_game_DeathStranding_1.jpg"
+                src="/Final_project/Picture/ps4_game_DeathStranding_1.jpg"
                 alt="Game DeathStrangding"
               />
             </div>
@@ -128,7 +131,7 @@
                 <p class="price">730.000</p>
                 <p class="unit-price">VND</p>
               </div>
-              <a class="add-to-cart">Thêm vào giỏ hàng</a>
+              <a href="#" class="add-to-cart" id="add-cart">Thêm vào giỏ hàng</a>
               <div class="guarantee">
                 <h2>Bảo đảm 100% chính hãng</h2>
                 <p>
@@ -162,7 +165,7 @@
             <p>The Beach – giống như tên – là một bãi biển lớn với rất nhiều xác chết từ con người cho đến động vật. Đây được xem là ranh giới giữa sự sống và cái chết.</p>
             <img
             class="img-console"
-            src="../Picture/death-strangding-1.jpg"
+            src="/Final_project/Picture/death-strangding-1.jpg"
             alt="Ảnh chi tiết DeathStranding 1"
           />
           <p>Time Fall là những cơn mưa có khả năng điều khiển thời gian của vạn vật. Mỗi khi hiện tượng này xuất hiện thì tất cả cỏ cây đều bắt rễ, lớn lên và héo úa. Ngay cả những công trình cũng sẽ trở nên mục nát và con người cũng bị lão hóa khi chạm vào hạt mưa này. Điểm đặc biệt chính là bên trong những con BT có chứa Time Fall.</p>
@@ -170,7 +173,7 @@
           <p>Đây là một dạng vật chất vũ trụ được sản sinh tại The Beach. Do đây là một vật chất kém ổn định, thế nên chỉ có những người sở hữu sức mạnh siêu nhiên là Doom mới có thể tiếp xúc được. Đồng thời, Doom cũng có thể nhận biết sự xuất hiện của các BT.</p>
           <img
             class="img-console"
-            src="../Picture/death-strangding-2.jpg"
+            src="/Final_project/Picture/death-strangding-2.jpg"
             alt="Ảnh chi tiết DeathStrangdin 2"
           />
           <p>Trong bối cảnh của Death Stranding, những người sống sót sẽ bị cô lập phía dưới lòng đất. Do đó cần có những người can đảm đảm nhận vai trò vận chuyển hàng hóa thiết yếu giữa thành phố. Có như vậy thì con người mới có thể tồn tại được. Vậy nên có thể nói ngành vận chuyển là lĩnh vực then chốt nhất trong thế giới này.</p>
@@ -181,13 +184,13 @@
           <p>Tiếp tục là một tựa game thế giới mở như Shadow Of The Tomb Raider, thế nên bạn có thể tự do lựa chọn cung đường vận chuyển mà mình muốn. Trên các cung đường này đều tồn tại những điều bất ngờ chờ đón bạn. Đồng thời bạn cũng có thể nhìn ngắm vẻ đẹp hoang sơ của thế giới hậu tận thế.</p>
           <img
             class="img-console"
-            src="../Picture/death-strangding-4.jpg"
+            src="/Final_project/Picture/death-strangding-4.jpg"
             alt="Ảnh chi tiết DeathStranding 3"
           />
           <p>Đảm nhận vai trò trở thành một anh chàng vận chuyển hàng hóa nên nhiệm vụ chính của bạn cũng là giao hàng. Mỗi người dân sống dưới lòng đất sẽ đặt những đơn hàng nhu yếu phẩm thiết yếu. Sau đó bạn sẽ cung cấp những món hàng ấy. Sau mỗi đơn hàng thành công thì bạn sẽ nhận được rất nhiều vật phẩm hỗ trợ khác nhau. </p>
           <img
             class="img-console"
-            src="../Picture/death-strangding-5.jpg"
+            src="/Final_project/Picture/death-strangding-5.jpg"
             alt="Ảnh chi tiết DeathStranding 4"
           />
           <p>Những vật phẩm này đóng vai trò giúp các đơn hàng vận chuyển trong tương lai thuận lợi hơn. Bởi trong quá trình vận chuyển, bạn sẽ có nguy cơ đụng độ lũ BT hoặc đám phiến quân MULE. Việc luôn trang bị các tài nguyên trong chuyến hành trình sẽ hỗ trợ bạn vượt qua thử thách và giao hàng thành công.</p>
@@ -195,110 +198,109 @@
           <P>Ngay từ ấn tượng đầu tiên, người chơi hẳn đã cảm nhận được vô số hình ảnh ấn tượng đã được đầu tư và chăm chút kỹ lưỡng. Nhà sản xuất thật sự đã tỉ mỉ đến từng chi tiết nhỏ nhất như ngọn cỏ cho đến dự báo thời tiết. Điều đó tạo nên một thế giới sống động như ở thế giới thiệt. Nhờ vậy mang đến cảm giác như đang dõi theo một thước phim 3D tuyệt sắc trên màn ảnh rộng vậy.</P>
           <img
           class="img-console"
-          src="../Picture/death-strangding-6.jpg"
+          src="/Final_project/Picture/death-strangding-6.jpg"
           alt="Ảnh chi tiết DeathStranding 5"
         />
           <P>Nếu muốn tăng thêm sự hấp dẫn cho một tựa game thì đương nhiên không thể bỏ qua phần âm thanh. Những âm thanh đơn giản giữa cuộc sống hàng ngày như tiếng bước chân, tiếng mưa rơi, tiếng nước chảy, tiếng hơi thở của nhân vật khi đối đầu BT,… Tất cả những điều này đều góp phần tạo nên sự sinh động, hồi hộp và hấp dẫn cho game Death Stranding.</P>
           <p>Phần âm thanh trong Resident Evil 2 là vô số những bản nhạc được những ca sĩ nổi tiếng thời điểm bấy giờ trình bày. Chúng mang âm hưởng kinh dị, và có sự thay đổi theo những tình huống xảy ra trong trò chơi. Đặc biệt, những đoạn đánh giá điểm cũng được khéo léo chèn những phần âm thanh ngắn cực kỳ thú vị. </p>
           <img
           class="img-console"
-          src="../Picture/death-strangding-7.jpg"
+          src="/Final_project/Picture/death-strangding-7.jpg"
           alt="Ảnh chi tiết DeathStranding 6"
         />
         </div>
         </div>
         <aside class="sidebar">
-            <h2>Gợi ý cho bạn</h2>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps4_game_GhostOfTsushima_1.jpg"
-                  alt="GhostOfTsushima"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">GHOST OF TSUSHIMA – ĐĨA GAME PS4 </a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.680.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          <h2>Gợi ý cho bạn</h2>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_ghost_of_tsushima_ps4.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps4_game_GhostOfTsushima_1.jpg"
+                alt="GhostOfTsushima"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_ghost_of_tsushima_ps4.html">GHOST OF TSUSHIMA – ĐĨA GAME PS4 </a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.680.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps4_game_ShinMegamiTenseiV_1.jpg"
-                  alt="ShinMegamiTenseiV"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">ShinMegamiTenseiV – ĐĨA GAME PS4</a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.550.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          </div>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_shin_megami_tensei_ps4.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps4_game_ShinMegamiTenseiV_1.jpg"
+                alt="ShinMegamiTenseiV"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_shin_megami_tensei_ps4.html">SHIN MEGAMI TENSEI V – ĐĨA GAME PS4</a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.550.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps4_game_GodOfWar_1.jpg"
-                  alt="God Of War"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">GOD OF WAR: RAGNAROK - Đĩa Game PS4</a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.400.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          </div>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_god_of_war-ragnarok_ps4.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps4_game_GodOfWar_1.jpg"
+                alt="God Of War"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_god_of_war-ragnarok_ps4.html">GOD OF WAR: RAGNAROK - ĐĨA GAME PS4</a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.400.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps4_game_Batman_1.jpg"
-                  alt="Batman 1"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">BATMAN:ARKHAM KNIGHT – ĐĨA GAME PS4</a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">630.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          </div>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_batman_arkham_knight_ps4.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps4_game_Batman_1.jpg"
+                alt="Batman 1"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_batman_arkham_knight_ps4.html">BATMAN:ARKHAM KNIGHT – ĐĨA GAME PS4</a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">630.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            </div>
-          </aside>
+          </div>
+      </aside>
         </div>
       </div>
     </body>
@@ -332,17 +334,17 @@
           href="https://youtu.be/dQw4w9WgXcQ?si=QiFbp9tAmNxaVkpt"
           target="_blank"
         >
-          <img src="../Picture\Logo_youtube.png" alt="YouTube" width="180px" />
+          <img src="/Final_project/Picture\Logo_youtube.png" alt="YouTube" width="180px" />
         </a>
         <a href="/https://www.tiktok.com" target="_blank">
-          <img src="../Picture\Logo_tiktok.png" alt="TikTok" width="180px" />
+          <img src="/Final_project/Picture\Logo_tiktok.png" alt="TikTok" width="180px" />
         </a>
         <a href="../https://www.facebook.com" target="_blank">
-          <img src="../Picture\Logo_facebook.png" alt="Facebook" width="180px" />
+          <img src="/Final_project/Picture\Logo_facebook.png" alt="Facebook" width="180px" />
         </a>
         <a href="../https://www.facebook.com/groups/ps5vietnam">
           <img
-            src="../Picture/Logo_Ps5_Group.png"
+            src="/Final_project/Picture/Logo_Ps5_Group.png"
             alt="Hội PS5 Việt Nam"
             width="180px"
           />
@@ -357,15 +359,15 @@
         <p>- Chính sách đổi trả</p>
         <br />
         <img
-          src="../Picture\Logo_BoCongthuong.png"
+          src="/Final_project/Picture\Logo_BoCongthuong.png"
           alt="Đã thông báo bộ công thương"
           width="200"
         />
       </div>
     </div>
   </footer>
-  <script src="js/main.js"></script>
-  <script src="js/button.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/button.js"></script>
   </body>
   </html>
   

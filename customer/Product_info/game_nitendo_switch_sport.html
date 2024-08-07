@@ -40,77 +40,80 @@
       });
     </script>
     <!-- Header -->
-    <div class="header-wallpaper">
+    <header class="header-wallpaper">
       <div class="header">
-        <div class="left-selection">
-          <img
-            class="Logo_website"
-            src="../Picture/Logo_web_3.png"
-            alt="logo_web"
-          />
-        </div>
-        <!-- Search bar -->
-        <div class="middle-selection">
-          <input
-            class="search-bar"
-            type="search"
-            placeholder="Tìm kiếm sản phẩm ..."
-          />
-          <button class="search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
-        <div class="right-selection">
-          <div class="cart-wallpaper">
-            <a class="Cart" href=""
-              ><span class="text-header">Giỏ Hàng /</span
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <div class="left-selection">
+              <a href="../index.php">
+                  <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
           </div>
-          <div class="cart_wallpaper_2">
-            <a class="Cart_2" href=""
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <!-- search bar -->
+          <div class="middle-selection">
+              <input class="search-bar" type="search" placeholder="Tìm kiếm sản phẩm ..." />
+              <button class="search-button">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
           </div>
-        </div>
+          <div class="right-selection">
+              <div class="cart-wallpaper" id="cart-1">
+                  <a class="Cart" href="#"><span class="text-header">Giỏ Hàng /</span><i
+                          class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+              <div class="cart_wallpaper_2" id="cart-2">
+                  <a class="Cart_2" href="#">
+                      <i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+          </div>
       </div>
-      <!-- Navigation Menu -->
+      <!-- Thanh điều hướng (menu) -->
       <div id="toggle">
-        <!-- Menu toggle button -->
-        <i class="fa-solid fa-bars"></i>
+          <!-- cái nút menu 3 gạch -->
+          <i class="fa-solid fa-bars"></i>
       </div>
       <nav>
-        <ul class="main-menu">
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-playstation"></i
-              ><span>PLAYSTATION</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fab fa-nintendo-switch"></i
-              ><span>NITENDO SWITCH</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a
-            >
-          </li>
-        </ul>
+          <ul class="main-menu">
+              <li>
+                  <a href="../PlayStation/Playstation_page.php">
+                      <i class="fa-brands fa-playstation"></i>
+                      <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                      <li><a href="../PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                      <li><a href="../PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                      <li><a href="../PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Xbox/Xbox_page.php">
+                      <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
+              </li>
+              <li>
+                  <!--  -->
+                  <a href="../Nintendo/Nintendo_page.php">
+                      <i class="fab fa-nintendo-switch"></i>
+                      <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
+                      </i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                      <li><a href="../Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Controller\Cotroller_page.php">
+                      <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
+                              id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                      <li><a href="../Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                      <li><a href="../Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Contact.html">
+                      <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a>
+              </li>
+          </ul>
       </nav>
-    </div>
+  </header>
     <div class="main-content">
       <div class="content-wallpaper">
         <div class="container">
@@ -118,7 +121,7 @@
             <div class="product-image">
               <img
                 class="img-console"
-                src="../Picture/Nitendo_game_swtichSports_1.jpg"
+                src="/Final_project/Picture/Nitendo_game_swtichSports_1.jpg"
                 alt="Ảnh game The Legend of Zelda Tears of the Kingdom"
               />
             </div>
@@ -128,7 +131,7 @@
                 <p class="price">1.150.000</p>
                 <p class="unit-price">VND</p>
               </div>
-              <a class="add-to-cart">Thêm vào giỏ hàng</a>
+              <a href="#" class="add-to-cart" id="add-cart">Thêm vào giỏ hàng</a>
               <ul class="product-info">
                 <p>Di chuyển với Bóng đá, Bóng chuyền, Bowling, Quần vợt, Cầu lông và Chambara (Đấu kiếm) bằng bộ điều khiển Joy-Con! Các điều khiển trực quan, vì vậy bạn có thể đánh vào sân (hoặc làn đường, sân hoặc đấu trường) và bắt đầu. Với các chuyển động được kiểm soát, bạn có thể làm cong trái bóng bowling của mình, thêm độ xoáy vào một cú đánh quần vợt hoặc thậm chí sử dụng Joy-Con với phụ kiện Dây đeo chân để đá bóng trong Trận đá luân lưu. Gia đình và bạn bè có thể tham gia vui chơi trên cùng một hệ thống hoặc trực tuyến. Thêm vào đó, một môn thể thao thứ bảy được lên kế hoạch bổ sung thông qua bản cập nhật miễn phí vào mùa thu này, sẵn sàng tham gia chơi Golf!</p>
               </ul>
@@ -155,45 +158,45 @@
           </div>
             <p>Hơn mười năm trước, game thủ trên toàn thế giới sẽ rất vui mừng với sự ra mắt của Wii Sports, được phát hành cùng với Wii của Nintendo vào năm 2006. Mọi con mắt đều đổ dồn vào phong cách chơi mới sử dụng chuyển động của người chơi Thay vì nhấn các nút bằng cần điều khiển, Wii Mote đã khiến nó trở nên phổ biến ngay cả tại lễ trao giải Oscar đến nỗi nó đã được đưa lên trình chiếu.</p>            <img
             class="img-console"
-            src="../Picture/nitendo-switch-sport-1.jpg"
+            src="/Final_project/Picture/nitendo-switch-sport-1.jpg"
             alt="Ảnh chi tiết Nitendo Switch Sport 1"
           />
           <p>Và với danh tiếng này, các trại game khác vẫn đang bắt chước. và tạo ra một xu hướng game thể dục phổ biến một lần nữa của Pu Nin để tiếp tục vào năm 2009 với Wii Sports Resort, được bán kèm với các phụ kiện Wii Motion Plus giúp tăng độ chân thực khi chơi. Và tiếp tục với Câu lạc bộ Thể thao Wii trên WiiU, không thành công lắm vì nó không có gì mới. Nhưng khi nói đến các game tập thể dục, đầu tiên người ta phải nghĩ đến series Wii Sports của Grandfather Nin.</p>
           <img
           class="img-console"
-          src="../Picture/nitendo-switch-sport-2.jpg"
+          src="/Final_project/Picture/nitendo-switch-sport-2.jpg"
           alt="Ảnh chi tiết Nitendo Switch Sport 2"
         />
                <p>Tuy nhiên, xu hướng dành cho các game cảm biến chuyển động đã dần biến mất, mặc dù Grandfather Nin đã đưa nó trở lại như một phần của các bảng điều khiển lai như Nintendo Switch, nhưng game ra mắt không phải là phần tiếp theo của Wii Sports. Nhưng sau 5 năm kể từ khi phát hành Chuyển đổi, Pu Nin đã gây bất ngờ cho người hâm mộ của game với việc phát hành. Nintendo Switch Sports Đây được coi là phần mới của game thể dục huyền thoại trên Switch như tên gọi của game.</p>                
                <img
                class="img-console"
-               src="../Picture/nitendo-switch-sport-3.jpg"
+               src="/Final_project/Picture/nitendo-switch-sport-3.jpg"
                alt="Ảnh chi tiết Nitendo Switch Sport 3"
              />
                 <h2>Đồ họa trông quá đẹp mắt.</h2>
               <p>Điều đầu tiên thực sự ấn tượng là hình ảnh bất ngờ trong game vì bản gốc không tập trung vào điểm này. Và cách tiếp cận của game không tập trung vào vẻ đẹp hình ảnh mà trên Nintendo Switch Sports, Grandfather đã áp dụng công nghệ nâng cấp độ phân giải FidelityFX Super Resolution, giúp hình ảnh trở nên sắc nét hơn so với thực tế. Mặc dù hình ảnh vẫn được thiết kế theo phim hoạt hình trông dễ thương nhưng nhìn không được đẹp mắt, độ chi tiết của các cảnh phim hơn hẳn Wii Sports.</p>
               <img
               class="img-console"
-              src="../Picture/nitendo-switch-sport-4.jpg"
+              src="/Final_project/Picture/nitendo-switch-sport-4.jpg"
               alt="Ảnh chi tiết Nitendo Switch Sport 4"
             />
             <p>Còn các tính năng gốc, ký tự Mii mà ngành này không có. Nhưng có một hệ thống tạo nhân vật của riêng bạn có thể tùy chỉnh cả giới tính, ngoại hình, kiểu tóc, màu da nhưng không quá chi tiết theo lối chơi tập trung vào sự vui nhộn hơn. Các nhân vật của chúng ta chân thực hơn chứ không phải LEGO như Wii Sports, trong khi nhạc nền không bắt tai và phần lồng tiếng của game đã thay đổi. Nhưng nhìn chung thì không tệ, nhưng cá nhân tôi thích nhạc phim của phần trước hơn.</p>
             <img
             class="img-console"
-            src="../Picture/nitendo-switch-sport-5.jpg"
+            src="/Final_project/Picture/nitendo-switch-sport-5.jpg"
             alt="Ảnh chi tiết Nitendo Switch Sport 5"
           /> 
           <h2>Phong cách chơi tập trung vào gắng sức như thường lệ.</h2>   
           <p>Giống như bản gốc, lối chơi của Nintendo Switch Sports mô phỏng các môn thể thao với bộ điều khiển cảm biến chuyển động. Đổi từ Wii Mote sang Joy-con coi như tốt như trước. nhưng không nổi bật hoặc thực tế Người chơi phải lấy cần điều khiển và hành động theo game đã thiết lập. Đối với lĩnh vực này, 6 môn thể thao sẽ được bao gồm, đó là bowling, tennis và bóng đá, bóng chuyền, cầu lông, đấu kiếm và golf sẽ được bổ sung sau đó.</p>
           <img
           class="img-console"
-          src="../Picture/nitendo-switch-sport-6.jpg"
+          src="/Final_project/Picture/nitendo-switch-sport-6.jpg"
           alt="Ảnh chi tiết Nitendo Switch Sport 6"
         /> 
         <p>Đối với game quần vợt, rất dễ chơi chỉ với một cái lướt tay của bạn. Nhưng vẫn có những chi tiết như hướng đánh bóng. Ai đã từng chơi Wii Sports thì cũng vậy, không thay đổi. Tiếp tục với bowling đơn giản chỉ cần giả vờ ném bóng. và cũng sử dụng bàn phím để đặt hướng Bạn cũng có thể thực hiện động tác búng tay để ném bóng như xoay. Nó cũng đi kèm với các chế độ chơi bowling thông thường và ngoài thế giới, nơi các chướng ngại vật kỳ lạ như sàn trượt hoặc vách ngăn khiến việc chơi trở nên khó khăn hơn để thêm vào thử thách.</p>
         <img
         class="img-console"
-        src="../Picture/nitendo-switch-sport-7.jpg"
+        src="/Final_project/Picture/nitendo-switch-sport-7.jpg"
         alt="Ảnh chi tiết Nitendo Switch Sport 7"
       />
       <p>Đối với hàng rào không phải là mới kể từ Wii Sports Resort, nó hoạt động giống như bản gốc. bởi vì chúng ta phải nắm bắt niềm vui thay vì một thanh kiếm Và có thể xác định hướng cắt, đồng thời có thể dùng để lập các quân bài để ngăn chặn các đợt tấn công cần tìm phản đòn. Và cũng có một cặp kiếm để lựa chọn. Nhưng đừng lo lắng về việc nó bạo lực vì nó không phải là một thanh kiếm thật. Và mục đích là làm cho thí sinh rơi xuống nước mà thôi.</p> 
@@ -201,7 +204,7 @@
       <P>Phần mới, ‘Bóng chuyền’, rất vui, nhưng hơi hỗn loạn. Bởi vì chúng ta phải thực hiện nhiều động tác khác nhau, bao gồm giao bóng, đặt bóng, nhảy tát và nhảy khối mà chúng ta phải thực hiện theo quy định của game. Và nó có thể ra đủ mồ hôi nếu chúng ta chơi nghiêm túc, tiếp theo là “đánh cầu lông” vui hơn mong đợi vì nó sử dụng một tốc độ đáng kể so với quần vợt. và một cú tát tốc độ cao Và có một nhịp để chơi, cũng có một cú đánh rơi quả bóng phải được ép vào nhau. Riêng tôi, chơi với bạn bè càng vui thì càng vui.</P>
       <img
       class="img-console"
-      src="../Picture/nitendo-switch-sport-9.jpg"
+      src="/Final_project/Picture/nitendo-switch-sport-9.jpg"
       alt="Ảnh chi tiết Nitendo Switch Sport 8"
     />    
     <p>Nhìn chung, nếu bạn đã chơi Wii Sports trước đây, Nintendo Switch Sports vẫn không có gì khác biệt. và cũng bổ sung các môn thể thao mới Bao gồm cả việc sử dụng chân để chơi với Ngoài ra còn có một chế độ trực tuyến cho phép chúng tôi ở lại game trong một thời gian dài. Và với thời đại sinh động, tụ tập cùng nhau để chơi game trong một phòng có thể không an toàn. Ai muốn tập thể dục, đó là một lựa chọn thú vị khác, nhưng nói thẳng ra, nếu bạn muốn giảm cân nghiêm túc, tốt hơn nên đi với Ring Fit vì có một chương trình tập thể dục cố định, nhưng Nintendo Switch Sports chúng tôi phải lên lịch để chơi. kém hiệu quả Nhưng nếu chơi để giải trí, nó tốt như Wii Sports.</p>
@@ -210,16 +213,16 @@
         <aside class="sidebar">
           <h2>Gợi ý cho bạn</h2>
           <div class="product-img">
-            <a href=""
+            <a href="/Final_project/customer/Product_info\game_the_legend_of_zelda_breath_of_the_wild_nitendo.html"
               ><img
                 class="img-game"
-                src="../Picture/Nitendo_game_Zelda_BreathOfTheWild_1.jpg"
+                src="/Final_project/Picture/Nitendo_game_Zelda_BreathOfTheWild_1.jpg"
                 alt="Zelda Breath Of The Wild"
             /></a>
             <div class="product-name">
               <div class="name-wallpaper">
                 <p class="name">
-                  <a href="">THE LEGEND OF ZELDA BREATH OF THE WILD - Nintendo Switch</a>
+                  <a href="/Final_project/customer/Product_info\game_the_legend_of_zelda_breath_of_the_wild_nitendo.html">THE LEGEND OF ZELDA BREATH OF THE WILD - Nintendo Switch</a>
                 </p>
               </div>
               <div class="price-wallpaper">
@@ -232,16 +235,16 @@
             </div>
           </div>
           <div class="product-img">
-            <a href=""
+            <a href="/Final_project/customer/Product_info\game_kirby_return_to_dreamland_nitendo.html"
               ><img
                 class="img-game"
-                src="../Picture/Nitendo_game_Kirby_1.jpg"
+                src="/Final_project/Picture/Nitendo_game_Kirby_1.jpg"
                 alt="Kirby"
             /></a>
             <div class="product-name">
               <div class="name-wallpaper">
                 <p class="name">
-                  <a href="">KIRBY’S RETURN TO DREAMLAND - Nintendo Switch</a>
+                  <a href="/Final_project/customer/Product_info\game_kirby_return_to_dreamland_nitendo.html">KIRBY’S RETURN TO DREAMLAND - Nintendo Switch</a>
                 </p>
               </div>
               <div class="price-wallpaper">
@@ -254,16 +257,16 @@
             </div>
           </div>
           <div class="product-img">
-            <a href=""
+            <a href="/Final_project/customer/Product_info\game_the_witcher_3_nitendo.html"
               ><img
                 class="img-game"
-                src="../Picture/Nitendo_game_theWitcher3_!.webp"
+                src="/Final_project/Picture/Nitendo_game_theWitcher3_!.webp"
                 alt="The Wichcher3"
             /></a>
             <div class="product-name">
               <div class="name-wallpaper">
                 <p class="name">
-                  <a href="">THE WITCHER 3 WILD HUNT - Nintendo Switch</a>
+                  <a href="/Final_project/customer/Product_info\game_the_witcher_3_nitendo.html">THE WITCHER 3 WILD HUNT - Nintendo Switch</a>
                 </p>
               </div>
               <div class="price-wallpaper">
@@ -276,16 +279,16 @@
             </div>
           </div>
           <div class="product-img">
-            <a href=""
+            <a href="/Final_project/customer/Product_info\game_octopath_traveler_2_nitendo.html"
               ><img
                 class="img-game"
-                src="../Picture/Nitendo_game_OctopathTravelerII_1.jpg"
+                src="/Final_project/Picture/Nitendo_game_OctopathTravelerII_1.jpg"
                 alt="OctopathTravelerII"
             /></a>
             <div class="product-name">
               <div class="name-wallpaper">
                 <p class="name">
-                  <a href="">OCTOPATH TRAVELER II - Nintendo Switch</a>
+                  <a href="/Final_project/customer/Product_info\game_octopath_traveler_2_nitendo.html">OCTOPATH TRAVELER II - Nintendo Switch</a>
                 </p>
               </div>
               <div class="price-wallpaper">
@@ -331,17 +334,17 @@
         href="https://www.youtube.com/watch?v=bv__9O5CZok"
         target="_blank"
       >
-        <img src="../Picture/Logo_youtube.png" alt="YouTube" width="180px" />
+        <img src="/Final_project/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
       </a>
       <a href="https://www.tiktok.com" target="_blank">
-        <img src="../Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
+        <img src="/Final_project/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
       </a>
       <a href="https://www.facebook.com" target="_blank">
-        <img src="../Picture/Logo_facebook.png" alt="Facebook" width="180px" />
+        <img src="/Final_project/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
       </a>
       <a href="https://www.facebook.com/groups/ps5vietnam">
         <img
-          src="../Picture/Logo_Ps5_Group.png"
+          src="/Final_project/Picture/Logo_Ps5_Group.png"
           alt="Hội PS5 Việt Nam"
           width="180px"
         />
@@ -356,14 +359,14 @@
       <p>- Chính sách đổi trả</p>
       <br />
       <img
-        src="../Picture/Logo_BoCongthuong.png"
+        src="/Final_project/Picture/Logo_BoCongthuong.png"
         alt="Đã thông báo bộ công thương"
         width="200"
       />
     </div>
   </div>
 </footer>
-<script src="js/main.js"></script>
-<script src="js/button.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/button.js"></script>
 </body>
 </html>

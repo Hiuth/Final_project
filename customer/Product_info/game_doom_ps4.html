@@ -40,77 +40,80 @@
       });
     </script>
     <!-- Header -->
-    <div class="header-wallpaper">
+    <header class="header-wallpaper">
       <div class="header">
-        <div class="left-selection">
-          <img
-            class="Logo_website"
-            src="../Picture/Logo_web_3.png"
-            alt="logo_web"
-          />
-        </div>
-        <!-- Search bar -->
-        <div class="middle-selection">
-          <input
-            class="search-bar"
-            type="search"
-            placeholder="Tìm kiếm sản phẩm ..."
-          />
-          <button class="search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
-        <div class="right-selection">
-          <div class="cart-wallpaper">
-            <a class="Cart" href=""
-              ><span class="text-header">Giỏ Hàng /</span
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <div class="left-selection">
+              <a href="../index.php">
+                  <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
           </div>
-          <div class="cart_wallpaper_2">
-            <a class="Cart_2" href=""
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <!-- search bar -->
+          <div class="middle-selection">
+              <input class="search-bar" type="search" placeholder="Tìm kiếm sản phẩm ..." />
+              <button class="search-button">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
           </div>
-        </div>
+          <div class="right-selection">
+              <div class="cart-wallpaper" id="cart-1">
+                  <a class="Cart" href="#"><span class="text-header">Giỏ Hàng /</span><i
+                          class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+              <div class="cart_wallpaper_2" id="cart-2">
+                  <a class="Cart_2" href="#">
+                      <i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+          </div>
       </div>
-      <!-- Navigation Menu -->
+      <!-- Thanh điều hướng (menu) -->
       <div id="toggle">
-        <!-- Menu toggle button -->
-        <i class="fa-solid fa-bars"></i>
+          <!-- cái nút menu 3 gạch -->
+          <i class="fa-solid fa-bars"></i>
       </div>
       <nav>
-        <ul class="main-menu">
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-playstation"></i
-              ><span>PLAYSTATION</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fab fa-nintendo-switch"></i
-              ><span>NITENDO SWITCH</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a
-            >
-          </li>
-        </ul>
+          <ul class="main-menu">
+              <li>
+                  <a href="../PlayStation/Playstation_page.php">
+                      <i class="fa-brands fa-playstation"></i>
+                      <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                      <li><a href="../PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                      <li><a href="../PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                      <li><a href="../PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Xbox/Xbox_page.php">
+                      <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
+              </li>
+              <li>
+                  <!--  -->
+                  <a href="../Nintendo/Nintendo_page.php">
+                      <i class="fab fa-nintendo-switch"></i>
+                      <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
+                      </i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                      <li><a href="../Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Controller\Cotroller_page.php">
+                      <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
+                              id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                      <li><a href="../Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                      <li><a href="../Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Contact.html">
+                      <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a>
+              </li>
+          </ul>
       </nav>
-    </div>
+  </header>
     <div class="main-content">
       <div class="content-wallpaper">
         <div class="container">
@@ -118,7 +121,7 @@
             <div class="product-image">
               <img
                 class="img-console"
-                src="../Picture/ps4_game_Doom_1.jpg"
+                src="/Final_project/Picture/ps4_game_Doom_1.jpg"
                 alt="Game Doom"
               />
             </div>
@@ -128,7 +131,7 @@
                 <p class="price">800.000</p>
                 <p class="unit-price">VND</p>
               </div>
-              <a class="add-to-cart">Thêm vào giỏ hàng</a>
+              <a href="#" class="add-to-cart" id="add-cart">Thêm vào giỏ hàng</a>
               <div class="guarantee">
                 <h2>Bảo đảm 100% chính hãng</h2>
                 <p>
@@ -158,7 +161,7 @@
             <p>Trong một thế giới viễn tưởng nọ, cơ sở nghiên cứu trên sao Hỏa của siêu tập đoàn vũ trụ Union Aerospace Corporation (UAC) đã bị xâm chiếm bởi các thực thể gớm ghiếc bước ra từ Địa ngục. Trước tình thế cấp bách, chủ tịch của tập đoàn Samuel Hayden đã phải đánh thức “ông kẹ” của quái vật - The Doom Slayer.</p>
             <img
             class="img-console"
-            src="../Picture/doom-1.jpeg"
+            src="/Final_project/Picture/doom-1.jpeg"
             alt="Ảnh chi tiết Doom 1"
           />
           <p>Theo những dữ liệu để lại trên trạm nghiên cứu, tiến sĩ Olivia Pierce đã trở nên cuồng tín với Địa ngục và tìm mọi cách mở ra cánh cổng kết nối với thế giới tàn ác này. Tệ hơn nữa, bà có ý định tiến xa hơn khi muốn sử dụng tòa tháp năng lượng Argent của UAC nhằm tạo ra một cánh cổng địa ngục tồn tại mãi mãi.</p>
@@ -166,28 +169,28 @@
           <p>Giống như hầu hết các tựa game bắn súng góc nhìn thứ nhất, các cuộc chiến trong DOOM 4 luôn có tiết tấu nhanh và hồi hộp. Đồng thời vì không có cơ chế đỡ đạn, gameplay đòi hỏi người chơi phải liên tục ra chiến đấu nếu như không muốn phải bỏ mạng.</p>
           <img
           class="img-console"
-          src="../Picture/doom-2.jpg"
+          src="/Final_project/Picture/doom-2.jpg"
           alt="Ảnh chi tiết Doom 2"
         />
           <p>Doomguy (Doom Slayer) nhanh hơn hầu hết các quái vật trong game, chính vì thế đây sẽ là món vũ khí lợi hại mà người chơi có thể sử dụng cho cả việc tấn công hay phòng thủ. Vì những kẻ thù “dị hợm” sẽ đuổi theo bạn đến cùng, người chơi sẽ buộc phải tiêu diệt chúng tận gốc nếu muốn có một chút giây phút “bình yên”.</p>
           <p>DOOM là một tựa game đặt nặng yếu tố chiến đấu tốc độ cao, chính vì thế mà phần lớn thời của người chơi sẽ được dùng để tiêu diệt toàn bộ kẻ thù, xuôi theo mạch truyện chính. Trong quá trình đó, bạn sẽ phải thực hiện các thao tác như tìm chìa khóa đúng màu để mở cửa các căn phòng, thu thập đạn và sức mạnh dọc đường đi,... - những yếu tố được thừa hưởng trực tiếp từ người tiên phong Doom 1993.</p>  
           <img
           class="img-console"
-          src="../Picture/doom-3.jpg"
+          src="/Final_project/Picture/doom-3.jpg"
           alt="Ảnh chi tiết Doom 3"
         />
           <P>Bên cạnh đó, các Easter Egg cũng như các loại vũ khí khác nhau sẽ có thể được dễ dàng định vị trên bản đồ và người chơi sẽ phải nỗ lực “tìm kiếm” để có thể sở hữu nó. Tuy nhiên quá trình ấy sẽ không hề dễ dàng khi người chơi buộc phải vượt qua những thử thách vô cùng lắt léo, phần nào sẽ làm nhùn chí một số game thủ mất kiên nhẫn.</P>
           <p>Đối với những người chơi trung thành của series game này, quá trình phát triển từ Doomguy trở thành Doom Slayer của nhân vật chính có lẽ là một trong những phần thú vị nhất. Thuở ban đầu, anh là một người phàm với sức mạnh và ý chí chiến đấu phi thường.</p>
           <img
           class="img-console"
-          src="../Picture/doom-4.jpg"
+          src="/Final_project/Picture/doom-4.jpg"
           alt="Ảnh chi tiết Doom 4"
         />
           <p>Sau sự kiện chiến đấu chống lại tên titan khổng lồ Dreadnought, anh đã được diện kiến Samur Maykr, là cánh tay phải của The Father - người tạo ra vạn vật. Maykr đã ban cho anh một sức mạnh mà chưa có bất kỳ con quỷ nào được diện kiến, đó là khả năng hấp thụ linh hồn của những kẻ anh hạ gục, từ đó trở thành một chiến binh bất khả chiến bại.</p>
           <p>Trong DOOM 2016, có tổng cộng 27 vũ khí có thể được Doomguy sử dụng. Trong đó, toàn bộ các vũ khí hay trang bị đều mang phong cách viễn tưởng tươi lai pha lẫn với một chút đời thực.</p>
           <img
           class="img-console"
-          src="../Picture/doom-5.jpg"
+          src="/Final_project/Picture/doom-5.jpg"
           alt="Ảnh chi tiết Doom 5"
         />
           <p>Những khẩu súng trong DOOM thông thường sẽ có thể được nâng cấp thông qua hệ thống trang ngọc hoặc thông qua các vật phẩm mà người chơi thu thập được. Hai khẩu súng được cho là thông dụng và hiệu quả nhất chính là BFG9000, một trong những khẩu súng cơ bản, và Super Shotgun, khẩu súng tầm gần với sát thương cực “khủng”.</p>
@@ -195,7 +198,7 @@
 
           <img
           class="img-console"
-          src="../Picture/doom-6.jpg"
+          src="/Final_project/Picture/doom-6.jpg"
           alt="Ảnh chi tiết Doom 6"
         />
         <p>Bạn sẽ bắt đầu trò chơi bằng việc tiêu diệt một số ít những con quái vật thuộc nhiều thể loại khác nhau, một bước “làm nóng tay” cực kỳ chiến thuật đến từ đội ngũ sản xuất. Hãy cố gắng tận hưởng giây phút “trong lành ấy” vì chặng hành trình phía sau sẽ vô cùng “ngột ngạt” bởi số lượng quái vật đông như “ong vỡ tổ”.</p>
@@ -203,111 +206,110 @@
           <P>Xét về mặt đồ họa, DOOM 4 là sự cải tiến hình ảnh của không chỉ các phần game tiền nhiệm mà còn là cuộc cách mạng trong ngành công nghiệp game tại thời điểm đó. Với sự phát triển của công nghệ engine id Tech 6, gameplay của DOOM luôn được duy trì sự ổn định mượt mà, đồng thời hỗ trợ tốc độ khung hình lên đến 120Hz - con số cực khủng vào năm 2016.</P>
           <img
           class="img-console"
-          src="../Picture/doom-7.jpg"
+          src="/Final_project/Picture/doom-7.jpg"
           alt="Ảnh chi tiết Doom 7"
         />
         <p>Từ bối cảnh, cốt truyện cho đến nhân vật và trải nghiệm chiến đấu đều được đội ngũ sản xuất trau chuốt kỹ lưỡng đến từng chi tiết. Chính vì thế, không có gì bất ngờ khi các game thủ bị “cuốn” vào vòng xoáy mê hoặc của những trận chiến oanh liệt, nơi Doom Slayer “xé địch như giấy”.</p>\
         <p>Với một tựa game FPS, âm thanh là yếu tố thiết yếu để tạo nên một trải nghiệm tuyệt vời cho game thủ. Âm thanh 3D trong DOOM được phát triển vô cùng sống động, hỗ trợ người chơi xác định phương hướng của kẻ địch đồng thời tăng thêm khí thế khi chiến đấu với đông đảo quái vật.</p>
         <img
           class="img-console"
-          src="../Picture/doom-8.jpg"
+          src="/Final_project/Picture/doom-8.jpg"
           alt="Ảnh chi tiết Doom 8"
         />
           <P>Phần nhạc nền trong game được hòa âm vô cùng chất lượng, toát ra sự hào hùng và cực kỳ bắt tai trong các phân cảnh chiến đấu. Nhạc nền của DOOM sau này đã được tách ra thành một bản soundtrack riêng để người chơi có thể dễ dàng tìm nghe khi có nhu cầu.</P>
         </div>
         </div>
         <aside class="sidebar">
-            <h2>Gợi ý cho bạn</h2>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps4_game_GhostOfTsushima_1.jpg"
-                  alt="GhostOfTsushima"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">GHOST OF TSUSHIMA – ĐĨA GAME PS4 </a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.680.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          <h2>Gợi ý cho bạn</h2>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_ghost_of_tsushima_ps4.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps4_game_GhostOfTsushima_1.jpg"
+                alt="GhostOfTsushima"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_ghost_of_tsushima_ps4.html">GHOST OF TSUSHIMA – ĐĨA GAME PS4 </a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.680.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps4_game_ShinMegamiTenseiV_1.jpg"
-                  alt="ShinMegamiTenseiV"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">ShinMegamiTenseiV – ĐĨA GAME PS4</a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.550.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          </div>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_shin_megami_tensei_ps4.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps4_game_ShinMegamiTenseiV_1.jpg"
+                alt="ShinMegamiTenseiV"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_shin_megami_tensei_ps4.html">SHIN MEGAMI TENSEI V – ĐĨA GAME PS4</a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.550.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps4_game_GodOfWar_1.jpg"
-                  alt="God Of War"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">GOD OF WAR: RAGNAROK - Đĩa Game PS4</a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.400.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          </div>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_god_of_war-ragnarok_ps4.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps4_game_GodOfWar_1.jpg"
+                alt="God Of War"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_god_of_war-ragnarok_ps4.html">GOD OF WAR: RAGNAROK - ĐĨA GAME PS4</a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.400.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps4_game_Batman_1.jpg"
-                  alt="Batman 1"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">BATMAN:ARKHAM KNIGHT – ĐĨA GAME PS4</a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">630.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          </div>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_batman_arkham_knight_ps4.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps4_game_Batman_1.jpg"
+                alt="Batman 1"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_batman_arkham_knight_ps4.html">BATMAN:ARKHAM KNIGHT – ĐĨA GAME PS4</a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">630.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            </div>
-          </aside>
+          </div>
+      </aside>
         </div>
       </div>
     </body>
@@ -341,17 +343,17 @@
           href="https://youtu.be/dQw4w9WgXcQ?si=QiFbp9tAmNxaVkpt"
           target="_blank"
         >
-          <img src="../Picture/Logo_youtube.png" alt="YouTube" width="180px" />
+          <img src="/Final_project/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
         </a>
         <a href="https://www.tiktok.com" target="_blank">
-          <img src="../Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
+          <img src="/Final_project/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
         </a>
         <a href="https://www.facebook.com" target="_blank">
-          <img src="../Picture/Logo_facebook.png" alt="Facebook" width="180px" />
+          <img src="/Final_project/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
         </a>
         <a href="https://www.facebook.com/groups/ps5vietnam">
           <img
-            src="../Picture/Logo_Ps5_Group.png"
+            src="/Final_project/Picture/Logo_Ps5_Group.png"
             alt="Hội PS5 Việt Nam"
             width="180px"
           />
@@ -366,15 +368,15 @@
         <p>- Chính sách đổi trả</p>
         <br />
         <img
-          src="../Picture/Logo_BoCongthuong.png"
+          src="/Final_project/Picture/Logo_BoCongthuong.png"
           alt="Đã thông báo bộ công thương"
           width="200"
         />
       </div>
     </div>
   </footer>
-  <script src="js/main.js"></script>
-  <script src="js/button.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/button.js"></script>
   </body>
   </html>
   

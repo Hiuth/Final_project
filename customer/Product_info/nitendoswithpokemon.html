@@ -40,77 +40,80 @@
       });
     </script>
     <!-- Header -->
-    <div class="header-wallpaper">
+    <header class="header-wallpaper">
       <div class="header">
-        <div class="left-selection">
-          <img
-            class="Logo_website"
-            src="../Picture/Logo_web_3.png"
-            alt="logo_web"
-          />
-        </div>
-        <!-- Search bar -->
-        <div class="middle-selection">
-          <input
-            class="search-bar"
-            type="search"
-            placeholder="Tìm kiếm sản phẩm ..."
-          />
-          <button class="search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
-        <div class="right-selection">
-          <div class="cart-wallpaper">
-            <a class="Cart" href=""
-              ><span class="text-header">Giỏ Hàng /</span
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <div class="left-selection">
+              <a href="../index.php">
+                  <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
           </div>
-          <div class="cart_wallpaper_2">
-            <a class="Cart_2" href=""
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <!-- search bar -->
+          <div class="middle-selection">
+              <input class="search-bar" type="search" placeholder="Tìm kiếm sản phẩm ..." />
+              <button class="search-button">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
           </div>
-        </div>
+          <div class="right-selection">
+              <div class="cart-wallpaper" id="cart-1">
+                  <a class="Cart" href="#"><span class="text-header">Giỏ Hàng /</span><i
+                          class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+              <div class="cart_wallpaper_2" id="cart-2">
+                  <a class="Cart_2" href="#">
+                      <i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+          </div>
       </div>
-      <!-- Navigation Menu -->
+      <!-- Thanh điều hướng (menu) -->
       <div id="toggle">
-        <!-- Menu toggle button -->
-        <i class="fa-solid fa-bars"></i>
+          <!-- cái nút menu 3 gạch -->
+          <i class="fa-solid fa-bars"></i>
       </div>
       <nav>
-        <ul class="main-menu">
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-playstation"></i
-              ><span>PLAYSTATION</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fab fa-nintendo-switch"></i
-              ><span>NITENDO SWITCH</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a
-            >
-          </li>
-        </ul>
+          <ul class="main-menu">
+              <li>
+                  <a href="../PlayStation/Playstation_page.php">
+                      <i class="fa-brands fa-playstation"></i>
+                      <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                      <li><a href="../PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                      <li><a href="../PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                      <li><a href="../PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Xbox/Xbox_page.php">
+                      <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
+              </li>
+              <li>
+                  <!--  -->
+                  <a href="../Nintendo/Nintendo_page.php">
+                      <i class="fab fa-nintendo-switch"></i>
+                      <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
+                      </i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                      <li><a href="../Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Controller\Cotroller_page.php">
+                      <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
+                              id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                      <li><a href="../Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                      <li><a href="../Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Contact.html">
+                      <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a>
+              </li>
+          </ul>
       </nav>
-    </div>
+  </header>
     <div class="main-content">
       <div class="content-wallpaper">
         <div class="container">
@@ -118,11 +121,11 @@
             <div class="product-image">
               <img
                 class="img-console"
-                src="../Picture/Nitendo_Oled_PokemonEdition_1.jpg"
+                src="/Final_project/Picture/Nitendo_Oled_PokemonEdition_1.jpg"
                 alt="Nitendo Oled White"
               />
               <div class="product-thumbnails">
-                <img src="../Picture/Nitendo_Oled_PokemonEdition_2.jpg" alt="Nitendo Oled Redllue Thumbnail 2" />
+                <img src="/Final_project/Picture/Nitendo_Oled_PokemonEdition_2.jpg" alt="Nitendo Oled Redllue Thumbnail 2" />
               </div>
             </div>
             <div class="product-details">
@@ -131,7 +134,7 @@
                 <p class="price">7.390.000</p>
                 <p class="unit-price">VND</p>
               </div>
-              <a class="add-to-cart">Thêm vào giỏ hàng</a>
+              <a href="#" class="add-to-cart" id="add-cart">Thêm vào giỏ hàng</a>
               <ul class="product-info">
                 <li>• Bán Máy Nintendo Switch chính hãng tại TPHCM</li>
                 <li>• Bảo hành: 12 tháng</li>
@@ -183,7 +186,7 @@
             </h3>
             <img
             class="img-console"
-            src="../Picture/Nitendo_Oled_PokemonEdition_3.jpg"
+            src="/Final_project/Picture/Nitendo_Oled_PokemonEdition_3.jpg"
             alt="Ảnh chi tiết nitendo oled pokemon 3"
           />
             <p>
@@ -194,44 +197,44 @@
                 Chân đế vững chắc và linh hoạt hơn            </h2>
             <img
                 class="img-console"
-                src="../Picture/nintendo-switch-oled-pokemon-scarlet-and-violet-edition-06.jpg"
+                src="/Final_project/Picture/nintendo-switch-oled-pokemon-scarlet-and-violet-edition-06.jpg"
                 alt="Ảnh chi tiết nitendo pokemon 4"
               />
               <p>Đế dựng của Nintendo Switch OLED Model được thiết kế lại mới hoàn toàn. Toàn bộ chân đế lớn, chiếm đến một nửa diện tích mặt sau máy, giúp máy đứng vững hơn khi chơi ở chế độ Table Top. Bản lề hai bên lớn chứ không còn lỏng lẻo như trước. Không dừng ở đó, chân đế mới này còn có khả năng điều chỉnh góc nghiêng để phù hợp với vị trí ngồi của bạn.</p>
               <h2>Thêm kết nối mạng có dây</h2>
               <img
               class="img-console"
-              src="../Picture/Nitendo_Oled_PokemonEdition_5.jpg"
+              src="/Final_project/Picture/Nitendo_Oled_PokemonEdition_5.jpg"
               alt="Ảnh chi tiết nitendo oled white 5"
             />
             <p>Dock thế hệ mới của Nintendo Switch OLED Model được bổ sung thêm cổng LAN, mang đến cho bạn tùy chọn kết nối mạng có dây khi chơi trên màn hình TV. Nếu WIFI nhà bạn không đủ mạnh, hay cần đường truyền ổn định hơn trong những trận chiến game online kịch tính thì đây là một lựa chọn đáng giá. Đặc biệt chiếc Dock cũng có thể sử dụng cho máy Nintendo Switch thường trước đây.</p>
             <h2>Âm thanh hay hơn</h2>
             <img
             class="img-console"
-            src="../Picture/oled_pkm_3_01231ebd350a43f6bd84199934f19018.webp"
+            src="/Final_project/Picture/oled_pkm_3_01231ebd350a43f6bd84199934f19018.webp"
             alt="Ảnh chi tiết nitendo pokemon 6"
           />
           <p>Nintendo Switch OLED Model còn được nâng cấp khả năng âm thanh với bộ loa mới trên thân máy, lớn hơn, trong hơn, chất lượng hơn.</p>
           <h2>So sánh Máy Nintendo Switch OLED Model Neon Red Blue Joy Và Switch V1 ,V2</h2>
       <img
       class="img-console"
-      src="../Picture/Screenshot 2024-08-02 224919.png"
+      src="/Final_project/Picture/Screenshot 2024-08-02 224919.png"
       alt="Ảnh so sánh " />
           </div>
         </div>
         <aside class="sidebar">
           <h2>Gợi ý cho bạn</h2>
           <div class="product-img">
-            <a href=""
+            <a href="/Final_project/customer/Product_info\game_the_legend_of_zelda_breath_of_the_wild_nitendo.html"
               ><img
                 class="img-game"
-                src="../Picture/Nitendo_game_Zelda_BreathOfTheWild_1.jpg"
+                src="/Final_project/Picture/Nitendo_game_Zelda_BreathOfTheWild_1.jpg"
                 alt="Zelda Breath Of The Wild"
             /></a>
             <div class="product-name">
               <div class="name-wallpaper">
                 <p class="name">
-                  <a href="">THE LEGEND OF ZELDA BREATH OF THE WILD - Nintendo Switch</a>
+                  <a href="/Final_project/customer/Product_info\game_the_legend_of_zelda_breath_of_the_wild_nitendo.html">THE LEGEND OF ZELDA BREATH OF THE WILD - Nintendo Switch</a>
                 </p>
               </div>
               <div class="price-wallpaper">
@@ -244,16 +247,16 @@
             </div>
           </div>
           <div class="product-img">
-            <a href=""
+            <a href="/Final_project/customer/Product_info\game_kirby_return_to_dreamland_nitendo.html"
               ><img
                 class="img-game"
-                src="../Picture/Nitendo_game_Kirby_1.jpg"
+                src="/Final_project/Picture/Nitendo_game_Kirby_1.jpg"
                 alt="Kirby"
             /></a>
             <div class="product-name">
               <div class="name-wallpaper">
                 <p class="name">
-                  <a href="">KIRBY’S RETURN TO DREAMLAND - Nintendo Switch</a>
+                  <a href="/Final_project/customer/Product_info\game_kirby_return_to_dreamland_nitendo.html">KIRBY’S RETURN TO DREAMLAND - Nintendo Switch</a>
                 </p>
               </div>
               <div class="price-wallpaper">
@@ -266,16 +269,16 @@
             </div>
           </div>
           <div class="product-img">
-            <a href=""
+            <a href="/Final_project/customer/Product_info\game_the_witcher_3_nitendo.html"
               ><img
                 class="img-game"
-                src="../Picture/Nitendo_game_theWitcher3_!.webp"
+                src="/Final_project/Picture/Nitendo_game_theWitcher3_!.webp"
                 alt="The Wichcher3"
             /></a>
             <div class="product-name">
               <div class="name-wallpaper">
                 <p class="name">
-                  <a href="">THE WITCHER 3 WILD HUNT - Nintendo Switch</a>
+                  <a href="/Final_project/customer/Product_info\game_the_witcher_3_nitendo.html">THE WITCHER 3 WILD HUNT - Nintendo Switch</a>
                 </p>
               </div>
               <div class="price-wallpaper">
@@ -288,16 +291,16 @@
             </div>
           </div>
           <div class="product-img">
-            <a href=""
+            <a href="/Final_project/customer/Product_info\game_octopath_traveler_2_nitendo.html"
               ><img
                 class="img-game"
-                src="../Picture/Nitendo_game_OctopathTravelerII_1.jpg"
+                src="/Final_project/Picture/Nitendo_game_OctopathTravelerII_1.jpg"
                 alt="OctopathTravelerII"
             /></a>
             <div class="product-name">
               <div class="name-wallpaper">
                 <p class="name">
-                  <a href="">OCTOPATH TRAVELER II - Nintendo Switch</a>
+                  <a href="/Final_project/customer/Product_info\game_octopath_traveler_2_nitendo.html">OCTOPATH TRAVELER II - Nintendo Switch</a>
                 </p>
               </div>
               <div class="price-wallpaper">
@@ -343,17 +346,17 @@
         href="https://www.youtube.com/watch?v=bv__9O5CZok"
         target="_blank"
       >
-        <img src="../Picture/Logo_youtube.png" alt="YouTube" width="180px" />
+        <img src="/Final_project/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
       </a>
       <a href="https://www.tiktok.com" target="_blank">
-        <img src="../Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
+        <img src="/Final_project/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
       </a>
       <a href="https://www.facebook.com" target="_blank">
-        <img src="../Picture/Logo_facebook.png" alt="Facebook" width="180px" />
+        <img src="/Final_project/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
       </a>
       <a href="https://www.facebook.com/groups/ps5vietnam">
         <img
-          src="../Picture/Logo_Ps5_Group.png"
+          src="/Final_project/Picture/Logo_Ps5_Group.png"
           alt="Hội PS5 Việt Nam"
           width="180px"
         />
@@ -368,14 +371,14 @@
       <p>- Chính sách đổi trả</p>
       <br />
       <img
-        src="../Picture/Logo_BoCongthuong.png"
+        src="/Final_project/Picture/Logo_BoCongthuong.png"
         alt="Đã thông báo bộ công thương"
         width="200"
       />
     </div>
   </div>
 </footer>
-<script src="js/main.js"></script>
-<script src="js/button.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/button.js"></script>
 </body>
 </html>

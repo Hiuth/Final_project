@@ -40,77 +40,80 @@
       });
     </script>
     <!-- Header -->
-    <div class="header-wallpaper">
+    <header class="header-wallpaper">
       <div class="header">
-        <div class="left-selection">
-          <img
-            class="Logo_website"
-            src="../Picture/Logo_web_3.png"
-            alt="logo_web"
-          />
-        </div>
-        <!-- Search bar -->
-        <div class="middle-selection">
-          <input
-            class="search-bar"
-            type="search"
-            placeholder="Tìm kiếm sản phẩm ..."
-          />
-          <button class="search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
-        <div class="right-selection">
-          <div class="cart-wallpaper">
-            <a class="Cart" href=""
-              ><span class="text-header">Giỏ Hàng /</span
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <div class="left-selection">
+              <a href="../index.php">
+                  <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
           </div>
-          <div class="cart_wallpaper_2">
-            <a class="Cart_2" href=""
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <!-- search bar -->
+          <div class="middle-selection">
+              <input class="search-bar" type="search" placeholder="Tìm kiếm sản phẩm ..." />
+              <button class="search-button">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
           </div>
-        </div>
+          <div class="right-selection">
+              <div class="cart-wallpaper" id="cart-1">
+                  <a class="Cart" href="#"><span class="text-header">Giỏ Hàng /</span><i
+                          class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+              <div class="cart_wallpaper_2" id="cart-2">
+                  <a class="Cart_2" href="#">
+                      <i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+          </div>
       </div>
-      <!-- Navigation Menu -->
+      <!-- Thanh điều hướng (menu) -->
       <div id="toggle">
-        <!-- Menu toggle button -->
-        <i class="fa-solid fa-bars"></i>
+          <!-- cái nút menu 3 gạch -->
+          <i class="fa-solid fa-bars"></i>
       </div>
       <nav>
-        <ul class="main-menu">
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-playstation"></i
-              ><span>PLAYSTATION</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fab fa-nintendo-switch"></i
-              ><span>NITENDO SWITCH</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a
-            >
-          </li>
-        </ul>
+          <ul class="main-menu">
+              <li>
+                  <a href="../PlayStation/Playstation_page.php">
+                      <i class="fa-brands fa-playstation"></i>
+                      <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                      <li><a href="../PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                      <li><a href="../PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                      <li><a href="../PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Xbox/Xbox_page.php">
+                      <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
+              </li>
+              <li>
+                  <!--  -->
+                  <a href="../Nintendo/Nintendo_page.php">
+                      <i class="fab fa-nintendo-switch"></i>
+                      <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
+                      </i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                      <li><a href="../Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Controller\Cotroller_page.php">
+                      <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
+                              id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                      <li><a href="../Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                      <li><a href="../Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Contact.html">
+                      <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a>
+              </li>
+          </ul>
       </nav>
-    </div>
+  </header>
     <div class="main-content">
       <div class="content-wallpaper">
         <div class="container">
@@ -118,22 +121,22 @@
             <div class="product-image">
               <img
                 class="img-console"
-                src="../Picture/ps4_Pro1TB_2.jpg"
+                src="/Final_project/Picture/ps4_Pro1TB_2.jpg"
                 alt="PS5 Slim"
               />
               <div class="product-thumbnails">
-                <img src="../Picture/ps4_Pro1TB_1.jpg" alt="PS5 Thumbnail 2" />
-                <img src="../Picture/ps4_Pro1TB_3.jpg" alt="PS5 Thumbnail 3" />
-                <img src="../Picture/ps4_cotroller_1.jpg" alt="ps4 cotroller" />
+                <img src="/Final_project/Picture/ps4_Pro1TB_1.jpg" alt="PS5 Thumbnail 2" />
+                <img src="/Final_project/Picture/ps4_Pro1TB_3.jpg" alt="PS5 Thumbnail 3" />
+                <img src="/Final_project/Picture/ps4_cotroller_1.jpg" alt="ps4 cotroller" />
               </div>
             </div>
             <div class="product-details">
-              <h1>MÁY PS4 PRO 1TB CŨ</h1>
+              <h1>MÁY PS4 SLIM 1TB CŨ</h1>
               <div class="price-wallpaper">
-                <p class="price">10.490.000</p>
+                <p class="price">4.990.000</p>
                 <p class="unit-price">VND</p>
               </div>
-              <a class="add-to-cart">Thêm vào giỏ hàng</a>
+              <a href="#" class="add-to-cart" id="add-cart">Thêm vào giỏ hàng</a>
               <ul class="product-info">
                 <li>• Máy chơi game PlayStation 4 Pro.</li>
                 <li>• Khả năng hiển thị nội dung 4K.</li>
@@ -183,7 +186,7 @@
             <figure>
               <img
               class="img-console"
-              src="../Picture/ps4-slim-46-700x700-1.webp"
+              src="/Final_project/Picture/ps4-slim-46-700x700-1.webp"
               alt="Cấu hình Máy PS5 Slim Digital Edition – Phiên bản ổ đĩa"
             />
               <figcaption>
@@ -216,7 +219,7 @@
               </h2>
             <img
                 class="img-console"
-                src="../Picture/Screenshot 2024-08-02 222314.png"
+                src="/Final_project/Picture/Screenshot 2024-08-02 222314.png"
                 alt="Cấu hình Máy PS4 Slim"
               />
     
@@ -225,16 +228,16 @@
         <aside class="sidebar">
           <h2>Gợi ý cho bạn</h2>
           <div class="product-img">
-            <a href=""
+            <a href="/Final_project/customer/Product_info\game_ghost_of_tsushima_ps4.html"
               ><img
                 class="img-game"
-                src="../Picture/ps4_game_GhostOfTsushima_1.jpg"
+                src="/Final_project/Picture/ps4_game_GhostOfTsushima_1.jpg"
                 alt="GhostOfTsushima"
             /></a>
             <div class="product-name">
               <div class="name-wallpaper">
                 <p class="name">
-                  <a href="">GHOST OF TSUSHIMA - Đĩa Game PS4</a>
+                  <a href="/Final_project/customer/Product_info\game_ghost_of_tsushima_ps4.html">GHOST OF TSUSHIMA – ĐĨA GAME PS4 </a>
                 </p>
               </div>
               <div class="price-wallpaper">
@@ -247,16 +250,16 @@
             </div>
           </div>
           <div class="product-img">
-            <a href=""
+            <a href="/Final_project/customer/Product_info\game_shin_megami_tensei_ps4.html"
               ><img
                 class="img-game"
-                src="../Picture/ps4_game_ShinMegamiTenseiV_1.jpg"
+                src="/Final_project/Picture/ps4_game_ShinMegamiTenseiV_1.jpg"
                 alt="ShinMegamiTenseiV"
             /></a>
             <div class="product-name">
               <div class="name-wallpaper">
                 <p class="name">
-                  <a href="">ShinMegamiTenseiV - Đĩa Game PS4</a>
+                  <a href="/Final_project/customer/Product_info\game_shin_megami_tensei_ps4.html">SHIN MEGAMI TENSEI V – ĐĨA GAME PS4</a>
                 </p>
               </div>
               <div class="price-wallpaper">
@@ -269,16 +272,16 @@
             </div>
           </div>
           <div class="product-img">
-            <a href=""
+            <a href="/Final_project/customer/Product_info\game_god_of_war-ragnarok_ps4.html"
               ><img
                 class="img-game"
-                src="../Picture/ps4_game_GodOfWar_1.jpg"
+                src="/Final_project/Picture/ps4_game_GodOfWar_1.jpg"
                 alt="God Of War"
             /></a>
             <div class="product-name">
               <div class="name-wallpaper">
                 <p class="name">
-                  <a href="">GOD OF WAR: RAGNAROK - Đĩa Game PS4</a>
+                  <a href="/Final_project/customer/Product_info\game_god_of_war-ragnarok_ps4.html">GOD OF WAR: RAGNAROK - ĐĨA GAME PS4</a>
                 </p>
               </div>
               <div class="price-wallpaper">
@@ -291,16 +294,16 @@
             </div>
           </div>
           <div class="product-img">
-            <a href=""
+            <a href="/Final_project/customer/Product_info\game_batman_arkham_knight_ps4.html"
               ><img
                 class="img-game"
-                src="../Picture/ps4_game_Batman_1.jpg"
-                alt="Batman"
+                src="/Final_project/Picture/ps4_game_Batman_1.jpg"
+                alt="Batman 1"
             /></a>
             <div class="product-name">
               <div class="name-wallpaper">
                 <p class="name">
-                  <a href="">BATMAN:ARKHAM KNIGHT - Đĩa Game PS4</a>
+                  <a href="/Final_project/customer/Product_info\game_batman_arkham_knight_ps4.html">BATMAN:ARKHAM KNIGHT – ĐĨA GAME PS4</a>
                 </p>
               </div>
               <div class="price-wallpaper">
@@ -312,8 +315,7 @@
               </div>
             </div>
           </div>
-          </div>
-        </aside>
+      </aside>
       </div>
     </div>
   </body>
@@ -347,17 +349,17 @@
         href="https://youtu.be/dQw4w9WgXcQ?si=QiFbp9tAmNxaVkpt"
         target="_blank"
       >
-        <img src="../Picture/Logo_youtube.png" alt="YouTube" width="180px" />
+        <img src="/Final_project/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
       </a>
       <a href="https://www.tiktok.com" target="_blank">
-        <img src="../Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
+        <img src="/Final_project/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
       </a>
       <a href="https://www.facebook.com" target="_blank">
-        <img src="../Picture/Logo_facebook.png" alt="Facebook" width="180px" />
+        <img src="/Final_project/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
       </a>
       <a href="https://www.facebook.com/groups/ps5vietnam">
         <img
-          src="../Picture/Logo_Ps5_Group.png"
+          src="/Final_project/Picture/Logo_Ps5_Group.png"
           alt="Hội PS5 Việt Nam"
           width="180px"
         />
@@ -372,14 +374,14 @@
       <p>- Chính sách đổi trả</p>
       <br />
       <img
-        src="../Picture/Logo_BoCongthuong.png"
+        src="/Final_project/Picture/Logo_BoCongthuong.png"
         alt="Đã thông báo bộ công thương"
         width="200"
       />
     </div>
   </div>
 </footer>
-<script src="js/main.js"></script>
-<script src="js/button.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/button.js"></script>
 </body>
 </html>

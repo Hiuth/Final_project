@@ -40,77 +40,80 @@
       });
     </script>
     <!-- Header -->
-    <div class="header-wallpaper">
+    <header class="header-wallpaper">
       <div class="header">
-        <div class="left-selection">
-          <img
-            class="Logo_website"
-            src="../Picture/Logo_web_3.png"
-            alt="logo_web"
-          />
-        </div>
-        <!-- Search bar -->
-        <div class="middle-selection">
-          <input
-            class="search-bar"
-            type="search"
-            placeholder="Tìm kiếm sản phẩm ..."
-          />
-          <button class="search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
-        <div class="right-selection">
-          <div class="cart-wallpaper">
-            <a class="Cart" href=""
-              ><span class="text-header">Giỏ Hàng /</span
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <div class="left-selection">
+              <a href="../index.php">
+                  <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
           </div>
-          <div class="cart_wallpaper_2">
-            <a class="Cart_2" href=""
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <!-- search bar -->
+          <div class="middle-selection">
+              <input class="search-bar" type="search" placeholder="Tìm kiếm sản phẩm ..." />
+              <button class="search-button">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
           </div>
-        </div>
+          <div class="right-selection">
+              <div class="cart-wallpaper" id="cart-1">
+                  <a class="Cart" href="#"><span class="text-header">Giỏ Hàng /</span><i
+                          class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+              <div class="cart_wallpaper_2" id="cart-2">
+                  <a class="Cart_2" href="#">
+                      <i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+          </div>
       </div>
-      <!-- Navigation Menu -->
+      <!-- Thanh điều hướng (menu) -->
       <div id="toggle">
-        <!-- Menu toggle button -->
-        <i class="fa-solid fa-bars"></i>
+          <!-- cái nút menu 3 gạch -->
+          <i class="fa-solid fa-bars"></i>
       </div>
       <nav>
-        <ul class="main-menu">
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-playstation"></i
-              ><span>PLAYSTATION</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fab fa-nintendo-switch"></i
-              ><span>NITENDO SWITCH</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a
-            >
-          </li>
-        </ul>
+          <ul class="main-menu">
+              <li>
+                  <a href="../PlayStation/Playstation_page.php">
+                      <i class="fa-brands fa-playstation"></i>
+                      <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                      <li><a href="../PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                      <li><a href="../PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                      <li><a href="../PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Xbox/Xbox_page.php">
+                      <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
+              </li>
+              <li>
+                  <!--  -->
+                  <a href="../Nintendo/Nintendo_page.php">
+                      <i class="fab fa-nintendo-switch"></i>
+                      <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
+                      </i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                      <li><a href="../Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Controller\Cotroller_page.php">
+                      <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
+                              id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                      <li><a href="../Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                      <li><a href="../Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Contact.html">
+                      <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a>
+              </li>
+          </ul>
       </nav>
-    </div>
+  </header>
     <div class="main-content">
       <div class="content-wallpaper">
         <div class="container">
@@ -118,7 +121,7 @@
             <div class="product-image">
               <img
                 class="img-console"
-                src="../Picture/ps5_game_FinalFantasyVII_1.jpg"
+                src="/Final_project/Picture/ps5_game_FinalFantasyVII_1.jpg"
                 alt="Game FinalFantasyVII PS5"
               />
             </div>
@@ -128,7 +131,7 @@
                 <p class="price">1.650.000</p>
                 <p class="unit-price">VND</p>
               </div>
-              <a class="add-to-cart">Thêm vào giỏ hàng</a>
+              <a href="#" class="add-to-cart" id="add-cart">Thêm vào giỏ hàng</a>
               <div class="guarantee">
                 <h2>Bảo đảm 100% chính hãng</h2>
                 <p>
@@ -164,7 +167,7 @@
           <p>Bằng công nghệ mới của mình, hãng cũng đã khiến những cảnh vốn đã đáng nhớ trong bản gốc trở nên tuyệt vời hơn nữa với việc mọi nhân vật đều có giọng nói riêng được “thổi hồn” bởi dàn diễn viên đầy tài năng, xây dựng các đoạn cắt cảnh có bố trí góc quay tuyệt vời và kịch bản đầy kịch tính!</p>
             <img
             class="img-console"
-            src="../Picture/final-fantasy-vii-remake-danh-gia-game-01-1140x641.webp"
+            src="/Final_project/Picture/final-fantasy-vii-remake-danh-gia-game-01-1140x641.webp"
             alt="Ảnh chi tiết FinalFantasyVII 1"
           />
           <h2>Tính năng được cập nhật trong Final Fantasy 7 Rebirt</h2>
@@ -173,7 +176,7 @@
           <p>Ngoài ra, mỗi nhân vật còn có một đòn tấn công đặc biệt gắn liền với nút tam giác, Cloud sẽ chuyển từ chế độ Operator Mode thiên về tốc độ sang chế độ Punisher Mode với khả năng “cày cho ra bã” mọi kẻ địch, Tifa đưa ra đòn đánh sẽ tăng 5% khả năng nhận sát thương của kẻ địch khi choáng, Aerith sẽ dùng ma thuật để đưa ra một đòn tấn công từ xa với mức sát thương càng cao khi càng được gồng lâu, Barret thì dùng cánh tay của mình để bắn một loạt những viên đạn đầy uy lực…</p>
             <img
             class="img-console"
-            src="../Picture/final-fantasy-vii-remake-danh-gia-game-03-1140x641.webp"
+            src="/Final_project/Picture/final-fantasy-vii-remake-danh-gia-game-03-1140x641.webp"
             alt="Ảnh chi tiết FinalFantasyVII 2"
           />
           <p>Mặc dù lối chơi của game là sự kết hợp giữa chiến thuật và hành động nhưng thực sự trong các cuộc xung đột, bạn sẽ nhận ra rằng yếu tố chiến thuật hiện lên rất rõ. Mọi kẻ địch đều có thanh máu và thanh choáng (Stagger), nếu chỉ tập trung rút thanh máu của địch thì một trận đấu có thể kéo dài rất lâu.</p>
@@ -184,7 +187,7 @@
           <p>Do đó, bạn buộc phải hiểu thật rõ đối phương để quyết định khi nào nên sử dụng cơ chế này!</p>  
           <img
             class="img-console"
-            src="../Picture/final-fantasy-vii-remake-danh-gia-game-04-1140x641.webp"
+            src="/Final_project/Picture/final-fantasy-vii-remake-danh-gia-game-04-1140x641.webp"
             alt="Ảnh chi tiết FinalFantasyVII 3"
           />
           <h2>Am hiểu rõ về skill của nhân vật trong Final Fantasy 7 Remake REBIRTH</h2>
@@ -194,96 +197,96 @@
         </div>
         </div>
         <aside class="sidebar">
-            <h2>Gợi ý cho bạn</h2>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps5_game_AterlierRyza3_1.jpg"
-                  alt="elden-ring"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">ATER lIER RYZA 3 – ĐĨA GAME PS5 </a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.080.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          <h2>Gợi ý cho bạn</h2>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_atelier_ryza_3_ps5.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps5_game_AterlierRyza3_1.jpg"
+                alt="elden-ring"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_atelier_ryza_3_ps5.html">ATER lIER RYZA 3 – ĐĨA GAME PS5 </a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.080.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps5_game_Persona5_1.jpg"
-                  alt="PERSONA 5"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">PERSONA 5 ROYAL STEELBOOK– Đĩa Game PS5 </a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.550.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          </div>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_persona5_ps5.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps5_game_Persona5_1.jpg"
+                alt="PERSONA 5"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_persona5_ps5.html">PERSONA 5 ROYAL STEELBOOK– Đĩa Game PS5 </a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.550.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps5_game_SpiderMan2_1.jpg"
-                  alt="SPIDER-MAN2"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">MARVEL’S SPIDER-MAN 2 – ĐĨA GAME PS5 </a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.500.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          </div>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\marvel_spiderman2.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps5_game_SpiderMan2_1.jpg"
+                alt="SPIDER-MAN2"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\marvel_spiderman2.html">MARVEL’S SPIDER-MAN 2 – ĐĨA GAME PS5 </a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.500.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps5_game_HelldriversII_1.jpg"
-                  alt="HelldriversII"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">HelldriversII PS5 – Đĩa Game PS5 </a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.500.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          </div>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_helldiver2_ps5.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps5_game_HelldriversII_1.jpg"
+                alt="HelldriversII"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_helldiver2_ps5.html">HelldriversII PS5 – Đĩa Game PS5 </a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.500.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-          </aside>
+          </div>
+        </aside>
         </div>
       </div>
     </body>
@@ -317,17 +320,17 @@
           href="https://www.youtube.com/watch?v=bv__9O5CZok"
           target="_blank"
         >
-          <img src="../Picture/Logo_youtube.png" alt="YouTube" width="180px" />
+          <img src="/Final_project/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
         </a>
         <a href="https://www.tiktok.com" target="_blank">
-          <img src="../Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
+          <img src="/Final_project/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
         </a>
         <a href="https://www.facebook.com" target="_blank">
-          <img src="../Picture/Logo_facebook.png" alt="Facebook" width="180px" />
+          <img src="/Final_project/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
         </a>
         <a href="https://www.facebook.com/groups/ps5vietnam">
           <img
-            src="../Picture/Logo_Ps5_Group.png"
+            src="/Final_project/Picture/Logo_Ps5_Group.png"
             alt="Hội PS5 Việt Nam"
             width="180px"
           />
@@ -342,14 +345,14 @@
         <p>- Chính sách đổi trả</p>
         <br />
         <img
-          src="../Picture/Logo_BoCongthuong.png"
+          src="/Final_project/Picture/Logo_BoCongthuong.png"
           alt="Đã thông báo bộ công thương"
           width="200"
         />
       </div>
     </div>
   </footer>
-  <script src="js/main.js"></script>
-  <script src="js/button.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/button.js"></script>
   </body>
   </html>

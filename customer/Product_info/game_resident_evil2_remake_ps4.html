@@ -40,77 +40,80 @@
       });
     </script>
     <!-- Header -->
-    <div class="header-wallpaper">
+    <header class="header-wallpaper">
       <div class="header">
-        <div class="left-selection">
-          <img
-            class="Logo_website"
-            src="../Picture/Logo_web_3.png"
-            alt="logo_web"
-          />
-        </div>
-        <!-- Search bar -->
-        <div class="middle-selection">
-          <input
-            class="search-bar"
-            type="search"
-            placeholder="Tìm kiếm sản phẩm ..."
-          />
-          <button class="search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
-        <div class="right-selection">
-          <div class="cart-wallpaper">
-            <a class="Cart" href=""
-              ><span class="text-header">Giỏ Hàng /</span
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <div class="left-selection">
+              <a href="../index.php">
+                  <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
           </div>
-          <div class="cart_wallpaper_2">
-            <a class="Cart_2" href=""
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
+          <!-- search bar -->
+          <div class="middle-selection">
+              <input class="search-bar" type="search" placeholder="Tìm kiếm sản phẩm ..." />
+              <button class="search-button">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
           </div>
-        </div>
+          <div class="right-selection">
+              <div class="cart-wallpaper" id="cart-1">
+                  <a class="Cart" href="#"><span class="text-header">Giỏ Hàng /</span><i
+                          class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+              <div class="cart_wallpaper_2" id="cart-2">
+                  <a class="Cart_2" href="#">
+                      <i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+          </div>
       </div>
-      <!-- Navigation Menu -->
+      <!-- Thanh điều hướng (menu) -->
       <div id="toggle">
-        <!-- Menu toggle button -->
-        <i class="fa-solid fa-bars"></i>
+          <!-- cái nút menu 3 gạch -->
+          <i class="fa-solid fa-bars"></i>
       </div>
       <nav>
-        <ul class="main-menu">
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-playstation"></i
-              ><span>PLAYSTATION</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fab fa-nintendo-switch"></i
-              ><span>NITENDO SWITCH</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a
-            >
-          </li>
-        </ul>
+          <ul class="main-menu">
+              <li>
+                  <a href="../PlayStation/Playstation_page.php">
+                      <i class="fa-brands fa-playstation"></i>
+                      <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                      <li><a href="../PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                      <li><a href="../PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                      <li><a href="../PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Xbox/Xbox_page.php">
+                      <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
+              </li>
+              <li>
+                  <!--  -->
+                  <a href="../Nintendo/Nintendo_page.php">
+                      <i class="fab fa-nintendo-switch"></i>
+                      <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
+                      </i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                      <li><a href="../Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Controller\Cotroller_page.php">
+                      <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
+                              id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                      <li><a href="../Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                      <li><a href="../Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Contact.html">
+                      <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a>
+              </li>
+          </ul>
       </nav>
-    </div>
+  </header>
     <div class="main-content">
       <div class="content-wallpaper">
         <div class="container">
@@ -118,7 +121,7 @@
             <div class="product-image">
               <img
                 class="img-console"
-                src="../Picture/ps4_game_ResidentEvil2_1.jpg"
+                src="/Final_project/Picture/ps4_game_ResidentEvil2_1.jpg"
                 alt="Game Resident Evil 4 Remake"
               />
             </div>
@@ -128,7 +131,7 @@
                 <p class="price">1.050.000</p>
                 <p class="unit-price">VND</p>
               </div>
-              <a class="add-to-cart">Thêm vào giỏ hàng</a>
+              <a href="#" class="add-to-cart" id="add-cart">Thêm vào giỏ hàng</a>
               <div class="guarantee">
                 <h2>Bảo đảm 100% chính hãng</h2>
                 <p>
@@ -158,7 +161,7 @@
             <p>Trò chơi lấy bối cảnh ở Thành phố Raccoon vào tháng 9 năm 1998, hai tháng sau các sự kiện của Resident Evil. Hầu hết các công dân đã bị biến thành những thây ma không có trí óc, do sự bùng phát của một loại vũ khí sinh học virus được gọi là T-virus, do Tập đoàn Umbrella sản xuất. Trò chơi bắt đầu tại một trạm xăng bên ngoài thành phố, nơi sĩ quan cảnh sát tập sự Leon S. Kennedy (Nick Apostolides lồng tiếng) gặp sinh viên đại học Claire Redfield (Stephanie Panisello lồng tiếng), người đang tìm kiếm anh trai Chris.</p>
             <img
             class="img-console"
-            src="../Picture/Resident_Evil_2_intro.jpg"
+            src="/Final_project/Picture/Resident_Evil_2_intro.jpg"
             alt="Ảnh chi tiết Resident Evil 2 Remake 1"
           />
           <p>Sau khi bị chia cắt sau một vụ tai nạn xe hơi, Leon và Claire đồng ý gặp nhau tại sở cảnh sát của thành phố. Tòa nhà bị phá hoại bởi thây ma và những quái vật khác, bao gồm cả "Tyrant"[b], kẻ được cử đi săn lùng và giết bất kỳ người sống sót nào. Những sinh vật và những chướng ngại vật khác nhau ngăn Leon và Claire thực sự đoàn tụ khi họ buộc phải tìm cách thoát khỏi thành phố. Leon và Claire sẽ đến nhà ga vào những thời điểm khác nhau tùy theo kịch bản.</p>
@@ -167,13 +170,13 @@
           <p>Nếu như trong phiên bản đầu tiên, người chơi có thể lựa chọn nhập vai một trong hai nhân vật là Chris Redfield hoặc Jill Valentine để trải nghiệm trò chơi. Thì với Resident Evil 2, người chơi có thể hoá thân trở thành một trong hai nhân vật là Leon S. Kennedy hoặc Claire Redfield để bắt đầu cuộc hành trình điều tra của mình. </p>
           <img
             class="img-console"
-            src="../Picture/resident-evil-2-1.jpg"
+            src="/Final_project/Picture/resident-evil-2-1.jpg"
             alt="Ảnh chi tiết Resident Evil 2 Remake 2"
           />
           <p>Dưới góc nhìn thứ 3 quen thuộc, người chơi sẽ điều khiển nhân vật của mình chiến đấu với lũ xác sống, cũng như những con quái vật biến dị đầy ghê rợn, đang xuất hiện tràn lan trên khắp đường phố Raccoon City. Ngoài ra, người chơi cũng cần phải tiến hành điều tra các sự việc liên quan, nhằm thu thập chứng cứ cũng như thông tin về hoạt động sai trái của tổ chức Umbrella. Một nhiệm vụ quan trọng khác chính là ngăn chặn sự phát tác của loại siêu virus mới G-Virus. </p>
             <img
             class="img-console"
-            src="../Picture/resident-evil-2-3.jpg"
+            src="/Final_project/Picture/resident-evil-2-3.jpg"
             alt="Ảnh chi tiết Resident Evil 2 Remake 3"
           />
           <h2>Đồ hoạ, chất lượng âm thanh</h2>
@@ -181,7 +184,7 @@
           <p>Phiên bản này không chỉ cải tiến về mặt bản đồ và nó còn chia nhỏ ra thành nhiều công trình, phòng tối và chật hẹp hơn so với bản gốc. Đội ngũ thiết kế game cũng đã tăng thêm các vật trang trí để tổng thể trông đáng sợ hơn tạo áp lực tâm lý cho người chơi. </p>
           <img
           class="img-console"
-          src="../Picture/resident-evil-2-4.jpg"
+          src="/Final_project/Picture/resident-evil-2-4.jpg"
           alt="Ảnh chi tiết Resident Evil 2 Remake 4"
         />
           <P>Bên cạnh đó, là hình ảnh nhân vật hay những con quái vật, xác sống cũng được trau chuốt vô cùng kỹ lưỡng, qua đó mang đến cho người chơi những trải nghiệm sống động, chân thật và thú vị nhất. Trò chơi cũng có cho mình vô số những hiệu ứng hình ảnh khác nhau. Giúp những trận chiến hay quá trình của người chơi trở nên kịch tính, gây cấn và hấp dẫn hơn.</P>
@@ -190,97 +193,96 @@
         </div>
         </div>
         <aside class="sidebar">
-            <h2>Gợi ý cho bạn</h2>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps4_game_GhostOfTsushima_1.jpg"
-                  alt="GhostOfTsushima"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">GHOST OF TSUSHIMA – ĐĨA GAME PS4 </a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.680.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          <h2>Gợi ý cho bạn</h2>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_ghost_of_tsushima_ps4.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps4_game_GhostOfTsushima_1.jpg"
+                alt="GhostOfTsushima"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_ghost_of_tsushima_ps4.html">GHOST OF TSUSHIMA – ĐĨA GAME PS4 </a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.680.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps4_game_ShinMegamiTenseiV_1.jpg"
-                  alt="ShinMegamiTenseiV"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">ShinMegamiTenseiV – ĐĨA GAME PS4</a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.550.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          </div>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_shin_megami_tensei_ps4.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps4_game_ShinMegamiTenseiV_1.jpg"
+                alt="ShinMegamiTenseiV"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_shin_megami_tensei_ps4.html">SHIN MEGAMI TENSEI V – ĐĨA GAME PS4</a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.550.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps4_game_GodOfWar_1.jpg"
-                  alt="God Of War"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">GOD OF WAR: RAGNAROK - Đĩa Game PS4</a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">1.400.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          </div>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_god_of_war-ragnarok_ps4.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps4_game_GodOfWar_1.jpg"
+                alt="God Of War"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_god_of_war-ragnarok_ps4.html">GOD OF WAR: RAGNAROK - ĐĨA GAME PS4</a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">1.400.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            <div class="product-img">
-              <a href=""
-                ><img
-                  class="img-game"
-                  src="../Picture/ps4_game_Batman_1.jpg"
-                  alt="Batman 1"
-              /></a>
-              <div class="product-name">
-                <div class="name-wallpaper">
-                  <p class="name">
-                    <a href="">BATMAN:ARKHAM KNIGHT – ĐĨA GAME PS4</a>
-                  </p>
-                </div>
-                <div class="price-wallpaper">
-                  <p class="price">630.000</p>
-                  <p class="unit-price">VND</p>
-                </div>
-                <div class="add-cart-button">
-                  <a href="#">THÊM VÀO GIỎ HÀNG</a>
-                </div>
+          </div>
+          <div class="product-img">
+            <a href="/Final_project/customer/Product_info\game_batman_arkham_knight_ps4.html"
+              ><img
+                class="img-game"
+                src="/Final_project/Picture/ps4_game_Batman_1.jpg"
+                alt="Batman 1"
+            /></a>
+            <div class="product-name">
+              <div class="name-wallpaper">
+                <p class="name">
+                  <a href="/Final_project/customer/Product_info\game_batman_arkham_knight_ps4.html">BATMAN:ARKHAM KNIGHT – ĐĨA GAME PS4</a>
+                </p>
+              </div>
+              <div class="price-wallpaper">
+                <p class="price">630.000</p>
+                <p class="unit-price">VND</p>
+              </div>
+              <div class="add-cart-button">
+                <a href="#">THÊM VÀO GIỎ HÀNG</a>
               </div>
             </div>
-            </div>
-          </aside>
+          </div>
+      </aside>
         </div>
       </div>
     </body>
@@ -314,17 +316,17 @@
           href="https://youtu.be/dQw4w9WgXcQ?si=QiFbp9tAmNxaVkpt"
           target="_blank"
         >
-          <img src="../Picture/Logo_youtube.png" alt="YouTube" width="180px" />
+          <img src="/Final_project/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
         </a>
         <a href="https://www.tiktok.com" target="_blank">
-          <img src="../Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
+          <img src="/Final_project/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
         </a>
         <a href="https://www.facebook.com" target="_blank">
-          <img src="../Picture/Logo_facebook.png" alt="Facebook" width="180px" />
+          <img src="/Final_project/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
         </a>
         <a href="https://www.facebook.com/groups/ps5vietnam">
           <img
-            src="../Picture/Logo_Ps5_Group.png"
+            src="/Final_project/Picture/Logo_Ps5_Group.png"
             alt="Hội PS5 Việt Nam"
             width="180px"
           />
@@ -339,15 +341,15 @@
         <p>- Chính sách đổi trả</p>
         <br />
         <img
-          src="../Picture/Logo_BoCongthuong.png"
+          src="/Final_project/Picture/Logo_BoCongthuong.png"
           alt="Đã thông báo bộ công thương"
           width="200"
         />
       </div>
     </div>
   </footer>
-  <script src="js/main.js"></script>
-  <script src="js/button.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/button.js"></script>
   </body>
   </html>
   
