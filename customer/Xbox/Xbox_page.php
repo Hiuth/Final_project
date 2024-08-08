@@ -45,7 +45,7 @@
                 </div>
                 <!-- search bar -->
                 <div class="middle-selection">
-                    <form id="searchForm" action="search.php" method="GET">
+                    <form id="searchForm" action="../search.php" method="GET">
                         <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm sản phẩm ..." />
                         <button class="search-button" type="submit">
                             <i class="fa-solid fa-magnifying-glass"></i>
