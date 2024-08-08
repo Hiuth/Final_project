@@ -8,7 +8,8 @@
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $customer_id = $row['Customer_id'];
-            $conn =null;
+            $conn->close();
+            $stmt->close();
             return $customer_id;
         } else {
             //echo "Khách hàng không tồn tại trong cơ sở dữ liệu.";
@@ -16,7 +17,8 @@
             VALUES ('$username', '$gender', '$phone_number', '$address', '$email')";
             $conn->query($sql);
             $last_id = $conn->insert_id;
-            $conn =null;
+            $conn->close();
+            $stmt->close();
             return $last_id;
         }
        
@@ -55,7 +57,7 @@
         VALUES ('$Customer_id','$today','$cart_total','$note','$address','$payment_status','$shipping_status','$order_status')";
             $conn->query($sql);
             $last_id = $conn->insert_id;
-            $conn =null;
+            $conn->close();
             return $last_id;
     }
 
@@ -83,7 +85,8 @@
             VALUES ('$orders_id','$product_id','$product_quantity','$unit_price')";
              $conn->query($sql);
         }
-        $conn =null;
+        $conn->close();
+        $stmt->close();
     }
 
     function ShowProduct($category_id=[]){
@@ -146,7 +149,8 @@
             </div>';
             }
         }
-        $conn = null;
+        $conn->close();
+        $stmt->close();
         
     }
 
@@ -182,9 +186,50 @@
             </div>';
             }
         }
-        $conn = null;
+        $conn->close();
+        $stmt->close();
         
     }
 
-    
+    function SearchProduct(){
+       
+        $conn= connect();
+        $text = isset($_GET['query']) ? $conn->real_escape_string($_GET['query']) : '';  
+        $sql = "SELECT * FROM product WHERE Product_name LIKE ? OR Category_id LIKE ? OR Brand_id LIKE ?";
+       
+        $stmt = $conn->prepare($sql);
+        $search = "%$text%";
+        //$search = "%$text%";: Thêm ký tự % trước và sau từ khóa tìm kiếm để tìm các chuỗi chứa từ khóa này ở bất kỳ vị trí nào.
+        $stmt->bind_param("sss",  $search, $search, $search);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo '<div class="product-img">
+                <a href="'.$row["Product_link"].'"><img class="img-console" src="'.$row["Product_img"].'" alt="ps5_slim" /></a>
+                <div class="product-name">
+                    <div class="name-wallpaper">
+                        <p class="name">
+                            <a href="'.$row["Product_link"].'">'.$row["Product_name"].'
+                            </a>
+                        </p>
+                    </div>
+                    <div class="price-wallpaper">
+                        <p class="price">'.number_format($row["Product_price"],0,',','.').'</p>
+                        <p class="unit-price">VND</p>
+                    </div>
+                    <!-- <button class="add-cart-button">Thêm vào giỏ hàng</button> -->
+                    <div class="add-cart-button">
+                        <a href="#">THÊM VÀO GIỎ HÀNG</a>
+                    </div>
+                </div>
+            </div>';
+            }
+        }else{
+               echo"Không tìm thấy sản phẩm nào khớp với lựa chọn của bạn!!!";
+        }
+        $conn->close();
+    }
+
 ?>

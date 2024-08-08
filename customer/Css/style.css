@@ -70,6 +70,11 @@ body {
   /* background-color: white; */
 }
 
+#searchForm {
+  display: flex;
+  flex: 1;
+}
+
 .search-button {
   height: 35px;
   width: 35px;

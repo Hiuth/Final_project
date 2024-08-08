@@ -1,35 +1,11 @@
 <?php
-     require_once 'connect.php';
-     session_start();
-     include "Thuvien.php";
-     // xử lý dữ liệu được gửi từ js sang php
-     if (isset($_POST['data'])) {
-        $receivedData = json_decode($_POST['data'], true);
-        $_SESSION['productList'] = $receivedData;
-    } 
+  require_once 'connect.php';
+  include "Thuvien.php";
 
-     if (isset($_POST['btn-submit'])&&$_POST['btn-submit']) {
-         $username=$_POST['name'];
-         $gender=$_POST['gender'];
-         $email=$_POST['email'];
-         $phone_number= $_POST['phone'];
-         $address=$_POST['address'];
-         $note=$_POST['note'];
-         $total =Cart_total();
-         if(!empty($username) && !empty($gender) && !empty($email) && !empty($phone_number) && !empty($address)) {
-            $customer_id=Create_Customer_Info($username, $gender, $phone_number, $address, $email);
-            //tạo đơn hàng
-            $orders_id = Create_orders($customer_id,$total,$note,$address);
-            //tạo chi tiết đơn hàng
-            Create_orders_details($orders_id);
-         }
-    }
-     
-     
-  
+   
+
+
 ?>
-
-
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -49,11 +25,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="Css/style.css" />
     <link rel="stylesheet" href="Css/screen.css" />
-    <link rel="stylesheet" href="css/giohang.css" />
+    <link rel="stylesheet" href="Css/giohang.css" />
+    <link rel="stylesheet" href="Css/product_page.css" />
     <title>2004'S Store</title>
 </head>
-
-<body>
+<div>
     <!-- js dùng cho menu-->
     <script>
     $(document).ready(function() {
@@ -67,8 +43,8 @@
     <header class="header-wallpaper">
         <div class="header">
             <div class="left-selection">
-                <a href="./index.php">
-                    <img class="Logo_website" src="/Final_project/Picture/Logo_web_3.png" alt="logo_web" /></a>
+                <a href="index.php">
+                    <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
             </div>
             <!-- search bar -->
             <div class="middle-selection">
@@ -109,7 +85,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="./Xbox/Xbox_page.php">
+                    <a href="../Xbox/Xbox_page.php">
                         <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
                 </li>
                 <li>
@@ -140,72 +116,103 @@
             </ul>
         </nav>
     </header>
-    <!-- Thân trang -->`
 
-    <div class="main-content">
-        <div class="cart-none-product">
-            <div class="cart-tilte">
-                <span>CẢM ƠN BẠN ĐÃ ĐẶT HÀNG. CHÚNG TÔI SẼ LIÊN HỆ ĐỂ XÁC NHẬN ĐƠN HÀNG TRONG THỜI GIAN SỚM NHẤT.</span>
+    <!-- Thân trang -->
+    <div class="page-title-wall">
+        <div class="page-title">
+            <div class="left-title">
+                <h1>KẾT QUẢ TÌM KIẾM</h1>
             </div>
-            <div class="return-home">
-                <a href="index.php">QUAY TRỞ LẠI CỬA HÀNG </a>
+            <div class="right-title">
+                <form action="search.php" method="GET">
+                    <select name="sort" id="sort" onchange="this.form.submit()">
+                        <!-- khi select-box thay đổi, form sẽ tự động được gửi lệnh -->
+                        <option value="default">Mặc định</option>
+                        <option value="price-asc"
+                            <?php echo isset($_GET['sort']) && $_GET['sort'] == 'price-asc' ? 'selected' : ''; ?>>Thứ tự
+                            theo giá: thấp đến cao</option>
+                        <!-- ? toán tử điều kiện -->
+                        <option value="price-desc"
+                            <?php echo isset($_GET['sort']) && $_GET['sort'] == 'price-desc' ? 'selected' : ''; ?>>Thứ
+                            tự theo giá: cao đến thấp</option>
+                    </select>
+                </form>
             </div>
         </div>
     </div>
-    <!-- Chân trang -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="about">
-                <span class="footer-text-title">Giới Thiệu</span>
-                <p>
-                    - 2004’S Store là đơn vị bán lẻ các sản phẩm máy chơi game, tay cầm,
-                    đĩa game Sony PS4, PS5, Nintendo Switch, Microsoft Xbox One uy tín.
-                </p>
-                <br />
-                <span class="footer-text-title">ĐỊA CHỈ</span>
-                <p>- 02 Võ Oanh, Phường 25, Bình Thạnh, Hồ Chí Minh</p>
-                <p>- 9 Nguyễn Thị Định, An Phú, Quận 2, Thành phố Hồ Chí Minh</p>
-            </div>
-            <div class="contact">
-                <span class="footer-text-title">LIÊN HỆ</span>
-                <p>- Hotline: 0898.176.914 (Hồ Chí Minh)</p>
-                <p>- 0901.497.185 (TP.HCM)</p>
-                <p>- Email: 2004’sstore@gmail.com</p>
-                <br />
-                <span class="footer-text-title">THỜI GIAN LÀM VIỆC</span>
-                <p>- 9h00 Sáng – 22h00 Tối</p>
-            </div>
-            <div class="follow-us">
-                <span class="footer-text-title">Theo dõi 2004'S Store tại</span>
-                <a href="https://youtu.be/dQw4w9WgXcQ?si=QiFbp9tAmNxaVkpt" target="_blank">
-                    <img src="/Final_project/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
-                </a>
-                <a href="https://www.tiktok.com" target="_blank">
-                    <img src="/Final_project/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
-                </a>
-                <a href="https://www.facebook.com" target="_blank">
-                    <img src="/Final_project/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
-                </a>
-                <a href="https://www.facebook.com/groups/ps5vietnam">
-                    <img src="/Final_project/Picture/Logo_Ps5_Group.png" alt="Hội PS5 Việt Nam" width="180px" />
-                </a>
-            </div>
-            <div class="info">
-                <span class="footer-text-title">Thông tin</span>
-                <p>- Quy định chung</p>
-                <p>- Quy định đặt cọc</p>
-                <p>- Quy định bảo hành</p>
-                <p>- Chính sách vận chuyển</p>
-                <p>- Chính sách đổi trả</p>
-                <br />
-                <img src="/Final_project/Picture/Logo_BoCongthuong.png" alt="Đã thông báo bộ công thương" width="200" />
-            </div>
+    <div class="main-content">
+        <div class="sidebar">
+            <h2>Gợi ý cho bạn</h2>
+            <?php
+              $category_id = "Đĩa game PS5";
+              ShowRandomProduct($category_id,4);
+              $category_id_2 = "Đĩa game PS4";
+              ShowRandomProduct($category_id_2,4);
+            ?>
+
         </div>
-    </footer>
-    <script src="js/main.js"></script>
-    <script src="js/button.js"></script>
+        <div class="main-product">
+            <?php
+                  
+                   SearchProduct();
+            
+            ?>
+        </div>
+    </div>
 
-
+</div>
+<!-- Chân trang -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="about">
+            <span class="footer-text-title">Giới Thiệu</span>
+            <p>
+                - 2004’S Store là đơn vị bán lẻ các sản phẩm máy chơi game, tay cầm,
+                đĩa game Sony PS4, PS5, Nintendo Switch, Microsoft Xbox One uy tín.
+            </p>
+            <br />
+            <span class="footer-text-title">ĐỊA CHỈ</span>
+            <p>- 02 Võ Oanh, Phường 25, Bình Thạnh, Hồ Chí Minh</p>
+            <p>- 9 Nguyễn Thị Định, An Phú, Quận 2, Thành phố Hồ Chí Minh</p>
+        </div>
+        <div class="contact">
+            <span class="footer-text-title">LIÊN HỆ</span>
+            <p>- Hotline: 0898.176.914 (Hồ Chí Minh)</p>
+            <p>- 0901.497.185 (TP.HCM)</p>
+            <p>- Email: 2004’sstore@gmail.com</p>
+            <br />
+            <span class="footer-text-title">THỜI GIAN LÀM VIỆC</span>
+            <p>- 9h00 Sáng – 22h00 Tối</p>
+        </div>
+        <div class="follow-us">
+            <span class="footer-text-title">Theo dõi 2004'S Store tại</span>
+            <a href="https://youtu.be/dQw4w9WgXcQ?si=QiFbp9tAmNxaVkpt" target="_blank">
+                <img src="/Final_project/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
+            </a>
+            <a href="https://www.tiktok.com" target="_blank">
+                <img src="/Final_project/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="/Final_project/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
+            </a>
+            <a href="https://www.facebook.com/groups/ps5vietnam">
+                <img src="/Final_project/Picture/Logo_Ps5_Group.png" alt="Hội PS5 Việt Nam" width="180px" />
+            </a>
+        </div>
+        <div class="info">
+            <span class="footer-text-title">Thông tin</span>
+            <p>- Quy định chung</p>
+            <p>- Quy định đặt cọc</p>
+            <p>- Quy định bảo hành</p>
+            <p>- Chính sách vận chuyển</p>
+            <p>- Chính sách đổi trả</p>
+            <br />
+            <img src="/Final_project/Picture/Logo_BoCongthuong.png" alt="Đã thông báo bộ công thương" width="200" />
+        </div>
+    </div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/button.js"></script>
 </body>
 
 </html>

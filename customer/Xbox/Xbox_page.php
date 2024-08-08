@@ -45,10 +45,12 @@
                 </div>
                 <!-- search bar -->
                 <div class="middle-selection">
-                    <input class="search-bar" type="search" placeholder="Tìm kiếm sản phẩm ..." />
-                    <button class="search-button">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
+                    <form id="searchForm" action="search.php" method="GET">
+                        <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm sản phẩm ..." />
+                        <button class="search-button" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
                 </div>
                 <div class="right-selection">
                     <div class="cart-wallpaper" id="cart-1">
