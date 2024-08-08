@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     var addItem = event.target;
     var product = addItem.closest(".product");
-    var productImg = product.querySelector(".product-image").children[0].src;
+    var productImg = product.querySelector(".product-image .img-console").src;
     var productName =
       product.querySelector(".product-details").children[0].innerText;
     var productPrice = product.querySelector(".price").innerText;
