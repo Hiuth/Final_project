@@ -104,7 +104,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="./Product_info\test.html">
                         <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a>
                 </li>
             </ul>

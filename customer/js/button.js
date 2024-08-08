@@ -53,3 +53,47 @@ function handleMinus(x, i) {
     location.reload();
   }
 }
+
+// nút bấm di chuyển qua lại ảnh
+
+document.addEventListener("DOMContentLoaded", function () {
+  var mainImage = document.getElementById("main-image");
+  var thumbnails = document.querySelectorAll(".product-thumbnails img");
+  var currentPictureIndex = 0;
+
+  // cập nhật ảnh to và cập nhật khung viền cho ảnh nhỏ bên dưới
+  function updateMainImg(Index) {
+    mainImage.src = thumbnails[Index].src;
+    document
+      .querySelector(".product-thumbnails img.active")
+      .classList.remove("active");
+    thumbnails[Index].classList.add("active");
+  }
+  // sao lại -1 ? đơn giản thôi length nó đếm từ 1 trở đi. nhưng số thứ tự nó đếm từ 0 nên thành ra -1. giống như mảng z đó
+  document.getElementById("prev-button").addEventListener("click", function () {
+    if (currentPictureIndex > 0) {
+      currentPictureIndex = currentPictureIndex - 1;
+    } else {
+      currentPictureIndex = thumbnails.length - 1;
+    }
+    updateMainImg(currentPictureIndex);
+  });
+
+  document.getElementById("next-button").addEventListener("click", function () {
+    if (currentPictureIndex < thumbnails.length - 1) {
+      currentPictureIndex = currentPictureIndex + 1;
+    } else {
+      currentPictureIndex = 0;
+    }
+    updateMainImg(currentPictureIndex);
+  });
+
+  //bấm chuột vào ảnh nào thì cập nhật lại chỉ số
+
+  thumbnails.forEach(function (thumbnails, index) {
+    thumbnails.addEventListener("click", function () {
+      currentPictureIndex = index;
+      updateMainImg(currentPictureIndex);
+    });
+  });
+});
