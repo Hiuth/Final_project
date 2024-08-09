@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     var checkPhone = document.getElementById("phone");
     var checkEmail = document.getElementById("email");
-    if (info.phone.value.length !== 10) {
+    if (info.phone.value.length != 10) {
       checkPhone.classList.add("input-error");
       isFormTrue = false;
     } else {

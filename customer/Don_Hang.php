@@ -145,7 +145,7 @@
                     <input name="gender" type="radio" value="Nam" checked /> Nam
                     <input name="gender" type="radio" value="Nữ" /> Nữ
                 </div>
-                <div class="input-info">
+                <div class="input-info ">
                     <label for="phone_nubmer">Số điện thoại*</label>
                     <input type="tel" name="phone" id="phone" required />
                 </div>
