@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Reset default styles -->
+    <link rel="stylesheet" href="../../Css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css"
+      integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+   <link rel="stylesheet" href="../../Css/style.css"/>
+    <link rel="stylesheet" href="../../Css/screen.css" />
+   <link rel="stylesheet" href="../../Css/chitiethang.css"/>
+    <title>2004'S Store</title>
+  </head>
+  <body>
+    <!-- JS for menu toggle -->
+    <script>
+      $(document).ready(function () {
+        $("#toggle").click(function () {
+          $("nav").slideToggle();
+        });
+      });
+    </script>
+    <!-- Header -->
+    <header class="header-wallpaper">
+      <div class="header">
+          <div class="left-selection">
+              <a href="../index.php">
+                  <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
+          </div>
+          <!-- search bar -->
+          <div class="middle-selection">
+            <form id="searchForm" action="../search.php" method="GET">
+                <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm sản phẩm ..." />
+                <button class="search-button" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+          <div class="right-selection">
+              <div class="cart-wallpaper" id="cart-1">
+                  <a class="Cart" href="#"><span class="text-header">Giỏ Hàng /</span><i
+                          class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+              <div class="cart_wallpaper_2" id="cart-2">
+                  <a class="Cart_2" href="#">
+                      <i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+          </div>
+      </div>
+      <!-- Thanh điều hướng (menu) -->
+      <div id="toggle">
+          <!-- cái nút menu 3 gạch -->
+          <i class="fa-solid fa-bars"></i>
+      </div>
+      <nav>
+          <ul class="main-menu">
+              <li>
+                  <a href="../PlayStation/Playstation_page.php">
+                      <i class="fa-brands fa-playstation"></i>
+                      <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                      <li><a href="../PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                      <li><a href="../PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                      <li><a href="../PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Xbox/Xbox_page.php">
+                      <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
+              </li>
+              <li>
+                  <!--  -->
+                  <a href="../Nintendo/Nintendo_page.php">
+                      <i class="fab fa-nintendo-switch"></i>
+                      <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
+                      </i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                      <li><a href="../Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Controller\Cotroller_page.php">
+                      <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
+                              id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="../Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                      <li><a href="../Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                      <li><a href="../Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="../Contact.html">
+                      <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a>
+              </li>
+          </ul>
+      </nav>
+  </header>
+    <div class="main-content">
+      <div class="content-wallpaper">
+        <div class="container">
+          
+          </div>
+          <div class="polyci">
+            <h2>Chính Sách Đổi Trả Tại 2004'S Store</h2>
+            <p>Các sản phẩm được mua tại 2004'S Store.vn luôn được đổi trả theo đúng chính sách đổi trả như sau:</p>
+            <h2>Ðiều Kiện Đổi Trả:</h2>
+            <p>1. Còn đầy đủ phiếu bảo hành (nếu có) và phụ kiện đi kèm</ol>
+            <p>2. Ngoài ra, không thu thêm bất kỳ phí nào khác.</p>
+            <p>3. Áp dụng với sản phẩm mua tại cửa hàng 2004'S Store và trên trang web https://2004'S Store.vn/.</p>
+            <p>4. Máy đổi trả chỉ được tiếp nhận tại các cửa hàng 2004'S Store</p>
+            <p>5. Đối với các tỉnh xa từ 3 đến 5 ngày ( Không bao gồm T7, CN và ngày lễ )</p>
+            <p>6. Cửa hàng sẽ  từ chối bảo hành khi khách hàng sử dụng phụ kiện ngoài để sạc hoặc chạy thiết bị.</p>    
+            <p>Sản phẩm chỉ được đổi trả nếu đó là sản phẩm máy nguyên bản chưa qua hack, modchip hoặc can thiệp phần cứng.</p>
+            <p>Sản phẩm chỉ được đổi trả nếu sản phẩm đó có lỗi đến từ nhà sản xuất.</p>
+            <p>Sản phẩm chỉ được đổi trả trong thời hạn 07 ngày kể từ ngay mua sản phẩm.</p>
+            <p>Sau khi mua hàng và sản phẩm được mang đi rời khỏi shop thì sản phẩm sẽ không được đổi trả với lý do khách hàng không ưng, không thích, hay không hợp màu sắc.</p>
+           <h2>Khái Niệm Về Bảo Hành:</h2>
+        <p>– Khách hàng đem máy lên hệ thống 2004'S Store hoặc đem trực tiếp lên hãng để được bảo hành.</p>
+        <p>– Tuỳ vào thời hạn bảo hành còn lại của sản phẩm, 2004'S Store sẽ gửi máy đến trung tâm bảo hành hãng hoặc bảo hành trực tiếp tại trung tâm bảo hành 2004'S Store, đối tác. Chính sách, quy trình và các nghiệp vụ sửa chữa bảo hành tại 3GgameShop giống với bảo hành tại hãng./p>
+            <h2>Terms And Conditions Of Return: </h2>
+            <p>1. Comes with a full warranty (if applicable) and all original accessories.<p>
+            <p>2. In addition, no additional fees will be charged.</p>
+            <p>3. Applicable to products purchased at 2004'S Store stores and on the website https://2004'S Store.vn/.</p>
+            <p>4. Please note that returns can only be processed at our physical 2004'S Store.</p>
+            <p>5. The store will refuse warranty if customers use third-party accessories to charge or operate the device.</p>
+            <p>6. Products can only be exchanged if they are original machines that have not been hacked, modded, or had their hardware tampered with.</p>    
+            <p>Sản phẩm chỉ được đổi trả nếu đó là sản phẩm máy nguyên bản chưa qua hack, modchip hoặc can thiệp phần cứng.</p>
+            <p>7. Products can only be returned if they are faulty from the factory.</p>
+            <p>8. Products can only be exchanged within 7 days from the date of purchase.</p>
+            <p>9. After purchasing an item and taking it out of the shop, the product cannot be exchanged or returned due to customer dissatisfaction, dislike, or color mismatch.</p>
+           <h2>Warranty Concept:</h2>
+        <p>– Customers can bring their devices to the 2004'S Store system or directly to the manufacturer for warranty service.</p>
+        <p>– Depending on the remaining warranty period of the product, 2004'S Store will send the device to the manufacturer’s warranty center or provide direct warranty service at 2004'S Store warranty center, partner. Policies, procedures, and warranty repair services at 2004'S Store are similar to the manufacturer’s warranty./p>
+</div>
+        </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>
+ <!-- Chân trang -->
+ <footer class="footer">
+  <div class="footer-content">
+    <div class="about">
+      <span class="footer-text-title">Giới Thiệu</span>
+      <p>
+        - 2004’S Store là đơn vị bán lẻ các sản phẩm máy chơi game, tay cầm,
+        đĩa game Sony PS4, PS5, Nintendo Switch, Microsoft Xbox One uy tín.
+      </p>
+      <br />
+      <span class="footer-text-title">ĐỊA CHỈ</span>
+      <p>- 02 Võ Oanh, Phường 25, Bình Thạnh, Hồ Chí Minh</p>
+      <p>- 9 Nguyễn Thị Định, An Phú, Quận 2, Thành phố Hồ Chí Minh</p>
+    </div>
+    <div class="contact">
+      <span class="footer-text-title">LIÊN HỆ</span>
+      <p>- Hotline: 0898.176.914 (Hồ Chí Minh)</p>
+      <p>- 0901.497.185 (TP.HCM)</p>
+      <p>- Email: 2004’sstore@gmail.com</p>
+      <br />
+      <span class="footer-text-title">THỜI GIAN LÀM VIỆC</span>
+      <p>- 9h00 Sáng – 22h00 Tối</p>
+    </div>
+    <div class="follow-us">
+      <span class="footer-text-title">Theo dõi 2004'S Store tại</span>
+      <a
+        href="https://www.youtube.com/watch?v=bv__9O5CZok"
+        target="_blank"
+      >
+        <img src="/Final_project/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
+      </a>
+      <a href="https://www.tiktok.com" target="_blank">
+        <img src="/Final_project/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
+      </a>
+      <a href="https://www.facebook.com" target="_blank">
+        <img src="/Final_project/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
+      </a>
+      <a href="https://www.facebook.com/groups/ps5vietnam">
+        <img
+          src="/Final_project/Picture/Logo_Ps5_Group.png"
+          alt="Hội PS5 Việt Nam"
+          width="180px"
+        />
+      </a>
+    </div>
+    <div class="info">
+      <span class="footer-text-title">Thông tin</span>
+      <p>- Quy định chung</p>
+      <p>- Quy định đặt cọc</p>
+      <p>- Quy định bảo hành</p>
+      <p>- Chính sách vận chuyển</p>
+      <p>- Chính sách đổi trả</p>
+      <br />
+      <img
+        src="/Final_project/Picture/Logo_BoCongthuong.png"
+        alt="Đã thông báo bộ công thương"
+        width="200"
+      />
+    </div>
+  </div>
+</footer>
+<script src="../../js/main.js"></script>
+<script src="../../js/button.js"></script>
+</body>
+</html>

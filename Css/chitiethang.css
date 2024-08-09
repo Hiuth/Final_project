@@ -162,6 +162,9 @@
 .img-console {
   width: 100%;
 }
+.img-conect {
+  width: 100%;
+}
 .img-game {
   width: 100%;
 }
@@ -263,4 +266,22 @@
 .product-thumbnails img.active {
   border: 2px solid #000;
   opacity: 1;
+}
+.polyci {
+  margin-top: 20px;
+}
+.polyci h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+.polyci h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #333;
+}
+.polyci p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #555;
 }
