@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Reset default styles -->
-    <link rel="stylesheet" href="../../Css/reset.css" />
+    <link rel="stylesheet" href="../Css/reset.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -25,10 +25,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-   <link rel="stylesheet" href="../../Css/style.css"/>
-    <link rel="stylesheet" href="../../Css/screen.css" />
-   <link rel="stylesheet" href="../../Css/chitiethang.css"/>
+   <link rel="stylesheet" href="../Css/style.css"/>
+    <link rel="stylesheet" href="../Css/screen.css" />
+   <link rel="stylesheet" href="../Css/chitiethang.css"/>
     <title>2004'S Store</title>
+    <style>
+      .main-content{
+          max-width: 60%;
+      }
+      </style>
   </head>
   <body>
     <!-- JS for menu toggle -->
@@ -43,12 +48,12 @@
     <header class="header-wallpaper">
       <div class="header">
           <div class="left-selection">
-              <a href="../index.php">
+              <a href="index.php">
                   <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
           </div>
           <!-- search bar -->
           <div class="middle-selection">
-            <form id="searchForm" action="../search.php" method="GET">
+            <form id="searchForm" action="search.php" method="GET">
                 <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm sản phẩm ..." />
                 <button class="search-button" type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -74,43 +79,43 @@
       <nav>
           <ul class="main-menu">
               <li>
-                  <a href="../PlayStation/Playstation_page.php">
+                  <a href="./PlayStation/Playstation_page.php">
                       <i class="fa-brands fa-playstation"></i>
                       <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
                   <ul class="menu-child">
-                      <li><a href="../PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
-                      <li><a href="../PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
-                      <li><a href="../PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
-                      <li><a href="../PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                      <li><a href="./PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                      <li><a href="./PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                      <li><a href="./PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                      <li><a href="./PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
                   </ul>
               </li>
               <li>
-                  <a href="../Xbox/Xbox_page.php">
+                  <a href="./Xbox/Xbox_page.php">
                       <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
               </li>
               <li>
                   <!--  -->
-                  <a href="../Nintendo/Nintendo_page.php">
+                  <a href="./Nintendo/Nintendo_page.php">
                       <i class="fab fa-nintendo-switch"></i>
                       <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
                       </i></a>
                   <ul class="menu-child">
-                      <li><a href="../Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                      <li><a href="./Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
                       <li><a href="../Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
                   </ul>
               </li>
               <li>
-                  <a href="../Controller\Cotroller_page.php">
+                  <a href="./Controller\Cotroller_page.php">
                       <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
                               id="icon-down"></i></span></i></a>
                   <ul class="menu-child">
-                      <li><a href="../Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
-                      <li><a href="../Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
-                      <li><a href="../Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
+                      <li><a href="./Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                      <li><a href="./Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                      <li><a href="./Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
                   </ul>
               </li>
               <li>
-                  <a href="../Contact.html">
+                  <a href="./Contact.html">
                       <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a>
               </li>
           </ul>
@@ -122,21 +127,18 @@
           
           </div>
           <div class="polyci">
-            <h3>Với phương châm luôn đảm bảo những quyền lợi tốt nhất cho khách hàng, 2004'S Store cung cấp dịch vụ vận chuyển sản phẩm tận tay/vận chuyển ship COD, mang lại sự tiện ích và đáp ứng nhu cầu mua sắm của mọi khách hàng trên khắp toàn quốc, thoải mái lựa chọn sản phẩm thông qua website hay mua trực tiếp tại cửa hàng 2004'S Store.
-                2004'S Store sử dụng hình thức giao hàng Vận chuyển ship COD</h3>
-            <h2>THỜI GIAN GIAO HÀNG</h2>
-              <p>• Giao Hàng từ 1 đến 3 Giờ kể từ khi chốt đơn xuất bill cho khách đối với các quận nội thành</ol>
-                <p>• Ngoài việc sử dụng, người dùng cần có trách nhiệm về việc bảo mật tài khoản cá nhân của mình và một số thông tin khác như tên tuổi, địa chỉ,… nhằm đảm bảo quyền lợi riêng và hỗ trợ 2004'S Store phục vụ người dùng tốt hơn.</p>
-            <p>• Giao hàng từ 3 đến 5 giờ kể từ khi chốt đơn xuất bill cho khách đối với các quận: 9, 12, Thủ Đức, Bình Chánh</p>
-           <p>• Đối với các quận huyện ngoại thành: Hóc Môn, Củ Chi, Bình Dương giao hàng qua EMS từ 24h đến 48h ( Không bao gồm T7, CN và ngày lễ )</p>
-            <p>• Đối với các tỉnh xa từ 3 đến 5 ngày ( Không bao gồm T7, CN và ngày lễ )</p>
-            <p>• Đối với tỉnh, thành phố trực thuộc biển đảo tùy theo điều kiện thời tiết và diễn biến của dịch bệnh từ 7 ngày trở lên.</p>    
-           <h2>QUYỀN LỢI KHÁCH HÀNG</h2>
-        <p>• Đảm bảo giao hàng đúng thời hạn đã cam kết.</p>
-        <p>• Hàng sẽ được gửi đến đúng địa chỉ mà khách hàng đã đăng ký trong đơn hàng khi thanh toán.</p>
-        <p>Lưu ý: Đối với trường hợp khách hàng ở Tỉnh không thuộc TP.HCM. Khi chọn hình thức thanh toán bằng tiền mặt khi nhận hàng ( COD  2004'S Store). Chỉ tiến hành gửi hàng sau khi nhận cọc 30% từ phía khách hàng. Vì vậy để sớm nhận được sản phẩm, quý khách vui lòng tiến hành thủ tục chuyển tiền đặt cọc. Chân thành cảm ơn Quý khách!
-            Vận chuyển ship COD</p>
-        
+            <h2>CHÍNH SÁCH BẢO HÀNH</h2>
+            <h2>1. Đối Với Hàng Nhập Khẩu</h2>
+              <p>–  Sản phẩm được bảo hành sữa chữa toàn phần tại 2004'S Store, thời gian bảo hành tùy vào từng sản phẩm và gói bảo hành mà khách hàng lựa chọn và được ghi rõ trên hóa đơn.</ol>
+                <p>–  Thời gian bảo hành sửa chữa có thể lên đến 45 ngày đối với các thiết bị máy chơi game mà có mức độ hư hại nặng. Nhưng phần lớn sẽ được hoàn thành trong khoảng 3-7 ngày. Đối với các sản phẩm tay cầm, thời gian bảo hành sẽ trong khoảng 3-5 ngày.</p>
+            <p>–  Quy định tiếp nhận bảo hành của 2004'S Store là trong mọi trường hợp sản phẩm gặp sự cố về phần cứng, hay phần mềm, mức độ nặng hay nhẹ thì 2004'S Store chỉ tiếp nhận sản phẩm trước và sẽ thông báo về lỗi cụ thể kèm ngày trả sản phẩm bảo hành sau 48h kể từ ngày tiếp nhận. Nhưng thông thường thời gian trên cũng nhanh hơn đang kể.</p>
+           <p>– Tất cả sản phẩm máy chơi game của 2004'S Store được bảo hành điện tử theo số điện thoại của khách hàng. Quý khách chỉ cần xuất trình hoặc lưu trữ hóa đơn đối với các sản phẩm tay cầm, phụ kiện..</p>
+        <h2>2. Đối Với Hàng Chính Hãng Phân Phối Tại Việt Nam</h2>
+        <p>– Sản phẩm được phân phối chính hãng tại Việt Nam sẽ do trung tâm bảo hành chính hãng của công ty bảo hành. Vì vậy việc bảo hành chính hãng khách hàng sẽ đem qua địa chỉ của hãng để đơn vị tiếp nhận bảo hành. Khi mua hàng phân phối chính hãng quí khách sẽ nhận được tin nhắn kích hoạt bảo hành của hãng, thông tin số seri và thời hạn bảo hành.</p>
+        <h2>ĐIỀU KIỆN BẢO HÀNH</h2>
+        <p>– Sản phẩm bảo hành phải được giữ nguyên 100% hình dạng ban đầu. Sản phẩm không có hiện tượng bị rơi rớt, trầy xước, móp méo, va đập, tự ý tháo máy để sửa chữa hoặc các hiện tượng không bình thường như lúc xuất xưởng mà do người dùng gây ra.</p>
+        <p>– Sản phẩm chỉ dùng cho mục đích cá nhân, không sử dụng sản phẩm cho mục đích thương mại</p>
+        <p>– Đối với trường hợp bảo hành đổi mới trong 1 tuần thì sản phẩm cần nguyên trạng từ máy cho đến phụ kiện và hộp sách, các loại dây đi kèm đều đầy đủ và nguyên bản</p>
 </div>
         </div>
             </div>
@@ -193,11 +195,11 @@
     </div>
     <div class="info">
       <span class="footer-text-title">Thông tin</span>
-      <p>- Quy định chung</p>
-      <p>- Quy định đặt cọc</p>
-      <p>- Quy định bảo hành</p>
-      <p>- Chính sách vận chuyển</p>
-      <p>- Chính sách đổi trả</p>
+      <a href="quy_dinh_chung.html"> <p>- Quy định chung</p></a>
+      <a href="quy_dinh_dat_tra_gop.html"><p>- Quy định đặt cọc</p></a>
+      <a href="quy_dinh_bao_hanh.html"><p>- Quy định bảo hành</p></a>
+      <a href="quy_dinh_van_chuyen.html"><p>- Chính sách vận chuyển</p></a>
+      <a href="quy_dinh_doi_tra.html"><p>- Chính sách đổi trả</p></a>
       <br />
       <img
         src="/Final_project/Picture/Logo_BoCongthuong.png"
@@ -207,7 +209,7 @@
     </div>
   </div>
 </footer>
-<script src="../../js/main.js"></script>
-<script src="../../js/button.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/button.js"></script>
 </body>
 </html>

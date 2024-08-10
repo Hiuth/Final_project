@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Reset default styles -->
-    <link rel="stylesheet" href="../../Css/reset.css" />
+    <link rel="stylesheet" href="../Css/reset.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -25,10 +25,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-   <link rel="stylesheet" href="../../Css/style.css"/>
-    <link rel="stylesheet" href="../../Css/screen.css" />
-   <link rel="stylesheet" href="../../Css/chitiethang.css"/>
+   <link rel="stylesheet" href="../Css/style.css"/>
+    <link rel="stylesheet" href="../Css/screen.css" />
+   <link rel="stylesheet" href="../Css/chitiethang.css"/>
     <title>2004'S Store</title>
+    <style>
+      .main-content{
+          max-width: 60%;
+      }
+      </style>
   </head>
   <body>
     <!-- JS for menu toggle -->
@@ -43,12 +48,12 @@
     <header class="header-wallpaper">
       <div class="header">
           <div class="left-selection">
-              <a href="../index.php">
+              <a href="index.php">
                   <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
           </div>
           <!-- search bar -->
           <div class="middle-selection">
-            <form id="searchForm" action="../search.php" method="GET">
+            <form id="searchForm" action="search.php" method="GET">
                 <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm sản phẩm ..." />
                 <button class="search-button" type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -74,43 +79,43 @@
       <nav>
           <ul class="main-menu">
               <li>
-                  <a href="../PlayStation/Playstation_page.php">
+                  <a href="./PlayStation/Playstation_page.php">
                       <i class="fa-brands fa-playstation"></i>
                       <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
                   <ul class="menu-child">
-                      <li><a href="../PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
-                      <li><a href="../PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
-                      <li><a href="../PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
-                      <li><a href="../PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                      <li><a href="./PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                      <li><a href="./PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                      <li><a href="./PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                      <li><a href="./PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
                   </ul>
               </li>
               <li>
-                  <a href="../Xbox/Xbox_page.php">
+                  <a href="./Xbox/Xbox_page.php">
                       <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
               </li>
               <li>
                   <!--  -->
-                  <a href="../Nintendo/Nintendo_page.php">
+                  <a href="./Nintendo/Nintendo_page.php">
                       <i class="fab fa-nintendo-switch"></i>
                       <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
                       </i></a>
                   <ul class="menu-child">
-                      <li><a href="../Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                      <li><a href="./Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
                       <li><a href="../Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
                   </ul>
               </li>
               <li>
-                  <a href="../Controller\Cotroller_page.php">
+                  <a href="./Controller\Cotroller_page.php">
                       <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
                               id="icon-down"></i></span></i></a>
                   <ul class="menu-child">
-                      <li><a href="../Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
-                      <li><a href="../Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
-                      <li><a href="../Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
+                      <li><a href="./Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                      <li><a href="./Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                      <li><a href="./Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
                   </ul>
               </li>
               <li>
-                  <a href="../Contact.html">
+                  <a href="./Contact.html">
                       <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a>
               </li>
           </ul>
@@ -208,11 +213,11 @@
     </div>
     <div class="info">
       <span class="footer-text-title">Thông tin</span>
-      <p>- Quy định chung</p>
-      <p>- Quy định đặt cọc</p>
-      <p>- Quy định bảo hành</p>
-      <p>- Chính sách vận chuyển</p>
-      <p>- Chính sách đổi trả</p>
+      <a href="quy_dinh_chung.html"> <p>- Quy định chung</p></a>
+      <a href="quy_dinh_dat_tra_gop.html"><p>- Quy định đặt cọc</p></a>
+      <a href="quy_dinh_bao_hanh.html"><p>- Quy định bảo hành</p></a>
+      <a href="quy_dinh_van_chuyen.html"><p>- Chính sách vận chuyển</p></a>
+      <a href="quy_dinh_doi_tra.html"><p>- Chính sách đổi trả</p></a>
       <br />
       <img
         src="/Final_project/Picture/Logo_BoCongthuong.png"

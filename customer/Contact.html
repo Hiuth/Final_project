@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Reset default styles -->
+    <link rel="stylesheet" href="../Css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css"
+      integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+   <link rel="stylesheet" href="../Css/style.css"/>
+    <link rel="stylesheet" href="../Css/screen.css" />
+   <link rel="stylesheet" href="../Css/chitiethang.css"/>
+    <title>2004'S Store</title>
+    <style>
+        .main-content{
+            max-width: 60%;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- JS for menu toggle -->
+    <script>
+      $(document).ready(function () {
+        $("#toggle").click(function () {
+          $("nav").slideToggle();
+        });
+      });
+    </script>
+    <!-- Header -->
+    <header class="header-wallpaper">
+      <div class="header">
+          <div class="left-selection">
+              <a href="./index.php">
+                  <img class="Logo_website" src="/Final_project/Picture\Logo_web_3.png" alt="logo_web" /></a>
+          </div>
+          <!-- search bar -->
+          <div class="middle-selection">
+            <form id="searchForm" action="search.php" method="GET">
+                <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm sản phẩm ..." />
+                <button class="search-button" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+          <div class="right-selection">
+              <div class="cart-wallpaper" id="cart-1">
+                  <a class="Cart" href="#"><span class="text-header">Giỏ Hàng /</span><i
+                          class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+              <div class="cart_wallpaper_2" id="cart-2">
+                  <a class="Cart_2" href="#">
+                      <i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+          </div>
+      </div>
+      <!-- Thanh điều hướng (menu) -->
+      <div id="toggle">
+          <!-- cái nút menu 3 gạch -->
+          <i class="fa-solid fa-bars"></i>
+      </div>
+      <nav>
+          <ul class="main-menu">
+              <li>
+                  <a href="./PlayStation/Playstation_page.php">
+                      <i class="fa-brands fa-playstation"></i>
+                      <span>PLAYSTATION <i class="fa-solid fa-angle-down" id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="./PlayStation/Playstation5_page.php">PLAYSTATION 5</a></li>
+                      <li><a href="./PlayStation/Playstation5_game_page.php">ĐĨA GAME PS5</a></li>
+                      <li><a href="./PlayStation/Playstation4_page.php">PLAYSTATION 4</a></li>
+                      <li><a href="./PlayStation/Playstation4_game_page.php">ĐĨA GAME PS4</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="./Xbox/Xbox_page.php">
+                      <i class="fa-brands fa-xbox"></i><span>MICROSOFT XBOX</span></a>
+              </li>
+              <li>
+                  <!--  -->
+                  <a href="./Nintendo/Nintendo_page.php">
+                      <i class="fab fa-nintendo-switch"></i>
+                      <span>NINTENDO SWITCH <i class="fa-solid fa-angle-down" id="icon-down"></i></span>
+                      </i></a>
+                  <ul class="menu-child">
+                      <li><a href="./Nintendo\Nintendo_swtich.php">MÁY NINTENDO SWITCH</a></li>
+                      <li><a href="./Nintendo\Nintendo_game.php">GAME NINTENDO SWITCH</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="./Controller\Cotroller_page.php">
+                      <i class="fa-solid fa-gamepad"></i><span>TAY CẦM GAME <i class="fa-solid fa-angle-down"
+                              id="icon-down"></i></span></i></a>
+                  <ul class="menu-child">
+                      <li><a href="./Controller\Ps5_cotroller.php">TAY CẦM PS5</a></li>
+                      <li><a href="./Controller\Nintendo_cotroller.php">TAY CẦM NINTENDO SWITCH</a></li>
+                      <li><a href="./Controller\Xbox_controller.php">TAY CẦM XBOX</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="./Contact.html">
+                      <i class="fa-solid fa-paper-plane"></i><span>LIÊN HỆ</span></a>
+              </li>
+          </ul>
+      </nav>
+  </header>
+    <div class="main-content">
+      <div class="content-wallpaper">
+        <div class="container">
+          
+          </div>
+          <div class="polyci">
+            <h2>LIÊN HỆ</h2>
+            <img
+            class="img-conect"
+            src="/Final_project/Picture/355542e18b016c5f3510-2-746x1024.webp"
+            alt="Ảnh liên hệ"
+          />
+            <h2>GIỚI THIỆU</h2>
+            <p>• 2004'S Store đơn vị bán lẻ các sản phẩm máy chơi game, tay cầm, đĩa game, phụ kiện chính hãng Sony PS4, PS3, PS2, Nintendo Switch, Microsoft Xbox One…</ol>
+                <img
+                class="img-conect"
+                src="/Final_project/Picture/335081490_1425520328184691_7062341199780074540_n.jpg"
+                alt="Ảnh liên hệ"
+              />
+                <p>• Thương hiệu được ra đời vào tháng 5/2008 bởi những gì tận tâm và nhiệt huyết nhất. Đến bây giờ chúng tôi vẫn luôn luôn nỗ lực hàng ngày để hoàn thiện tốt hơn, để đem đến cho khách hàng những trải nghiệm tốt nhất khi mua sắm và sử dụng dịch vụ của chúng tôi</p>
+            <p>• Ngoài là một thương hiệu bán lẻ 2004'S Store còn là 1 trang thương mại điện tử lớn và có bề dày thành tích lịch sử mua hàng, với những lượt review 5 sao cực cao trên các sản phẩm bán tại các trang TMĐT như Lazada, Shopee, Tiki..</p>
+            <p>• Với bề dày kinh nghiệm nhiều năm trong mảng kinh doanh giải trí máy chơi game chính hãng, chúng tôi luôn biết rằng uy tín và trách nhiệm là những thứ vô cùng quan trọng để giúp chúng tôi không ngừng vươn xa, nhằm tạo lòng tin tuyệt đối với khách hàng của chúng tôi.</p>
+            <img
+            class="img-conect"
+            src="/Final_project/Picture/z4724433381232_c0bcd44bd481e84e792b8c3147a6ad7f (1).jpg"
+            alt="Ảnh liên hệ"
+          />
+            <p>• Sản phẩm của 2004'S Store bảo đảm và cam kết 100% thông tin chính xác đến với từng sản phẩm, rõ nguồn gốc, chất lượng, giá luôn rẻ nhất, cập nhật nhanh nhất.</p>
+            <p>• Để cùng phát triển lợi ích của quý khách hàng 2004'S Store luôn mong muốn những ý kiến đóng góp tích cực của quý khách hàng khi trải nghiệm mua sắm tại 2004'S Store.</p>    
+          <h4>  LIÊN HỆ NGAY VỚI 34GAMESHOP</h4>
+          <p>• Điện thoại:
+            - 0901.497.185
+            - 0898176914</p>
+          <p>• Địa chỉ:<br>
+            - 02 Võ Oanh, Phường 25, Bình Thạnh, Hồ Chí Minh<br>
+
+            - 9 Nguyễn Thị Định, An Phú, Quận 2, Thành phố Hồ Chí Minh
+          </p>
+          <p>• Số tài khoản:</p>
+          <p>• Mã Số Thuế : 0105705487</p>
+          <p>• Hộ kinh doanh, GPKD Số 01K8071841 do Cục Trưởng của Ủy Ban Nhân Dân quận Bình Thạnh, TP. Hồ Chí Minh cấp ngày 10/03/2017.</p>
+</div>
+        </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>
+ <!-- Chân trang -->
+ <footer class="footer">
+    <div class="footer-content">
+      <div class="about">
+        <span class="footer-text-title">Giới Thiệu</span>
+        <p>
+          - 2004’S Store là đơn vị bán lẻ các sản phẩm máy chơi game, tay cầm,
+          đĩa game Sony PS4, PS5, Nintendo Switch, Microsoft Xbox One uy tín.
+        </p>
+        <br />
+        <span class="footer-text-title">ĐỊA CHỈ</span>
+        <p>- 02 Võ Oanh, Phường 25, Bình Thạnh, Hồ Chí Minh</p>
+        <p>- 9 Nguyễn Thị Định, An Phú, Quận 2, Thành phố Hồ Chí Minh</p>
+      </div>
+      <div class="contact">
+        <span class="footer-text-title">LIÊN HỆ</span>
+        <p>- Hotline: 0898.176.914 (Hồ Chí Minh)</p>
+        <p>- 0901.497.185 (TP.HCM)</p>
+        <p>- Email: 2004’sstore@gmail.com</p>
+        <br />
+        <span class="footer-text-title">THỜI GIAN LÀM VIỆC</span>
+        <p>- 9h00 Sáng – 22h00 Tối</p>
+      </div>
+      <div class="follow-us">
+        <span class="footer-text-title">Theo dõi 2004'S Store tại</span>
+        <a
+          href="https://www.youtube.com/watch?v=bv__9O5CZok"
+          target="_blank"
+        >
+          <img src="/Final_project/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
+        </a>
+        <a href="https://www.tiktok.com" target="_blank">
+          <img src="/Final_project/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+          <img src="/Final_project/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
+        </a>
+        <a href="https://www.facebook.com/groups/ps5vietnam">
+          <img
+            src="/Final_project/Picture/Logo_Ps5_Group.png"
+            alt="Hội PS5 Việt Nam"
+            width="180px"
+          />
+        </a>
+      </div>
+      <div class="info">
+        <span class="footer-text-title">Thông tin</span>
+        <a href="quy_dinh_chung.html"> <p>- Quy định chung</p></a>
+        <a href="quy_dinh_dat_tra_gop.html"><p>- Quy định đặt cọc</p></a>
+        <a href="quy_dinh_bao_hanh.html"><p>- Quy định bảo hành</p></a>
+        <a href="quy_dinh_van_chuyen.html"><p>- Chính sách vận chuyển</p></a>
+        <a href="quy_dinh_doi_tra.html"><p>- Chính sách đổi trả</p></a>
+        <br />
+        <img
+          src="/Final_project/Picture/Logo_BoCongthuong.png"
+          alt="Đã thông báo bộ công thương"
+          width="200"
+        />
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+  <script src="../js/button.js"></script>
+  </body>
+  </html>
+  

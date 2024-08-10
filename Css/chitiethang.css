@@ -274,11 +274,13 @@
   font-size: 22px;
   margin-bottom: 15px;
   color: #333;
+  line-height: 20px;
 }
 .polyci h3 {
   font-size: 16px;
   margin-bottom: 15px;
   color: #333;
+  line-height: 30px;
 }
 .polyci p {
   margin-bottom: 15px;
