@@ -237,6 +237,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       localStorage.clear();
       location.reload();
+    } else {
+      event.preventDefault();
     }
   }
   document.getElementById("order_button").addEventListener("click", sendCart);
