@@ -101,7 +101,13 @@ nav ul li:hover > a {
   padding: 20px;
   overflow: hidden; /*nếu như sản phẩm nhiều quá vượt qua khả năng hiển thị của main content thì sẽ xuất hiện thanh cuốn ngay bên trong main-content */
 }
-
+.title {
+  height: 50px;
+  width: 100%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+}
 .table-wrapper {
   max-height: 100%;
   overflow-y: auto; /*Thuộc tính này tạo ra một thanh cuộn dọc (scrollbar) khi nội dung của bảng vượt quá chiều cao tối đa (max-height) đã được xác định*/
@@ -140,9 +146,36 @@ th {
   padding-left: 5px;
 }
 
-button {
+.fix-product {
   border: none;
   font-size: 20px;
   background-color: white;
   cursor: pointer;
+}
+
+.cart {
+  border: none;
+  font-size: 20px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.title-left {
+  font-size: 20px;
+}
+
+#searchForm {
+  display: flex;
+  flex: 1;
+}
+.search-button {
+  height: 30px;
+  width: 30px;
+}
+
+.search-bar {
+  width: 300px;
+  height: 30px;
+  border: 1px solid gray;
+  margin-left: 0px;
 }
