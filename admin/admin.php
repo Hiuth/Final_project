@@ -101,6 +101,28 @@
         return $order_info;
     }
 
+    function FindOrderDetailsInfo( $id ){
+        $conn= connect();
+        $sql_customer = 'SELECT Order_id, Product_id, Quantity,UnitPrice FROM orderdetails WHERE OrderDetails_id = ?';
+        $stmt_customer = $conn->prepare($sql_customer);
+        $stmt_customer->bind_param("i",$id);
+        $stmt_customer->execute();
+        $result_customer=$stmt_customer->get_result();
+        if($result_customer->num_rows > 0){
+            $row=$result_customer->fetch_assoc();
+            $Order_id = $row['Order_id'];
+            $Product_id = $row['Product_id'];
+            $Quantity = $row['Quantity'];
+            $UnitPrice = $row['UnitPrice'];
+            $orderDetails_info=[ $Order_id,$Product_id, $Quantity, $UnitPrice ];
+        }
+
+        
+        $conn->close();
+        $stmt_customer->close();
+        return $orderDetails_info;
+    }
+
     function ShowOder(){
         $conn= connect();
         $sql = 'SELECT Order_id,Customer_id, Order_date, Order_total, Shipping_address, Payment_Status, Shipping_status, Order_status FROM orders';
@@ -235,8 +257,11 @@
     }
 
     
-    function UpdateTotalOrdersPrice(){
+    function UpdateTotalOrdersTotal($orderDetails_id){
         $conn= connect();
+        $orderDetailsInfo=FindOrderDetailsInfo($orderDetails_id);
+        $orderInfo=FindOrderInfo($orderDetailsInfo[0]);
+        
     }
 
     function DeleteProductInOrders($orderDetails_id){
