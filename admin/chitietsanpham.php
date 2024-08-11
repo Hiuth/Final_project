@@ -43,65 +43,64 @@
                 </ul>
             </nav>
         </div>
-    </div>
-    <div class="main-content">
-        <div class="table-wrapper">
-            <div class="title">
-                <div class="title-left">Chi tiết sản phẩm</div>
-                <div class="title-right">
-                    <form id="searchForm" action="search.php" method="GET">
-                        <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm sản phẩm ..." />
-                        <button class="search-button" type="submit">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Ảnh</th>
-                        <th>Tên sản phẩm</th>
-                        <th>Giá bán</th>
-                        <th>Số lượng</th>
-                        <th>Thành tiền</th>
-                        <th>Tùy chỉnh</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>
-                            <img class="img-table" src="/Final_project/Picture/ps5_slim_st_1.jpg" alt="" />
-                        </td>
-                        <td>
-                            MÁY PS5 SLIM / PLAYSTATION 5 DIGITAL EDITION PHIÊN BẢN CÓ Ổ
-                            ĐĨA
-                        </td>
-                        <td>
-                            <div class="price-wallpaper">
-                                <p class="price">11.490.000</p>
-                                <p class="unit-price">VND</p>
-                            </div>
-                        </td>
-                        <td>10</td>
-                        <td>
-                            <div class="price-wallpaper">
-                                <p class="price">11.490.000</p>
-                                <p class="unit-price">VND</p>
-                            </div>
-                        </td>
-                        <td>
-                            <button class="trash">
-                                <i class="fa-solid fa-trash"></i></i>
+        <div class="main-content">
+            <div class="table-wrapper">
+                <div class="title">
+                    <div class="title-left">Chi tiết sản phẩm</div>
+                    <div class="title-right">
+                        <form id="searchForm" action="search.php" method="GET">
+                            <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm sản phẩm ..." />
+                            <button class="search-button" type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                        </form>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ảnh</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá bán</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                            <th>Tùy chỉnh</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img class="img-table" src="/Final_project/Picture/ps5_slim_st_1.jpg" alt="" />
+                            </td>
+                            <td>
+                                MÁY PS5 SLIM / PLAYSTATION 5 DIGITAL EDITION PHIÊN BẢN CÓ Ổ
+                                ĐĨA
+                            </td>
+                            <td>
+                                <div class="price-wallpaper">
+                                    <p class="price">11.490.000</p>
+                                    <p class="unit-price">VND</p>
+                                </div>
+                            </td>
+                            <td>10</td>
+                            <td>
+                                <div class="price-wallpaper">
+                                    <p class="price">11.490.000</p>
+                                    <p class="unit-price">VND</p>
+                                </div>
+                            </td>
+                            <td>
+                                <button class="trash">
+                                    <i class="fa-solid fa-trash"></i></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
     </div>
     <script src="../js/admin.js"></script>
 </body>

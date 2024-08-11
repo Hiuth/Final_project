@@ -1,7 +1,7 @@
 <?php
      function Create_Customer_Info($username, $gender, $phone_number, $address, $email){
         $conn= connect();
-        $stmt = $conn->prepare("SELECT Customer_id FROM Customer WHERE Customer_name=? OR Customer_phone = ?  OR Customer_sex=? OR Customer_address = ? OR Customer_email = ?");
+        $stmt = $conn->prepare("SELECT Customer_id FROM Customer WHERE Customer_name=? AND Customer_phone = ?  AND Customer_sex=? AND Customer_address = ? AND Customer_email = ?");
         $stmt->bind_param("sisss", $username, $phone_number,$gender,$address,$email);
         $stmt->execute();
         $result = $stmt->get_result();  
