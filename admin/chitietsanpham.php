@@ -1,7 +1,8 @@
 <?php
+session_start();
   require_once("connect-admin.php");
   include "admin.php"
-
+  
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -104,20 +105,20 @@
                         </tr> -->
 
                         <?php
-                        if(isset($_POST['btn']) && $_POST['btn']){
-                          $orders_id=$_POST['Order_id'];
-                          // echo '{'.$orders_id.'}';
+                        if(isset($_GET['btn']) && $_GET['btn']){
+                          $orders_id=$_GET['Order_id'];
+                          $_SESSION['Order_id'] = $orders_id;
+                          $id=$_SESSION['Order_id'];
                           ShowOrderDetails($orders_id);
                         }
-                        if(isset($_POST['btn-4']) && $_POST['btn-4']){
-                          $orderDetails_id=$_POST['OrderDetails_id'];
-                          
+                        if(isset($_GET['btn-4']) && $_GET['btn-4']){
+                          $orderDetails_id=$_GET['OrderDetails_id'];
                           DeleteProductInOrders($orderDetails_id);
-                          echo "<script>
-                          window.location.href = 'DonHang.php';
-                      </script>";
-                          exit();
+                          $order_id = $_SESSION['Order_id'];
+                          echo '<script>window.location.href="chitietsanpham.php?Order_id=' . $order_id . '&btn=details";</script>';
+                          unset($_SESSION['Order_id']);
                         }
+                       
                         ?>
                     </tbody>
                 </table>
