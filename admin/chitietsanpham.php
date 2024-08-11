@@ -69,7 +69,7 @@
                             <th>Giá bán</th>
                             <th>Số lượng</th>
                             <th>Thành tiền</th>
-                            <th>Tùy chỉnh</th>
+                            <th>Xoá sản phẩm</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -108,7 +108,11 @@
                           // echo '{'.$orders_id.'}';
                           ShowOrderDetails($orders_id);
                         }
-                        
+                        if(isset($_POST['btn-3']) && $_POST['btn-3']){
+                          $orderDetails_id=$_POST['OrderDetails_id'];
+                          DeleteProductInOrders($orderDetails_id);
+                          echo '<script>window.location.href = window.location.href;</script>';
+                        }
                         ?>
                     </tbody>
                 </table>

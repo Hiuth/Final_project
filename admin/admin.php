@@ -78,6 +78,29 @@
         return $Product_info;
     }
 
+    function FindOrderInfo($id){
+        $conn= connect();
+        $sql_customer = 'SELECT Order_id,Order_total,Order_status,Payment_Status, Shipping_status FROM orders WHERE Order_id = ?';
+        $stmt_customer = $conn->prepare($sql_customer);
+        $stmt_customer->bind_param("i",$id);
+        $stmt_customer->execute();
+        $result_customer=$stmt_customer->get_result();
+        if($result_customer->num_rows > 0){
+            $row=$result_customer->fetch_assoc();
+            $Order_id = $row['Order_id'];
+            $Order_total = $row['Order_total'];
+            $Order_status = $row['Order_status'];
+            $Payment_Status= $row['Payment_Status'];
+            $Shipping_status= $row['Shipping_status'];
+            $order_info=[ $Order_id,$Order_total,$Order_status,$Payment_Status,$Shipping_status ];
+        }
+
+        
+        $conn->close();
+        $stmt_customer->close();
+        return $order_info;
+    }
+
     function ShowOder(){
         $conn= connect();
         $sql = 'SELECT Order_id,Customer_id, Order_date, Order_total, Shipping_address, Payment_Status, Shipping_status, Order_status FROM orders';
@@ -122,9 +145,9 @@
                                 </form>
                             </td>
                             <td>
-                             <form action="" method="POST">
+                             <form action="DonHang.php" method="POST">
                                     <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
-                                    <button class="fix-product" type="submit" name="btn-3" value="delete">
+                                    <button class="trash" type="submit" name="btn-3" value="delete">
                                         <i class="fa-solid fa-trash"></i></i>
                                     </button>
                                 </form> 
@@ -169,9 +192,12 @@
                                 </div>
                             </td>
                             <td>
-                                <button class="trash">
-                                    <i class="fa-solid fa-trash"></i></i>
-                                </button>
+                            <form action="chitietsanpham.php" method="POST">
+                                    <input type="hidden" name="OrderDetails_id" value="'.$row["OrderDetails_id"].'">
+                                    <button class="trash" type="submit" name="btn-3" value="delete">
+                                        <i class="fa-solid fa-trash"></i></i>
+                                    </button>
+                                </form> 
                             </td>
                         </tr>';
             }
@@ -179,4 +205,49 @@
         $conn->close();
         $stmt->close();
     }
+
+
+
+    function DeleteOrder( $orders_id ){
+        $conn= connect();
+        $sql = 'DELETE FROM Orders WHERE Order_id = ? ';
+        $stmt= $conn->prepare($sql);
+        $stmt->bind_param('i',$orders_id);
+        $stmt->execute();
+        if($stmt->affected_rows > 0){
+         
+        }
+        $conn->close();
+        $stmt->close();
+    }
+    function DeleteOrderDetails($orders_id){
+        $conn= connect();
+        $sql = 'DELETE FROM orderdetails WHERE Order_id = ? ';
+        $stmt= $conn->prepare($sql);
+        $stmt->bind_param('i',$orders_id);
+        $stmt->execute();
+        if($stmt->affected_rows > 0){
+            DeleteOrder($orders_id);
+
+        }
+        $conn->close();
+        $stmt->close();
+    }
+
+    
+    function UpdateTotalOrdersPrice(){
+        $conn= connect();
+    }
+
+    function DeleteProductInOrders($orderDetails_id){
+        $conn= connect();
+        $sql = 'DELETE FROM orderdetails WHERE OrderDetails_id = ?';
+        $stmt= $conn->prepare($sql);
+        $stmt->bind_param('i',$orderDetails_id);
+        $stmt->execute();
+        if($stmt->affected_rows > 0){}
+        $conn->close();
+        $stmt->close();
+    }
+
 ?>
