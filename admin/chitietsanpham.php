@@ -1,3 +1,7 @@
+<?php
+  require_once("connect-admin.php");
+  include "admin.php"
+?>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -69,7 +73,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <!-- <tr>
                             <td>1</td>
                             <td>
                                 <img class="img-table" src="/Final_project/Picture/ps5_slim_st_1.jpg" alt="" />
@@ -96,7 +100,16 @@
                                     <i class="fa-solid fa-trash"></i></i>
                                 </button>
                             </td>
-                        </tr>
+                        </tr> -->
+
+                        <?php
+                        if(isset($_POST['btn']) && $_POST['btn']){
+                          $orders_id=$_POST['Order_id'];
+                          // echo '{'.$orders_id.'}';
+                          ShowOrderDetails($orders_id);
+                        }
+                        
+                        ?>
                     </tbody>
                 </table>
             </div>
