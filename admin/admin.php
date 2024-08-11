@@ -216,7 +216,7 @@
                             <td>
                             <form action="chitietsanpham.php" method="POST">
                                     <input type="hidden" name="OrderDetails_id" value="'.$row["OrderDetails_id"].'">
-                                    <button class="trash" type="submit" name="btn-3" value="delete">
+                                    <button class="trash" type="submit" name="btn-4" value="deleteProduct">
                                         <i class="fa-solid fa-trash"></i></i>
                                     </button>
                                 </form> 
@@ -260,19 +260,40 @@
     function UpdateTotalOrdersTotal($orderDetails_id){
         $conn= connect();
         $orderDetailsInfo=FindOrderDetailsInfo($orderDetails_id);
+        if($orderDetailsInfo==null){
+            $conn->close();
+            return;
+        }
         $orderInfo=FindOrderInfo($orderDetailsInfo[0]);
+        if($orderInfo==null){
+            $conn->close();
+            return;
+        }
+
         
+        $newTotal = $orderInfo[1] - $orderDetailsInfo[3];
+        $sql = 'UPDATE orders SET Order_total = ? WHERE Order_id = ?';
+        $stmt= $conn->prepare($sql);
+        $stmt->bind_param('di',$newTotal,$orderInfo[0]);
+        $stmt->execute();
+        $result=$stmt->get_result();
+        if($result->num_rows > 0){}
+        $conn->close();
+        $stmt->close();
     }
 
     function DeleteProductInOrders($orderDetails_id){
         $conn= connect();
         $sql = 'DELETE FROM orderdetails WHERE OrderDetails_id = ?';
+        UpdateTotalOrdersTotal($orderDetails_id);
         $stmt= $conn->prepare($sql);
         $stmt->bind_param('i',$orderDetails_id);
         $stmt->execute();
-        if($stmt->affected_rows > 0){}
+        if($stmt->affected_rows > 0){
+        }
         $conn->close();
         $stmt->close();
+        
     }
 
 ?>
