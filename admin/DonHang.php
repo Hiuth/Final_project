@@ -44,6 +44,7 @@
                         <a href="DonHang.php">Đơn Hàng</a>
                     </li>
                     <li><a href="">Thêm đơn hàng</a></li>
+                    <li><a href="">Lịch sử đơn hàng</a></li>
                 </ul>
             </nav>
         </div>

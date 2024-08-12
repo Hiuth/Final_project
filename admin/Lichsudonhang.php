@@ -1,8 +1,6 @@
 <?php
-session_start();
   require_once("connect-admin.php");
   include "admin.php"
-  
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -53,10 +51,10 @@ session_start();
         <div class="main-content">
             <div class="table-wrapper">
                 <div class="title">
-                    <div class="title-left">Chi tiết sản phẩm</div>
+                    <div class="title-left">Đơn hàng</div>
                     <div class="title-right">
                         <form id="searchForm" action="search.php" method="GET">
-                            <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm sản phẩm ..." />
+                            <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm đơn hàng ..." />
                             <button class="search-button" type="submit">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
@@ -66,60 +64,56 @@ session_start();
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Ảnh</th>
-                            <th>Tên sản phẩm</th>
-                            <th>Giá bán</th>
-                            <th>Số lượng</th>
-                            <th>Thành tiền</th>
-                            <th>Xoá sản phẩm</th>
+                            <th>STT</th>
+                            <th>Tên khách hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Email</th>
+                            <th>Địa Chỉ</th>
+                            <th>Ngày đặt</th>
+                            <th>Trạng thái giao hàng</th>
+                            <th>Trạng thái thanh toán</th>
+                            <th>Trạng thái đơn hàng</th>
+                            <th>Tổng giá trị đơn hàng</th>
+                            <th>Chi tiết</th>
                         </tr>
                     </thead>
                     <tbody>
                         <!-- <tr>
-                            <td>1</td>
-                            <td>
-                                <img class="img-table" src="/Final_project/Picture/ps5_slim_st_1.jpg" alt="" />
+                            <td>1
                             </td>
-                            <td>
-                                MÁY PS5 SLIM / PLAYSTATION 5 DIGITAL EDITION PHIÊN BẢN CÓ Ổ
-                                ĐĨA
-                            </td>
+                            <td>Tuấn Cô Đơn</td>
+                            <td>0123456789</td>
+                            <td>tuancodon@gmail.com</td>
+                            <td>114/116 Tô Ngọc vân, phường 15 Quận Gò Vấp, TPHCM</td>
+                            <td>21/12/2004</td>
+                            <td>Chưa giao hàng</td>
+                            <td>Chưa thanh toán</td>
+                            <td>Chưa xác nhận</td>
                             <td>
                                 <div class="price-wallpaper">
                                     <p class="price">11.490.000</p>
                                     <p class="unit-price">VND</p>
                                 </div>
                             </td>
-                            <td>10</td>
                             <td>
-                                <div class="price-wallpaper">
-                                    <p class="price">11.490.000</p>
-                                    <p class="unit-price">VND</p>
-                                </div>
+                                <form action="chitietsanpham.php" method="POST">
+                                    <input type="hidden" name="Order_id" value="1">
+                                    <button class="details" type="submit">
+                                        <i class="fa-solid fa-file-invoice"></i>
+                                    </button>
+                                </form>
                             </td>
                             <td>
-                                <button class="trash">
-                                    <i class="fa-solid fa-trash"></i></i>
-                                </button>
+                                <form action="" method="POST">
+                                    <input type="hidden" name="Order_id" value="1">
+                                    <button class="fix-product">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+                                </form>
                             </td>
                         </tr> -->
-
                         <?php
-                        if(isset($_GET['btn']) && $_GET['btn']){
-                          $orders_id=$_GET['Order_id'];
-                          $_SESSION['Order_id'] = $orders_id;
-                          $id=$_SESSION['Order_id'];
-                          ShowOrderDetails($orders_id);
-                        }
-                        if(isset($_GET['btn-4']) && $_GET['btn-4']){
-                          $orderDetails_id=$_GET['OrderDetails_id'];
-                          DeleteProductInOrders($orderDetails_id);
-                          $order_id = $_SESSION['Order_id'];
-                          echo '<script>window.location.href="chitietsanpham.php?Order_id=' . $order_id . '&btn=details";</script>';
-                          unset($_SESSION['Order_id']);
-                        }
-                       
+                        ShowOderHistory();
                         ?>
                     </tbody>
                 </table>

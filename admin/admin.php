@@ -1,41 +1,5 @@
 <?php
-    
-    function ShowProductAdmin(){
-        $conn= connect();
-        $sql = "SELECT Product_id,Product_img, Product_name, Product_price, Quantity FROM product";
-        $stmt= $conn->prepare($sql);
-        $stmt->execute();
-        $result=$stmt->get_result();
-        if($result->num_rows > 0){
-            while($row=$result->fetch_assoc()){
-                echo '  <tr>
-                            <td>'.$row["Product_id"].'</td>
-                            <td>
-                                <img class="img-table" src="'.$row["Product_img"].'" alt="" />
-                            </td>
-                            <td>
-                                '.$row["Product_name"].'
-                            </td>
-                            <td>
-                                <div class="price-wallpaper">
-                                    <p class="price">'.number_format($row["Product_price"],0,',','.').'</p>
-                                    <p class="unit-price">VND</p>
-                                </div>
-                            </td>
-                            <td>'.$row["Quantity"].'</td>
-                            <td>
-                                <button class="fix-product">
-                                    <a href=""><i class="fa-solid fa-pen"></i></a>
-                                    </i>
-                                </button>
-                            </td>
-                        </tr>';
-            }
-        }
-        $conn->close();
-        $stmt->close();
-    }
-
+    //Find Function zone
     function FindCustomerInfo($id){
         $conn= connect();
         $sql_customer = 'SELECT Customer_name,Customer_phone,Customer_email FROM customer WHERE Customer_id = ?';
@@ -123,6 +87,42 @@
         return $orderDetails_info;
     }
 
+    //show function zone
+    function ShowProductAdmin(){
+        $conn= connect();
+        $sql = "SELECT Product_id,Product_img, Product_name, Product_price, Quantity FROM product";
+        $stmt= $conn->prepare($sql);
+        $stmt->execute();
+        $result=$stmt->get_result();
+        if($result->num_rows > 0){
+            while($row=$result->fetch_assoc()){
+                echo '  <tr>
+                            <td>'.$row["Product_id"].'</td>
+                            <td>
+                                <img class="img-table" src="'.$row["Product_img"].'" alt="" />
+                            </td>
+                            <td>
+                                '.$row["Product_name"].'
+                            </td>
+                            <td>
+                                <div class="price-wallpaper">
+                                    <p class="price">'.number_format($row["Product_price"],0,',','.').'</p>
+                                    <p class="unit-price">VND</p>
+                                </div>
+                            </td>
+                            <td>'.$row["Quantity"].'</td>
+                            <td>
+                                <button class="fix-product">
+                                    <a href=""><i class="fa-solid fa-pen"></i></a>
+                                    </i>
+                                </button>
+                            </td>
+                        </tr>';
+            }
+        }
+        $conn->close();
+        $stmt->close();
+    }
     function ShowOder(){
         $conn= connect();
         $sql = 'SELECT Order_id,Customer_id, Order_date, Order_total, Shipping_address, Payment_Status, Shipping_status, Order_status FROM orders';
@@ -182,6 +182,43 @@
     }
 
 
+    function ShowOrderDetailsHistory($orders_id){
+        $conn= connect();
+        $sql = 'SELECT OrderDetails_id, Product_id,Quantity, UnitPrice FROM orderdetails WHERE Order_id = ?';
+        $stmt= $conn->prepare($sql);
+        $stmt->bind_param("i",$orders_id);
+        $stmt->execute();
+        $result=$stmt->get_result();
+        if($result->num_rows > 0){
+        while($row=$result->fetch_assoc()){
+            $info = FindProductInfo($row['Product_id']);
+            echo '<tr>
+                            <td>'.$row["OrderDetails_id"].'</td>
+                            <td>
+                                <img class="img-table" src="'.$info[0].'" alt="" />
+                            </td>
+                            <td>
+                                '.$info[1].'
+                            </td>
+                            <td>
+                                <div class="price-wallpaper">
+                                    <p class="price">'.number_format($info[2],0,',','.').'</p>
+                                    <p class="unit-price">VND</p>
+                                </div>
+                            </td>
+                            <td>'.$row["Quantity"].'</td>
+                            <td>
+                                <div class="price-wallpaper">
+                                    <p class="price">'.number_format($row["UnitPrice"],0,',','.').'</p>
+                                    <p class="unit-price">VND</p>
+                                </div>
+                            </td>
+                        </tr>';
+            }
+        }
+        $conn->close();
+        $stmt->close();
+    }
     function ShowOrderDetails($orders_id){
         $conn= connect();
         $sql = 'SELECT OrderDetails_id, Product_id,Quantity, UnitPrice FROM orderdetails WHERE Order_id = ?';
@@ -229,7 +266,69 @@
     }
 
 
+    function ShowOderHistory(){
+        $conn= connect();
+        $sql = 'SELECT Order_id,Customer_id, Order_date, Order_total, Shipping_address, Payment_Status, Shipping_status, Order_status FROM orders';
+        $stmt= $conn->prepare($sql);
+        $stmt->execute();
+        $result=$stmt->get_result();
+        $count=1;
+        if($result->num_rows > 0){
+            while($row=$result->fetch_assoc()){
 
+                $info = FindCustomerInfo($row["Customer_id"]);
+                if($row["Order_status"] =="Đã xác nhận" && $row["Shipping_status"] =="Gửi hàng thành công" && $row["Payment_Status"] == "Đã thanh toán"){
+                    echo' <tr>
+                    <td>'.$count++.'</td>
+                    <td>'.$info[0].'</td>
+                    <td>'.$info[1].'</td>
+                    <td>'.$info[2].'</td>
+                    <td>'.$row["Shipping_address"].'</td>
+                    <td>'.$row["Order_date"].'</td>
+                    <td>'.$row["Shipping_status"].'</td>
+                    <td>'.$row["Payment_Status"].'</td>
+                    <td>'.$row["Order_status"].'</td>
+                    <td>
+                        <div class="price-wallpaper">
+                            <p class="price">'.number_format($row["Order_total"],0,',','.').'</p>
+                            <p class="unit-price">VND</p>
+                        </div>
+                    </td>
+                    <td>
+                        <form action="chitietlichsudonhang.php" method="GET">
+                            <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
+                            <button class="details" type="submit" name="btn" value="details">
+                                <i class="fa-solid fa-file-invoice"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>';
+                }
+               
+            }
+        }
+        $conn->close();
+        $stmt->close();
+    }
+    //check, count Function zone
+
+    function CountOrderDetails($orders_id){
+        $conn= connect();
+        $sql = 'SELECT COUNT(Order_id) AS total FROM orderdetails WHERE order_id =?';
+        $stmt= $conn->prepare($sql);
+        $stmt->bind_param('i',$orders_id);
+        $stmt->execute();
+        $stmt->bind_result($count); //gán biến count vào biến mà sql đang truy vấn là order_id
+        $stmt->fetch();//gán giá trị của total vào biến count
+         $conn->close();
+        $stmt->close();
+        return $count;
+    }
+
+
+
+
+    //Delete function zone
     function DeleteOrder( $orders_id ){
         $conn= connect();
         $sql = 'DELETE FROM Orders WHERE Order_id = ? ';
@@ -283,14 +382,24 @@
     }
 
     function DeleteProductInOrders($orderDetails_id){
-        $conn= connect();
-        $sql = 'DELETE FROM orderdetails WHERE OrderDetails_id = ?';
-        UpdateTotalOrdersTotal($orderDetails_id);
-        $stmt= $conn->prepare($sql);
-        $stmt->bind_param('i',$orderDetails_id);
-        $stmt->execute();
-        if($stmt->affected_rows > 0){
+        $conn= connect(); 
+        $orderDetailsInfo=FindOrderDetailsInfo($orderDetails_id);
+        if(CountOrderDetails($orderDetailsInfo[0]) == 1){
+            $check = CountOrderDetails($orderDetails_id);
+           echo'<script>window.location.href="DonHang.php";</script>';
+           DeleteOrderDetails($orderDetailsInfo[0]);
+        }else{
+            $sql = 'DELETE FROM orderdetails WHERE OrderDetails_id = ?';
+            UpdateTotalOrdersTotal($orderDetails_id);
+            $stmt= $conn->prepare($sql);
+            $stmt->bind_param('i',$orderDetails_id);
+            $stmt->execute();
+            if($stmt->affected_rows > 0){
+            }
         }
+
+       
+
         $conn->close();
         $stmt->close();
         

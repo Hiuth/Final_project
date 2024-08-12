@@ -1,5 +1,4 @@
 <?php
-session_start();
   require_once("connect-admin.php");
   include "admin.php"
   
@@ -72,7 +71,6 @@ session_start();
                             <th>Giá bán</th>
                             <th>Số lượng</th>
                             <th>Thành tiền</th>
-                            <th>Xoá sản phẩm</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -98,28 +96,13 @@ session_start();
                                     <p class="unit-price">VND</p>
                                 </div>
                             </td>
-                            <td>
-                                <button class="trash">
-                                    <i class="fa-solid fa-trash"></i></i>
-                                </button>
-                            </td>
                         </tr> -->
 
                         <?php
                         if(isset($_GET['btn']) && $_GET['btn']){
                           $orders_id=$_GET['Order_id'];
-                          $_SESSION['Order_id'] = $orders_id;
-                          $id=$_SESSION['Order_id'];
-                          ShowOrderDetails($orders_id);
+                          ShowOrderDetailsHistory($orders_id);
                         }
-                        if(isset($_GET['btn-4']) && $_GET['btn-4']){
-                          $orderDetails_id=$_GET['OrderDetails_id'];
-                          DeleteProductInOrders($orderDetails_id);
-                          $order_id = $_SESSION['Order_id'];
-                          echo '<script>window.location.href="chitietsanpham.php?Order_id=' . $order_id . '&btn=details";</script>';
-                          unset($_SESSION['Order_id']);
-                        }
-                       
                         ?>
                     </tbody>
                 </table>
