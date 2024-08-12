@@ -161,47 +161,50 @@
             while($row=$result->fetch_assoc()){
 
                 $info = FindCustomerInfo($row["Customer_id"]);
-                echo' <tr>
-                            <td>'.$count++.'</td>
-                            <td>'.$info[0].'</td>
-                            <td>'.$info[1].'</td>
-                            <td>'.$info[2].'</td>
-                            <td>'.$row["Shipping_address"].'</td>
-                            <td>'.$row["Order_date"].'</td>
-                            <td>'.$row["Shipping_status"].'</td>
-                            <td>'.$row["Payment_Status"].'</td>
-                            <td>'.$row["Order_status"].'</td>
-                            <td>
-                                <div class="price-wallpaper">
-                                    <p class="price">'.number_format($row["Order_total"],0,',','.').'</p>
-                                    <p class="unit-price">VND</p>
-                                </div>
-                            </td>
-                            <td>
-                                <form action="chitietdonhang.php" method="GET">
-                                    <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
-                                    <button class="details" type="submit" name="btn" value="details">
-                                        <i class="fa-solid fa-file-invoice"></i>
-                                    </button>
-                                </form>
-                            </td>
-                            <td class="setting">
-                                <form action="" method="POST">
-                                    <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
-                                    <button class="fix-product" type="submit" name="btn-2" value="fix">
-                                        <i class="fa-solid fa-pen"></i>
-                                    </button>
-                                </form>
-                            </td>
-                            <td>
-                             <form action="DonHang.php" method="POST">
-                                    <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
-                                    <button class="trash" type="submit" name="btn-3" value="delete">
-                                        <i class="fa-solid fa-trash"></i></i>
-                                    </button>
-                                </form> 
-                                </td>
-                        </tr>';
+                if($row["Order_status"] !="Đã xác nhận" && $row["Shipping_status"] !="Gửi hàng thành công" && $row["Payment_Status"] != "Đã thanh toán"){
+                    echo' <tr>
+                    <td>'.$count++.'</td>
+                    <td>'.$info[0].'</td>
+                    <td>'.$info[1].'</td>
+                    <td>'.$info[2].'</td>
+                    <td>'.$row["Shipping_address"].'</td>
+                    <td>'.$row["Order_date"].'</td>
+                    <td>'.$row["Shipping_status"].'</td>
+                    <td>'.$row["Payment_Status"].'</td>
+                    <td>'.$row["Order_status"].'</td>
+                    <td>
+                        <div class="price-wallpaper">
+                            <p class="price">'.number_format($row["Order_total"],0,',','.').'</p>
+                            <p class="unit-price">VND</p>
+                        </div>
+                    </td>
+                    <td>
+                        <form action="chitietdonhang.php" method="GET">
+                            <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
+                            <button class="details" type="submit" name="btn" value="details">
+                                <i class="fa-solid fa-file-invoice"></i>
+                            </button>
+                        </form>
+                    </td>
+                    <td class="setting">
+                        <form action="" method="POST">
+                            <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
+                            <button class="fix-product" type="submit" name="btn-2" value="fix">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                        </form>
+                    </td>
+                    <td>
+                     <form action="DonHang.php" method="POST">
+                            <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
+                            <button class="trash" type="submit" name="btn-3" value="delete">
+                                <i class="fa-solid fa-trash"></i></i>
+                            </button>
+                        </form> 
+                        </td>
+                </tr>';
+                }
+                
             }
         }
         $conn->close();
