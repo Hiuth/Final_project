@@ -51,9 +51,9 @@
         <div class="main-content">
             <div class="table-wrapper">
                 <div class="title">
-                    <div class="title-left">Đơn hàng</div>
+                    <div class="title-left">Lịch sử đơn hàng</div>
                     <div class="title-right">
-                        <form id="searchForm" action="search.php" method="GET">
+                        <form id="searchForm" action="searchOrder.php" method="GET">
                             <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm đơn hàng ..." />
                             <button class="search-button" type="submit">
                                 <i class="fa-solid fa-magnifying-glass"></i>
