@@ -69,9 +69,9 @@ session_start();
                             <th>ID</th>
                             <th>Ảnh</th>
                             <th>Tên sản phẩm</th>
-                            <th>Giá bán</th>
-                            <th>Số lượng</th>
-                            <th>Thành tiền</th>
+                            <th onclick="sortTable(3,'number')">Giá bán</th>
+                            <th onclick="sortTable(4,'number')">Số lượng</th>
+                            <th onclick="sortTable(5,'number')">Thành tiền</th>
                             <th>Xoá sản phẩm</th>
                         </tr>
                     </thead>
