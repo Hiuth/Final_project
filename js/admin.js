@@ -1,7 +1,6 @@
 var sortMemory = {};
 
 function sortTable(n, type) {
-  console.log("Sorting column:", n, "Type:", type);
   var table = document.getElementById("table");
   var swap = true;
   var shouldSwap;
@@ -17,13 +16,11 @@ function sortTable(n, type) {
     for (var i = 1; i < rows.length - 1; i++) {
       shouldSwap = false;
       var rowTop = rows[i].getElementsByTagName("TD")[n];
-      console.log(rowTop);
       var rowBelow = rows[i + 1].getElementsByTagName("TD")[n];
       var rowTopValue, rowBelowValue;
 
       if (type === "number") {
         var top = rowTop.querySelector(".price").innerText;
-        console.log(top);
         rowTopValue = parseInt(top.replace(/\./g, ""), 10);
         var below = rowBelow.querySelector(".price").innerText;
         rowBelowValue = parseInt(below.replace(/\./g, ""), 10);
