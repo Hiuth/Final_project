@@ -65,6 +65,33 @@
         return $order_info;
     }
 
+    function FindOrderInfoWithCustomer($id){
+        $conn= connect();
+        $order_info = null;
+        $sql_customer = 'SELECT Order_id,Order_date,Order_total,Order_status,Payment_Status, Shipping_status FROM orders WHERE Customer_id = ?';
+        $stmt_customer = $conn->prepare($sql_customer);
+        $stmt_customer->bind_param("i",$id);
+        $stmt_customer->execute();
+        $result_customer=$stmt_customer->get_result();
+        if($result_customer->num_rows > 0){
+            $row=$result_customer->fetch_assoc();
+            if($row["Order_total"] != null){
+                $Order_id = $row['Order_id'];
+                $Order_total = $row['Order_total'];
+                $Order_status = $row['Order_status'];
+                $Payment_Status= $row['Payment_Status'];
+                $Shipping_status= $row['Shipping_status'];
+                $Order_date = $row['Order_date'];
+                $order_info=[ $Order_id,$Order_total,$Order_status,$Payment_Status,$Shipping_status,$Order_date ];
+            }
+        }
+
+        
+        $conn->close();
+        $stmt_customer->close();
+        return $order_info;
+    }
+
     function FindOrderDetailsInfo( $id ){
         $conn= connect();
         $sql_customer = 'SELECT Order_id, Product_id, Quantity,UnitPrice FROM orderdetails WHERE OrderDetails_id = ?';
@@ -461,7 +488,6 @@
         } else {
             $text = '';
         } 
-        // $sql = "SELECT * FROM product WHERE Product_name LIKE ? OR Category_id LIKE ? OR Brand_id LIKE ?";
         $sql = 'SELECT * FROM orders WHERE Order_date LIKE ? OR Shipping_address LIKE ? OR Payment_Status LIKE ? OR Shipping_status LIKE ? OR Order_status LIKE ? ';
         $stmt = $conn->prepare($sql);
         $search = "%$text%";
@@ -519,5 +545,71 @@
         $conn->close();
         $stmt->close();
         
+    }
+
+    function SearchOrderCustomer(){
+        $conn= connect(); 
+        if (isset($_GET['searchOrder'])) {
+            $text = $conn->real_escape_string($_GET['searchOrder']);
+        } else {
+            $text = '';
+        } 
+        $sql = 'SELECT * FROM customer WHERE Customer_name LIKE ?  OR Customer_phone LIKE ? OR Customer_email LIKE ? ';
+        $stmt = $conn->prepare($sql);
+        $search = "%$text%";
+        //$search = "%$text%";: Thêm ký tự % trước và sau từ khóa tìm kiếm để tìm các chuỗi chứa từ khóa này ở bất kỳ vị trí nào.
+        $stmt->bind_param("sss", $search, $search, $search);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $count=1;
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                if(FindOrderInfoWithCustomer($row["Customer_id"]) != null){
+                    $info = FindOrderInfoWithCustomer($row["Customer_id"]);
+                    echo '<tr>
+                                <td>'.$count++.'</td>
+                                <td>'.$row["Customer_name"].'</td>
+                                <td>'.$row["Customer_phone"].'</td>
+                                <td>'.$row["Customer_email"].'</td>
+                                <td>'.$row["Customer_address"].'</td>
+                                <td>'.$info[5].'</td>
+                                <td>'.$info[4].'</td>
+                                <td>'.$info[3].'</td>
+                                <td>'.$info[2].'</td>
+                                <td>
+                                    <div class="price-wallpaper">
+                                        <p class="price">'.number_format($info[1],0,',','.').'</p>
+                                        <p class="unit-price">VND</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <form action="chitietdonhang.php" method="GET">
+                                        <input type="hidden" name="Order_id" value="'.$info[0].'">
+                                        <button class="details" type="submit" name="btn" value="details">
+                                            <i class="fa-solid fa-file-invoice"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                                <td class="setting">
+                                    <form action="" method="POST">
+                                        <input type="hidden" name="Order_id" value="'.$info[0].'">
+                                        <button class="fix-product" type="submit" name="btn-2" value="fix">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                                <td>
+                                 <form action="DonHang.php" method="POST">
+                                        <input type="hidden" name="Order_id" value="'.$info[0].'">
+                                        <button class="trash" type="submit" name="btn-3" value="delete">
+                                            <i class="fa-solid fa-trash"></i></i>
+                                        </button>
+                                    </form> 
+                                    </td>
+                            </tr>';
+                }
+               
+            }
+        }
     }
 ?>

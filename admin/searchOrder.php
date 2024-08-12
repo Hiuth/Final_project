@@ -84,7 +84,8 @@
                         <?php
 
                             SearchOrder();
-
+                            SearchOrderCustomer();
+    
                         
                         if(isset($_POST['btn-3']) && $_POST['btn-3']){
                           $orders_id=$_POST['Order_id'];
