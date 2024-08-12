@@ -405,4 +405,119 @@
         
     }
 
+    // search Function zone
+
+
+    function searchProduct(){
+        $conn= connect(); 
+        if (isset($_GET['query'])) {
+            $text = $conn->real_escape_string($_GET['query']);
+        } else {
+            $text = '';
+        } 
+        $sql = "SELECT * FROM product WHERE Product_name LIKE ? OR Category_id LIKE ? OR Brand_id LIKE ?";
+        $stmt = $conn->prepare($sql);
+        $search = "%$text%";
+        //$search = "%$text%";: Thêm ký tự % trước và sau từ khóa tìm kiếm để tìm các chuỗi chứa từ khóa này ở bất kỳ vị trí nào.
+        $stmt->bind_param("sss",  $search, $search, $search);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                echo ' <tr>
+                            <td>'.$row["Product_id"].'</td>
+                            <td>
+                                <img class="img-table" src="'.$row["Product_img"].'" alt="" />
+                            </td>
+                            <td>
+                                '.$row["Product_name"].'
+                            </td>
+                            <td>
+                                <div class="price-wallpaper">
+                                    <p class="price">'.number_format($row["Product_price"],0,',','.').'</p>
+                                    <p class="unit-price">VND</p>
+                                </div>
+                            </td>
+                            <td>'.$row["Quantity"].'</td>
+                            <td>
+                                <button class="fix-product">
+                                    <a href=""><i class="fa-solid fa-pen"></i></a>
+                                    </i>
+                                </button>
+                            </td>
+                        </tr>';
+            }
+        }
+        $conn->close();
+        $stmt->close();
+        
+    }
+
+    
+    function SearchOrder(){
+        $conn= connect(); 
+        if (isset($_GET['searchOrder'])) {
+            $text = $conn->real_escape_string($_GET['searchOrder']);
+        } else {
+            $text = '';
+        } 
+        // $sql = "SELECT * FROM product WHERE Product_name LIKE ? OR Category_id LIKE ? OR Brand_id LIKE ?";
+        $sql = 'SELECT * FROM orders WHERE Order_date LIKE ? OR Shipping_address LIKE ? OR Payment_Status LIKE ? OR Shipping_status LIKE ? OR Order_status LIKE ? ';
+        $stmt = $conn->prepare($sql);
+        $search = "%$text%";
+        //$search = "%$text%";: Thêm ký tự % trước và sau từ khóa tìm kiếm để tìm các chuỗi chứa từ khóa này ở bất kỳ vị trí nào.
+        $stmt->bind_param("sssss",  $search,  $search, $search, $search, $search);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $count=1;
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                $info = FindCustomerInfo($row["Customer_id"]);
+                echo '  <tr>
+                            <td>'.$count++.'</td>
+                            <td>'.$info[0].'</td>
+                            <td>'.$info[1].'</td>
+                            <td>'.$info[2].'</td>
+                            <td>'.$row["Shipping_address"].'</td>
+                            <td>'.$row["Order_date"].'</td>
+                            <td>'.$row["Shipping_status"].'</td>
+                            <td>'.$row["Payment_Status"].'</td>
+                            <td>'.$row["Order_status"].'</td>
+                            <td>
+                                <div class="price-wallpaper">
+                                    <p class="price">'.number_format($row["Order_total"],0,',','.').'</p>
+                                    <p class="unit-price">VND</p>
+                                </div>
+                            </td>
+                            <td>
+                                <form action="chitietdonhang.php" method="GET">
+                                    <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
+                                    <button class="details" type="submit" name="btn" value="details">
+                                        <i class="fa-solid fa-file-invoice"></i>
+                                    </button>
+                                </form>
+                            </td>
+                            <td class="setting">
+                                <form action="" method="POST">
+                                    <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
+                                    <button class="fix-product" type="submit" name="btn-2" value="fix">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+                                </form>
+                            </td>
+                            <td>
+                             <form action="DonHang.php" method="POST">
+                                    <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
+                                    <button class="trash" type="submit" name="btn-3" value="delete">
+                                        <i class="fa-solid fa-trash"></i></i>
+                                    </button>
+                                </form> 
+                                </td>
+                        </tr>';
+            }
+        }
+        $conn->close();
+        $stmt->close();
+        
+    }
 ?>

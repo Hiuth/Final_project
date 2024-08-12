@@ -51,7 +51,7 @@
         <div class="main-content">
             <div class="table-wrapper">
                 <div class="title">
-                    <div class="title-left">Đơn hàng</div>
+                    <div class="title-left">Tìm kiếm đơn hàng</div>
                     <div class="title-right">
                         <form id="searchForm" action="searchOrder.php" method="GET">
                             <input class="search-bar" type="search" name="searchOrder"
@@ -81,45 +81,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- <tr>
-                            <td>1
-                            </td>
-                            <td>Tuấn Cô Đơn</td>
-                            <td>0123456789</td>
-                            <td>tuancodon@gmail.com</td>
-                            <td>114/116 Tô Ngọc vân, phường 15 Quận Gò Vấp, TPHCM</td>
-                            <td>21/12/2004</td>
-                            <td>Chưa giao hàng</td>
-                            <td>Chưa thanh toán</td>
-                            <td>Chưa xác nhận</td>
-                            <td>
-                                <div class="price-wallpaper">
-                                    <p class="price">11.490.000</p>
-                                    <p class="unit-price">VND</p>
-                                </div>
-                            </td>
-                            <td>
-                                <form action="chitietsanpham.php" method="POST">
-                                    <input type="hidden" name="Order_id" value="1">
-                                    <button class="details" type="submit">
-                                        <i class="fa-solid fa-file-invoice"></i>
-                                    </button>
-                                </form>
-                            </td>
-                            <td>
-                                <form action="" method="POST">
-                                    <input type="hidden" name="Order_id" value="1">
-                                    <button class="fix-product">
-                                        <i class="fa-solid fa-pen"></i>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr> -->
                         <?php
-                        ShowOder();
+
+                            SearchOrder();
+
+                        
                         if(isset($_POST['btn-3']) && $_POST['btn-3']){
                           $orders_id=$_POST['Order_id'];
-                          echo '{'.$orders_id.'}';
                           DeleteOrderDetails($orders_id);
                           echo '<script>window.location.href = window.location.href;</script>';
                         }

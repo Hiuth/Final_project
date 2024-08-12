@@ -194,7 +194,11 @@
     function SearchProduct(){
        
         $conn= connect();
-        $text = isset($_GET['query']) ? $conn->real_escape_string($_GET['query']) : '';  
+        if (isset($_GET['query'])) {
+            $text = $conn->real_escape_string($_GET['query']);
+        } else {
+            $text = '';
+        } 
         $sql = "SELECT * FROM product WHERE Product_name LIKE ? OR Category_id LIKE ? OR Brand_id LIKE ?";
        
         $stmt = $conn->prepare($sql);
