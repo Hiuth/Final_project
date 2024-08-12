@@ -61,7 +61,7 @@
                         </form>
                     </div>
                 </div>
-                <table>
+                <table id="table">
                     <thead>
                         <tr>
                             <th>STT</th>
@@ -69,11 +69,11 @@
                             <th>Số điện thoại</th>
                             <th>Email</th>
                             <th>Địa Chỉ</th>
-                            <th>Ngày đặt</th>
-                            <th>Trạng thái giao hàng</th>
-                            <th>Trạng thái thanh toán</th>
-                            <th>Trạng thái đơn hàng</th>
-                            <th>Tổng giá trị đơn hàng</th>
+                            <th onclick="sortTable(5,'date')">Ngày đặt</th>
+                            <th onclick="sortTable(6,'string')">Trạng thái giao hàng</th>
+                            <th onclick="sortTable(7,'string')">Trạng thái thanh toán</th>
+                            <th onclick="sortTable(8,'string')">Trạng thái đơn hàng</th>
+                            <th onclick="sortTable(9,'number')">Tổng giá trị đơn hàng</th>
                             <th>Chi tiết</th>
                             <th>Tùy chỉnh</th>
                             <th>Xoá</th>

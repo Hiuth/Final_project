@@ -63,7 +63,7 @@ session_start();
                         </form>
                     </div>
                 </div>
-                <table>
+                <table id="table">
                     <thead>
                         <tr>
                             <th>ID</th>
