@@ -76,35 +76,6 @@ session_start();
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- <tr>
-                            <td>1</td>
-                            <td>
-                                <img class="img-table" src="/Final_project/Picture/ps5_slim_st_1.jpg" alt="" />
-                            </td>
-                            <td>
-                                MÁY PS5 SLIM / PLAYSTATION 5 DIGITAL EDITION PHIÊN BẢN CÓ Ổ
-                                ĐĨA
-                            </td>
-                            <td>
-                                <div class="price-wallpaper">
-                                    <p class="price">11.490.000</p>
-                                    <p class="unit-price">VND</p>
-                                </div>
-                            </td>
-                            <td>10</td>
-                            <td>
-                                <div class="price-wallpaper">
-                                    <p class="price">11.490.000</p>
-                                    <p class="unit-price">VND</p>
-                                </div>
-                            </td>
-                            <td>
-                                <button class="trash">
-                                    <i class="fa-solid fa-trash"></i></i>
-                                </button>
-                            </td>
-                        </tr> -->
-
                         <?php
                         if(isset($_GET['btn']) && $_GET['btn']){
                           $orders_id=$_GET['Order_id'];
@@ -116,7 +87,7 @@ session_start();
                           $orderDetails_id=$_GET['OrderDetails_id'];
                           DeleteProductInOrders($orderDetails_id);
                           $order_id = $_SESSION['Order_id'];
-                          echo '<script>window.location.href="chitietsanpham.php?Order_id=' . $order_id . '&btn=details";</script>';
+                          echo '<script>window.location.href="chitietdonhang.php?Order_id=' . $order_id . '&btn=details";</script>';
                           unset($_SESSION['Order_id']);
                         }
                        

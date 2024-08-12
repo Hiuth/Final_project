@@ -151,7 +151,7 @@
                                 </div>
                             </td>
                             <td>
-                                <form action="chitietsanpham.php" method="GET">
+                                <form action="chitietdonhang.php" method="GET">
                                     <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
                                     <button class="details" type="submit" name="btn" value="details">
                                         <i class="fa-solid fa-file-invoice"></i>
@@ -251,7 +251,7 @@
                                 </div>
                             </td>
                             <td>
-                            <form action="chitietsanpham.php" method="GET">
+                            <form action="chitietdonhang.php" method="GET">
                                     <input type="hidden" name="OrderDetails_id" value="'.$row["OrderDetails_id"].'">
                                     <button class="trash" type="submit" name="btn-4" value="deleteProduct">
                                         <i class="fa-solid fa-trash"></i></i>
