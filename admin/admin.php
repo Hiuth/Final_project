@@ -121,14 +121,15 @@
         $stmt= $conn->prepare($sql);
         $stmt->execute();
         $result=$stmt->get_result();
+        $count=1;
         if($result->num_rows > 0){
             while($row=$result->fetch_assoc()){
                 echo '  <tr>
-                            <td>'.$row["Product_id"].'</td>
-                            <td>
+                            <td class="product_id">'.$row["Product_id"].'</td>
+                            <td class="product_img">
                                 <img class="img-table" src="'.$row["Product_img"].'" alt="" />
                             </td>
-                            <td>
+                            <td class = "product_name">
                                 '.$row["Product_name"].'
                             </td>
                             <td>
@@ -137,17 +138,17 @@
                                     <p class="unit-price">VND</p>
                                 </div>
                             </td>
-                            <td>'.$row["Quantity"].'</td>
+                            <td class = "Quantity">'.$row["Quantity"].'</td>
                             <td>
                              <form action="" method="POST">
                                 <input type="hidden" name="Order_id" value="'.$row["Product_id"].'">
                             <button class="fix-product" type="submit" name="btn-2" value="fix">
                                 <i class="fa-solid fa-pen"></i>
                             </button>
-                        </form>
+                            </form>
                             </td>
                             <td>
-                                <button class="cart">
+                                <button class="cart" onclick = "addOrder(this)" >
                                   <i class="fa-solid fa-cart-plus"></i>
                                 </button>
                             </td>
