@@ -57,6 +57,20 @@ function sortTable(n, type) {
 // thêm đơn hàng
 var OrderCart = JSON.parse(sessionStorage.getItem("productOrder")) || [];
 
+function check(name) {
+  if (OrderCart.length === 0) {
+    return false;
+  } else {
+    for (var i = 0; i < OrderCart.length; i++) {
+      if (OrderCart[i][2] === name) {
+        OrderCart[i][4]++;
+        return true;
+      }
+    }
+    return false;
+  }
+}
+
 function addOrder(n) {
   var product = n.parentElement.parentElement;
   var product_id = product.querySelector(".product_id").innerText;
@@ -64,8 +78,15 @@ function addOrder(n) {
   var product_name = product.querySelector(".product_name").innerText;
   var product_price = product.querySelector(".price").innerText;
   var quantity = 1;
-  console.log(product_id, product_img, product_name, product_price, quantity);
-  var list = new Array(product_id, product_img, product_name, product_price);
-  OrderCart.push(list);
-  sessionStorage.setItem("productOrder", JSON.stringify(OrderCart));
+  if (check(product_name) === false) {
+    var list = new Array(
+      product_id,
+      product_img,
+      product_name,
+      product_price,
+      quantity
+    );
+    OrderCart.push(list);
+    sessionStorage.setItem("productOrder", JSON.stringify(OrderCart));
+  }
 }
