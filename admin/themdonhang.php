@@ -124,6 +124,7 @@
     <script src="../js/admin.js"></script>
     <script>
     showCartOrder();
+    showTotal();
     </script>
 </body>
 

@@ -167,6 +167,22 @@ function showCartOrder() {
   document.getElementById("List").innerHTML = myOrder;
 }
 
+function showTotal() {
+  var pro_total = 0;
+  var order_total = "";
+  for (var i = 0; i < OrderCart.length; i++) {
+    var price = parseInt(OrderCart[i][3].replace(/\./g, ""), 10);
+    var quantity = parseInt(OrderCart[i][4], 10);
+    pro_total += price * quantity;
+  }
+  var Unit_change = pro_total.toLocaleString("de-DE");
+  order_total +=
+    '<span class="order-but-tilte">Tổng tiền</span><span class="order-total">' +
+    Unit_change +
+    '<span class="unit-price">VND</span>';
+  document.getElementById("or-total").innerHTML = order_total;
+}
+
 //nút tăng giảm số lượng đơn hàng
 
 function handleMinus(x, i) {
