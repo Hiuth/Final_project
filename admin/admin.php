@@ -139,9 +139,16 @@
                             </td>
                             <td>'.$row["Quantity"].'</td>
                             <td>
-                                <button class="fix-product">
-                                    <a href=""><i class="fa-solid fa-pen"></i></a>
-                                    </i>
+                             <form action="" method="POST">
+                                <input type="hidden" name="Order_id" value="'.$row["Product_id"].'">
+                            <button class="fix-product" type="submit" name="btn-2" value="fix">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                        </form>
+                            </td>
+                            <td>
+                                <button class="cart">
+                                  <i class="fa-solid fa-cart-plus"></i>
                                 </button>
                             </td>
                         </tr>';

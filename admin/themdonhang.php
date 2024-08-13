@@ -73,13 +73,14 @@
                                 <th onclick="sortTable(2,'string')">Tên sản phẩm</th>
                                 <th onclick="sortTable(3,'number')">Giá bán</th>
                                 <th onclick="sortTable(4,'number')">Số lượng</th>
-                                <th>Tùy chỉnh</th>
+                                <th>Tạm tính</th>
+                                <th>Xoá</th>
                             </tr>
                         </thead>
                         <tbody id="List">
-                            <?php
+                            <!-- <?php
                           ShowProductAdmin();
-                          ?>
+                          ?> -->
                         </tbody>
                     </table>
                 </div>

@@ -132,6 +132,7 @@ th {
   top: 0;
   z-index: 1000;
   cursor: pointer;
+  font-weight: bold;
   background-color: #f7e3c1;
 }
 
