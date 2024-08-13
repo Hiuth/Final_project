@@ -71,6 +71,8 @@ function check(name) {
   }
 }
 
+function del(x) {}
+
 function addOrder(n) {
   var product = n.parentElement.parentElement;
   var product_id = product.querySelector(".product_id").innerText;
@@ -89,4 +91,62 @@ function addOrder(n) {
     OrderCart.push(list);
     sessionStorage.setItem("productOrder", JSON.stringify(OrderCart));
   }
+}
+
+function showCartOrder() {
+  var total = 0;
+  var myOrder = "";
+  console.log(OrderCart);
+  if (OrderCart.length === 0) {
+    myOrder +=
+      '<tr><td class="product_id">1</td>' +
+      '<td class="product_img">' +
+      '<img class="img-table" src="" alt="" /> Chưa có dữ liệu sản phẩm' +
+      '</td><td class = "product_name">' +
+      'Chưa có dữ liệu sản phẩm, vui lòng vào mục sản phẩm để thêm dữ liệu đơn hàng </td><td><div class="price-wallpaper">' +
+      '<p class="price">0</p>' +
+      '<p class="unit-price">VND</p></div>' +
+      '</td><td class = "Quantity">Chưa có dữ liệu</td>' +
+      "<td>Chưa có dữ liệu</td>" +
+      '<td><form action="" method="POST">' +
+      '<input type="hidden" name="Order_id" value="">' +
+      '<button class="trash" onclick="del(this)">' +
+      ' <i class="fa-solid fa-trash"></i></button></form></td></tr>';
+  } else {
+    for (var i = 0; i < OrderCart.length; i++) {
+      var price = parseInt(OrderCart[i][3].replace(/\./g, ""), 10);
+      var quantity = parseInt(OrderCart[i][4], 10);
+      total = price * quantity;
+      myOrder +=
+        '<tr><td class="product_id">' +
+        OrderCart[i][0] +
+        "</td>" +
+        '<td class="product_img">' +
+        '<img class="img-table" src="' +
+        OrderCart[i][1] +
+        '" alt="" /> ' +
+        '</td><td class = "product_name">' +
+        "" +
+        OrderCart[i][2] +
+        ' </td><td><div class="price-wallpaper">' +
+        '<p class="price">' +
+        OrderCart[i][3] +
+        "</p>" +
+        '<p class="unit-price">VND</p></div>' +
+        '</td><td class = "Quantity">' +
+        OrderCart[i][4] +
+        "</td>" +
+        '<td class ="total"><div class="price-wallpaper">' +
+        '<p class="price">' +
+        total.toLocaleString("de-DE") +
+        "</p>" +
+        '<p class="unit-price">VND</p></div></td>' +
+        '<td><form action="" method="POST">' +
+        '<input type="hidden" name="Order_id" value="">' +
+        '<button class="trash" onclick="del(this)">' +
+        ' <i class="fa-solid fa-trash"></i></button></form></td></tr>';
+    }
+  }
+
+  document.getElementById("List").innerHTML = myOrder;
 }

@@ -78,9 +78,6 @@
                             </tr>
                         </thead>
                         <tbody id="List">
-                            <!-- <?php
-                          ShowProductAdmin();
-                          ?> -->
                         </tbody>
                     </table>
                 </div>
@@ -125,6 +122,9 @@
         </div>
     </div>
     <script src="../js/admin.js"></script>
+    <script>
+    showCartOrder();
+    </script>
 </body>
 
 </html>
