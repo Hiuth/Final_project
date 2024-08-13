@@ -1,6 +1,6 @@
 <?php
+    session_start();
      require_once 'connect.php';
-     session_start();
      include "Thuvien.php";
      // xử lý dữ liệu được gửi từ js sang php
      if (isset($_POST['data'])) {
