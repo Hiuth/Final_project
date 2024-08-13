@@ -54,7 +54,7 @@ header {
   display: flex;
   flex-direction: column;
   height: calc(100vh - 120px);
-  width: 250px;
+  min-width: 250px;
   background-color: #f2ddbe;
 }
 a {
@@ -73,7 +73,7 @@ li {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 20px 0; /* Thêm padding trên và dưới để tránh các mục sát với cạnh */
+  padding: 20px 0;
 }
 
 nav ul li {
@@ -110,13 +110,13 @@ nav ul li:hover > a {
   justify-content: space-between;
 }
 .table-wrapper {
-  max-height: 680px;
+  max-height: calc(100vh - 160px);
   overflow-y: auto; /*Thuộc tính này tạo ra một thanh cuộn dọc (scrollbar) khi nội dung của bảng vượt quá chiều cao tối đa (max-height) đã được xác định*/
 }
 
 table {
   width: 100%;
-  min-width: 1000px;
+  /* min-width: 1000px; */
   border-collapse: collapse; /* giúp bảng trông gọn gàng hơn, không có khoảng cách giữa các ô, tạo cảm giác bảng là một khối thống nhất*/
 }
 

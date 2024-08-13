@@ -19,6 +19,7 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="../Css/admin.css" />
+    <link rel="stylesheet" href="../Css/donhang_admin.css" />
     <title>Sản phẩm</title>
 </head>
 
@@ -48,36 +49,78 @@
                 </ul>
             </nav>
         </div>
-        <div class="main-content">
-            <div class="table-wrapper">
-                <div class="title">
-                    <div class="title-left">Sản Phẩm</div>
-                    <div class="title-right">
-                        <form id="searchForm" action="search.php" method="GET">
-                            <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm sản phẩm ..." />
-                            <button class="search-button" type="submit">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
-                        </form>
-                    </div>
+
+        <div class="content-wrapper">
+            <div class="title">
+                <div class="title-left">Sản Phẩm</div>
+                <div class="title-right">
+                    <form id="searchForm" action="search.php" method="GET">
+                        <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm sản phẩm ..." />
+                        <button class="search-button" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
                 </div>
-                <table id="table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Ảnh</th>
-                            <th onclick="sortTable(2,'string')">Tên sản phẩm</th>
-                            <th onclick="sortTable(3,'number')">Giá bán</th>
-                            <th onclick="sortTable(4,'number')">Số lượng</th>
-                            <th>Tùy chỉnh</th>
-                        </tr>
-                    </thead>
-                    <tbody id="List">
-
-                    </tbody>
-                </table>
             </div>
+            <div class="main-content">
+                <div class="table-wrapper">
 
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Ảnh</th>
+                                <th onclick="sortTable(2,'string')">Tên sản phẩm</th>
+                                <th onclick="sortTable(3,'number')">Giá bán</th>
+                                <th onclick="sortTable(4,'number')">Số lượng</th>
+                                <th>Tùy chỉnh</th>
+                            </tr>
+                        </thead>
+                        <tbody id="List">
+                            <?php
+                          ShowProductAdmin();
+                          ?>
+                        </tbody>
+                    </table>
+                </div>
+                <form class="input-form" id="customer_form" action="" method="post">
+                    <h2>THÔNG TIN KHÁCH MUA HÀNG</h2>
+                    <div class="form-content">
+                        <div class="input-info">
+                            <label for="name">Họ và tên*</label>
+                            <input type="text" name="name" id="name" required />
+                        </div>
+                        <div class="input-info">
+                            <label for="sex">Giới Tính* :</label>
+                            <input name="gender" type="radio" value="Nam" checked /> Nam
+                            <input name="gender" type="radio" value="Nữ" /> Nữ
+                        </div>
+                        <div class="input-info ">
+                            <label for="phone_nubmer">Số điện thoại*</label>
+                            <input type="tel" name="phone" id="phone" required />
+                        </div>
+                        <div class="input-info">
+                            <label for="address">Địa chỉ*</label>
+                            <input type="text" name="address" id="address" required />
+                        </div>
+                        <div class="input-info">
+                            <label for="email_address">Địa chỉ email*</label>
+                            <input type="email" name="email" id="email" required />
+                        </div>
+
+                        <div class="input-info">
+                            <label for="notes">Ghi chú đơn hàng*</label>
+                            <textarea name="note" id="note"></textarea>
+                        </div>
+                    </div>
+                    <div class="add-order-button">
+                        <div class="add-order-title" id="or-total">
+                        </div>
+                        <div class="add-order-bottom">
+                            <input type="submit" name="btn-submit" value="ĐẶT HÀNG NGAY" id="order_button">
+                        </div>
+                </form>
+            </div>
         </div>
     </div>
     <script src="../js/admin.js"></script>

@@ -1,0 +1,103 @@
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  max-height: calc(100vh - 140px);
+  justify-content: center;
+}
+.main-content {
+  display: flex;
+}
+
+.title {
+  padding: 0px 20px;
+}
+
+/* form  */
+.input-form {
+  width: 600px;
+  margin: 0 0 0 20px;
+  padding: 20px;
+  height: calc(100vh -120px);
+  background-color: white;
+  /* border: 2px solid #eb412f; */
+  border-left: 1px solid #ccc;
+  border-radius: 5px;
+  overflow-y: auto;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 550;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-info {
+  flex: 1;
+  margin-bottom: 8px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 550;
+}
+
+#name,
+#phone,
+#address,
+#email,
+#note {
+  width: 100%;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-order-title,
+.add-order-bottom {
+  margin-top: 30px;
+}
+
+.add-order-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;
+}
+#note {
+  max-width: 100%;
+  min-height: 60px;
+}
+.order-total {
+  color: #eb412f;
+  font-size: 20px;
+}
+
+#order_button {
+  width: 100%;
+  height: 50px;
+  font-weight: bold;
+  border: none;
+  background-color: #eb412f;
+  color: white;
+  cursor: pointer;
+}
+
+#order_button:hover {
+  background-color: #f2ddbe;
+  color: black;
+  transition: 0.5s;
+}
+
+.add-order-bottom .unit-price {
+  color: #eb412f;
+}
