@@ -101,3 +101,16 @@ label {
 .add-order-bottom .unit-price {
   color: #eb412f;
 }
+
+.but {
+  display: flex;
+  margin: 0 20px;
+}
+
+.quantity-button span {
+  display: flex;
+  width: 40px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}

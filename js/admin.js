@@ -64,6 +64,7 @@ function check(name) {
     for (var i = 0; i < OrderCart.length; i++) {
       if (OrderCart[i][2] === name) {
         OrderCart[i][4]++;
+        sessionStorage.setItem("productOrder", JSON.stringify(OrderCart));
         return true;
       }
     }
@@ -71,7 +72,19 @@ function check(name) {
   }
 }
 
-function del(x) {}
+function del(x) {
+  var del = x.parentElement.parentElement;
+  var name = del.querySelector(".product_name").innerText;
+  console.log(name);
+  del.remove();
+  for (var i = 0; i < OrderCart.length; i++) {
+    if (OrderCart[i][2] === name) {
+      OrderCart.splice(i, 1);
+    }
+  }
+  sessionStorage.setItem("productOrder", JSON.stringify(OrderCart));
+  location.reload();
+}
 
 function addOrder(n) {
   var product = n.parentElement.parentElement;
@@ -96,7 +109,6 @@ function addOrder(n) {
 function showCartOrder() {
   var total = 0;
   var myOrder = "";
-  console.log(OrderCart);
   if (OrderCart.length === 0) {
     myOrder +=
       '<tr><td class="product_id">1</td>' +
@@ -133,20 +145,49 @@ function showCartOrder() {
         OrderCart[i][3] +
         "</p>" +
         '<p class="unit-price">VND</p></div>' +
-        '</td><td class = "Quantity">' +
+        '</td><td class="quantity-button">' +
+        '<div class="but"> <button class="minus-btn" onclick="handleMinus(this,' +
+        i +
+        ')">-</button> <span>' +
         OrderCart[i][4] +
+        '</span> <button class="plus-btn" onclick="handlePlus(this,' +
+        i +
+        ')">+</button> </div>' +
         "</td>" +
         '<td class ="total"><div class="price-wallpaper">' +
         '<p class="price">' +
         total.toLocaleString("de-DE") +
         "</p>" +
         '<p class="unit-price">VND</p></div></td>' +
-        '<td><form action="" method="POST">' +
-        '<input type="hidden" name="Order_id" value="">' +
-        '<button class="trash" onclick="del(this)">' +
-        ' <i class="fa-solid fa-trash"></i></button></form></td></tr>';
+        '<td><button class="trash" onclick="del(this)">' +
+        ' <i class="fa-solid fa-trash"></i></button></td></tr>';
     }
   }
 
   document.getElementById("List").innerHTML = myOrder;
+}
+
+//nút tăng giảm số lượng đơn hàng
+
+function handleMinus(x, i) {
+  var parent = x.parentElement;
+  var number = parseInt(parent.querySelector("span").innerHTML);
+  if (number > 1) {
+    var newNum = number - 1;
+    parent.querySelector("span").innerHTML = newNum;
+    OrderCart[i][4] = newNum;
+    sessionStorage.setItem("productOrder", JSON.stringify(OrderCart));
+    location.reload();
+  }
+}
+
+function handlePlus(x, i) {
+  var parent = x.parentElement;
+  var number = parseInt(parent.querySelector("span").innerHTML);
+  var newNum = number + 1;
+  console.log(newNum);
+  parent.querySelector("span").innerHTML = newNum;
+  OrderCart[i][4] = newNum;
+  sessionStorage.setItem("productOrder", JSON.stringify(OrderCart));
+  location.reload();
 }
