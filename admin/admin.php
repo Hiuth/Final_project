@@ -255,7 +255,7 @@
     }
     function ShowOder(){
         $conn= connect();
-        $sql = 'SELECT Order_id,Customer_id, Order_date, Order_total, Shipping_address, Payment_Status, Shipping_status, Order_status FROM orders';
+        $sql = 'SELECT Order_id,Customer_id, Order_date, Order_total,Order_note ,Shipping_address, Payment_Status, Shipping_status, Order_status FROM orders';
         $stmt= $conn->prepare($sql);
         $stmt->execute();
         $result=$stmt->get_result();
@@ -275,6 +275,7 @@
                     <td>'.$row["Shipping_status"].'</td>
                     <td>'.$row["Payment_Status"].'</td>
                     <td>'.$row["Order_status"].'</td>
+                    <td>'.$row["Order_note"].'</td>
                     <td>
                         <div class="price-wallpaper">
                             <p class="price">'.number_format($row["Order_total"],0,',','.').'</p>

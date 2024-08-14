@@ -74,7 +74,8 @@
                             <th onclick="sortTable(6,'string')">Trạng thái giao hàng</th>
                             <th onclick="sortTable(7,'string')">Trạng thái thanh toán</th>
                             <th onclick="sortTable(8,'string')">Trạng thái đơn hàng</th>
-                            <th onclick="sortTable(9,'number')">Tổng giá trị đơn hàng</th>
+                            <th>Ghi chú</th>
+                            <th onclick="sortTable(10,'number')">Tổng giá trị đơn hàng</th>
                             <th>Chi tiết</th>
                             <th>Tùy chỉnh</th>
                             <th>Xoá</th>

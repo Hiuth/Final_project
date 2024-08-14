@@ -96,10 +96,6 @@ label {
   transition: 0.5s;
 }
 
-.add-order-bottom .unit-price {
-  color: #eb412f;
-}
-
 .but {
   display: flex;
   margin: 0 20px;

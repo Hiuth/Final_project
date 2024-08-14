@@ -191,3 +191,7 @@ th {
   border: 1px solid gray;
   margin-left: 0px;
 }
+
+.add-order-bottom .unit-price {
+  color: #eb412f;
+}
