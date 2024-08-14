@@ -205,10 +205,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (!info.email.value.endsWith("@gmail.com")) {
-      checkPhone.classList.add("input-error");
+      checkEmail.classList.add("input-error");
       isFormTrue = false;
     } else {
-      checkPhone.classList.remove("input-error");
+      checkEmail.classList.remove("input-error");
     }
 
     if (isFormTrue) {

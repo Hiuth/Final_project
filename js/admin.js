@@ -93,13 +93,15 @@ function addOrder(n) {
   var product_name = product.querySelector(".product_name").innerText;
   var product_price = product.querySelector(".price").innerText;
   var quantity = 1;
+  var quantityInWarehouse = product.querySelector(".Quantity").innerText;
   if (check(product_name) === false) {
     var list = new Array(
       product_id,
       product_img,
       product_name,
       product_price,
-      quantity
+      quantity,
+      quantityInWarehouse
     );
     OrderCart.push(list);
     sessionStorage.setItem("productOrder", JSON.stringify(OrderCart));
@@ -111,7 +113,7 @@ function showCartOrder() {
   var myOrder = "";
   if (OrderCart.length === 0) {
     myOrder +=
-      '<tr><td class="product_id">1</td>' +
+      '<tr><td class="product_id">0</td>' +
       '<td class="product_img">' +
       '<img class="img-table" src="" alt="" /> Chưa có dữ liệu sản phẩm' +
       '</td><td class = "product_name">' +
@@ -207,3 +209,78 @@ function handlePlus(x, i) {
   sessionStorage.setItem("productOrder", JSON.stringify(OrderCart));
   location.reload();
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  function sendCart(event) {
+    var info = document.getElementById("customer_form");
+    var isFormTrue = true;
+    var info_data = {
+      name: info.name.value,
+      gender: info.querySelector('input[name="gender"]:checked').value,
+      phone: info.phone.value,
+      address: info.address.value,
+      email: info.email.value,
+      note: info.note.value,
+    };
+    var checkPhone = document.getElementById("phone");
+    var checkEmail = document.getElementById("email");
+
+    if (info.phone.value.length != 10) {
+      checkPhone.classList.add("input-error");
+      isFormTrue = false;
+    } else {
+      checkPhone.classList.remove("input-error");
+    }
+
+    if (!info.email.value.endsWith("@gmail.com")) {
+      checkEmail.classList.add("input-error");
+      isFormTrue = false;
+    } else {
+      checkEmail.classList.remove("input-error");
+    }
+
+    for (var i = 0; i < OrderCart.length; i++) {
+      if (OrderCart[i][4] > OrderCart[i][5]) {
+        console.log(OrderCart[i][4]);
+        isFormTrue = false;
+        alert(
+          "Số lượng sản phẩm " +
+            OrderCart[i][2] +
+            " đang vượt quá số lượng sản phẩm có trong kho"
+        );
+        break;
+      }
+    }
+    if (isFormTrue) {
+      // hàm gửi dữ liệu từ local storage sang php
+      var Data = sessionStorage.getItem("productOrder");
+      var url = "themdonhang.php";
+      var options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: "data=" + encodeURIComponent(Data), // hàm mã hoá chuỗi
+      };
+
+      fetch(url, options)
+        .then((response) => response.text()) // Đổi từ json sang text
+        .then((data) => {
+          console.log("Phản hồi từ server:", data);
+          return JSON.parse(data);
+        })
+        .then((parsedData) => {
+          console.log(":", parsedData);
+        })
+        .catch((error) => {
+          console.error("Lỗi khi gửi yêu cầu:", error);
+        });
+      sessionStorage.clear();
+      location.reload();
+    } else {
+      event.preventDefault();
+    }
+  }
+
+  document.getElementById("order_button").addEventListener("click", sendCart);
+});

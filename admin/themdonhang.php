@@ -1,6 +1,30 @@
 <?php
+  session_start();
   require_once("connect-admin.php");
-  include "admin.php"
+  include "admin.php";
+
+  if (isset($_POST['data'])) {
+    $receivedData = json_decode($_POST['data'], true);
+    $_SESSION['productOrder'] = $receivedData;
+} 
+
+ if (isset($_POST['btn-submit'])&&$_POST['btn-submit']) {
+     $username=$_POST['name'];
+     $gender=$_POST['gender'];
+     $email=$_POST['email'];
+     $phone_number= $_POST['phone'];
+     $address=$_POST['address'];
+     $note=$_POST['note'];
+     $total =Cart_total();
+     if(!empty($username) && !empty($gender) && !empty($email) && !empty($phone_number) && !empty($address)) {
+        $customer_id=Create_Customer_Info($username, $gender, $phone_number, $address, $email);
+        //tạo đơn hàng
+        $orders_id = Create_orders($customer_id,$total,$note,$address);
+        //tạo chi tiết đơn hàng
+        Create_orders_details($orders_id);
+     }
+}
+ 
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -81,7 +105,7 @@
                         </tbody>
                     </table>
                 </div>
-                <form class="input-form" id="customer_form" action="" method="post">
+                <form class="input-form" id="customer_form" action="themdonhang.php" method="post">
                     <h2>THÔNG TIN KHÁCH MUA HÀNG</h2>
                     <div class="form-content">
                         <div class="input-info">
@@ -95,7 +119,7 @@
                         </div>
                         <div class="input-info ">
                             <label for="phone_nubmer">Số điện thoại*</label>
-                            <input type="tel" name="phone" id="phone" required />
+                            <input class="input-error" type="tel" name="phone" id="phone" required />
                         </div>
                         <div class="input-info">
                             <label for="address">Địa chỉ*</label>
