@@ -49,13 +49,20 @@
       <div class="sidebar">
         <nav>
           <ul>
-            <li><a href="sanpham.html" target="table">Sản Phẩm</a></li>
-            <li><a href="DonHang.html" target="table">Đơn Hàng</a></li>
+            <li>
+              <a href="sanpham.php">Sản Phẩm</a>
+            </li>
+            <li><a href="">Thêm sản phẩm</a></li>
+            <li>
+              <a href="DonHang.php">Đơn Hàng</a>
+            </li>
+            <li><a href="themdonhang.php">Thêm đơn hàng</a></li>
+            <li><a href="Lichsudonhang.php">Lịch sử đơn hàng</a></li>
           </ul>
         </nav>
       </div>
       <div class="main-content">
-        <h1>Chỉnh sửa sản phẩm</h1>
+        <h1>Thêm mặt hàng</h1>
         <form class="edit-product-form">
           <div class="form-row">
             <!-- Cột bên trái cho các trường nhập liệu -->
@@ -77,7 +84,7 @@
                 <input type="text" id="price" name="price" />
               </div>
               <div class="form-group">
-                <label for="category">Thuộc loại máy</label>
+                <label for="category">Thuộc loại</label>
                 <select id="category" name="category">
                   <option value="">Chọn loại máy</option>
                   <option value="ps5">PS5</option>
@@ -91,12 +98,12 @@
 
             <!-- Cột bên phải cho phần "Chỉnh sửa ảnh" -->
             <div class="form-group image-upload">
-              <label for="product-image">Chỉnh sửa ảnh</label>
+              <label for="product-image">Thêm ảnh</label>
               <div class="image-placeholder">Chọn ảnh</div>
             </div>
           </div>
           <div class="button-container">
-            <button type="submit" class="submit-button">Chỉnh sửa</button>
+            <button type="submit" class="submit-button">Thêm mặt hàng</button>
           </div>
         </form>
       </div>
