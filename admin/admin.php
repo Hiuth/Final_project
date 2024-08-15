@@ -244,8 +244,8 @@
                             </td>
                             <td class = "Quantity">'.$row["Quantity"].'</td>
                             <td>
-                             <form action="" method="POST">
-                                <input type="hidden" name="Order_id" value="'.$row["Product_id"].'">
+                             <form action="chinhsuasanpham.php" method="POST">
+                                <input type="hidden" name="Product_id" value="'.$row["Product_id"].'">
                             <button class="fix-product" type="submit" name="btn-2" value="fix">
                                 <i class="fa-solid fa-pen"></i>
                             </button>
@@ -453,6 +453,72 @@
         $conn->close();
         $stmt->close();
     }
+
+
+
+
+
+    function showProduct_edit($id){
+        
+        $conn= connect();
+        $sql = 'SELECT Product_img, Product_name, Product_price, Brand_id, Category_id, Quantity FROM product WHERE product_id = ?';
+        $stmt= $conn->prepare($sql);
+        $stmt->bind_param("i",$id);
+        $stmt->execute();
+        // $brand = showBrand();
+        // $category = showCategory();
+        $result=$stmt->get_result();
+        if($result->num_rows > 0){
+            $row=$result->fetch_assoc();
+
+            echo'<div class="form-row">
+                    <!-- Cột bên trái cho các trường nhập liệu -->
+                    <div class="form-group-wrapper">
+                        <div class="form-group">
+                            <label for="product-name">Tên sản phẩm</label>
+                            <input type="hidden" name="product_id" value ="'.$id.'"/>
+                            <input type="text" id="product-name" name="product-name" value ="'.$row["Product_name"].'" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="brand">Nhãn hiệu</label>
+                            <select id="brand" name="brand"  ">
+                            <option value="">Chọn nhãn hiệu</option>';
+                                showBrand($row["Brand_id"]) ;
+                          echo  '</select>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Số lượng còn trong kho</label>
+                            <input type="number" id="quantity" name="quantity" value="'.$row["Quantity"].'" min="0" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Giá bán</label>
+                            <input type="text" id="price" name="price" value= "'.number_format($row["Product_price"],0,',','.').'" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Thuộc loại</label>
+                            <select id="category" name="category" required>
+                                <option value="">Chọn loại</option>';
+                                
+                                showCategory($row["Category_id"]);
+                              
+                           echo '</select>
+                        </div>
+                    </div>
+
+                    <!-- Cột bên phải cho phần "Chỉnh sửa ảnh" -->
+                    <div class="form-group image-upload">
+                        <label for="product-image">Thêm ảnh</label>
+                        <div class="image-placeholder">
+                            <input type="file" accept="image/*" id="file" name="image">
+                        </div>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button type="submit" class="submit-button" name="btn-5" id="submit-button"
+                        value="Edit_product">Chỉnh sửa sản phẩm</button>
+                </div>';
+        }
+    }
     //check, count Function zone
 
     function CountOrderDetails($orders_id){
@@ -463,7 +529,7 @@
         $stmt->execute();
         $stmt->bind_result($count); //gán biến count vào biến mà sql đang truy vấn là order_id
         $stmt->fetch();//gán giá trị của total vào biến count
-         $conn->close();
+        $conn->close();
         $stmt->close();
         return $count;
     }
@@ -546,6 +612,31 @@
         $conn->close();
         $stmt->close();
         
+    }
+
+
+
+    function UpdateProduct($product_img,$product_name,$product_price,$Brand_id,$product_category,$product_quantity,$product_id){
+        $conn= connect();
+        $number = FormatNumber($product_price);
+        $name = strtoupper($product_name);
+        if($product_img == null){
+            $sql = 'UPDATE product SET Product_name = ?, Product_price = ?, Brand_id = ?, Category_id = ? , Quantity = ? WHERE Product_id = ?';
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param('sissss',$name,$number,$Brand_id, $product_category,$product_quantity,$product_id);
+            $stmt->execute();
+            if($stmt->affected_rows > 0){}
+            
+        }else{
+            $sql = 'UPDATE product SET Product_img = ?,Product_name = ?, Product_price = ?, Brand_id = ?, Category_id = ? , Quantity = ? WHERE Product_id = ?';
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param('ssissss',$product_img,$name,$number,$Brand_id, $product_category,$product_quantity,$product_id);
+            $stmt->execute();
+            if($stmt->affected_rows > 0){}
+        }
+        
+        $conn->close();
+        $stmt->close();
     }
 
     // search Function zone
@@ -736,23 +827,33 @@
 
 
     //Add Product
-    function showBrand(){
+    function showBrand($selectedBrand = null) {
         $conn = connect();
         $sql = 'SELECT Brand_id FROM brand';
         $stmt = $conn->prepare($sql);
         $stmt->execute();
-        $result=$stmt->get_result();
-        if($result->num_rows > 0){
-            while($row = $result->fetch_assoc()){
-                echo '<option value="'.$row["Brand_id"].'">'.$row["Brand_id"].'</option>';
-            }
-        }
-        $conn->close();
-        $stmt->close();
+        $result = $stmt->get_result();
         
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                if ($row["Brand_id"] == $selectedBrand) {
+                    $selected = ' selected';
+                } else {
+                    $selected = '';
+                }
+                
+                echo '<option value="' . $row["Brand_id"] . '"' . $selected . '>' . $row["Brand_id"] . '</option>';
+            }
+        } else {
+            echo '<option value="">Không có nhãn hiệu nào</option>';
+        }
+        
+        $stmt->close();
+        $conn->close();
     }
+    
 
-    function showCategory(){
+    function showCategory($selectedCategory = null){
         $conn = connect();
         $sql = 'SELECT Category_id FROM category';
         $stmt = $conn->prepare($sql);
@@ -760,11 +861,21 @@
         $result=$stmt->get_result();
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
-                echo '<option value="'.$row["Category_id"].'">'.$row["Category_id"].'</option>';
+                if ($row['Category_id'] == $selectedCategory) {
+                    $selected = ' selected';
+                } else {
+                    $selected = '';
+                }
+                echo '<option value="'.$row["Category_id"].'" ' . $selected . '>'.$row["Category_id"].'</option>';
             }
+            
+        } else {
+            echo '<option value="">Không có nhãn hiệu nào</option>';
         }
+        
         $conn->close();
         $stmt->close();
     }
+
 
 ?>

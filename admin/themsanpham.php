@@ -95,7 +95,7 @@
                         </div>
                         <div class="form-group">
                             <label for="quantity">Số lượng</label>
-                            <input type="number" id="quantity" name="quantity" value="0" required />
+                            <input type="number" id="quantity" name="quantity" value="0" min="0" required />
                         </div>
                         <div class="form-group">
                             <label for="price">Giá bán</label>
