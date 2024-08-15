@@ -68,7 +68,7 @@
                     <li>
                         <a href="DonHang.php">Đơn Hàng</a>
                     </li>
-                    <li><a href="">Thêm đơn hàng</a></li>
+                    <li><a href="themdonhang.php">Thêm đơn hàng</a></li>
                     <li><a href="Lichsudonhang.php">Lịch sử đơn hàng</a></li>
                 </ul>
             </nav>

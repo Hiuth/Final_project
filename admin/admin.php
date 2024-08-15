@@ -89,7 +89,16 @@
     }
 
 
-
+    function create_product($product_img,$product_name,$product_price,$product_brand,$product_category,$product_quantity){
+            $conn= connect();
+            $number = FormatNumber($product_price);
+            $img= "/Final_project/Picture/".$product_img;
+            $name = strtoupper($product_name);
+            $sql = "INSERT INTO product(Product_img,Product_name,Product_price,Brand_id,Category_id,Quantity)
+            VALUES ('$img','$name','$number','$product_brand','$product_category','$product_quantity')";
+            $conn->query($sql);
+            $conn->close();
+    }
 
 
 
@@ -757,4 +766,5 @@
         $conn->close();
         $stmt->close();
     }
+
 ?>

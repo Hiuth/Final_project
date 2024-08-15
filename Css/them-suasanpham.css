@@ -99,3 +99,8 @@ select:focus {
   justify-content: center;
   margin-top: 100px;
 }
+
+#file {
+  border: none;
+  justify-content: center;
+}

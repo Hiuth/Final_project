@@ -1,6 +1,26 @@
 <?php
   require_once("connect-admin.php");
-  include "admin.php"
+  include "admin.php";
+
+  if (isset($_POST["btn-5"]) && $_POST["btn-5"]) {
+    $product_name = $_POST['product-name'];
+    $product_brand = $_POST['brand'];
+    $product_quantity = $_POST['quantity'];
+    $product_price = $_POST['price'];
+    $product_category = $_POST['category'];
+    $product_img = $_FILES['image']['name'];
+    // Đường dẫn thư mục đích trên xampp
+    $target_dir = "/Xampp/htdocs/Final_project/Picture/";
+    $target_file = $target_dir . basename($product_img);
+    if (file_exists($target_file)) {
+    } else {
+        // Di chuyển tệp đến thư mục đích
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
+        }
+    }
+    create_product($product_img,$product_name,$product_price,$product_brand,$product_category,$product_quantity);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -40,7 +60,7 @@
                     <li>
                         <a href="sanpham.php">Sản Phẩm</a>
                     </li>
-                    <li><a href="">Thêm sản phẩm</a></li>
+                    <li><a href="themsanpham.php">Thêm sản phẩm</a></li>
                     <li>
                         <a href="DonHang.php">Đơn Hàng</a>
                     </li>
@@ -51,7 +71,7 @@
         </div>
         <div class="main-content">
             <h1>Thêm mặt hàng</h1>
-            <form class="edit-product-form">
+            <form class="edit-product-form" action="themsanpham.php" method="POST" enctype="multipart/form-data">
                 <div class="form-row">
                     <!-- Cột bên trái cho các trường nhập liệu -->
                     <div class="form-group-wrapper">
@@ -100,16 +120,23 @@
                     <!-- Cột bên phải cho phần "Chỉnh sửa ảnh" -->
                     <div class="form-group image-upload">
                         <label for="product-image">Thêm ảnh</label>
-                        <div class="image-placeholder">Chọn ảnh</div>
+                        <div class="image-placeholder">
+                            <input type="file" accept="image/*" id="file" name="image" required>
+                        </div>
                     </div>
                 </div>
                 <div class="button-container">
-                    <button type="submit" class="submit-button">Thêm mặt hàng</button>
+                    <button type="submit" class="submit-button" name="btn-5" id="submit-button"
+                        value="Thêm mặt hàng">Thêm mặt hàng</button>
                 </div>
             </form>
         </div>
     </div>
     <script src="../js/admin.js"></script>
+
+    <?php
+
+    ?>
 </body>
 
 </html>
