@@ -718,6 +718,43 @@
                
             }
         }
+        $conn->close();
+        $stmt->close();
     }
 
+
+
+
+
+    //Add Product
+    function showBrand(){
+        $conn = connect();
+        $sql = 'SELECT Brand_id FROM brand';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $result=$stmt->get_result();
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                echo '<option value="'.$row["Brand_id"].'">'.$row["Brand_id"].'</option>';
+            }
+        }
+        $conn->close();
+        $stmt->close();
+        
+    }
+
+    function showCategory(){
+        $conn = connect();
+        $sql = 'SELECT Category_id FROM category';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $result=$stmt->get_result();
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                echo '<option value="'.$row["Category_id"].'">'.$row["Category_id"].'</option>';
+            }
+        }
+        $conn->close();
+        $stmt->close();
+    }
 ?>
