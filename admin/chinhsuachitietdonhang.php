@@ -1,7 +1,8 @@
 <?php
-  require_once("connect-admin.php");
-  include "admin.php"
+    require_once("connect-admin.php");
+    include "admin.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -19,6 +20,7 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="../Css/admin.css" />
+    <link rel="stylesheet" href="../Css/them-suasanpham.css" />
     <title>Sản phẩm</title>
 </head>
 
@@ -49,38 +51,18 @@
             </nav>
         </div>
         <div class="main-content">
-            <div class="table-wrapper">
-                <div class="title">
-                    <div class="title-left">Sản Phẩm</div>
-                    <div class="title-right">
-                        <form id="searchForm" action="search.php" method="GET">
-                            <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm sản phẩm ..." />
-                            <button class="search-button" type="submit">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                <table id="table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Ảnh</th>
-                            <th onclick="sortTable(2,'string')">Tên sản phẩm</th>
-                            <th onclick="sortTable(3,'number')">Giá bán</th>
-                            <th onclick="sortTable(4,'number')">Số lượng</th>
-                            <th>Tùy chỉnh</th>
-                            <th>Thêm đơn hàng</th>
-                            <th>Xoá sản phẩm</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                      ShowProductAdmin();
-                      ?>
-                    </tbody>
-                </table>
-            </div>
+            <h1>Chỉnh sửa sản phẩm</h1>
+            <form class="edit-product-form" action="chinhsuachitietdonhang.php" method="POST" enctype="multipart/form-data">
+                <?php
+            if (isset($_POST['btn-2'])&&$_POST['btn-2']) {
+              $orderDetails_id= $_POST["OrderDetailsEdit_id"];
+              ShowOrderDetails_edit($orderDetails_id);
+              
+            }
+            
+          ?>
+            </form>
+
         </div>
     </div>
     <script src="../js/admin.js"></script>

@@ -127,7 +127,7 @@
 
     function FindProductInfo($id){
         $conn= connect();
-        $sql_customer = 'SELECT Product_img,Product_name,Product_price FROM product WHERE Product_id = ?';
+        $sql_customer = 'SELECT Product_img,Product_name,Product_price, Brand_id, Category_id FROM product WHERE Product_id = ?';
         $stmt_customer = $conn->prepare($sql_customer);
         $stmt_customer->bind_param("i",$id);
         $stmt_customer->execute();
@@ -137,7 +137,9 @@
             $Product_img = $row['Product_img'];
             $Product_name = $row['Product_name'];
             $Product_price = $row['Product_price'];
-            $Product_info=[ $Product_img, $Product_name, $Product_price];
+            $Brand_id = $row['Brand_id'];
+            $Category_id = $row['Category_id'];
+            $Product_info=[ $Product_img, $Product_name, $Product_price, $Brand_id,$Category_id];
         }
 
         
@@ -256,6 +258,14 @@
                                   <i class="fa-solid fa-cart-plus"></i>
                                 </button>
                             </td>
+                            <td>
+                        <form action="sanpham.php" method="POST">
+                            <input type="hidden" name="Del_product_id" value="'.$row["Product_id"].'">
+                            <button class="trash" type="submit" name="btn-3" value="delete">
+                                <i class="fa-solid fa-trash"></i></i>
+                            </button>
+                        </form> 
+                        </td>
                         </tr>';
             }
         }
@@ -393,6 +403,14 @@
                                     <p class="unit-price">VND</p>
                                 </div>
                             </td>
+                            <td class="setting">
+                                 <form action="chinhsuachitietdonhang.php" method="POST">
+                                <input type="hidden" name="OrderDetailsEdit_id" value="'.$row["OrderDetails_id"].'">
+                                <button class="fix-product" type="submit" name="btn-2" value="fix">
+                                <i class="fa-solid fa-pen"></i>
+                                </button>
+                            </form>
+                              </td>
                             <td>
                             <form action="chitietdonhang.php" method="GET">
                                     <input type="hidden" name="OrderDetails_id" value="'.$row["OrderDetails_id"].'">
@@ -518,8 +536,80 @@
                         value="Edit_product">Chỉnh sửa sản phẩm</button>
                 </div>';
         }
+        $conn->close();
+        $stmt->close();
     }
+
+
+    function ShowOrderDetails_edit($id){
+        $conn= connect();
+        $sql = 'SELECT Product_id, Quantity, UnitPrice FROM orderdetails WHERE OrderDetails_id = ?';
+        $stmt= $conn->prepare($sql);
+        $stmt->bind_param('i',$id);
+        $stmt->execute();
+        $result=$stmt->get_result();
+        if($result->num_rows > 0){
+            $row=$result->fetch_assoc();
+            $info = FindProductInfo($row['Product_id']);
+            echo'<div class="form-row">
+            <!-- Cột bên trái cho các trường nhập liệu -->
+            <div class="form-group-wrapper">
+                <div class="form-group">
+                    <label for="product-name">Tên sản phẩm</label>
+                    <input type="hidden" name="product_id" value ="'.$id.'"/>
+                    <input type="text" id="product-name" name="product-name" value ="'.$info['1'].'" readonly />
+                </div>
+                <div class="form-group">
+                    <label for="brand">Nhãn hiệu</label>
+                    <select id="brand" name="brand" disabled ">
+                    <option value="">Chọn nhãn hiệu</option>';
+                        showBrand($info[3]) ;
+                  echo  '</select>
+                </div>
+                <div class="form-group">
+                    <label for="price">Giá bán</label>
+                    <input type="text" id="price" name="price" value= "'.number_format($info['2'],0,',','.').'"  readonly />
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Số lượng sản phẩm mua</label>
+                    <input type="number" id="quantity" name="quantity" value="'.$row["Quantity"].'" min="0" required />
+                </div>
+                 <div class="form-group">
+                    <label for="price">Tổng tiền</label>
+                    <input type="text" id="price" name="price" value= "'.number_format($info['2']*$row["Quantity"],0,',','.').'" readonly />
+                </div>
+                <div class="form-group">
+                    <label for="category">Thuộc loại</label>
+                    <select id="category" name="category" disabled>
+                        <option value="">Chọn loại</option>';
+                        
+                        showCategory($info[4]);
+                      
+                   echo '</select>
+                </div>
+            </div>
+
+            <!-- Cột bên phải cho phần "Chỉnh sửa ảnh" -->
+            <div class="form-group image-upload">
+                <label for="product-image">Ảnh sản phẩm</label>
+                <div class="image-placeholder">
+                    <img class="image-placeholder"src = "'.$info[0].'" width = 100%>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button type="submit" class="submit-button" name="btn-5" id="submit-button"
+                value="Edit_OrderDetails">Chỉnh sửa sản phẩm</button>
+        </div>';
+        }
+    }
+ 
+
+
+
     //check, count Function zone
+
+
 
     function CountOrderDetails($orders_id){
         $conn= connect();
