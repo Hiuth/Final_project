@@ -556,7 +556,7 @@
             <div class="form-group-wrapper">
                 <div class="form-group">
                     <label for="product-name">Tên sản phẩm</label>
-                    <input type="hidden" name="product_id" value ="'.$id.'"/>
+                    <input type="hidden" name="OrderDetails_id" value ="'.$id.'"/>
                     <input type="text" id="product-name" name="product-name" value ="'.$info['1'].'" readonly />
                 </div>
                 <div class="form-group">
@@ -624,7 +624,27 @@
         return $count;
     }
 
+    function GetOrderDetailsID($id){
+        $conn = connect();
+        $sql = 'SELECT OrderDetails_id FROM orderdetails WHERE Order_id = ?';
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        $orderDetailsIds = array(); 
+        
+        while ($row = $result->fetch_assoc()) {
+            $orderDetailsIds[] = $row['OrderDetails_id']; 
+        }
+        
+        $stmt->close();
+        $conn->close();
+        
+        return $orderDetailsIds;
+    }
 
+    
 
 
     //Delete function zone
@@ -729,6 +749,32 @@
         $stmt->close();
     }
 
+
+
+    function UpdateOrderDetails($id,$quantity, $total,$Order_id){
+        $conn= connect();
+        $number_quantity = FormatNumber($quantity);
+        $number_total = FormatNumber($total);
+        $sql = 'UPDATE orderdetails SET Quantity = ?, UnitPrice = ? WHERE OrderDetails_id = ?';
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('iii',$number_quantity,$number_total,$id);
+        $stmt->execute();
+        if($stmt->affected_rows > 0){}
+        $info = GetOrderDetailsID($Order_id);
+        $total=0;
+        for($i= 0;$i<count($info);$i++){
+            $info_2 = FindOrderDetailsInfo($info[$i]);
+            $total += $info_2[3];
+        }
+        $sql_2 = 'UPDATE orders SET Order_total = ? WHERE Order_id = ?';
+        $stmt_2 = $conn->prepare($sql_2);
+        $stmt_2->bind_param('ii',$total, $Order_id);
+        $stmt_2->execute();
+        if($stmt_2->affected_rows > 0){}
+        $conn->close();
+        $stmt->close();
+        $stmt_2->close();
+    }
     // search Function zone
 
 

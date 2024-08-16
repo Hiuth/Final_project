@@ -1,6 +1,16 @@
 <?php
     require_once("connect-admin.php");
     include "admin.php";
+
+    if(isset($_POST["btn-5"]) &&$_POST["btn-5"]){
+        $orderDetails_id = $_POST["OrderDetails_id"];
+        $quantity = $_POST["quantity"];
+        $total = $_POST["total"];
+        $info= FindOrderDetailsInfo($orderDetails_id);
+        UpdateOrderDetails($orderDetails_id,$quantity,$total,$info[0]);
+      
+        echo '<script>window.location.href="chitietdonhang.php?Order_id=' . $info[0]. '&btn=details";</script>';
+    }
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +66,7 @@
                 <?php
             if (isset($_POST['btn-2'])&&$_POST['btn-2']) {
               $orderDetails_id= $_POST["OrderDetailsEdit_id"];
+             
               ShowOrderDetails_edit($orderDetails_id);
               
             }
