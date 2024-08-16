@@ -284,3 +284,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("order_button").addEventListener("click", sendCart);
 });
+
+function ChangeTotal() {
+  var quantity = document.getElementById("quantity").value;
+  var price = parseInt(
+    document.getElementById("price").value.replace(/\./g, ""),
+    10
+  );
+
+  var total = price * quantity;
+  console.log(total);
+  document.getElementById("total").value = total.toLocaleString("de-DE");
+}

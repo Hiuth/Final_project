@@ -572,11 +572,11 @@
                 </div>
                 <div class="form-group">
                     <label for="quantity">Số lượng sản phẩm mua</label>
-                    <input type="number" id="quantity" name="quantity" value="'.$row["Quantity"].'" min="0" required />
+                    <input type="number" id="quantity" name="quantity" value="'.$row["Quantity"].'" min="1" oninput="ChangeTotal()" required />
                 </div>
                  <div class="form-group">
                     <label for="price">Tổng tiền</label>
-                    <input type="text" id="price" name="price" value= "'.number_format($info['2']*$row["Quantity"],0,',','.').'" readonly />
+                    <input type="text" id="total" name="total" value= "'.number_format($info['2']*$row["Quantity"],0,',','.').'" readonly />
                 </div>
                 <div class="form-group">
                     <label for="category">Thuộc loại</label>
@@ -592,9 +592,9 @@
             <!-- Cột bên phải cho phần "Chỉnh sửa ảnh" -->
             <div class="form-group image-upload">
                 <label for="product-image">Ảnh sản phẩm</label>
-                <div class="image-placeholder">
+           
                     <img class="image-placeholder"src = "'.$info[0].'" width = 100%>
-                </div>
+               
             </div>
         </div>
         <div class="button-container">
