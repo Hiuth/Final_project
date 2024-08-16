@@ -51,7 +51,7 @@
             </nav>
         </div>
         <div class="main-content">
-            <h1>Chỉnh sửa sản phẩm</h1>
+            <h1>Chỉnh sửa chi tiết đơn hàng</h1>
             <form class="edit-product-form" action="chinhsuachitietdonhang.php" method="POST" enctype="multipart/form-data">
                 <?php
             if (isset($_POST['btn-2'])&&$_POST['btn-2']) {
