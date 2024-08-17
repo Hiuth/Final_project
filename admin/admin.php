@@ -650,14 +650,22 @@
     }
     function DeleteOrderDetails($orders_id){
         $conn= connect();
-        $sql = 'DELETE FROM orderdetails WHERE Order_id = ? ';
-        $stmt= $conn->prepare($sql);
-        $stmt->bind_param('i',$orders_id);
-        $stmt->execute();
-        if($stmt->affected_rows > 0){
-            DeleteOrder($orders_id);
-
+        $info = FindOrderInfo($orders_id);
+        if($info[4] == "Đang vận chuyển" || $info[4] == "Gửi Hàng Thành công" ){
+            echo '<script>alert("Đơn hàng đang ở trạng thái '.$info[4].' không thể huỷ đơn !!! ");</script>';
+            $conn->close();
+            return;
+        }else{
+            $sql = 'DELETE FROM orderdetails WHERE Order_id = ? ';
+            $stmt= $conn->prepare($sql);
+            $stmt->bind_param('i',$orders_id);
+            $stmt->execute();
+            if($stmt->affected_rows > 0){
+                DeleteOrder($orders_id);
+    
+            }
         }
+
         $conn->close();
         $stmt->close();
     }
@@ -691,24 +699,31 @@
     function DeleteProductInOrders($orderDetails_id){
         $conn= connect(); 
         $orderDetailsInfo=FindOrderDetailsInfo($orderDetails_id);
-        if(CountOrderDetails($orderDetailsInfo[0]) == 1){
-            $check = CountOrderDetails($orderDetails_id);
-           echo'<script>window.location.href="DonHang.php";</script>';
-           DeleteOrderDetails($orderDetailsInfo[0]);
+        $info=FindOrderInfo( $orderDetailsInfo[0] );
+        if($info[4] == "Đang vận chuyển" || $info[4] == "Gửi hàng thành công"){
+           //echo 'Đơn hàng đang ở trạng thái '.$info[4].' không thể huỷ đơn !!! ';
+          // echo '<script>window.location.href="chitietdonhang.php?Order_id=' . $info[0]. '&btn=details";</script>';
+            $conn->close();
+            return;
         }else{
-            $sql = 'DELETE FROM orderdetails WHERE OrderDetails_id = ?';
-            UpdateTotalOrdersTotal($orderDetails_id);
-            $stmt= $conn->prepare($sql);
-            $stmt->bind_param('i',$orderDetails_id);
-            $stmt->execute();
-            if($stmt->affected_rows > 0){
+            if(CountOrderDetails($orderDetailsInfo[0]) == 1){
+                $check = CountOrderDetails($orderDetails_id);
+               echo'<script>window.location.href="DonHang.php";</script>';
+               DeleteOrderDetails($orderDetailsInfo[0]);
+            }else{
+                $sql = 'DELETE FROM orderdetails WHERE OrderDetails_id = ?';
+                UpdateTotalOrdersTotal($orderDetails_id);
+                $stmt= $conn->prepare($sql);
+                $stmt->bind_param('i',$orderDetails_id);
+                $stmt->execute();
+                if($stmt->affected_rows > 0){
+                }
+                echo '<script>window.location.href="chitietdonhang.php?Order_id=' . $info[0] . '&btn=details";</script>';
             }
+            $conn->close();
+            $stmt->close();
         }
-
        
-
-        $conn->close();
-        $stmt->close();
         
     }
 
