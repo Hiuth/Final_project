@@ -56,6 +56,7 @@
                         <form id="searchForm" action="searchOrder.php" method="GET">
                             <input class="search-bar" type="search" name="searchOrder"
                                 placeholder="Tìm kiếm đơn hàng ..." />
+                                <input type="hidden" value = "donHang" name="typeSearch">
                             <button class="search-button" type="submit">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
@@ -84,7 +85,7 @@
                         <?php
 
                             SearchOrder();
-                            SearchOrderCustomer();
+                            //SearchOrderCustomer();
     
                         
                         if(isset($_POST['btn-3']) && $_POST['btn-3']){

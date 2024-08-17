@@ -272,90 +272,126 @@
         $conn->close();
         $stmt->close();
     }
-    function ShowOder(){
-        $conn= connect();
-        $sql = 'SELECT Order_id,Customer_id, Order_date, Order_total,Order_note ,Shipping_address, Payment_Status, Shipping_status, Order_status FROM orders';
-        $stmt= $conn->prepare($sql);
+    function ShowOrder($isHistory = false) {
+        $conn = connect();
+        $sql = 'SELECT Order_id, Customer_id, Order_date, Order_total, Order_note, Shipping_address, Payment_Status, Shipping_status, Order_status FROM orders';
+        $stmt = $conn->prepare($sql);
         $stmt->execute();
-        $result=$stmt->get_result();
-        $count=1;
-        if($result->num_rows > 0){
-            while($row=$result->fetch_assoc()){
-
+        $result = $stmt->get_result();
+        $count = 1;
+    
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
                 $info = FindCustomerInfo($row["Customer_id"]);
-                if($row["Order_status"] !="Đã xác nhận" && $row["Shipping_status"] !="Gửi hàng thành công" && $row["Payment_Status"] != "Đã thanh toán"){
-                    echo' <tr>
-                    <td>'.$count++.'</td>
-                    <td>'.$info[0].'</td>
-                    <td>'.$info[1].'</td>
-                    <td>'.$info[2].'</td>
-                    <td>'.$row["Shipping_address"].'</td>
-                    <td>'.$row["Order_date"].'</td>
-                    <td>'.$row["Shipping_status"].'</td>
-                    <td>'.$row["Payment_Status"].'</td>
-                    <td>'.$row["Order_status"].'</td>
-                    <td>'.$row["Order_note"].'</td>
-                    <td>
-                        <div class="price-wallpaper">
-                            <p class="price">'.number_format($row["Order_total"],0,',','.').'</p>
-                            <p class="unit-price">VND</p>
-                        </div>
-                    </td>
-                    <td>
-                        <form action="chitietdonhang.php" method="GET">
-                            <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
-                            <button class="details" type="submit" name="btn" value="details">
-                                <i class="fa-solid fa-file-invoice"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td class="setting">
-                        <form action="" method="POST">
-                            <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
-                            <button class="fix-product" type="submit" name="btn-2" value="fix">
-                                <i class="fa-solid fa-pen"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>
-                     <form action="DonHang.php" method="POST">
-                            <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
-                            <button class="trash" type="submit" name="btn-3" value="delete">
-                                <i class="fa-solid fa-trash"></i></i>
-                            </button>
-                        </form> 
+    
+                // Điều kiện để hiển thị trong lịch sử đơn hàng
+                $isHistoryCondition = ($row["Order_status"] == "Đã xác nhận" && $row["Shipping_status"] == "Gửi hàng thành công" && $row["Payment_Status"] == "Đã thanh toán");
+    
+                // Điều kiện để hiển thị trong đơn hàng
+                $isOrderCondition = !($isHistoryCondition);
+    
+                // Kiểm tra nếu là lịch sử đơn hàng
+                if ($isHistory && $isHistoryCondition) {
+                    echo '<tr>
+                        <td>'.$count++.'</td>
+                        <td>'.$info[0].'</td>
+                        <td>'.$info[1].'</td>
+                        <td>'.$info[2].'</td>
+                        <td>'.$row["Shipping_address"].'</td>
+                        <td>'.$row["Order_date"].'</td>
+                        <td>'.$row["Shipping_status"].'</td>
+                        <td>'.$row["Payment_Status"].'</td>
+                        <td>'.$row["Order_status"].'</td>
+                        <td>
+                            <div class="price-wallpaper">
+                                <p class="price">'.number_format($row["Order_total"], 0, ',', '.').'</p>
+                                <p class="unit-price">VND</p>
+                            </div>
                         </td>
-                </tr>';
+                        <td>
+                            <form action="chitietlichsudonhang.php" method="GET">
+                                <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
+                                <button class="details" type="submit" name="btn" value="details">
+                                    <i class="fa-solid fa-file-invoice"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>';
+                } 
+                // Kiểm tra nếu là đơn hàng
+                elseif (!$isHistory && $isOrderCondition) {
+                    echo '<tr>
+                        <td>'.$count++.'</td>
+                        <td>'.$info[0].'</td>
+                        <td>'.$info[1].'</td>
+                        <td>'.$info[2].'</td>
+                        <td>'.$row["Shipping_address"].'</td>
+                        <td>'.$row["Order_date"].'</td>
+                        <td>'.$row["Shipping_status"].'</td>
+                        <td>'.$row["Payment_Status"].'</td>
+                        <td>'.$row["Order_status"].'</td>
+                        <td>'.$row["Order_note"].'</td>
+                        <td>
+                            <div class="price-wallpaper">
+                                <p class="price">'.number_format($row["Order_total"], 0, ',', '.').'</p>
+                                <p class="unit-price">VND</p>
+                            </div>
+                        </td>
+                        <td>
+                            <form action="chitietdonhang.php" method="GET">
+                                <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
+                                <button class="details" type="submit" name="btn" value="details">
+                                    <i class="fa-solid fa-file-invoice"></i>
+                                </button>
+                            </form>
+                        </td>
+                        <td class="setting">
+                            <form action="" method="POST">
+                                <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
+                                <button class="fix-product" type="submit" name="btn-2" value="fix">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="DonHang.php" method="POST">
+                                <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
+                                <button class="trash" type="submit" name="btn-3" value="delete">
+                                    <i class="fa-solid fa-trash"></i></i>
+                                </button>
+                            </form> 
+                        </td>
+                    </tr>';
                 }
-                
             }
         }
-        $conn->close();
+    
         $stmt->close();
+        $conn->close();
     }
+    
 
 
     function ShowOrderDetailsHistory($orders_id){
         $conn= connect();
-        $sql = 'SELECT OrderDetails_id, Product_id,Quantity, UnitPrice FROM orderdetails WHERE Order_id = ?';
+        $sql = 'SELECT History_id, Product_img,Product_name,Product_price,Quantity, UnitPrice FROM historyorder_details WHERE Order_id = ?';
         $stmt= $conn->prepare($sql);
         $stmt->bind_param("i",$orders_id);
         $stmt->execute();
         $result=$stmt->get_result();
         if($result->num_rows > 0){
         while($row=$result->fetch_assoc()){
-            $info = FindProductInfo($row['Product_id']);
             echo '<tr>
-                            <td>'.$row["OrderDetails_id"].'</td>
+                            <td>'.$row["History_id"].'</td>
                             <td>
-                                <img class="img-table" src="'.$info[0].'" alt="" />
+                                <img class="img-table" src="'.$row["Product_img"].'" alt="" />
                             </td>
                             <td>
-                                '.$info[1].'
+                                '.$row["Product_name"].'
                             </td>
                             <td>
                                 <div class="price-wallpaper">
-                                    <p class="price">'.number_format($info[2],0,',','.').'</p>
+                                    <p class="price">'.number_format($row["Product_price"],0,',','.').'</p>
                                     <p class="unit-price">VND</p>
                                 </div>
                             </td>
@@ -425,54 +461,6 @@
         $conn->close();
         $stmt->close();
     }
-
-
-    function ShowOderHistory(){
-        $conn= connect();
-        $sql = 'SELECT Order_id,Customer_id, Order_date, Order_total, Shipping_address, Payment_Status, Shipping_status, Order_status FROM orders';
-        $stmt= $conn->prepare($sql);
-        $stmt->execute();
-        $result=$stmt->get_result();
-        $count=1;
-        if($result->num_rows > 0){
-            while($row=$result->fetch_assoc()){
-
-                $info = FindCustomerInfo($row["Customer_id"]);
-                if($row["Order_status"] =="Đã xác nhận" && $row["Shipping_status"] =="Gửi hàng thành công" && $row["Payment_Status"] == "Đã thanh toán"){
-                    echo' <tr>
-                    <td>'.$count++.'</td>
-                    <td>'.$info[0].'</td>
-                    <td>'.$info[1].'</td>
-                    <td>'.$info[2].'</td>
-                    <td>'.$row["Shipping_address"].'</td>
-                    <td>'.$row["Order_date"].'</td>
-                    <td>'.$row["Shipping_status"].'</td>
-                    <td>'.$row["Payment_Status"].'</td>
-                    <td>'.$row["Order_status"].'</td>
-                    <td>
-                        <div class="price-wallpaper">
-                            <p class="price">'.number_format($row["Order_total"],0,',','.').'</p>
-                            <p class="unit-price">VND</p>
-                        </div>
-                    </td>
-                    <td>
-                        <form action="chitietlichsudonhang.php" method="GET">
-                            <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
-                            <button class="details" type="submit" name="btn" value="details">
-                                <i class="fa-solid fa-file-invoice"></i>
-                            </button>
-                        </form>
-                    </td>
-                </tr>';
-                }
-               
-            }
-        }
-        $conn->close();
-        $stmt->close();
-    }
-
-
 
 
 
@@ -828,139 +816,115 @@
         $conn= connect(); 
         if (isset($_GET['searchOrder'])) {
             $text = $conn->real_escape_string($_GET['searchOrder']);
+            $type = $_GET["typeSearch"];
         } else {
             $text = '';
+            $type = $_GET["typeSearch"];
         } 
-        $sql = 'SELECT * FROM orders WHERE Order_date LIKE ? OR Shipping_address LIKE ? OR Payment_Status LIKE ? OR Shipping_status LIKE ? OR Order_status LIKE ? ';
+       // $sql = 'SELECT * FROM orders WHERE Order_date LIKE ? OR Shipping_address LIKE ? OR Payment_Status LIKE ? OR Shipping_status LIKE ? OR Order_status LIKE ? ';
+       $sql = 'SELECT orders.*, customer.*
+               FROM orders
+               JOIN customer ON orders.Customer_id = customer.Customer_id
+               WHERE 
+                    Order_date LIKE ? OR 
+                    Shipping_address LIKE ? OR 
+                    Payment_Status LIKE ? OR 
+                    Shipping_status LIKE ? OR 
+                    Order_status LIKE ? OR
+                    Customer_name LIKE ? OR 
+                    Customer_phone LIKE ? OR 
+                    Customer_email LIKE ? OR
+                    Customer_sex LIKE ? ' ;
         $stmt = $conn->prepare($sql);
         $search = "%$text%";
         //$search = "%$text%";: Thêm ký tự % trước và sau từ khóa tìm kiếm để tìm các chuỗi chứa từ khóa này ở bất kỳ vị trí nào.
-        $stmt->bind_param("sssss",  $search,  $search, $search, $search, $search);
+        $stmt->bind_param("sssssssss",  $search,  $search, $search, $search, $search, $search, $search, $search, $search);
         $stmt->execute();
         $result = $stmt->get_result();
         $count=1;
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
-                $info = FindCustomerInfo($row["Customer_id"]);
-                echo '  <tr>
-                            <td>'.$count++.'</td>
-                            <td>'.$info[0].'</td>
-                            <td>'.$info[1].'</td>
-                            <td>'.$info[2].'</td>
-                            <td>'.$row["Shipping_address"].'</td>
-                            <td>'.$row["Order_date"].'</td>
-                            <td>'.$row["Shipping_status"].'</td>
-                            <td>'.$row["Payment_Status"].'</td>
-                            <td>'.$row["Order_status"].'</td>
-                            <td>
-                                <div class="price-wallpaper">
-                                    <p class="price">'.number_format($row["Order_total"],0,',','.').'</p>
-                                    <p class="unit-price">VND</p>
-                                </div>
-                            </td>
-                            <td>
-                                <form action="chitietdonhang.php" method="GET">
-                                    <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
-                                    <button class="details" type="submit" name="btn" value="details">
-                                        <i class="fa-solid fa-file-invoice"></i>
-                                    </button>
-                                </form>
-                            </td>
-                            <td class="setting">
-                                <form action="" method="POST">
-                                    <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
-                                    <button class="fix-product" type="submit" name="btn-2" value="fix">
-                                        <i class="fa-solid fa-pen"></i>
-                                    </button>
-                                </form>
-                            </td>
-                            <td>
-                             <form action="DonHang.php" method="POST">
-                                    <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
-                                    <button class="trash" type="submit" name="btn-3" value="delete">
-                                        <i class="fa-solid fa-trash"></i></i>
-                                    </button>
-                                </form> 
-                                </td>
-                        </tr>';
-            }
-        }
-        $conn->close();
-        $stmt->close();
-        
-    }
+                $History_order = ($row["Order_status"] == "Đã xác nhận" && $row["Shipping_status"] == "Gửi hàng thành công" && $row["Payment_Status"] == "Đã thanh toán" );
+                $order = !($History_order);
 
-    function SearchOrderCustomer(){
-        $conn= connect(); 
-        if (isset($_GET['searchOrder'])) {
-            $text = $conn->real_escape_string($_GET['searchOrder']);
-        } else {
-            $text = '';
-        } 
-        $sql = 'SELECT * FROM customer WHERE Customer_name LIKE ?  OR Customer_phone LIKE ? OR Customer_email LIKE ? ';
-        $stmt = $conn->prepare($sql);
-        $search = "%$text%";
-        //$search = "%$text%";: Thêm ký tự % trước và sau từ khóa tìm kiếm để tìm các chuỗi chứa từ khóa này ở bất kỳ vị trí nào.
-        $stmt->bind_param("sss", $search, $search, $search);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $count=1;
-        if($result->num_rows > 0){
-            while($row = $result->fetch_assoc()){
-                if(FindOrderInfoWithCustomer($row["Customer_id"]) != null){
-                    $info = FindOrderInfoWithCustomer($row["Customer_id"]);
-                    echo '<tr>
-                                <td>'.$count++.'</td>
-                                <td>'.$row["Customer_name"].'</td>
-                                <td>'.$row["Customer_phone"].'</td>
-                                <td>'.$row["Customer_email"].'</td>
-                                <td>'.$row["Customer_address"].'</td>
-                                <td>'.$info[5].'</td>
-                                <td>'.$info[4].'</td>
-                                <td>'.$info[3].'</td>
-                                <td>'.$info[2].'</td>
-                                <td>
-                                    <div class="price-wallpaper">
-                                        <p class="price">'.number_format($info[1],0,',','.').'</p>
-                                        <p class="unit-price">VND</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <form action="chitietdonhang.php" method="GET">
-                                        <input type="hidden" name="Order_id" value="'.$info[0].'">
-                                        <button class="details" type="submit" name="btn" value="details">
-                                            <i class="fa-solid fa-file-invoice"></i>
-                                        </button>
-                                    </form>
-                                </td>
-                                <td class="setting">
-                                    <form action="" method="POST">
-                                        <input type="hidden" name="Order_id" value="'.$info[0].'">
-                                        <button class="fix-product" type="submit" name="btn-2" value="fix">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </button>
-                                    </form>
-                                </td>
-                                <td>
-                                 <form action="DonHang.php" method="POST">
-                                        <input type="hidden" name="Order_id" value="'.$info[0].'">
-                                        <button class="trash" type="submit" name="btn-3" value="delete">
-                                            <i class="fa-solid fa-trash"></i></i>
-                                        </button>
-                                    </form> 
-                                    </td>
-                            </tr>';
+                if($type == "donHang" && $order){
+
+                    echo '  <tr>
+                    <td>'.$count++.'</td>
+                    <td>'.$row["Customer_name"].'</td>
+                    <td>'.$row["Customer_phone"].'</td>
+                    <td>'.$row["Customer_email"].'</td>
+                    <td>'.$row["Customer_address"].'</td>
+                    <td>'.$row["Order_date"].'</td>
+                    <td>'.$row["Shipping_status"].'</td>
+                    <td>'.$row["Payment_Status"].'</td>
+                    <td>'.$row["Order_status"].'</td>
+                    <td>
+                        <div class="price-wallpaper">
+                            <p class="price">'.number_format($row["Order_total"],0,',','.').'</p>
+                            <p class="unit-price">VND</p>
+                        </div>
+                    </td>
+                    <td>
+                        <form action="chitietdonhang.php" method="GET">
+                            <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
+                            <button class="details" type="submit" name="btn" value="details">
+                                <i class="fa-solid fa-file-invoice"></i>
+                            </button>
+                        </form>
+                    </td>
+                    <td class="setting">
+                        <form action="" method="POST">
+                            <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
+                            <button class="fix-product" type="submit" name="btn-2" value="fix">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                        </form>
+                    </td>
+                    <td>
+                     <form action="DonHang.php" method="POST">
+                            <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
+                            <button class="trash" type="submit" name="btn-3" value="delete">
+                                <i class="fa-solid fa-trash"></i></i>
+                            </button>
+                        </form> 
+                        </td>
+                </tr>';
+
+                }elseif($type == "lichSu"&& $History_order){
+                    echo '  <tr>
+                    <td>'.$count++.'</td>
+                    <td>'.$row["Customer_name"].'</td>
+                    <td>'.$row["Customer_phone"].'</td>
+                    <td>'.$row["Customer_email"].'</td>
+                    <td>'.$row["Customer_address"].'</td>
+                    <td>'.$row["Order_date"].'</td>
+                    <td>'.$row["Shipping_status"].'</td>
+                    <td>'.$row["Payment_Status"].'</td>
+                    <td>'.$row["Order_status"].'</td>
+                    <td>
+                        <div class="price-wallpaper">
+                            <p class="price">'.number_format($row["Order_total"],0,',','.').'</p>
+                            <p class="unit-price">VND</p>
+                        </div>
+                    </td>
+                    <td>
+                        <form action="chitietlichsudonhang.php" method="GET">
+                            <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
+                            <button class="details" type="submit" name="btn" value="details">
+                                <i class="fa-solid fa-file-invoice"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>';
                 }
                
             }
         }
         $conn->close();
         $stmt->close();
+        
     }
-
-
-
-
 
     //Add Product
     function showBrand($selectedBrand = null) {

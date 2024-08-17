@@ -51,10 +51,11 @@
         <div class="main-content">
             <div class="table-wrapper">
                 <div class="title">
-                    <div class="title-left">Tìm kiếm sản Phẩm</div>
+                    <div class="title-left">Tìm kiếm lịch sử đơn hàng</div>
                     <div class="title-right">
-                        <form id="searchForm" action="search.php" method="GET">
-                            <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm sản phẩm ..." />
+                        <form id="searchForm" action="searchOrderHistory.php" method="GET">
+                        <input class="search-bar" type="search" name="searchOrder" placeholder="Tìm kiếm đơn hàng ..." />
+                            <input type="hidden" value = "lichSu" name="typeSearch">
                             <button class="search-button" type="submit">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
@@ -64,21 +65,27 @@
                 <table id="table">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Ảnh</th>
-                            <th onclick="sortTable(2,'string')">Tên sản phẩm</th>
-                            <th onclick="sortTable(3,'number')">Giá bán</th>
-                            <th onclick="sortTable(4,'number')">Số lượng</th>
-                            <th>Tùy chỉnh</th>
+                            <th>STT</th>
+                            <th>Tên khách hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Email</th>
+                            <th>Địa Chỉ</th>
+                            <th onclick="sortTable(5,'date')">Ngày đặt</th>
+                            <th onclick="sortTable(6,'string')">Trạng thái giao hàng</th>
+                            <th onclick="sortTable(7,'string')">Trạng thái thanh toán</th>
+                            <th onclick="sortTable(8,'string')">Trạng thái đơn hàng</th>
+                            <th onclick="sortTable(9,'number')">Tổng giá trị đơn hàng</th>
+                            <th>Chi tiết</th>
                         </tr>
                     </thead>
                     <tbody>
+                        
                         <?php
-                    searchProduct();
-                     ?>
+                        SearchOrder();
+                        //SearchOrderCustomer();
+                        ?>
                     </tbody>
                 </table>
-
             </div>
         </div>
     </div>
