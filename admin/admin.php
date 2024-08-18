@@ -1,4 +1,22 @@
 <?php
+    //xử lý đăng nhập
+    function Login($username, $password) {
+        $conn= connect();
+        $sql = "SELECT Admin_id, Admin_email, Admin_name, Admin_password, Admin_power FROM admin_account WHERE Admin_email =? AND Admin_password = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ss", $username,$password);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if($result->num_rows > 0) {
+            $row = $result->fetch_assoc(); 
+            $_SESSION["admin"] = $row;
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
     //xử lý đơn hàng
     function Create_Customer_Info($username, $gender, $phone_number, $address, $email){
         $conn= connect();
