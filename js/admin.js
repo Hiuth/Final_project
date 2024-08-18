@@ -296,3 +296,14 @@ function ChangeTotal() {
   console.log(total);
   document.getElementById("total").value = total.toLocaleString("de-DE");
 }
+
+document.getElementById("file").addEventListener("change", function (event) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      document.getElementById("upload-Img").src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+});

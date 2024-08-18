@@ -115,13 +115,17 @@
                                 ?>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label for="picture">Thêm hình ảnh</label>
+                            <input type="file" accept="image/*" id="file" name="image" required>
+                        </div>
                     </div>
-
+                    
                     <!-- Cột bên phải cho phần "Chỉnh sửa ảnh" -->
                     <div class="form-group image-upload">
                         <label for="product-image">Thêm ảnh</label>
                         <div class="image-placeholder">
-                            <input type="file" accept="image/*" id="file" name="image" required>
+                            <img class="image-placeholder" id ="upload-Img" src="">
                         </div>
                     </div>
                 </div>

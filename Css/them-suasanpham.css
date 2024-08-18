@@ -67,7 +67,7 @@ select:focus {
 
 .image-upload .image-placeholder {
   width: 100%;
-  height: 450px;
+  height: 480px;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -101,6 +101,5 @@ select:focus {
 }
 
 #file {
-  border: none;
   justify-content: center;
 }
