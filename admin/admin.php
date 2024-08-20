@@ -688,7 +688,8 @@
             </div>
           </div>
           <div class="button-container">
-            <button type="submit" class="submit-button">
+          <input type="hidden" value="'.$id.' name="Order_id"/>
+            <button type="submit" class="submit-button" name="btn-7" vaule="Edit_order">
               Xác nhận chỉnh sửa
             </button>
           </div>';
@@ -827,6 +828,11 @@
         }
        
         
+    }
+
+
+    function updateOrder( $order_id, $Order_status,$Payment_status, $Shipping_status, $note,$address){
+
     }
 
 

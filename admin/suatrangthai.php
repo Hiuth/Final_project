@@ -1,6 +1,14 @@
 <?php
   require_once("connect-admin.php");
-  include "admin.php"
+  include "admin.php";
+  if(isset($_POST['btn-7'])&&$_POST['btn-7']){
+    $order_id = $_POST['Order_id'];
+    $Order_status = $_POST['order-status'];
+    $Payment_status = $_POST['payment-status'];
+    $Shipping_status = $_POST['shipping-status'];
+    $note = $_POST['note'];
+    $address = $_POST['address'];
+  }
 ?>
 
 <!DOCTYPE html>
