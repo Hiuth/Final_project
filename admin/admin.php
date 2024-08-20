@@ -844,6 +844,29 @@
         $stmt->close();
     }
 
+    // chuyển đổi vị trí từ order_Details sang HistoryOrder_details
+    function changeLocation($order_id){
+        $conn = connect();
+        $info = GetOrderDetailsID($order_id);
+        for($i = 0; $i < count($info);$i++){
+            $orderDetails_info = FindOrderDetailsInfo($info[$i]);
+            $product_info = FindProductInfo($orderDetails_info[1]);
+            $product_img = mysqli_real_escape_string($conn, $product_info[0]);
+            $sql = 'INSERT INTO historyorder_details (Order_id, Product_img, Product_name, Product_price, Quantity, UnitPrice)
+                VALUES ('.$order_id.', \''.$product_img.'\', \''.$product_info[1].'\', \''.$product_info[2].'\', '.$orderDetails_info[2].', '.$orderDetails_info[3].')';
+            $conn->query($sql);
+            echo $product_info[0];
+        }
+        $sql_2 = 'DELETE FROM orderdetails WHERE Order_id = ? ';
+        $stmt= $conn->prepare($sql_2);
+        $stmt->bind_param('i',$orders_id);
+        $stmt->execute();
+        if($stmt->affected_rows > 0){
+        }
+        $conn->close();
+        $stmt->close();   
+    }
+
 
 
     function UpdateProduct($product_img,$product_name,$product_price,$Brand_id,$product_category,$product_quantity,$product_id){
