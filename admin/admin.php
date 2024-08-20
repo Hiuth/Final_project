@@ -626,7 +626,7 @@
             $row=$result->fetch_assoc();
             $info=FindCustomerInfo($row["Customer_id"]);
             $CheckOrder_status = ($row["Order_status"] == "Chưa xác nhận") ? 'disabled' : '' ;
-            $CheckPayment_status = ($row["Payment_Status"] != "Gửi hàng thành công") ? 'disabled' : '';
+            $CheckPayment_status = ($row["Shipping_status"] != "Gửi hàng thành công") ? 'disabled' : '';
             echo '  <div class="form-row">
             <div class="form-group">
               <label for="customer-name">Tên khách hàng</label>
@@ -688,8 +688,10 @@
             </div>
           </div>
           <div class="button-container">
-          <input type="hidden" value="'.$id.' name="Order_id"/>
-            <button type="submit" class="submit-button" name="btn-7" vaule="Edit_order">
+          <input type="hidden" name = "shipping_edit" id ="shipping_edit" value ="'.$row["Payment_Status"].'">
+            <input type="hidden" name = "payment_edit" value ="'.$row["Payment_Status"].'">
+          <input type="hidden" value="'.$id.'" name="Order_id"/>
+            <button type="submit" class="submit-button" name="btn-7" value="Edit_order">
               Xác nhận chỉnh sửa
             </button>
           </div>';
@@ -832,7 +834,14 @@
 
 
     function updateOrder( $order_id, $Order_status,$Payment_status, $Shipping_status, $note,$address){
-
+        $conn = connect();
+        $sql ='UPDATE orders SET Order_Status =?, Payment_Status = ?, Shipping_status = ?, Order_note = ?, Shipping_address = ? WHERE Order_id = ? ';
+        $stmt= $conn->prepare($sql);
+        $stmt->bind_param('sssssi',$Order_status,$Payment_status,$Shipping_status,$note,$address,$order_id);
+        $stmt->execute();
+        if($stmt->affected_rows>0){}
+        $conn->close();
+        $stmt->close();
     }
 
 

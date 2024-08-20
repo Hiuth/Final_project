@@ -1,13 +1,30 @@
 <?php
   require_once("connect-admin.php");
   include "admin.php";
-  if(isset($_POST['btn-7'])&&$_POST['btn-7']){
+  if(isset($_POST["btn-7"])&&$_POST["btn-7"]){
     $order_id = $_POST['Order_id'];
     $Order_status = $_POST['order-status'];
-    $Payment_status = $_POST['payment-status'];
+    $Payment_status= $_POST['payment-status'];
+    $Payment_status_2 = $_POST['payment_edit'];
     $Shipping_status = $_POST['shipping-status'];
+    $Shipping_status_2 = $_POST['shipping_edit'];
     $note = $_POST['note'];
     $address = $_POST['address'];
+
+    if($Shipping_status == null ){
+       echo'hello'; 
+       updateOrder($order_id, $Order_status,$Payment_status_2, $Shipping_status_2, $note,$address);
+       echo '<script>window.location.href="donhang.php?";</script>';
+    }elseif($Payment_status == null){
+      updateOrder($order_id, $Order_status,$Payment_status_2, $Shipping_status, $note,$address);
+      echo '<script>window.location.href="donhang.php?";</script>';
+    }elseif($Shipping_status == null && $Payment_status == null){
+      updateOrder($order_id, $Order_status,$Payment_status_2, $Shipping_status_2, $note,$address);
+      echo '<script>window.location.href="donhang.php?";</script>';
+    }elseif($Shipping_status != null && $Payment_status != null ){
+      updateOrder($order_id, $Order_status,$Payment_status, $Shipping_status, $note,$address);
+      echo '<script>window.location.href="donhang.php?";</script>';
+    }
   }
 ?>
 
