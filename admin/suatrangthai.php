@@ -1,3 +1,8 @@
+<?php
+  require_once("connect-admin.php");
+  include "admin.php"
+?>
+
 <!DOCTYPE html>
 <html lang="vi">
   <head>
@@ -46,8 +51,8 @@
       </div>
       <div class="main-content">
         <h1>Chỉnh sửa trạng thái</h1>
-        <form>
-          <div class="form-row">
+        <form action ="suatrangthai.php" method = "POST">
+          <!-- <div class="form-row">
             <div class="form-group">
               <label for="customer-name">Tên khách hàng</label>
               <input type="text" id="customer-name" name="customer-name" />
@@ -111,7 +116,13 @@
             <button type="submit" class="submit-button">
               Xác nhận chỉnh sửa
             </button>
-          </div>
+          </div> -->
+          <?php
+            if(isset($_POST["btn-2"])&&$_POST["btn-2"]){
+              $order_id= $_POST["Order_id"];
+              showOrderStatus_edit($order_id);
+            }
+          ?>
         </form>
       </div>
     </div>

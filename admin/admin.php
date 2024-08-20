@@ -613,7 +613,87 @@
         </div>';
         }
     }
- 
+    
+
+    function showOrderStatus_edit($id){
+        $conn = connect();
+        $sql = 'SELECT Customer_id, Order_date, Order_total, Order_note, Shipping_address,Payment_Status, Shipping_status, Order_status FROM orders WHERE Order_id = ?';
+        $stmt= $conn->prepare($sql);
+        $stmt->bind_param('i',$id);
+        $stmt->execute();
+        $result=$stmt->get_result();
+        if($result->num_rows > 0){
+            $row=$result->fetch_assoc();
+            $info=FindCustomerInfo($row["Customer_id"]);
+            $CheckOrder_status = ($row["Order_status"] == "Chưa xác nhận") ? 'disabled' : '' ;
+            $CheckPayment_status = ($row["Payment_Status"] != "Gửi hàng thành công") ? 'disabled' : '';
+            echo '  <div class="form-row">
+            <div class="form-group">
+              <label for="customer-name">Tên khách hàng</label>
+              <input type="text" id="customer-name" name="customer-name" value ="'.$info[0].'" readonly/>
+            </div>
+            <div class="form-group">
+              <label for="shipping-status">Trạng thái giao hàng</label>
+              <select id="shipping-status" name="shipping-status" '.$CheckOrder_status.'>
+                <option value="Chưa được gửi" '.($row["Shipping_status"] == "Chưa được gửi" ? 'selected' : '' ).'>Chưa được gửi</option>
+                <option value="Đang gửi hàng" '.($row["Shipping_status"] == "Đang gửi hàng" ? 'selected' : '' ).'>Đang gửi hàng</option>
+                <option value="Gửi hàng thành công" '.($row["Shipping_status"] == "Gửi hàng thành công" ? 'selected' : '' ).'>Gửi hàng thành công</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Số điện thoại</label>
+              <input type="text" id="phone" name="phone" value="'.$info[1].'" readonly />
+            </div>
+            <div class="form-group">
+              <label for="payment-status">Trạng thái thanh toán</label>
+              <select id="payment-status" name="payment-status" '.$CheckPayment_status.'>
+                <option value="Chưa thanh toán" '.($row["Payment_Status"] == "Chưa thanh toán" ? 'selected' : '' ).'>Chưa thanh toán</option>
+                <option value="Đã thanh toán" '.($row["Payment_Status"] == "Đa thanh toán" ? 'selected' : '' ).'>Đã thanh toán</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" id="email" name="email" value="'.$info[2].'" readonly/>
+            </div>
+            <div class="form-group">
+              <label for="order-status">Trạng thái đơn hàng</label>
+              <select id="order-status" name="order-status">
+                <option value="Chưa xác nhận" '.($row["Order_status"] == "Chưa xác nhận" ? 'selected' : '' ).'>Chưa xác nhận</option>
+                <option value="Đã xác nhận" '.($row["Order_status"] == "Đã xác nhận" ? 'selected' : '' ).'>Đã xác nhận</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="address">Địa chỉ</label>
+              <input type="text" id="address" name="address" value = "'.$row["Shipping_address"].'" />
+            </div>
+            <div class="form-group">
+              <label for="note">Ghi chú</label>
+              <input type="text" id="note" name="note" value="'.$row["Order_note"].'" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="order-date">Ngày đặt</label>
+              <input type="text" id="order-date" name="order-date" value= "'.$row["Order_date"].'" readonly/>
+            </div>
+            <div class="form-group">
+              <label for="total-value">Tổng giá trị đơn hàng</label>
+              <input type="text" id="total-value" name="total-value" value="'.number_format($row["Order_total"],0,',','.').'" readonly />
+            </div>
+          </div>
+          <div class="button-container">
+            <button type="submit" class="submit-button">
+              Xác nhận chỉnh sửa
+            </button>
+          </div>';
+        }
+    }
 
 
 
