@@ -855,11 +855,10 @@
             $sql = 'INSERT INTO historyorder_details (Order_id, Product_img, Product_name, Product_price, Quantity, UnitPrice)
                 VALUES ('.$order_id.', \''.$product_img.'\', \''.$product_info[1].'\', \''.$product_info[2].'\', '.$orderDetails_info[2].', '.$orderDetails_info[3].')';
             $conn->query($sql);
-            echo $product_info[0];
         }
         $sql_2 = 'DELETE FROM orderdetails WHERE Order_id = ? ';
         $stmt= $conn->prepare($sql_2);
-        $stmt->bind_param('i',$orders_id);
+        $stmt->bind_param('i',$order_id);
         $stmt->execute();
         if($stmt->affected_rows > 0){
         }
