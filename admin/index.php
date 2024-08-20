@@ -1,6 +1,6 @@
 <?php
-session_start();
-  require_once "connect-admin.php";
+  require_once("connect-admin.php");
+  session_start();
   include "admin.php";
   if (isset($_POST["login-btn"])&&$_POST["login-btn"]) {
     $username = $_POST["email"];

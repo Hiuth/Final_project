@@ -364,7 +364,7 @@
                             </form>
                         </td>
                         <td class="setting">
-                            <form action="" method="POST">
+                            <form action="suatrangthai.php" method="POST">
                                 <input type="hidden" name="Order_id" value="'.$row["Order_id"].'">
                                 <button class="fix-product" type="submit" name="btn-2" value="fix">
                                     <i class="fa-solid fa-pen"></i>
