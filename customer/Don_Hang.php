@@ -59,7 +59,7 @@
         <div class="header">
             <div class="left-selection">
                 <a href="./index.php">
-                    <img class="Logo_website" src="/Final_project/Picture/Logo_web_3.png" alt="logo_web" /></a>
+                    <img class="Logo_website" src="/WebBanMayChoiGame/Picture/Logo_web_3.png" alt="logo_web" /></a>
             </div>
             <!-- search bar -->
             <div class="middle-selection">
@@ -199,16 +199,16 @@
             <div class="follow-us">
                 <span class="footer-text-title">Theo dõi 2004'S Store tại</span>
                 <a href="https://youtu.be/dQw4w9WgXcQ?si=QiFbp9tAmNxaVkpt" target="_blank">
-                    <img src="/Final_project/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
+                    <img src="/WebBanMayChoiGame/Picture/Logo_youtube.png" alt="YouTube" width="180px" />
                 </a>
                 <a href="https://www.tiktok.com" target="_blank">
-                    <img src="/Final_project/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
+                    <img src="/WebBanMayChoiGame/Picture/Logo_tiktok.png" alt="TikTok" width="180px" />
                 </a>
                 <a href="https://www.facebook.com" target="_blank">
-                    <img src="/Final_project/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
+                    <img src="/WebBanMayChoiGame/Picture/Logo_facebook.png" alt="Facebook" width="180px" />
                 </a>
                 <a href="https://www.facebook.com/groups/ps5vietnam">
-                    <img src="/Final_project/Picture/Logo_Ps5_Group.png" alt="Hội PS5 Việt Nam" width="180px" />
+                    <img src="/WebBanMayChoiGame/Picture/Logo_Ps5_Group.png" alt="Hội PS5 Việt Nam" width="180px" />
                 </a>
             </div>
             <div class="info">
@@ -229,7 +229,7 @@
                     <p>- Chính sách đổi trả</p>
                 </a>
                 <br />
-                <img src="/Final_project/Picture/Logo_BoCongthuong.png" alt="Đã thông báo bộ công thương" width="200" />
+                <img src="/WebBanMayChoiGame/Picture/Logo_BoCongthuong.png" alt="Đã thông báo bộ công thương" width="200" />
             </div>
         </div>
     </footer>
