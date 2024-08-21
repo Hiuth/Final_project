@@ -741,6 +741,16 @@
 
 
     //Delete function zone
+    function DeleteProduct($id){
+        $conn = connect();
+        
+        $sql = 'DELETE FROM product WHERE product_id =?';
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+        $stmt->close();
+        $conn->close();
+    }
     function DeleteOrder( $orders_id ){
         $conn= connect();
         $sql = 'DELETE FROM Orders WHERE Order_id = ? ';

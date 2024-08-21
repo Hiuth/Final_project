@@ -77,6 +77,9 @@
                     <tbody>
                         <?php
                       ShowProductAdmin();
+                      if(isset($_POST["btn-3"])&&$_POST["btn-3"]){
+                        $product_id=$_POST["Del_product_id"];
+                      }
                       ?>
                     </tbody>
                 </table>
