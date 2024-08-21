@@ -26,11 +26,11 @@
 <body>
     <header>
         <div class="left-selection">
-            <a href=""><img class="Logo_website" src="/Final_project/Picture/Logo_web_3.png" alt="" /></a>
+            <a href=""><img class="Logo_website" src="/WebBanMayChoiGame/Picture/Logo_web_3.png" alt="" /></a>
         </div>
         <div class="middle-selection"></div>
         <div class="right-selection">
-            <a href=""><img class="avatar" src="/Final_project/Picture/Human.png" alt="" /></a>
+            <a href=""><img class="avatar" src="/WebBanMayChoiGame/Picture/Human.png" alt="" /></a>
         </div>
     </header>
     <div class="container-wrapper">
@@ -77,7 +77,7 @@
                         <!-- <tr>
                             <td>1</td>
                             <td>
-                                <img class="img-table" src="/Final_project/Picture/ps5_slim_st_1.jpg" alt="" />
+                                <img class="img-table" src="/WebBanMayChoiGame/Picture/ps5_slim_st_1.jpg" alt="" />
                             </td>
                             <td>
                                 MÁY PS5 SLIM / PLAYSTATION 5 DIGITAL EDITION PHIÊN BẢN CÓ Ổ

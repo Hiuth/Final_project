@@ -51,7 +51,7 @@ addIntoCart.forEach(function (button, index) {
         localStorage.setItem("productList", JSON.stringify(productList));
       }
     } //stringify chuyển hết tất cả kiểu hết về string
-    window.location.assign("/Final_project/customer/Gio_Hang_Co_Hang.html");
+    window.location.assign("/WebBanMayChoiGame/customer/Gio_Hang_Co_Hang.html");
   });
 });
 
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
       productList.push(list);
       localStorage.setItem("productList", JSON.stringify(productList));
     }
-    window.location.assign("/Final_project/customer/Gio_Hang_Co_Hang.html");
+    window.location.assign("/WebBanMayChoiGame/customer/Gio_Hang_Co_Hang.html");
   }
   document.getElementById("add-cart").addEventListener("click", addIntoCart_2);
 });

@@ -13,9 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleClick(event) {
     console.log(productList.length);
     if (productList.length > 0) {
-      window.location.assign("/Final_project/customer/Gio_Hang_Co_Hang.html");
+      window.location.assign(
+        "/WebBanMayChoiGame/customer/Gio_Hang_Co_Hang.html"
+      );
     } else {
-      window.location.assign("/Final_project/customer/Gio_Hang.html");
+      window.location.assign("/WebBanMayChoiGame/customer/Gio_Hang.html");
     }
   }
   document.getElementById("cart-1").addEventListener("click", handleClick);

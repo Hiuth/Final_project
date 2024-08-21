@@ -10,7 +10,7 @@
     $product_category = $_POST['category'];
     $product_img = $_FILES['image']['name'];
     // Đường dẫn thư mục đích trên xampp
-    $target_dir = "/Xampp/htdocs/Final_project/Picture/";
+    $target_dir = "/Xampp/htdocs/WebBanMayChoiGame/Picture/";
     $target_file = $target_dir . basename($product_img);
     if (file_exists($target_file)) {
     } else {
@@ -46,11 +46,11 @@
 <body>
     <header>
         <div class="left-selection">
-            <a href=""><img class="Logo_website" src="/Final_project/Picture/Logo_web_3.png" alt="" /></a>
+            <a href=""><img class="Logo_website" src="/WebBanMayChoiGame/Picture/Logo_web_3.png" alt="" /></a>
         </div>
         <div class="middle-selection"></div>
         <div class="right-selection">
-            <a href=""><img class="avatar" src="/Final_project/Picture/Human.png" alt="" /></a>
+            <a href=""><img class="avatar" src="/WebBanMayChoiGame/Picture/Human.png" alt="" /></a>
         </div>
     </header>
     <div class="container-wrapper">
