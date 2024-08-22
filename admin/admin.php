@@ -552,13 +552,15 @@
 
     function ShowOrderDetails_edit($id){
         $conn= connect();
-        $sql = 'SELECT Product_id, Quantity, UnitPrice FROM orderdetails WHERE OrderDetails_id = ?';
+        $sql = 'SELECT Order_id,Product_id, Quantity, UnitPrice FROM orderdetails WHERE OrderDetails_id = ?';
         $stmt= $conn->prepare($sql);
         $stmt->bind_param('i',$id);
         $stmt->execute();
         $result=$stmt->get_result();
         if($result->num_rows > 0){
             $row=$result->fetch_assoc();
+            $order_info = FindOrderInfo($row["Order_id"]);
+            $lock = ($order_info[2] == "Đã xác nhận") ? 'readonly' : '';
             $info = FindProductInfo($row['Product_id']);
             echo'<div class="form-row">
             <!-- Cột bên trái cho các trường nhập liệu -->
@@ -581,7 +583,7 @@
                 </div>
                 <div class="form-group">
                     <label for="quantity">Số lượng sản phẩm mua</label>
-                    <input type="number" id="quantity" name="quantity" value="'.$row["Quantity"].'" min="1" oninput="ChangeTotal()" required />
+                    <input type="number" id="quantity" name="quantity" value="'.$row["Quantity"].'" min="1" oninput="ChangeTotal()" '.$lock.' required />
                 </div>
                  <div class="form-group">
                     <label for="price">Tổng tiền</label>
@@ -626,12 +628,11 @@
             $info=FindCustomerInfo($row["Customer_id"]);
             $CheckOrder_status = ($row["Order_status"] == "Chưa xác nhận") ? 'disabled' : '' ;
             $CheckPayment_status = ($row["Shipping_status"] != "Gửi hàng thành công") ? 'disabled' : '';
-            $order_status ='';
+            $lock_order_status =($row["Order_status"]== "Đã xác nhận")? 'disabled' :'';
             //kiểm tra số lượng sản phẩm trong đơn hàng so với kho
             $stock_warning = checkQuantityOrder_Product($id);
-            if($stock_warning != ''){
-                $order_status = 'disabled';
-            }
+            $order_status = ($stock_warning != '')? 'disabled':'';
+
             echo '  <div class="form-row">
             <div class="form-group">
               <label for="customer-name">Tên khách hàng</label>
@@ -666,7 +667,7 @@
             </div>
             <div class="form-group">
               <label for="order-status">Trạng thái đơn hàng</label>
-              <select id="order-status" name="order-status" '.$order_status.'>
+              <select id="order-status" name="order-status" '.$order_status.' '.$lock_order_status.'>
                 <option value="Chưa xác nhận" '.($row["Order_status"] == "Chưa xác nhận" ? 'selected' : '' ).'>Chưa xác nhận</option>
                 <option value="Đã xác nhận" '.($row["Order_status"] == "Đã xác nhận" ? 'selected' : '' ).'>Đã xác nhận</option>
               </select>

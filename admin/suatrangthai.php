@@ -10,18 +10,21 @@
     $Shipping_status_2 = $_POST['shipping_edit'];
     $note = $_POST['note'];
     $address = $_POST['address'];
+    if(empty($Order_status)){
+      $Order_status = "Đã xác nhận";
+    }
 
-    if($Shipping_status == null ){
+    if(empty($Shipping_status) ){
        echo'hello'; 
        updateOrder($order_id, $Order_status,$Payment_status_2, $Shipping_status_2, $note,$address);
       echo '<script>window.location.href="donhang.php?";</script>';
-    }elseif($Payment_status == null){
+    }elseif(empty($Payment_status)){
       updateOrder($order_id, $Order_status,$Payment_status_2, $Shipping_status, $note,$address);
      echo '<script>window.location.href="donhang.php?";</script>';
-    }elseif($Shipping_status == null && $Payment_status == null){
+    }elseif(empty($Shipping_status) && empty($Payment_status)){
       updateOrder($order_id, $Order_status,$Payment_status_2, $Shipping_status_2, $note,$address);
      echo '<script>window.location.href="donhang.php?";</script>';
-    }elseif($Shipping_status != null && $Payment_status != null ){
+    }elseif(!empty($Shipping_status) && !empty($Payment_status) ){
       updateOrder($order_id, $Order_status,$Payment_status, $Shipping_status, $note,$address);
       echo '<script>window.location.href="donhang.php?";</script>';
     }
