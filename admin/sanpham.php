@@ -79,7 +79,10 @@
                       ShowProductAdmin();
                       if(isset($_POST["btn-3"])&&$_POST["btn-3"]){
                         $product_id=$_POST["Del_product_id"];
+                        DeleteProduct($product_id);
+                        echo '<script>window.location.href = window.location.href;</script>';
                       }
+
                       ?>
                     </tbody>
                 </table>

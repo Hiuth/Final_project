@@ -715,6 +715,19 @@
         $conn->close();
         $stmt->close();
         return $count;
+    }   
+
+    function CountProductID_InOrderDetails($product_id){
+        $conn= connect();
+        $sql = 'SELECT COUNT(Product_id) AS total FROM orderdetails WHERE Product_id =?';
+        $stmt= $conn->prepare($sql);
+        $stmt->bind_param('i',$product_id);
+        $stmt->execute();
+        $stmt->bind_result($count);
+        $stmt->fetch();
+        $conn->close();
+        $stmt->close();
+        return $count;
     }
 
     function GetOrderDetailsID($id){
@@ -743,13 +756,20 @@
     //Delete function zone
     function DeleteProduct($id){
         $conn = connect();
+        //echo CountProductID_InOrderDetails($id);
+        if(CountProductID_InOrderDetails($id) > 0){
+            echo '<script>alert("Sản phẩm đang có đơn hàng! Không thể xoá");</script>';
+            $conn->close();
+            return;
+        }else{
+            $sql = 'DELETE FROM product WHERE product_id =?';
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param('i', $id);
+            $stmt->execute();
+            $stmt->close();
+            $conn->close();
+        }
         
-        $sql = 'DELETE FROM product WHERE product_id =?';
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param('i', $id);
-        $stmt->execute();
-        $stmt->close();
-        $conn->close();
     }
     function DeleteOrder( $orders_id ){
         $conn= connect();
@@ -766,10 +786,10 @@
     function DeleteOrderDetails($orders_id){
         $conn= connect();
         $info = FindOrderInfo($orders_id);
-        if($info[4] == "Đang vận chuyển" || $info[4] == "Gửi Hàng Thành công" ){
+        if($info[4] == "Đang gửi hàng" || $info[4] == "Gửi hàng thành công" ){
             echo '<script>alert("Đơn hàng đang ở trạng thái '.$info[4].' không thể huỷ đơn !!! ");</script>';
             $conn->close();
-            return;
+           return;
         }else{
             $sql = 'DELETE FROM orderdetails WHERE Order_id = ? ';
             $stmt= $conn->prepare($sql);
@@ -782,7 +802,7 @@
         }
 
         $conn->close();
-        $stmt->close();
+       // $stmt->close();
     }
 
     
