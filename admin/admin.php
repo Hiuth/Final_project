@@ -145,7 +145,7 @@
 
     function FindProductInfo($id){
         $conn= connect();
-        $sql_customer = 'SELECT Product_img,Product_name,Product_price, Brand_id, Category_id FROM product WHERE Product_id = ?';
+        $sql_customer = 'SELECT Product_img,Product_name,Product_price, Brand_id, Category_id,Quantity FROM product WHERE Product_id = ?';
         $stmt_customer = $conn->prepare($sql_customer);
         $stmt_customer->bind_param("i",$id);
         $stmt_customer->execute();
@@ -157,7 +157,8 @@
             $Product_price = $row['Product_price'];
             $Brand_id = $row['Brand_id'];
             $Category_id = $row['Category_id'];
-            $Product_info=[ $Product_img, $Product_name, $Product_price, $Brand_id,$Category_id];
+            $Quantity = $row["Quantity"];
+            $Product_info=[ $Product_img, $Product_name, $Product_price, $Brand_id,$Category_id,$Quantity];
         }
 
         
@@ -231,8 +232,6 @@
             $UnitPrice = $row['UnitPrice'];
             $orderDetails_info=[ $Order_id,$Product_id, $Quantity, $UnitPrice ];
         }
-
-        
         $conn->close();
         $stmt_customer->close();
         return $orderDetails_info;
@@ -262,7 +261,7 @@
                                     <p class="unit-price">VND</p>
                                 </div>
                             </td>
-                            <td class = "Quantity">'.$row["Quantity"].'</td>
+                            <td class = "Quantity" id = "Quantity_product">'.$row["Quantity"].'</td>
                             <td>
                              <form action="chinhsuasanpham.php" method="POST">
                                 <input type="hidden" name="Product_id" value="'.$row["Product_id"].'">
@@ -450,7 +449,7 @@
                                     <p class="unit-price">VND</p>
                                 </div>
                             </td>
-                            <td>'.$row["Quantity"].'</td>
+                            <td id = "Order_quantity_product">'.$row["Quantity"].'</td>
                             <td>
                                 <div class="price-wallpaper">
                                     <p class="price">'.number_format($row["UnitPrice"],0,',','.').'</p>
@@ -627,6 +626,12 @@
             $info=FindCustomerInfo($row["Customer_id"]);
             $CheckOrder_status = ($row["Order_status"] == "Chưa xác nhận") ? 'disabled' : '' ;
             $CheckPayment_status = ($row["Shipping_status"] != "Gửi hàng thành công") ? 'disabled' : '';
+            $order_status ='';
+            //kiểm tra số lượng sản phẩm trong đơn hàng so với kho
+            $stock_warning = checkQuantityOrder_Product($id);
+            if($stock_warning != ''){
+                $order_status = 'disabled';
+            }
             echo '  <div class="form-row">
             <div class="form-group">
               <label for="customer-name">Tên khách hàng</label>
@@ -661,10 +666,11 @@
             </div>
             <div class="form-group">
               <label for="order-status">Trạng thái đơn hàng</label>
-              <select id="order-status" name="order-status">
+              <select id="order-status" name="order-status" '.$order_status.'>
                 <option value="Chưa xác nhận" '.($row["Order_status"] == "Chưa xác nhận" ? 'selected' : '' ).'>Chưa xác nhận</option>
                 <option value="Đã xác nhận" '.($row["Order_status"] == "Đã xác nhận" ? 'selected' : '' ).'>Đã xác nhận</option>
               </select>
+              '.$stock_warning.'
             </div>
           </div>
           <div class="form-row">
@@ -691,7 +697,7 @@
           <input type="hidden" name = "shipping_edit" id ="shipping_edit" value ="'.$row["Payment_Status"].'">
             <input type="hidden" name = "payment_edit" value ="'.$row["Payment_Status"].'">
           <input type="hidden" value="'.$id.'" name="Order_id"/>
-            <button type="submit" class="submit-button" name="btn-7" value="Edit_order">
+            <button type="submit" class="submit-button" name="btn-7" id="btn-7" value="Edit_order" '.$order_status.'>
               Xác nhận chỉnh sửa
             </button>
           </div>';
@@ -702,13 +708,68 @@
 
     //check, count Function zone
 
+    function checkQuantityOrder_Product($order_id){
+        $conn= connect();
+        $sql = 'SELECT Product_id,Quantity FROM orderdetails WHERE order_id =?';
+        $stmt= $conn->prepare($sql);
+        $stmt->bind_param('i',$order_id);
+        $stmt->execute();
+        $result=$stmt->get_result();
+        $warning = '';
+        if($result->num_rows > 0){
+            while($row=$result->fetch_assoc()){
+                $product_info = FindProductInfo($row["Product_id"]);
+                if($row["Quantity"]>$product_info[5]){
+                    $warning = '<p id="warning">Số lượng sản phẩm đang vượt quá số lượng sản phẩm có trong kho</p>';
+                    $conn->close();
+                    return $warning;
+                }
+            }
+        }
+        $stmt->close();
+        $conn->close();
+        return $warning;
+    }
 
+    function UpdateProduct_Quantity($order_id,$type,$status){
+        $conn=connect();
+        $sql = 'SELECT Product_id,Quantity FROM orderdetails WHERE order_id =?';
+        $stmt= $conn->prepare($sql);
+        $stmt->bind_param('i',$order_id);
+        $stmt->execute();
+        $result=$stmt->get_result();
+        if($result->num_rows > 0){
+            while($row=$result->fetch_assoc()){
+                $product_info = FindProductInfo($row["Product_id"]);
+                if($type=="plus"){
+                    $sql_2 = "UPDATE product SET Quantity = ? WHERE Product_id = ?";
+                    $stmt_2= $conn->prepare($sql_2);
+                    $quantity = $row['Quantity'] - $product_info[5];
+                    $stmt_2->bind_param('i',$quantity,$row["Product_id"]);
+                    $stmt_2->execute();
+                    if($stmt->affected_rows > 0){ }
+                }elseif($type=="minus"){ //trường hợp huỷ đơn
+                    if($status == "Đã xác nhận"){
+                        $sql_2 = "UPDATE product SET Quantity = ? WHERE Product_id = ?";
+                        $stmt_2= $conn->prepare($sql_2);
+                        $quantity = $row['Quantity'] + $product_info[5];
+                        $stmt_2->bind_param('i',$quantity,$row["Product_id"]);
+                        $stmt_2->execute();
+                        if($stmt->affected_rows > 0){ }
+                    }
+                }
+            }
+        }
+        $stmt->close();
+        $stmt_2->close();
+        $conn->close();
+    }
 
-    function CountOrderDetails($orders_id){
+    function CountOrderDetails($order_id){
         $conn= connect();
         $sql = 'SELECT COUNT(Order_id) AS total FROM orderdetails WHERE order_id =?';
         $stmt= $conn->prepare($sql);
-        $stmt->bind_param('i',$orders_id);
+        $stmt->bind_param('i',$order_id);
         $stmt->execute();
         $stmt->bind_result($count); //gán biến count vào biến mà sql đang truy vấn là order_id
         $stmt->fetch();//gán giá trị của total vào biến count
@@ -771,6 +832,7 @@
         }
         
     }
+
     function DeleteOrder( $orders_id ){
         $conn= connect();
         $sql = 'DELETE FROM Orders WHERE Order_id = ? ';
@@ -783,6 +845,8 @@
         $conn->close();
         $stmt->close();
     }
+
+
     function DeleteOrderDetails($orders_id){
         $conn= connect();
         $info = FindOrderInfo($orders_id);

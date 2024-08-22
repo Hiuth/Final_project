@@ -17,7 +17,7 @@
        echo '<script>window.location.href="donhang.php?";</script>';
     }elseif($Payment_status == null){
       updateOrder($order_id, $Order_status,$Payment_status_2, $Shipping_status, $note,$address);
-      echo '<script>window.location.href="donhang.php?";</script>';
+     echo '<script>window.location.href="donhang.php?";</script>';
     }elseif($Shipping_status == null && $Payment_status == null){
       updateOrder($order_id, $Order_status,$Payment_status_2, $Shipping_status_2, $note,$address);
       echo '<script>window.location.href="donhang.php?";</script>';
@@ -28,7 +28,11 @@
 
     if($Shipping_status == "Gửi hàng thành công" && $Payment_status =="Đã thanh toán"){
       changeLocation($order_id);
-  }
+    }
+
+    if($Order_status == "Đã xác nhận"){
+      UpdateProduct_Quantity($order_id,"minus",$Order_status);
+    }
   }
 ?>
 

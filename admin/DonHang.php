@@ -121,10 +121,10 @@
                        
                         ShowOrder();
                         if(isset($_POST['btn-3']) && $_POST['btn-3']){
-                          $orders_id=$_POST['Order_id'];
-                        //   echo '{'.$orders_id.'}';
-                        //     print_r(FindOrderInfo($orders_id));
-                          DeleteOrderDetails($orders_id);
+                          $order_id=$_POST['Order_id'];
+                            $order_info=FindOrderInfo($order_id);
+                          DeleteOrderDetails($order_id);
+                          UpdateProduct_Quantity($order_id,"plus",$order_info[2]);
                           echo '<script>window.location.href = window.location.href;</script>';
                         }
                         ?>
