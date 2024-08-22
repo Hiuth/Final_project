@@ -583,8 +583,10 @@
                 </div>
                 <div class="form-group">
                     <label for="quantity">Số lượng sản phẩm mua</label>
-                    <input type="number" id="quantity" name="quantity" value="'.$row["Quantity"].'" min="1" oninput="ChangeTotal()" '.$lock.' required />
+                    <input type="number" id="quantity" name="quantity" value="'.$row["Quantity"].'" min="1" oninput="ChangeTotal(); checkQuantity();"'.$lock.' required />
+                     <span id="attention">Số lượng vượt quá số lượng sản phẩm có trong kho hàng</span>
                 </div>
+               
                  <div class="form-group">
                     <label for="price">Tổng tiền</label>
                     <input type="text" id="total" name="total" value= "'.number_format($info['2']*$row["Quantity"],0,',','.').'" readonly />
@@ -598,6 +600,7 @@
                       
                    echo '</select>
                 </div>
+                <input type = "hidden" id ="product_quantity" value = "'.$info[5].'">
             </div>
 
             <!-- Cột bên phải cho phần "Chỉnh sửa ảnh" -->

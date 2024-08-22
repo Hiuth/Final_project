@@ -195,3 +195,9 @@ th {
 .add-order-bottom .unit-price {
   color: #eb412f;
 }
+
+#attention {
+  color: red;
+  padding-top: 3px;
+  display: none;
+}

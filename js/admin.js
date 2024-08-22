@@ -293,7 +293,7 @@ function ChangeTotal() {
   );
 
   var total = price * quantity;
-  console.log(total);
+  //console.log(total);
   document.getElementById("total").value = total.toLocaleString("de-DE");
 }
 
@@ -307,3 +307,18 @@ document.getElementById("file").addEventListener("change", function (event) {
     reader.readAsDataURL(file);
   }
 });
+
+function checkQuantity() {
+  var product_quantity = document.getElementById("product_quantity").value;
+  var order_quantity = document.getElementById("quantity").value;
+  var attention = document.getElementById("attention");
+  var button = document.getElementById("submit-button");
+  console.log(order_quantity);
+  if (parseInt(order_quantity) > parseInt(product_quantity)) {
+    attention.style.display = "block";
+    button.disable = true;
+  } else {
+    attention.style.display = "none";
+    button.disable = false;
+  }
+}
