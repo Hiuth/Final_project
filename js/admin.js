@@ -316,9 +316,9 @@ function checkQuantity() {
   console.log(order_quantity);
   if (parseInt(order_quantity) > parseInt(product_quantity)) {
     attention.style.display = "block";
-    button.disable = true;
+    button.disabled = true;
   } else {
     attention.style.display = "none";
-    button.disable = false;
+    button.disabled = false;
   }
 }
