@@ -719,7 +719,7 @@
         if($result->num_rows > 0){
             while($row=$result->fetch_assoc()){
                 $product_info = FindProductInfo($row["Product_id"]);
-                if($row["Quantity"]>$product_info[5]){
+                if($row["Quantity"]>=$product_info[5]){
                     $warning = '<p id="warning">Số lượng sản phẩm đang vượt quá số lượng sản phẩm có trong kho</p>';
                     $conn->close();
                     return $warning;
@@ -733,7 +733,7 @@
 
     function UpdateProduct_Quantity($order_id,$type,$status){
         $conn=connect();
-        $sql = 'SELECT Product_id,Quantity FROM orderdetails WHERE order_id =?';
+        $sql = 'SELECT Product_id,Quantity FROM orderdetails WHERE Order_id =?';
         $stmt= $conn->prepare($sql);
         $stmt->bind_param('i',$order_id);
         $stmt->execute();
@@ -741,27 +741,22 @@
         if($result->num_rows > 0){
             while($row=$result->fetch_assoc()){
                 $product_info = FindProductInfo($row["Product_id"]);
-                if($type=="plus"){
-                    $sql_2 = "UPDATE product SET Quantity = ? WHERE Product_id = ?";
-                    $stmt_2= $conn->prepare($sql_2);
-                    $quantity = $row['Quantity'] - $product_info[5];
-                    $stmt_2->bind_param('i',$quantity,$row["Product_id"]);
-                    $stmt_2->execute();
-                    if($stmt->affected_rows > 0){ }
-                }elseif($type=="minus"){ //trường hợp huỷ đơn
+                if($type=="minus"){
+                    $quantity = $product_info[5] - $row['Quantity'];
+                }elseif($type=="plus"){ //trường hợp huỷ đơn
                     if($status == "Đã xác nhận"){
-                        $sql_2 = "UPDATE product SET Quantity = ? WHERE Product_id = ?";
-                        $stmt_2= $conn->prepare($sql_2);
                         $quantity = $row['Quantity'] + $product_info[5];
-                        $stmt_2->bind_param('i',$quantity,$row["Product_id"]);
-                        $stmt_2->execute();
-                        if($stmt->affected_rows > 0){ }
                     }
                 }
+                echo $quantity;
+                $sql_2 = "UPDATE product SET Quantity = ? WHERE Product_id = ?";
+                $stmt_2= $conn->prepare($sql_2);
+                $stmt_2->bind_param('ii',$quantity,$row["Product_id"]);
+                $stmt_2->execute();
+                $stmt_2->close();
             }
         }
         $stmt->close();
-        $stmt_2->close();
         $conn->close();
     }
 
@@ -855,13 +850,15 @@
             $conn->close();
            return;
         }else{
+            $order_info=FindOrderInfo($orders_id);
+            UpdateProduct_Quantity($orders_id,"plus",$order_info[2]);
             $sql = 'DELETE FROM orderdetails WHERE Order_id = ? ';
             $stmt= $conn->prepare($sql);
             $stmt->bind_param('i',$orders_id);
             $stmt->execute();
             if($stmt->affected_rows > 0){
                 DeleteOrder($orders_id);
-    
+                
             }
         }
 

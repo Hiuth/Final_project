@@ -14,13 +14,13 @@
     if($Shipping_status == null ){
        echo'hello'; 
        updateOrder($order_id, $Order_status,$Payment_status_2, $Shipping_status_2, $note,$address);
-       echo '<script>window.location.href="donhang.php?";</script>';
+      echo '<script>window.location.href="donhang.php?";</script>';
     }elseif($Payment_status == null){
       updateOrder($order_id, $Order_status,$Payment_status_2, $Shipping_status, $note,$address);
      echo '<script>window.location.href="donhang.php?";</script>';
     }elseif($Shipping_status == null && $Payment_status == null){
       updateOrder($order_id, $Order_status,$Payment_status_2, $Shipping_status_2, $note,$address);
-      echo '<script>window.location.href="donhang.php?";</script>';
+     echo '<script>window.location.href="donhang.php?";</script>';
     }elseif($Shipping_status != null && $Payment_status != null ){
       updateOrder($order_id, $Order_status,$Payment_status, $Shipping_status, $note,$address);
       echo '<script>window.location.href="donhang.php?";</script>';
