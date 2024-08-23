@@ -63,13 +63,15 @@
                 </div>
                 <table id="table">
                     <thead>
-                        <tr>
+                    <tr>
                             <th>ID</th>
                             <th>Ảnh</th>
                             <th onclick="sortTable(2,'string')">Tên sản phẩm</th>
                             <th onclick="sortTable(3,'number')">Giá bán</th>
                             <th onclick="sortTable(4,'number')">Số lượng</th>
                             <th>Tùy chỉnh</th>
+                            <th>Thêm đơn hàng</th>
+                            <th>Xoá sản phẩm</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -347,7 +347,6 @@
                         <td>'.$row["Shipping_status"].'</td>
                         <td>'.$row["Payment_Status"].'</td>
                         <td>'.$row["Order_status"].'</td>
-                        <td>'.$row["Order_note"].'</td>
                         <td>
                             <div class="price-wallpaper">
                                 <p class="price">'.number_format($row["Order_total"], 0, ',', '.').'</p>
@@ -1031,12 +1030,12 @@
         $result = $stmt->get_result();
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
-                echo ' <tr>
-                            <td>'.$row["Product_id"].'</td>
-                            <td>
+                echo '  <tr>
+                            <td class="product_id">'.$row["Product_id"].'</td>
+                            <td class="product_img">
                                 <img class="img-table" src="'.$row["Product_img"].'" alt="" />
                             </td>
-                            <td>
+                            <td class = "product_name">
                                 '.$row["Product_name"].'
                             </td>
                             <td>
@@ -1045,13 +1044,28 @@
                                     <p class="unit-price">VND</p>
                                 </div>
                             </td>
-                            <td>'.$row["Quantity"].'</td>
+                            <td class = "Quantity" id = "Quantity_product">'.$row["Quantity"].'</td>
                             <td>
-                                <button class="fix-product">
-                                    <a href=""><i class="fa-solid fa-pen"></i></a>
-                                    </i>
+                             <form action="chinhsuasanpham.php" method="POST">
+                                <input type="hidden" name="Product_id" value="'.$row["Product_id"].'">
+                            <button class="fix-product" type="submit" name="btn-2" value="fix">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            </form>
+                            </td>
+                            <td>
+                                <button class="cart" onclick = "addOrder(this)" >
+                                  <i class="fa-solid fa-cart-plus"></i>
                                 </button>
                             </td>
+                            <td>
+                        <form action="sanpham.php" method="POST">
+                            <input type="hidden" name="Del_product_id" value="'.$row["Product_id"].'">
+                            <button class="trash" type="submit" name="btn-3" value="delete">
+                                <i class="fa-solid fa-trash"></i></i>
+                            </button>
+                        </form> 
+                        </td>
                         </tr>';
             }
         }
