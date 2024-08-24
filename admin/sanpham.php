@@ -45,6 +45,7 @@
                     </li>
                     <li><a href="themdonhang.php">Thêm đơn hàng</a></li>
                     <li><a href="Lichsudonhang.php">Lịch sử đơn hàng</a></li>
+                    <li><a href="quanlytaikhoan.php">Quản lý tài khoản</a></li>
                 </ul>
             </nav>
         </div>
