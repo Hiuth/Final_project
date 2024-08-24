@@ -60,6 +60,7 @@
                 src="/WebBanMayChoiGame/Picture/ps5_slim.jpg"
                 alt="Employee Photo"
               />
+              
             </div>
             <div class="employee-details">
               <div class="detail-row">
@@ -78,7 +79,15 @@
                 <span class="label">Phân cấp tài khoản:</span>
                 <span class="value">Admin</span>
               </div>
+
+              <form action = "chinsuataikhoan.php" method = "POST">
+                <div class="button-container">
+                    <button type="submit" class="submit-button" name="btn-8" id="submit-button"
+                        value="Chỉnh sửa tài khoản">Chỉnh sửa tài khoản</button>
+                  </div>
+              </form>
             </div>
+
           </div>
         </div>
       </div>
