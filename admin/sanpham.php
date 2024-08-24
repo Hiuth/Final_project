@@ -29,7 +29,7 @@
         </div>
         <div class="middle-selection"></div>
         <div class="right-selection">
-            <a href=""><img class="avatar" src="/WebBanMayChoiGame/Picture/Human.png" alt="" /></a>
+            <a href="adminmain.php"><img class="avatar" src="/WebBanMayChoiGame/Picture/Human.png" alt="" /></a>
         </div>
     </header>
     <div class="container-wrapper">

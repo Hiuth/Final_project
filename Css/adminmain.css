@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+/* Main Content */
+
+/* Employee Card */
+.employee-card {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 1500px;
+  height: calc(100vh - 200px);
+  margin: auto;
+}
+
+.employee-photo img {
+  width: 400px;
+  height: 480px;
+  margin-right: 50px;
+  border-radius: 10px;
+}
+
+.employee-details {
+  flex: 1;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.label {
+  font-size: 2rem;
+  font-weight: 600;
+  width: 200px;
+}
+
+.value {
+  font-size: 2rem;
+  padding: 14px 20px;
+  background-color: #eaeaea;
+  border-radius: 10px;
+  width: calc(100% - 220px);
+}
