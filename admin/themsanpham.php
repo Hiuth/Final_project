@@ -85,11 +85,6 @@
                             <label for="brand">Nhãn hiệu</label>
                             <select id="brand" name="brand">
                                 <option value="">Chọn nhãn hiệu</option>
-                                <!-- <option value="ps5">PS5</option>
-                                    <option value="ps4">PS4</option>
-                                    <option value="switch">Nintendo Switch</option>
-                                    <option value="xbox-series-s">Xbox Series S</option>
-                                    <option value="xbox-series-x">Xbox Series X</option>  -->
                                 <?php 
                                     showBrand();
                                     ?>
@@ -107,11 +102,6 @@
                             <label for="category">Thuộc loại</label>
                             <select id="category" name="category" required>
                                 <option value="">Chọn loại</option>
-                                <!-- <option value="ps5">PS5</option>
-                                <option value="ps4">PS4</option>
-                                <option value="switch">Nintendo Switch</option>
-                                <option value="xbox-series-s">Xbox Series S</option>
-                                <option value="xbox-series-x">Xbox Series X</option> -->
                                 <?php
                                 showCategory();
                                 ?>

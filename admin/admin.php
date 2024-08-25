@@ -854,10 +854,56 @@
             </button>
           </div>';
         }
+        $stmt->close();
+        $conn->close();
     }
 
 
-
+    function ShowAccountList(){
+        $conn = connect();
+        $sql = 'SELECT Admin_id, Admin_img, Admin_email, Admin_name, Admin_password, Admin_power, Admin_birthday FROM admin_account';
+        $stmt= $conn->prepare($sql);
+        $stmt->execute();
+        $result=$stmt->get_result();
+        if($result->num_rows>0){
+            while($row=$result->fetch_assoc()){
+                echo '<tr>
+                            <td class="admin_id">'.$row["Admin_id"].'</td>
+                            <td class="admin_img">
+                                <img class="img-table" src="'.$row["Admin_img"].'" alt="" />
+                            </td>
+                            <td class = "admin_name">
+                                '.$row["Admin_name"].'
+                            </td>
+                            <td>
+                                '.$row["Admin_email"].'
+                            </td>
+                            <td>
+                               '.$row["Admin_password"].'
+                            </td>
+                            <td>'.$row["Admin_power"].'</td>
+                            <td>
+                             <form action="chinhsuataikhoan.php" method="POST">
+                                <input type="hidden" name="Product_id" value="'.$row["Admin_id"].'">
+                            <button class="fix-product" type="submit" name="btn-2" value="fix">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            </form>
+                            </td>
+                            <td>
+                        <form action="quanlytaikhoan.php" method="POST">
+                            <input type="hidden" name="Del_product_id" value="'.$row["Admin_id"].'">
+                            <button class="trash" type="submit" name="btn-3" value="delete">
+                                <i class="fa-solid fa-trash"></i></i>
+                            </button>
+                        </form> 
+                        </td>
+                        </tr>';
+            }
+        }
+        $stmt->close();
+        $conn->close();
+    }
     //check, count Function zone
 
     function checkQuantityOrder_Product($order_id){
