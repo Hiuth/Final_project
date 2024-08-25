@@ -1,3 +1,7 @@
+<?php
+  require_once("connect-admin.php");
+  include "admin.php"
+?>
 <!DOCTYPE html>
 <html lang="vi">
   <head>
@@ -54,7 +58,7 @@
       </nav>
       </div>
       <div class="main-content">
-          <div class="employee-card">
+          <!-- <div class="employee-card">
             <div class="employee-photo">
               <img
                 src="/WebBanMayChoiGame/Picture/ps5_slim.jpg"
@@ -80,15 +84,17 @@
                 <span class="value">Admin</span>
               </div>
 
-              <form action = "chinsuataikhoan.php" method = "POST">
+              <form action = "chinhsuataikhoan.php" method = "POST">
                 <div class="button-container">
                     <button type="submit" class="submit-button" name="btn-8" id="submit-button"
                         value="Chỉnh sửa tài khoản">Chỉnh sửa tài khoản</button>
                   </div>
               </form>
             </div>
-
-          </div>
+          </div> -->
+        <?php
+          showAccountInfo();
+        ?>
         </div>
       </div>
     </div>

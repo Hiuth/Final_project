@@ -1,8 +1,9 @@
 <?php
     //xử lý đăng nhập
+    session_start();
     function Login($username, $password) {
         $conn= connect();
-        $sql = "SELECT Admin_id, Admin_email, Admin_name, Admin_password, Admin_power FROM admin_account WHERE Admin_email =? AND Admin_password = ?";
+        $sql = "SELECT Admin_id, Admin_power FROM admin_account WHERE Admin_email =? AND Admin_password = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ss", $username,$password);
         $stmt->execute();
@@ -10,11 +11,66 @@
         if($result->num_rows > 0) {
             $row = $result->fetch_assoc(); 
             $_SESSION["admin"] = $row;
+            $conn->close();
+            $stmt->close();
             return true;
         }else{
+            $conn->close();
+            $stmt->close();
             return false;
         }
+     
 
+    }
+
+    function showAccountInfo(){
+        $conn= connect();
+        $sql = "SELECT Admin_img ,Admin_email, Admin_name, Admin_password, Admin_power,Admin_birthday FROM admin_account WHERE Admin_id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $_SESSION["admin"]["Admin_id"]);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if($result->num_rows > 0) {
+            $row = $result->fetch_assoc(); 
+            echo'<div class="employee-card">
+            <div class="employee-photo">
+              <img
+                src="'. $row["Admin_img"].'"
+                alt="Employee Photo"
+              />
+              
+            </div>
+            <div class="employee-details">
+              <div class="detail-row">
+                <span class="label">Họ và tên:</span>
+                <span class="value">'. $row["Admin_name"].'</span>
+              </div>
+              <div class="detail-row">
+                <span class="label">Email:</span>
+                <span class="value">'. $row["Admin_email"].'</span>
+              </div>
+              <div class="detail-row">
+                <span class="label">Ngày sinh:</span>
+                <span class="value">'. $row["Admin_birthday"].'</span>
+              </div>
+              <div class="detail-row">
+                <span class="label">Phân cấp tài khoản:</span>
+                <span class="value">'. $row["Admin_power"].'</span>
+              </div>
+
+              <form action = "chinhsuataikhoan.php" method = "POST">
+                <div class="button-container">
+                <input type="hidden" name = "account-id" value="'. $_SESSION["admin"]["Admin_id"].'">
+                    <button type="submit" class="submit-button" name="btn-8" id="submit-button"
+                        value="Chỉnh sửa tài khoản">Chỉnh sửa tài khoản</button>
+                  </div>
+              </form>
+            </div>
+          </div>';
+        }
+        $conn->close();
+        $stmt->close();
+        
     }
 
     //xử lý đơn hàng
