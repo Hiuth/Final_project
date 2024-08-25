@@ -1,5 +1,4 @@
 <?php
-  session_start();
   require_once("connect-admin.php");
   include "admin.php";
 
@@ -23,6 +22,7 @@
         //tạo chi tiết đơn hàng
         Create_orders_details($orders_id);
      }
+     unset( $_SESSION['productOrder']);
 }
  
 ?>

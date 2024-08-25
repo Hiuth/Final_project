@@ -82,10 +82,10 @@
             </nav>
         </div>
         <div class="main-content">
-            <h1>Chỉnh sửa tài khoản</h1>
+            <!-- <h1>Chỉnh sửa tài khoản</h1>
             <form class="edit-product-form" action="themsanpham.php" method="POST" enctype="multipart/form-data">
                 <div class="form-row">
-                    <!-- Cột bên trái cho các trường nhập liệu -->
+        
                     <div class="form-group-wrapper">
                         <div class="form-group">
                             <label for="product-name">Tên tài khoản</label>
@@ -102,7 +102,7 @@
                         </div>
                         <div class="form-group">
                             <label for="quantity">Ngày tháng năm sinh</label>
-                            <input type="text" id="admin-birthday" name="admin-birthday" required />
+                            <input type="date" id="admin-birthday" name="admin-birthday" value ="" required />
                         </div>
                         <div class="form-group">
                             <label for="category">Phân cấp tài khoản</label>
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                     
-                    <!-- Cột bên phải cho phần "Chỉnh sửa ảnh" -->
+         
                     <div class="form-group image-upload">
                         <label for="product-image">Thêm ảnh</label>
                         <div class="image-placeholder">
@@ -130,7 +130,13 @@
                     <button type="submit" class="submit-button" name="btn-5" id="submit-button"
                         value="Chỉnh sửa tài khoản">Chỉnh sửa tài khoản</button>
                 </div>
-            </form>
+            </form> -->
+            <?php
+                if(isset($_POST["btn-8"])&&$_POST["btn-8"]){
+                    $account_id = $_POST["account-id"];
+                    showAccountEdit($account_id);
+                } 
+            ?>       
         </div>
     </div>
     <script src="../js/admin.js"></script>
