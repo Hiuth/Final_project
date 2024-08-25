@@ -10,7 +10,7 @@
     $product_category = $_POST['category'];
     $product_img = $_FILES['image']['name'];
     // Đường dẫn thư mục đích trên xampp
-    $target_dir = "/Xampp/htdocs/WebBanMayChoiGame/Picture/";
+    $target_dir =  "../../WebBanMayChoiGame/Picture/";
     $target_file = $target_dir . basename($product_img);
     if (file_exists($target_file)) {
     } else {

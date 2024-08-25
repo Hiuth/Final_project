@@ -24,7 +24,7 @@
         }
        
     }else{
-        $target_dir = "/Xampp/htdocs/WebBanMayChoiGame/Picture/";
+        $target_dir =  "../../WebBanMayChoiGame/Picture/";
         $target_file = $target_dir . basename($account_img);
           if (file_exists($target_file)) {
             } else {
