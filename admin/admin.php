@@ -86,14 +86,14 @@
             $row = $result->fetch_assoc(); 
             $lock = ($row["Admin_power"] != "Quản lý") ? 'disabled': '';
             echo' <h1>Chỉnh sửa tài khoản</h1>
-            <form class="edit-product-form" action="themsanpham.php" method="POST" enctype="multipart/form-data">
+            <form class="edit-product-form" action="chinhsuataikhoan.php" method="POST" enctype="multipart/form-data">
                 <div class="form-row">
                     <!-- Cột bên trái cho các trường nhập liệu -->
                     <div class="form-group-wrapper">
                         <div class="form-group">
                             <label for="product-name">Tên tài khoản</label>
                             <input type="text" id="admin-name" name="admin-name" value="'. $row["Admin_name"].'" required />
-                            <input type="hidden" name = "account-id" value="">
+                            <input type="hidden" name = "account-id" value="'.$id.'">
                         </div>
                         <div class="form-group">
                             <label for="brand">Email</label>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="form-group">
                             <label for="quantity">Mật khẩu tài khoản</label>
-                            <input type="text" id="account-pass" name="admin-pass" value="'. $row["Admin_password"].'" required />
+                            <input type="text" id="account-pass" name="account-pass" value="'. $row["Admin_password"].'" required />
                         </div>
                         <div class="form-group">
                             <label for="quantity">Ngày tháng năm sinh</label>
@@ -117,7 +117,7 @@
                         </div>
                         <div class="form-group">
                             <label for="picture">Thêm hình ảnh</label>
-                            <input type="file" accept="image/*" id="file" name="image" required>
+                            <input type="file" accept="image/*" id="file" name="image">
                         </div>
                     </div>
                     
@@ -125,12 +125,13 @@
                     <div class="form-group image-upload">
                         <label for="product-image">Thêm ảnh</label>
                         <div class="image-placeholder">
-                            <img class="image-placeholder" id ="upload-Img" src="'. $row["Admin_img"].'">
+                            <img name ="upload-Img" class="image-placeholder" id ="upload-Img" src="'. $row["Admin_img"].'">
+                            <input type="hidden" id="img-src" name="img-src">
                         </div>
                     </div>
                 </div>
                 <div class="button-container">
-                    <button type="submit" class="submit-button" name="btn-5" id="submit-button"
+                    <button type="submit" class="submit-button" name="btn-10" id="submit-button"
                         value="Chỉnh sửa tài khoản">Chỉnh sửa tài khoản</button>
                 </div>
             </form>';
@@ -140,6 +141,16 @@
 
     }
 
+    function Edit_Account($account_id,$admin_name, $admin_email,$admin_pass,$account_power,$admin_birthday, $account_img){
+        $conn = connect();
+        $sql ='UPDATE admin_account SET Admin_img = ?, Admin_email = ?, Admin_name = ?, Admin_password=?, Admin_power = ?, Admin_birthday = ? WHERE Admin_id = ? ';
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssssssi", $account_img,$admin_email,$admin_name,$admin_pass,$account_power,$admin_birthday,$account_id);
+        $stmt->execute();
+        if($stmt->affected_rows>0){}
+        $conn->close();
+        $stmt->close();
+    }
     //xử lý đơn hàng
     function Create_Customer_Info($username, $gender, $phone_number, $address, $email){
         $conn= connect();

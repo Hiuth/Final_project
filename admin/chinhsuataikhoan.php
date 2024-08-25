@@ -1,7 +1,7 @@
 <?php
   require_once("connect-admin.php");
   include "admin.php";
-  if (isset($_POST["btn-5"]) && $_POST["btn-5"]) {
+  if (isset($_POST["btn-10"]) && $_POST["btn-10"]) {
     $account_id = $_POST['account-id'];
     $admin_name = $_POST['admin-name'];
     $admin_email= $_POST['admin-email'];
@@ -10,28 +10,33 @@
     $admin_birthday = $_POST['admin-birthday'];
     $account_img = $_FILES['image']['name'];
 
+    if(empty($account_power)){
+        $account_power="Nhân viên";
+    }
     if(empty($account_img)){
-      $account_img = null;
-      
-      echo '<script>window.location.href="sanpham.php?";</script>';
-
+        $account_img = $_POST["img-src"];
+        Edit_Account($account_id,$admin_name, $admin_email,$admin_pass,$account_power,$admin_birthday, $account_img);
+        echo '<script>window.location.href="adminmain.php?";</script>';
     }else{
-          // Đường dẫn thư mục đích trên xampp
         $target_dir = "/Xampp/htdocs/WebBanMayChoiGame/Picture/";
         $target_file = $target_dir . basename($account_img);
-      if (file_exists($target_file)) {
-        } else {
-        // Di chuyển tệp đến thư mục đích
-        if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
+          if (file_exists($target_file)) {
+            } else {
+            // Di chuyển tệp đến thư mục đích
+            if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
+            }
         }
+       
+        $img="/WebBanMayChoiGame/Picture/". basename($account_img);
+        Edit_Account($account_id,$admin_name, $admin_email,$admin_pass,$account_power,$admin_birthday, $img);
+        echo '<script>window.location.href="adminmain.php?";</script>';
     }
-    $img="/WebBanMayChoiGame/Picture/". basename($account_img);
-    // echo $img;
-    echo '<script>window.location.href="sanpham.php?";</script>';
-  }
+
+
+}
 
     
-}
+
 
 ?>
 <!DOCTYPE html>
@@ -145,5 +150,10 @@
 
     ?>
 </body>
+<script>
+    var imgSrc = document.getElementById("upload-Img").src;
+    document.getElementById("img-src").value = imgSrc;
+</script>
+
 
 </html>
