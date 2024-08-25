@@ -43,7 +43,8 @@ header {
 
 .avatar {
   height: calc(120px - 60px);
-  border-radius: 50%;
+  width: 75px;
+  border-radius: 60%;
 }
 /* Sidebar */
 
