@@ -865,42 +865,51 @@
         $stmt= $conn->prepare($sql);
         $stmt->execute();
         $result=$stmt->get_result();
-        if($result->num_rows>0){
-            while($row=$result->fetch_assoc()){
-                echo '<tr>
-                            <td class="admin_id">'.$row["Admin_id"].'</td>
-                            <td class="admin_img">
-                                <img class="img-table" src="'.$row["Admin_img"].'" alt="" />
+        if($_SESSION["admin"]["Admin_power"] != "Quản lý"){
+            // echo'<script>alert("BẠN KHÔNG CÓ QUYỀN ĐỂ XEM THÔNG TIN TRONG MỤC NÀY! NẾU CÓ THẮC MẮC XIN HÃY VUI LÒNG LIÊN HỆ VỚI BỘ PHẬN QUẢN LÝ");</script>';
+            echo '<div id="custom-alert">
+                <p>BẠN KHÔNG CÓ QUYỀN ĐỂ XEM THÔNG TIN TRONG MỤC NÀY! NẾU CÓ THẮC MẮC XIN HÃY VUI LÒNG LIÊN HỆ VỚI BỘ PHẬN QUẢN LÝ</p>
+                    <button onclick="closeAlert()">Đã hiểu!</button>
+                </div>';
+        }else{
+            if($result->num_rows>0){
+                while($row=$result->fetch_assoc()){
+                    echo '<tr>
+                                <td class="admin_id">'.$row["Admin_id"].'</td>
+                                <td class="admin_img">
+                                    <img class="img-table" src="'.$row["Admin_img"].'" alt="" />
+                                </td>
+                                <td class = "admin_name">
+                                    '.$row["Admin_name"].'
+                                </td>
+                                <td>
+                                    '.$row["Admin_email"].'
+                                </td>
+                                <td>
+                                   '.$row["Admin_password"].'
+                                </td>
+                                <td>'.$row["Admin_power"].'</td>
+                                <td>
+                                 <form action="chinhsuataikhoan.php" method="POST">
+                                    <input type="hidden" name="Product_id" value="'.$row["Admin_id"].'">
+                                <button class="fix-product" type="submit" name="btn-2" value="fix">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                </form>
+                                </td>
+                                <td>
+                            <form action="quanlytaikhoan.php" method="POST">
+                                <input type="hidden" name="Del_product_id" value="'.$row["Admin_id"].'">
+                                <button class="trash" type="submit" name="btn-3" value="delete">
+                                    <i class="fa-solid fa-trash"></i></i>
+                                </button>
+                            </form> 
                             </td>
-                            <td class = "admin_name">
-                                '.$row["Admin_name"].'
-                            </td>
-                            <td>
-                                '.$row["Admin_email"].'
-                            </td>
-                            <td>
-                               '.$row["Admin_password"].'
-                            </td>
-                            <td>'.$row["Admin_power"].'</td>
-                            <td>
-                             <form action="chinhsuataikhoan.php" method="POST">
-                                <input type="hidden" name="Product_id" value="'.$row["Admin_id"].'">
-                            <button class="fix-product" type="submit" name="btn-2" value="fix">
-                                <i class="fa-solid fa-pen"></i>
-                            </button>
-                            </form>
-                            </td>
-                            <td>
-                        <form action="quanlytaikhoan.php" method="POST">
-                            <input type="hidden" name="Del_product_id" value="'.$row["Admin_id"].'">
-                            <button class="trash" type="submit" name="btn-3" value="delete">
-                                <i class="fa-solid fa-trash"></i></i>
-                            </button>
-                        </form> 
-                        </td>
-                        </tr>';
+                            </tr>';
+                }
             }
         }
+
         $stmt->close();
         $conn->close();
     }
