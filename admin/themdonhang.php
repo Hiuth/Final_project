@@ -54,7 +54,8 @@
         </div>
         <div class="middle-selection"></div>
         <div class="right-selection">
-            <a href=""><img class="avatar" src="/WebBanMayChoiGame/Picture/Human.png" alt="" /></a>
+            <!-- <a href="adminmain.php"><img class="avatar" id ="avatar" src="/WebBanMayChoiGame/Picture/Human.png" alt="" /></a> -->
+             <?php printAvatar()?>
         </div>
     </header>
     <div class="container-wrapper">
@@ -70,6 +71,7 @@
                     </li>
                     <li><a href="themdonhang.php">Thêm đơn hàng</a></li>
                     <li><a href="Lichsudonhang.php">Lịch sử đơn hàng</a></li>
+                    <li><a href="quanlytaikhoan.php">Quản lý tài khoản</a></li>
                 </ul>
             </nav>
         </div>

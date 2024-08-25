@@ -29,7 +29,8 @@
         </div>
         <div class="middle-selection"></div>
         <div class="right-selection">
-            <a href="adminmain.php"><img class="avatar" src="/WebBanMayChoiGame/Picture/Human.png" alt="" /></a>
+            <!-- <a href="adminmain.php"><img class="avatar" id ="avatar" src="/WebBanMayChoiGame/Picture/Human.png" alt="" /></a> -->
+             <?php printAvatar()?>
         </div>
     </header>
     <div class="container-wrapper">

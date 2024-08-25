@@ -53,25 +53,19 @@
     <title>Quản lý Đơn hàng</title>
   </head>
   <body>
-    <header>
-      <div class="left-selection">
-        <a href="#"
-          ><img
-            class="Logo_website"
-            src="/WebBanMayChoiGame/Picture/Logo_web_3.png"
-            alt=""
-        /></a>
-      </div>
-      <div class="middle-selection"></div>
-      <div class="right-selection">
-        <a href="#"
-          ><img class="avatar" src="/WebBanMayChoiGame/Picture/Human.png" alt=""
-        /></a>
-      </div>
+  <header>
+        <div class="left-selection">
+            <a href=""><img class="Logo_website" src="/WebBanMayChoiGame/Picture/Logo_web_3.png" alt="" /></a>
+        </div>
+        <div class="middle-selection"></div>
+        <div class="right-selection">
+            <!-- <a href="adminmain.php"><img class="avatar" id ="avatar" src="/WebBanMayChoiGame/Picture/Human.png" alt="" /></a> -->
+             <?php printAvatar()?>
+        </div>
     </header>
     <div class="container-wrapper">
-      <div class="sidebar">
-      <nav>
+        <div class="sidebar">
+            <nav>
                 <ul>
                     <li>
                         <a href="sanpham.php">Sản Phẩm</a>
@@ -82,6 +76,7 @@
                     </li>
                     <li><a href="themdonhang.php">Thêm đơn hàng</a></li>
                     <li><a href="Lichsudonhang.php">Lịch sử đơn hàng</a></li>
+                    <li><a href="quanlytaikhoan.php">Quản lý tài khoản</a></li>
                 </ul>
             </nav>
       </div>

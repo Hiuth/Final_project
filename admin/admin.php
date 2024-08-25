@@ -3,7 +3,7 @@
     session_start();
     function Login($username, $password) {
         $conn= connect();
-        $sql = "SELECT Admin_id, Admin_power FROM admin_account WHERE Admin_email =? AND Admin_password = ?";
+        $sql = "SELECT Admin_id ,Admin_power FROM admin_account WHERE Admin_email =? AND Admin_password = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ss", $username,$password);
         $stmt->execute();
@@ -23,123 +23,7 @@
 
     }
 
-    function showAccountInfo(){
-        $conn= connect();
-        $sql = "SELECT Admin_img ,Admin_email, Admin_name, Admin_password, Admin_power,Admin_birthday FROM admin_account WHERE Admin_id = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $_SESSION["admin"]["Admin_id"]);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if($result->num_rows > 0) {
-            $row = $result->fetch_assoc(); 
-            $date = date("d/m/Y", strtotime($row["Admin_birthday"]));
-            echo'<div class="employee-card">
-            <div class="employee-photo">
-              <img
-                src="'. $row["Admin_img"].'"
-                alt="Employee Photo"
-              />
-              
-            </div>
-            <div class="employee-details">
-              <div class="detail-row">
-                <span class="label">Họ và tên:</span>
-                <span class="value">'. $row["Admin_name"].'</span>
-              </div>
-              <div class="detail-row">
-                <span class="label">Email:</span>
-                <span class="value">'. $row["Admin_email"].'</span>
-              </div>
-              <div class="detail-row">
-                <span class="label">Ngày sinh:</span>
-                <span class="value">'. $date.'</span>
-              </div>
-              <div class="detail-row">
-                <span class="label">Phân cấp tài khoản:</span>
-                <span class="value">'. $row["Admin_power"].'</span>
-              </div>
-
-              <form action = "chinhsuataikhoan.php" method = "POST">
-                <div class="button-container">
-                <input type="hidden" name = "account-id" value="'. $_SESSION["admin"]["Admin_id"].'">
-                    <button type="submit" class="submit-button" name="btn-8" id="submit-button"
-                        value="Chỉnh sửa tài khoản">Chỉnh sửa tài khoản</button>
-                  </div>
-              </form>
-            </div>
-          </div>';
-        }
-        $conn->close();
-        $stmt->close();
-        
-    }
-
-
-    function showAccountEdit($id){
-        $conn=connect();
-        $sql = 'SELECT Admin_img, Admin_email, Admin_name, Admin_password, Admin_power,Admin_birthday FROM admin_account WHERE Admin_id = ?';
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if($result->num_rows>0){
-            $row = $result->fetch_assoc(); 
-            $lock = ($row["Admin_power"] != "Quản lý") ? 'disabled': '';
-            echo' <h1>Chỉnh sửa tài khoản</h1>
-            <form class="edit-product-form" action="chinhsuataikhoan.php" method="POST" enctype="multipart/form-data">
-                <div class="form-row">
-                    <!-- Cột bên trái cho các trường nhập liệu -->
-                    <div class="form-group-wrapper">
-                        <div class="form-group">
-                            <label for="product-name">Tên tài khoản</label>
-                            <input type="text" id="admin-name" name="admin-name" value="'. $row["Admin_name"].'" required />
-                            <input type="hidden" name = "account-id" value="'.$id.'">
-                        </div>
-                        <div class="form-group">
-                            <label for="brand">Email</label>
-                            <input type="text" id="admin-email" name="admin-email" value="'. $row["Admin_email"].'" readonly />
-                        </div>
-                        <div class="form-group">
-                            <label for="quantity">Mật khẩu tài khoản</label>
-                            <input type="text" id="account-pass" name="account-pass" value="'. $row["Admin_password"].'" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="quantity">Ngày tháng năm sinh</label>
-                            <input type="date" id="admin-birthday" name="admin-birthday" value ="'. $row["Admin_birthday"].'" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="category">Phân cấp tài khoản</label>
-                            <select id="account-power" name="account-power" '.$lock.' required>
-                                <option value="">Chọn loại</option>
-                                <option value="Quản lý" '.($row["Admin_power"] == "Quản lý" ? 'selected' : '').'>Quản lý</option>
-                                <option value="Nhân viên" '.($row["Admin_power"] == "Nhân viên" ? 'selected' : '').' >Nhân viên</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="picture">Thêm hình ảnh</label>
-                            <input type="file" accept="image/*" id="file" name="image">
-                        </div>
-                    </div>
-                    
-                    <!-- Cột bên phải cho phần "Chỉnh sửa ảnh" -->
-                    <div class="form-group image-upload">
-                        <label for="product-image">Thêm ảnh</label>
-                        <div class="image-placeholder">
-                            <img name ="upload-Img" class="image-placeholder" id ="upload-Img" src="'. $row["Admin_img"].'">
-                            <input type="hidden" id="img-src" name="img-src">
-                        </div>
-                    </div>
-                </div>
-                <div class="button-container">
-                    <button type="submit" class="submit-button" name="btn-10" id="submit-button"
-                        value="Chỉnh sửa tài khoản">Chỉnh sửa tài khoản</button>
-                </div>
-            </form>';
-        }
-        $stmt->close();
-        $conn->close();
-
-    }
+    
 
     function Edit_Account($account_id,$admin_name, $admin_email,$admin_pass,$account_power,$admin_birthday, $account_img){
         $conn = connect();
@@ -372,6 +256,137 @@
     }
 
     //show function zone
+    function printAvatar(){
+        $conn= connect();
+        $sql = "SELECT Admin_img FROM admin_account WHERE Admin_id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $_SESSION["admin"]["Admin_id"]);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if($result->num_rows > 0) {
+            $row = $result->fetch_assoc(); 
+            echo ' <a href="adminmain.php"><img class="avatar" id ="avatar" src="'.$row["Admin_img"].'" alt="" /></a>';
+        }
+        $conn->close();
+        $stmt->close();
+    }
+    function showAccountInfo(){
+        $conn= connect();
+        $sql = "SELECT Admin_img ,Admin_email, Admin_name, Admin_password, Admin_power,Admin_birthday FROM admin_account WHERE Admin_id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $_SESSION["admin"]["Admin_id"]);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if($result->num_rows > 0) {
+            $row = $result->fetch_assoc(); 
+            $date = date("d/m/Y", strtotime($row["Admin_birthday"]));
+            echo'<div class="employee-card">
+            <div class="employee-photo">
+              <img
+                src="'. $row["Admin_img"].'"
+                alt="Employee Photo"
+              />
+              
+            </div>
+            <div class="employee-details">
+              <div class="detail-row">
+                <span class="label">Họ và tên:</span>
+                <span class="value">'. $row["Admin_name"].'</span>
+              </div>
+              <div class="detail-row">
+                <span class="label">Email:</span>
+                <span class="value">'. $row["Admin_email"].'</span>
+              </div>
+              <div class="detail-row">
+                <span class="label">Ngày sinh:</span>
+                <span class="value">'. $date.'</span>
+              </div>
+              <div class="detail-row">
+                <span class="label">Phân cấp tài khoản:</span>
+                <span class="value">'. $row["Admin_power"].'</span>
+              </div>
+
+              <form action = "chinhsuataikhoan.php" method = "POST">
+                <div class="button-container">
+                <input type="hidden" name = "account-id" value="'. $_SESSION["admin"]["Admin_id"].'">
+                    <button type="submit" class="submit-button" name="btn-8" id="submit-button"
+                        value="Chỉnh sửa tài khoản">Chỉnh sửa tài khoản</button>
+                  </div>
+              </form>
+            </div>
+          </div>';
+        }
+        $conn->close();
+        $stmt->close();
+        
+    }
+
+
+    function showAccountEdit($id){
+        $conn=connect();
+        $sql = 'SELECT Admin_img, Admin_email, Admin_name, Admin_password, Admin_power,Admin_birthday FROM admin_account WHERE Admin_id = ?';
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if($result->num_rows>0){
+            $row = $result->fetch_assoc(); 
+            $lock = ($row["Admin_power"] != "Quản lý") ? 'disabled': '';
+            echo' <h1>Chỉnh sửa tài khoản</h1>
+            <form class="edit-product-form" action="chinhsuataikhoan.php" method="POST" enctype="multipart/form-data">
+                <div class="form-row">
+                    <!-- Cột bên trái cho các trường nhập liệu -->
+                    <div class="form-group-wrapper">
+                        <div class="form-group">
+                            <label for="product-name">Tên tài khoản</label>
+                            <input type="text" id="admin-name" name="admin-name" value="'. $row["Admin_name"].'" required />
+                            <input type="hidden" name = "account-id" value="'.$id.'">
+                        </div>
+                        <div class="form-group">
+                            <label for="brand">Email</label>
+                            <input type="text" id="admin-email" name="admin-email" value="'. $row["Admin_email"].'" readonly />
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Mật khẩu tài khoản</label>
+                            <input type="text" id="account-pass" name="account-pass" value="'. $row["Admin_password"].'" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Ngày tháng năm sinh</label>
+                            <input type="date" id="admin-birthday" name="admin-birthday" value ="'. $row["Admin_birthday"].'" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Phân cấp tài khoản</label>
+                            <select id="account-power" name="account-power" '.$lock.' required>
+                                <option value="">Chọn loại</option>
+                                <option value="Quản lý" '.($row["Admin_power"] == "Quản lý" ? 'selected' : '').'>Quản lý</option>
+                                <option value="Nhân viên" '.($row["Admin_power"] == "Nhân viên" ? 'selected' : '').' >Nhân viên</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="picture">Thêm hình ảnh</label>
+                            <input type="file" accept="image/*" id="file" name="image">
+                        </div>
+                    </div>
+                    
+                    <!-- Cột bên phải cho phần "Chỉnh sửa ảnh" -->
+                    <div class="form-group image-upload">
+                        <label for="product-image">Thêm ảnh</label>
+                        <div class="image-placeholder">
+                            <img name ="upload-Img" class="image-placeholder" id ="upload-Img" src="'. $row["Admin_img"].'">
+                            <input type="hidden" id="img-src" name="img-src">
+                        </div>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button type="submit" class="submit-button" name="btn-10" id="submit-button"
+                        value="Chỉnh sửa tài khoản">Chỉnh sửa tài khoản</button>
+                </div>
+            </form>';
+        }
+        $stmt->close();
+        $conn->close();
+
+    }
     function ShowProductAdmin(){
         $conn= connect();
         $sql = "SELECT Product_id,Product_img, Product_name, Product_price, Quantity FROM product";
