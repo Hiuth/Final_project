@@ -9,6 +9,7 @@
     $account_power=$_POST['account-power'];
     $admin_birthday = $_POST['admin-birthday'];
     $account_img = $_FILES['image']['name'];
+    $type = $_POST["type"];
 
     if(empty($account_power)){
         $account_power="Nhân viên";
@@ -16,7 +17,12 @@
     if(empty($account_img)){
         $account_img = $_POST["img-src"];
         Edit_Account($account_id,$admin_name, $admin_email,$admin_pass,$account_power,$admin_birthday, $account_img);
-        echo '<script>window.location.href="adminmain.php?";</script>';
+        if($type=="tự-sửa"){
+            echo '<script>window.location.href="adminmain.php?";</script>';
+        }else{
+            echo '<script>window.location.href ="quanlytaikhoan.php?";</script>';
+        }
+       
     }else{
         $target_dir = "/Xampp/htdocs/WebBanMayChoiGame/Picture/";
         $target_file = $target_dir . basename($account_img);
@@ -29,7 +35,11 @@
        
         $img="/WebBanMayChoiGame/Picture/". basename($account_img);
         Edit_Account($account_id,$admin_name, $admin_email,$admin_pass,$account_power,$admin_birthday, $img);
-        echo '<script>window.location.href="adminmain.php?";</script>';
+        if($type=="tự-sửa"){
+            echo '<script>window.location.href="adminmain.php?";</script>';
+        }else{
+            echo '<script>window.location.href ="quanlytaikhoan.php?";</script>';
+        }
     }
 
 
@@ -141,7 +151,13 @@
             <?php
                 if(isset($_POST["btn-8"])&&$_POST["btn-8"]){
                     $account_id = $_POST["account-id"];
-                    showAccountEdit($account_id);
+                    showAccountEdit($account_id,"tự-sửa");
+                } 
+
+                if(isset($_POST["btn-2"])&&$_POST["btn-2"]){
+                    $account_id = $_POST["Admin_edit_id"];
+                    showAccountEdit($account_id,"admin-sửa");
+                    
                 } 
             ?>       
         </div>

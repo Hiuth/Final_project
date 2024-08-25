@@ -322,7 +322,7 @@
     }
 
 
-    function showAccountEdit($id){
+    function showAccountEdit($id,$type){
         $conn=connect();
         $sql = 'SELECT Admin_img, Admin_email, Admin_name, Admin_password, Admin_power,Admin_birthday FROM admin_account WHERE Admin_id = ?';
         $stmt = $conn->prepare($sql);
@@ -374,6 +374,7 @@
                         <div class="image-placeholder">
                             <img name ="upload-Img" class="image-placeholder" id ="upload-Img" src="'. $row["Admin_img"].'">
                             <input type="hidden" id="img-src" name="img-src">
+                            <input type="hidden" id="type" name="type" value ="'.$type.'">
                         </div>
                     </div>
                 </div>
@@ -866,7 +867,6 @@
         $stmt->execute();
         $result=$stmt->get_result();
         if($_SESSION["admin"]["Admin_power"] != "Quản lý"){
-            // echo'<script>alert("BẠN KHÔNG CÓ QUYỀN ĐỂ XEM THÔNG TIN TRONG MỤC NÀY! NẾU CÓ THẮC MẮC XIN HÃY VUI LÒNG LIÊN HỆ VỚI BỘ PHẬN QUẢN LÝ");</script>';
             echo '<div id="custom-alert">
                 <p>BẠN KHÔNG CÓ QUYỀN ĐỂ XEM THÔNG TIN TRONG MỤC NÀY! NẾU CÓ THẮC MẮC XIN HÃY VUI LÒNG LIÊN HỆ VỚI BỘ PHẬN QUẢN LÝ</p>
                     <button onclick="closeAlert()">Đã hiểu!</button>
@@ -891,7 +891,7 @@
                                 <td>'.$row["Admin_power"].'</td>
                                 <td>
                                  <form action="chinhsuataikhoan.php" method="POST">
-                                    <input type="hidden" name="Product_id" value="'.$row["Admin_id"].'">
+                                    <input type="hidden" name="Admin_edit_id" value="'.$row["Admin_id"].'">
                                 <button class="fix-product" type="submit" name="btn-2" value="fix">
                                     <i class="fa-solid fa-pen"></i>
                                 </button>
@@ -899,7 +899,7 @@
                                 </td>
                                 <td>
                             <form action="quanlytaikhoan.php" method="POST">
-                                <input type="hidden" name="Del_product_id" value="'.$row["Admin_id"].'">
+                                <input type="hidden" name="Del_admin_id" value="'.$row["Admin_id"].'">
                                 <button class="trash" type="submit" name="btn-3" value="delete">
                                     <i class="fa-solid fa-trash"></i></i>
                                 </button>
