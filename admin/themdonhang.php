@@ -78,7 +78,7 @@
 
         <div class="content-wrapper">
             <div class="title">
-                <div class="title-left">Sản Phẩm</div>
+                <div class="title-left">Thêm đơn hàng</div>
                 <div class="title-right">
                     <form id="searchForm" action="search.php" method="GET">
                         <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm sản phẩm ..." />
