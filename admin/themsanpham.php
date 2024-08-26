@@ -72,7 +72,7 @@
             </nav>
         </div>
         <div class="main-content">
-            <h1>Thêm mặt hàng</h1>
+            <h1>Thêm sản phẩm</h1>
             <form class="edit-product-form" action="themsanpham.php" method="POST" enctype="multipart/form-data">
                 <div class="form-row">
                     <!-- Cột bên trái cho các trường nhập liệu -->
