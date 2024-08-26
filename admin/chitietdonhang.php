@@ -56,12 +56,7 @@
                 <div class="title">
                     <div class="title-left">Chi tiết đơn hàng</div>
                     <div class="title-right">
-                        <!-- <form id="searchForm" action="search.php" method="GET">
-                            <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm sản phẩm ..." />
-                            <button class="search-button" type="submit">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
-                        </form> -->
+
                     </div>
                 </div>
                 <table id="table">

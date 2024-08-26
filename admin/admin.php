@@ -640,7 +640,7 @@
     function showProduct_edit($id){
         
         $conn= connect();
-        $sql = 'SELECT Product_img, Product_name, Product_price, Brand_id, Category_id, Quantity FROM product WHERE product_id = ?';
+        $sql = 'SELECT Product_img, Product_name, Product_price, Brand_id, Category_id, Quantity, Product_link FROM product WHERE product_id = ?';
         $stmt= $conn->prepare($sql);
         $stmt->bind_param("i",$id);
         $stmt->execute();
@@ -683,9 +683,14 @@
                            echo '</select>
                         </div>
                         <div class="form-group">
+                            <label for="product-link">Đường link mô tả sản phẩm</label>
+                            <input type="text" id="product-link" name="product-link" value ="'.$row["Product_link"].'" />
+                        </div>
+                        <div class="form-group">
                             <label for="picture">Thêm hình ảnh</label>
                             <input type="file" accept="image/*" id="file" name="image">
                         </div>
+
                     </div>
 
                     <!-- Cột bên phải cho phần "Chỉnh sửa ảnh" -->
@@ -1183,25 +1188,15 @@
 
 
 
-    function UpdateProduct($product_img,$product_name,$product_price,$Brand_id,$product_category,$product_quantity,$product_id){
+    function UpdateProduct($product_img,$product_name,$product_price,$Brand_id,$product_category,$product_quantity,$product_id, $product_link){
         $conn= connect();
         $number = FormatNumber($product_price);
         $name = strtoupper($product_name);
-        if($product_img == null){
-            $sql = 'UPDATE product SET Product_name = ?, Product_price = ?, Brand_id = ?, Category_id = ? , Quantity = ? WHERE Product_id = ?';
+            $sql = 'UPDATE product SET Product_img = ?,Product_name = ?, Product_price = ?, Brand_id = ?, Category_id = ? , Quantity = ?, Product_link = ? WHERE Product_id = ?';
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param('sissss',$name,$number,$Brand_id, $product_category,$product_quantity,$product_id);
+            $stmt->bind_param('ssisssss',$product_img,$name,$number,$Brand_id, $product_category,$product_quantity, $product_link,$product_id);
             $stmt->execute();
-            if($stmt->affected_rows > 0){}
-            
-        }else{
-            $sql = 'UPDATE product SET Product_img = ?,Product_name = ?, Product_price = ?, Brand_id = ?, Category_id = ? , Quantity = ? WHERE Product_id = ?';
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param('ssissss',$product_img,$name,$number,$Brand_id, $product_category,$product_quantity,$product_id);
-            $stmt->execute();
-            if($stmt->affected_rows > 0){}
-        }
-        
+            if($stmt->affected_rows > 0){}        
         $conn->close();
         $stmt->close();
     }

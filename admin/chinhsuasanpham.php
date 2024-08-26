@@ -8,11 +8,12 @@
     $product_quantity = $_POST['quantity'];
     $product_price = $_POST['price'];
     $product_category = $_POST['category'];
+    $product_link = $_POST['product-link'];
     $product_img = $_FILES['image']['name'];
 
     if(empty($product_img)){
       $product_img = $_POST["img-src"];
-      UpdateProduct($product_img,$product_name,$product_price,$product_brand,$product_category,$product_quantity,$product_id);
+      UpdateProduct($product_img,$product_name,$product_price,$product_brand,$product_category,$product_quantity,$product_id,$product_link);
       echo '<script>window.location.href="sanpham.php?";</script>';
 
     }else{
@@ -26,7 +27,7 @@
         }
     }
     $img="/WebBanMayChoiGame/Picture/". basename($product_img);
-    UpdateProduct($img,$product_name,$product_price,$product_brand,$product_category,$product_quantity,$product_id);
+    UpdateProduct($img,$product_name,$product_price,$product_brand,$product_category,$product_quantity,$product_id, $product_link);
     echo '<script>window.location.href="sanpham.php?";</script>';
   }
 
