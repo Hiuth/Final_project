@@ -393,8 +393,8 @@
         }
         $stmt->close();
         $conn->close();
-
     }
+
     function ShowProductAdmin(){
         $conn= connect();
         $sql = "SELECT Product_id,Product_img, Product_name, Product_price, Quantity FROM product";

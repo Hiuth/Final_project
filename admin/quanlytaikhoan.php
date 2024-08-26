@@ -55,7 +55,7 @@
             <div class="title">
                 <div class="title-left">TÀI KHOẢN</div>
                 <div class="title-right">
-                    <from action="chinhsuataikhoan.php" method="POST">
+                    <from action="themtaikhoan.php" method="POST">
                         <button id ="add_account" name="add_account" value="Thêm tài khoản">THÊM TÀI KHOẢN</button>
                     </from>
                 </div>
