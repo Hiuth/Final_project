@@ -70,7 +70,7 @@
                         <?php
                             ShowAccountList();
                             if(isset($_POST["btn-3"])&&$_POST["btn-3"]){
-                                $account_id = $_POST["account-id"];
+                                $account_id = $_POST["Del_admin_id"];
                                 DeleteAdmin_Account($account_id);
                             }
                       ?>
