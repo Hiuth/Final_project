@@ -10,13 +10,13 @@
   padding: 50px;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  width: 1500px;
+  width: calc(100vw - 300px);
   height: calc(100vh - 200px);
   margin: auto;
 }
 
 .employee-photo img {
-  width: 400px;
+  width: 450px;
   height: 480px;
   margin-right: 50px;
   border-radius: 10px;

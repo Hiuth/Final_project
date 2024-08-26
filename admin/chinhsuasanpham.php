@@ -11,7 +11,7 @@
     $product_img = $_FILES['image']['name'];
 
     if(empty($product_img)){
-      $product_img = null;
+      $product_img = $_POST["img-src"];
       UpdateProduct($product_img,$product_name,$product_price,$product_brand,$product_category,$product_quantity,$product_id);
       echo '<script>window.location.href="sanpham.php?";</script>';
 
@@ -26,7 +26,6 @@
         }
     }
     $img="/WebBanMayChoiGame/Picture/". basename($product_img);
-    // echo $img;
     UpdateProduct($img,$product_name,$product_price,$product_brand,$product_category,$product_quantity,$product_id);
     echo '<script>window.location.href="sanpham.php?";</script>';
   }
@@ -99,6 +98,11 @@
         </div>
     </div>
     <script src="../js/admin.js"></script>
+    <script>
+    var imgSrc = document.getElementById("upload-Img").src;
+    document.getElementById("img-src").value = imgSrc;
+</script>
+
 </body>
 
 </html>

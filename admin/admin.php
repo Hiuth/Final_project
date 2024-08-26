@@ -331,7 +331,14 @@
         $result = $stmt->get_result();
         if($result->num_rows>0){
             $row = $result->fetch_assoc(); 
-            $lock = ($row["Admin_power"] != "Quản lý") ? 'disabled': '';
+            // $lock = ($row["Admin_power"] != "Quản lý") ? 'disabled': '';
+            if($row["Admin_power"] != "Quản lý" && $type == "tự-sửa"){
+                    $lock = 'disabled';
+            }elseif($row["Admin_power"] != "Quản lý" && $type == "admin-sửa"){
+                    $lock = '';
+            }else{
+                $lock = '';
+            }
             echo' <h1>Chỉnh sửa tài khoản</h1>
             <form class="edit-product-form" action="chinhsuataikhoan.php" method="POST" enctype="multipart/form-data">
                 <div class="form-row">
@@ -685,7 +692,8 @@
                     <div class="form-group image-upload">
                         <label for="product-image">Thêm ảnh</label>
                         <div class="image-placeholder">
-                            <img class="image-placeholder" id ="upload-Img" src="">
+                            <img class="image-placeholder" id ="upload-Img" src="'.$row["Product_img"].'">
+                            <input type="hidden" id="img-src" name="img-src">
                         </div>
                     </div>
                 </div>

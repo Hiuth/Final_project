@@ -15,7 +15,6 @@
     }
 
     if(empty($Shipping_status) ){
-       echo'hello'; 
        updateOrder($order_id, $Order_status,$Payment_status_2, $Shipping_status_2, $note,$address);
       echo '<script>window.location.href="donhang.php?";</script>';
     }elseif(empty($Payment_status)){
@@ -49,6 +48,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="../Css/admin.css">
     <link rel="stylesheet" href="../Css/suatrangthai.css" />
     <title>Quản lý Đơn hàng</title>
   </head>
