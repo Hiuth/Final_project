@@ -1073,6 +1073,15 @@
        // $stmt->close();
     }
 
+    function DeleteAdmin_Account($id){
+        $conn = connect();
+        $sql = 'DELETE FROM Admin_account WHERE Admin_id =?';
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('i',$id);
+        $stmt->execute();
+        if($stmt->affected_rows>0){}
+    }
+
     
     function UpdateTotalOrdersTotal($orderDetails_id){
         $conn= connect();

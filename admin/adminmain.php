@@ -84,9 +84,7 @@
           </div> -->
         <?php
           showAccountInfo();
-          if(isset($_POST["btn-3"])&&$_POST["btn-3"]){
-              $account_id = $_POST["account-id"];
-          }
+
         ?>
         </div>
         
