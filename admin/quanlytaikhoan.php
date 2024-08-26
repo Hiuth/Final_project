@@ -55,12 +55,9 @@
             <div class="title">
                 <div class="title-left">TÀI KHOẢN</div>
                 <div class="title-right">
-                    <form id="searchForm" action="search.php" method="GET">
-                        <input class="search-bar" type="search" name="query" placeholder="Tìm kiếm sản phẩm ..." />
-                        <button class="search-button" type="submit">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </form>
+                    <from action="chinhsuataikhoan.php" method="POST">
+                        <button id ="add_account" name="add_account" value="Thêm tài khoản">THÊM TÀI KHOẢN</button>
+                    </from>
                 </div>
             </div>
                 <table id="table">

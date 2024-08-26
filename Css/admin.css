@@ -236,3 +236,18 @@ th {
   color: white;
   transition: 0.7s;
 }
+
+#add_account {
+  padding: 10px 15px;
+  border: none;
+  background-color: #eb412f;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#add_account:hover {
+  background-color: #f2ddbe;
+  color: black;
+  transition: 0.5s;
+}
