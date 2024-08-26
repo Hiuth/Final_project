@@ -684,7 +684,7 @@
                         </div>
                         <div class="form-group">
                             <label for="picture">Thêm hình ảnh</label>
-                            <input type="file" accept="image/*" id="file" name="image" required>
+                            <input type="file" accept="image/*" id="file" name="image">
                         </div>
                     </div>
 
