@@ -22,7 +22,7 @@
   background-color: white;
   /* border: 2px solid #eb412f; */
   border-left: 1px solid #ccc;
-  overflow-y: auto;
+  overflow: auto;
 }
 
 h2 {
