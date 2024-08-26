@@ -926,6 +926,15 @@
         $stmt->close();
         $conn->close();
     }
+
+
+    function Add_Admin_Account($admin_name, $admin_email,$admin_pass,$account_power,$admin_birthday, $account_img){
+        $conn = connect();
+        $sql = "INSERT INTO admin_account(Admin_img,Admin_email,Admin_name,Admin_password, Admin_power, Admin_birthday)
+        VALUES ('$account_img','$admin_email','$admin_name','$admin_pass','$account_power','$admin_birthday')";
+        $conn->query($sql);
+        $conn->close();
+    }
     //check, count Function zone
 
     function checkQuantityOrder_Product($order_id){

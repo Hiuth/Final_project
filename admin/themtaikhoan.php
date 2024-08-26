@@ -2,27 +2,19 @@
   require_once("connect-admin.php");
   include "admin.php";
   if (isset($_POST["btn-10"]) && $_POST["btn-10"]) {
-    $account_id = $_POST['account-id'];
     $admin_name = $_POST['admin-name'];
     $admin_email= $_POST['admin-email'];
     $admin_pass = $_POST['account-pass'];
     $account_power=$_POST['account-power'];
     $admin_birthday = $_POST['admin-birthday'];
     $account_img = $_FILES['image']['name'];
-    $type = $_POST["type"];
 
-    if(empty($account_power)){
-        $account_power="Nhân viên";
-    }
+    echo $admin_name;
     if(empty($account_img)){
-        $account_img = $_POST["img-src"];
-        Edit_Account($account_id,$admin_name, $admin_email,$admin_pass,$account_power,$admin_birthday, $account_img);
-        if($type=="tự-sửa"){
-            echo '<script>window.location.href="adminmain.php?";</script>';
-        }else{
-            echo '<script>window.location.href ="quanlytaikhoan.php?";</script>';
-        }
-       
+        $account_img = "/WebBanMayChoiGame/Picture/Human.png" ;
+        Add_Admin_Account($admin_name, $admin_email,$admin_pass,$account_power,$admin_birthday, $account_img);
+      //  echo '<script>window.location.href ="quanlytaikhoan.php?";</script>';
+        
     }else{
         $target_dir =  "../../WebBanMayChoiGame/Picture/";
         $target_file = $target_dir . basename($account_img);
@@ -34,12 +26,8 @@
         }
        
         $img="/WebBanMayChoiGame/Picture/". basename($account_img);
-        Edit_Account($account_id,$admin_name, $admin_email,$admin_pass,$account_power,$admin_birthday, $img);
-        if($type=="tự-sửa"){
-            echo '<script>window.location.href="adminmain.php?";</script>';
-        }else{
-            echo '<script>window.location.href ="quanlytaikhoan.php?";</script>';
-        }
+        Add_Admin_Account($admin_name, $admin_email,$admin_pass,$account_power,$admin_birthday, $img);
+        echo '<script>window.location.href ="quanlytaikhoan.php?";</script>';
     }
 
 
@@ -107,11 +95,10 @@
                         <div class="form-group">
                             <label for="product-name">Tên tài khoản</label>
                             <input type="text" id="admin-name" name="admin-name" required />
-                            <input type="hidden" name = "account-id" value="'.$id.'">
                         </div>
                         <div class="form-group">
                             <label for="brand">Email</label>
-                            <input type="text" id="admin-email" name="admin-email" readonly />
+                            <input type="text" id="admin-email" name="admin-email" required />
                         </div>
                         <div class="form-group">
                             <label for="quantity">Mật khẩu tài khoản</label>
@@ -139,34 +126,19 @@
                     <div class="form-group image-upload">
                         <label for="product-image">Thêm ảnh</label>
                         <div class="image-placeholder">
-                            <img name ="upload-Img" class="image-placeholder" id ="upload-Img" src="'. $row["Admin_img"].'">
-                            <input type="hidden" id="img-src" name="img-src">
-                            <input type="hidden" id="type" name="type" value ="'.$type.'">
+                            <img name ="upload-Img" class="image-placeholder" id ="upload-Img" src="">
                         </div>
                     </div>
                 </div>
                 <div class="button-container">
                     <button type="submit" class="submit-button" name="btn-10" id="submit-button"
-                        value="Chỉnh sửa tài khoản">Chỉnh sửa tài khoản</button>
+                        value="Chỉnh sửa tài khoản">Thêm tài khoản</button>
                 </div>
-            </form>
-            <?php
-                if(isset($_POST["add_account"])&&$_POST["add_account"]){
-                    
-                }
-            ?>       
+            </form>       
         </div>
     </div>
     <script src="../js/admin.js"></script>
-
-    <?php
-
-    ?>
 </body>
-<script>
-    var imgSrc = document.getElementById("upload-Img").src;
-    document.getElementById("img-src").value = imgSrc;
-</script>
 
 
 </html>
