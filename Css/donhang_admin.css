@@ -15,13 +15,14 @@
 
 /* form  */
 .input-form {
-  min-width: 650px;
+  width: calc(100vw - 850px);
   margin: 0 0 0 20px;
   padding: 20px;
   height: calc(100vh -120px);
   background-color: white;
   /* border: 2px solid #eb412f; */
   border-left: 1px solid #ccc;
+  overflow: scroll;
 }
 
 h2 {
