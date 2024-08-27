@@ -2,6 +2,7 @@
   require_once("connect-admin.php");
   include "admin.php";
 
+
   if (isset($_POST["btn-5"]) && $_POST["btn-5"]) {
     $product_name = $_POST['product-name'];
     $product_brand = $_POST['brand'];
@@ -20,7 +21,7 @@
     }
     create_product($product_img,$product_name,$product_price,$product_brand,$product_category,$product_quantity);
 }
-
+    
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -79,7 +80,8 @@
                     <div class="form-group-wrapper">
                         <div class="form-group">
                             <label for="product-name">Tên sản phẩm</label>
-                            <input type="text" id="product-name" name="product-name" required />
+                            <input type="text" id="product-name" name="product-name" oninput="TakeProduct_name()" required />
+                            <p id ="attention">CẢNH BÁO : TÊN SẢN PHẨM KHÔNG ĐƯỢC TRÙNG</p>
                         </div>
                         <div class="form-group">
                             <label for="brand">Nhãn hiệu</label>
@@ -129,10 +131,9 @@
         </div>
     </div>
     <script src="../js/admin.js"></script>
-
-    <?php
-
-    ?>
+    <script>
+        
+    </script>
 </body>
 
 </html>

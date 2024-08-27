@@ -347,3 +347,34 @@ window.addEventListener("popstate", function (event) {
 function denied_Log_out() {
   document.getElementById("custom-alert").style.display = "none";
 }
+
+function TakeProduct_name() {
+  var name = document.getElementById("product-name").value.trim();
+  var attention = document.getElementById("attention");
+  var button = document.getElementById("submit-button");
+  fetch("apiCall.php") // Gọi file PHP riêng biệt
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+      return response.json(); // Chuyển đổi phản hồi thành JSON
+    })
+    .then((product_name) => {
+      var found = false;
+      product_name.forEach(function (product) {
+        // console.log(name);
+        if (name === product.trim()) {
+          found = true;
+        }
+      });
+      if (found) {
+        attention.style.display = "block"; // Hiển thị thông báo
+        button.disabled = true; // Disable nút
+      } else {
+        attention.style.display = "none"; // Ẩn thông báo
+        button.disabled = false; // Enable nút
+      }
+    })
+    .catch((error) => console.log("Đã xảy ra lỗi:", error));
+}
+function checkName() {}

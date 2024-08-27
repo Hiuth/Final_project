@@ -268,3 +268,10 @@ th {
 #accept_log_out {
   margin: 0;
 }
+
+.check {
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+  display: none;
+}

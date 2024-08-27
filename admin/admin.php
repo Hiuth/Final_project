@@ -1056,7 +1056,6 @@
         return $orderDetailsIds;
     }
 
-    
 
 
     //Delete function zone
@@ -1486,5 +1485,5 @@
         $stmt->close();
     }
 
-
+    //gửi dữ liệu sản phẩm từ php sang js
 ?>
