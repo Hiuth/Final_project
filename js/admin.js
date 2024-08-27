@@ -322,3 +322,12 @@ function checkQuantity() {
     button.disabled = false;
   }
 }
+
+function showAlert() {
+  document.getElementById("custom-alert").style.display = "block";
+}
+
+function closeAlert() {
+  document.getElementById("custom-alert").style.display = "none";
+  window.location.href = "sanpham.php";
+}

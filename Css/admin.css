@@ -251,3 +251,8 @@ th {
   color: black;
   transition: 0.5s;
 }
+
+.button-group {
+  display: flex;
+  justify-content: center;
+}

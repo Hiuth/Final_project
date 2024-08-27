@@ -306,13 +306,20 @@
                 <span class="value">'. $row["Admin_power"].'</span>
               </div>
 
-              <form action = "chinhsuataikhoan.php" method = "POST">
+              <div class="button-group"> 
+             <form action = "chinhsuataikhoan.php" method = "POST">
                 <div class="button-container">
                 <input type="hidden" name = "account-id" value="'. $_SESSION["admin"]["Admin_id"].'">
                     <button type="submit" class="submit-button" name="btn-8" id="submit-button"
                         value="Chỉnh sửa tài khoản">Chỉnh sửa tài khoản</button>
                   </div>
               </form>
+             <div class="button-container">
+                    <button type="submit" class="log_out" name="btn-8" id="log_out"
+                        value="Đăng xuất">Đăng xuất tài khoản</button>
+                </div>
+              </div>
+             
             </div>
           </div>';
         }

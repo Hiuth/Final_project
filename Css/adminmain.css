@@ -65,3 +65,20 @@
   color: white;
   transition: 0.7s;
 }
+
+#log_out {
+  margin-right: 20px;
+  height: 40px;
+  width: 180px;
+  background-color: red;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  border: none;
+}
+
+#log_out:hover {
+  background-color: #f2ddbe;
+  color: black;
+  transition: 0.7s;
+}
