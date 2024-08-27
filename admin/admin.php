@@ -1,5 +1,5 @@
 <?php
-    //xử lý đăng nhập
+    //xử lý đăng nhập và đăng xuất
     session_start();
     function Login($username, $password) {
         $conn= connect();
@@ -22,7 +22,6 @@
      
 
     }
-
     
 
     function Edit_Account($account_id,$admin_name, $admin_email,$admin_pass,$account_power,$admin_birthday, $account_img){
@@ -314,12 +313,19 @@
                         value="Chỉnh sửa tài khoản">Chỉnh sửa tài khoản</button>
                   </div>
               </form>
-             <div class="button-container">
-                    <button type="submit" class="log_out" name="btn-8" id="log_out"
+                <div class="button-container">
+                    <button type="submit" class="log_out" name="btn-log_out" id="log_out" onclick="showAlert();"
                         value="Đăng xuất">Đăng xuất tài khoản</button>
                 </div>
               </div>
-             
+            <div id="custom-alert">
+                <p>Xác nhận đăng xuất tài khoản ? </p>
+                <div class="button-group-2"> 
+                    <button id ="accept_log_out" onclick="accept_Log_out()">Yes</button>
+                    <button id ="denied_log_out" onclick="denied_Log_out()">No</button>
+                </div>
+
+            </div>
             </div>
           </div>';
         }
@@ -440,12 +446,20 @@
                                 </button>
                             </td>
                             <td>
-                        <form action="sanpham.php" method="POST">
+                        <form action="sanpham.php" method="POST" id= "delete-form">
                             <input type="hidden" name="Del_product_id" value="'.$row["Product_id"].'">
-                            <button class="trash" type="submit" name="btn-3" value="delete">
+                            <button class="trash" type="submit" name="btn-3" value="delete" id ="btn-delete" >
                                 <i class="fa-solid fa-trash"></i></i>
                             </button>
                         </form> 
+                        <div id="custom-alert">
+                             <p>CẢNH BÁO! NÚT XOÁ SẢN PHẨM RẤT NHẠY, HÃY CẨN THẬN KHI LÀM VIỆC VỚI NÓ ! </br>
+                             BẤM XOÁ LÀ XOÁ LUÔN! KHÔNG CÓ ĐƯỜNG QUAY ĐẦU ĐÂU !!!!!
+                              </p>
+                            <div class="button-group-2"> 
+                                 <button id ="accept_delete_product" onclick="denied_Log_out()" value = "yes">Đã hiểu</button>
+                            </div>
+                        </div>
                         </td>
                         </tr>';
             }

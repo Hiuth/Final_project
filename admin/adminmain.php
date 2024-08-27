@@ -84,7 +84,6 @@
           </div> -->
         <?php
           showAccountInfo();
-
         ?>
         </div>
         

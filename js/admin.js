@@ -331,3 +331,19 @@ function closeAlert() {
   document.getElementById("custom-alert").style.display = "none";
   window.location.href = "sanpham.php";
 }
+//log_out
+function accept_Log_out() {
+  document.getElementById("custom-alert").style.display = "none";
+  setTimeout(function () {
+    window.location.href = "index.php";
+  }, 1000);
+}
+
+window.addEventListener("popstate", function (event) {
+  event.preventDefault();
+  history.go(1);
+});
+
+function denied_Log_out() {
+  document.getElementById("custom-alert").style.display = "none";
+}

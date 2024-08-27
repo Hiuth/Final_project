@@ -92,6 +92,9 @@
         </div>
     </div>
     <script src="../js/admin.js"></script>
+    <script>
+        showAlert();
+    </script>
 </body>
 
 </html>

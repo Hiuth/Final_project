@@ -255,4 +255,16 @@ th {
 .button-group {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.button-group-2 {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+  margin: auto;
+}
+
+#accept_log_out {
+  margin: 0;
 }
