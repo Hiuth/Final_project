@@ -113,6 +113,7 @@
                         <div class="input-info">
                             <label for="name">Họ và tên*</label>
                             <input type="text" name="name" id="name" required />
+                            <p id="attention-name">Tên không được để trống</p>
                         </div>
                         <div class="input-info">
                             <label for="sex">Giới Tính* :</label>
@@ -122,6 +123,7 @@
                         <div class="input-info ">
                             <label for="phone_nubmer">Số điện thoại*</label>
                             <input class="input-error" type="tel" name="phone" id="phone" required />
+                            <p id="attention">Số điện thoại phải đủ 10 số</p>
                         </div>
                         <div class="input-info">
                             <label for="address">Địa chỉ*</label>
@@ -130,6 +132,7 @@
                         <div class="input-info">
                             <label for="email_address">Địa chỉ email*</label>
                             <input type="email" name="email" id="email" required />
+                            <p id="attention-email">Địa chỉ email không đúng quy cách</p>
                         </div>
 
                         <div class="input-info">

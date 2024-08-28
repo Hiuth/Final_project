@@ -148,14 +148,17 @@
                 <div class="input-info ">
                     <label for="phone_nubmer">Số điện thoại*</label>
                     <input type="tel" name="phone" id="phone" required />
+                    <p id="attention">Số điện thoại phải đủ 10 số</p>
                 </div>
                 <div class="input-info">
                     <label for="address">Địa chỉ*</label>
                     <input type="text" name="address" id="address" required />
+                   
                 </div>
                 <div class="input-info">
                     <label for="email_address">Địa chỉ email*</label>
                     <input type="email" name="email" id="email" required />
+                    <p id="attention-email">Địa chỉ email không đúng quy cách !</p>
                 </div>
 
                 <div class="input-info">

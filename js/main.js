@@ -186,6 +186,8 @@ function ShowTotal_2() {
 document.addEventListener("DOMContentLoaded", function () {
   function sendCart(event) {
     var info = document.getElementById("customer_form");
+    var attention_email = document.getElementById("attention-email");
+    var attention_name = document.getElementById("attention-name");
     var isFormTrue = true;
     var info_data = {
       name: info.name.value,
@@ -198,17 +200,17 @@ document.addEventListener("DOMContentLoaded", function () {
     var checkPhone = document.getElementById("phone");
     var checkEmail = document.getElementById("email");
     if (info.phone.value.length != 10) {
-      checkPhone.classList.add("input-error");
+      attention.style.display = "block";
       isFormTrue = false;
     } else {
-      checkPhone.classList.remove("input-error");
+      attention.style.display = "none";
     }
 
     if (!info.email.value.endsWith("@gmail.com")) {
-      checkEmail.classList.add("input-error");
+      attention_email.style.display = "block";
       isFormTrue = false;
     } else {
-      checkEmail.classList.remove("input-error");
+      attention_email.style.display = "none";
     }
 
     if (isFormTrue) {

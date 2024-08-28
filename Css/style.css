@@ -452,3 +452,12 @@ footer {
 .follow-us {
   padding: 10px 0px;
 }
+
+#attention,
+#attention-email,
+#attention-name {
+  color: red;
+  padding-top: 3px;
+  display: none;
+  font-weight: bold;
+}
