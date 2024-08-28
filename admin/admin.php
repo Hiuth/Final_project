@@ -452,14 +452,7 @@
                                 <i class="fa-solid fa-trash"></i></i>
                             </button>
                         </form> 
-                        <div id="custom-alert">
-                             <p>CẢNH BÁO! NÚT XOÁ SẢN PHẨM RẤT NHẠY, HÃY CẨN THẬN KHI LÀM VIỆC VỚI NÓ ! </br>
-                             BẤM XOÁ LÀ XOÁ LUÔN! KHÔNG CÓ ĐƯỜNG QUAY ĐẦU ĐÂU !!!!!
-                              </p>
-                            <div class="button-group-2"> 
-                                 <button id ="accept_delete_product" onclick="denied_Log_out()" value = "yes">Đã hiểu</button>
-                            </div>
-                        </div>
+
                         </td>
                         </tr>';
             }
@@ -555,6 +548,7 @@
                                 </button>
                             </form> 
                         </td>
+                        
                     </tr>';
                 }
             }

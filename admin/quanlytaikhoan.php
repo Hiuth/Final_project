@@ -55,7 +55,7 @@
                 <div class="title-left">TÀI KHOẢN</div>
                 <div class="title-right">
                     <form action="themtaikhoan.php" method="POST">
-                        <button id ="add_account" name="add_account" value="Thêm tài khoản">THÊM TÀI KHOẢN</button>
+                        <button id ="add_account" name="add_account" value="Thêm tài khoản" <?php  echo ($_SESSION['admin']['Admin_power'] != "Quản lý") ? 'disabled' : ''; ?>>THÊM TÀI KHOẢN</button>
                     </form>
                 </div>
             </div>
@@ -83,6 +83,14 @@
                       ?>
                     </tbody>
                 </table>
+                <div id="custom-alert">
+                        <p>CẢNH BÁO! NÚT XOÁ SẢN PHẨM RẤT NHẠY, HÃY CẨN THẬN KHI LÀM VIỆC VỚI NÓ ! </br>
+                             BẤM XOÁ LÀ XOÁ LUÔN! KHÔNG CÓ ĐƯỜNG QUAY ĐẦU ĐÂU !!!!!
+                              </p>
+                        <div class="button-group-2"> 
+                            <button id ="accept_delete_product" onclick="denied_Log_out()" value = "yes">Đã hiểu</button>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
