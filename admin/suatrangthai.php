@@ -31,8 +31,8 @@
     if($Shipping_status == "Gửi hàng thành công" && $Payment_status =="Đã thanh toán"){
       changeLocation($order_id);
     }
-
-    if($Order_status == "Đã xác nhận"){
+     
+    if($Order_status == "Đã xác nhận" && empty($Shipping_status)){
       UpdateProduct_Quantity($order_id,"minus",$Order_status);
     }
   }
