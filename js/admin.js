@@ -359,7 +359,7 @@ function TakeProduct_name() {
   var name = document.getElementById("product-name").value.trim();
   var attention = document.getElementById("attention");
   var button = document.getElementById("submit-button");
-  fetch("apiCall.php") // Gọi file PHP riêng biệt
+  fetch("apiCall_ProductName.php") // Gọi file PHP riêng biệt
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok " + response.statusText);
@@ -388,7 +388,7 @@ function CheckEmail_Account() {
   var Email = document.getElementById("admin-email").value.trim();
   var attention = document.getElementById("attention");
   var button = document.getElementById("submit-button");
-  fetch("apiCall.php")
+  fetch("apiCall_Admin_email.php")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok " + response.statusText);

@@ -1,4 +1,5 @@
 <?php
+   require_once("connect-admin.php"); 
      function GetEmailAccount(){
             $conn = connect();
             $sql = 'SELECT Admin_email FROM admin_account';
