@@ -150,7 +150,7 @@
             </div>
             <div class="banner_8">
                 <a href="">
-                    <img class="img-banner" src="/WebBanMayChoiGame/Picture\Home_banner_nhansu.jpg" alt="Tuyen_dung" /></a>
+                    <img class="img-banner" src="/WebBanMayChoiGame/Picture/Home_banner_nhansu.jpg" alt="Tuyen_dung" /></a>
             </div>
         </div>
         <div class="Text-content">PLAYSATION 5</div>
