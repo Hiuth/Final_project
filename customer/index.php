@@ -158,7 +158,7 @@
             <div class="product-top">
                 <span class="product-top-tilte">MÁY PS5</span>
                 <b class="line"></b>
-                <a class="product-top-text" href="">Xem Tất Cả</a>
+                <a class="product-top-text" href="./PlayStation/Playstation5_page.php">Xem Tất Cả</a>
             </div>
             <div class="product">
                 <?php
@@ -176,7 +176,7 @@
                 <div class="product-top">
                     <span class="product-top-tilte">ĐĨA GAME PS5</span>
                     <b class="line"></b>
-                    <a class="product-top-text" href="">Xem Tất Cả</a>
+                    <a class="product-top-text" href="./PlayStation/Playstation5_game_page.php">Xem Tất Cả</a>
                 </div>
                 <div class="product-game">
                     <?php
@@ -193,7 +193,7 @@
             <div class="product-top">
                 <span class="product-top-tilte">MÁY PS4</span>
                 <b class="line"></b>
-                <a class="product-top-text" href="">Xem Tất Cả</a>
+                <a class="product-top-text" href="./PlayStation/Playstation4_page.php">Xem Tất Cả</a>
             </div>
             <div class="product">
                 <?php
@@ -210,7 +210,7 @@
                 <div class="product-top">
                     <span class="product-top-tilte">ĐĨA GAME PS4</span>
                     <b class="line"></b>
-                    <a class="product-top-text" href="">Xem Tất Cả</a>
+                    <a class="product-top-text" href="./PlayStation/Playstation4_game_page.php">Xem Tất Cả</a>
                 </div>
                 <div class="product-game">
                     <?php
@@ -228,7 +228,7 @@
             <div class="product-top">
                 <span class="product-top-tilte">MÁY NINTENDO SWTICH</span>
                 <b class="line"></b>
-                <a class="product-top-text" href="">Xem Tất Cả</a>
+                <a class="product-top-text" href="./Nintendo/Nintendo_swtich.php">Xem Tất Cả</a>
             </div>
             <div class="product">
                 <?php
@@ -239,13 +239,13 @@
             </div>
             <!-- Đĩa game Nintendo -->
             <div class="product-banner">
-                <img class="img-banner" src="/WebBanMayChoiGame/Picture\Nitendo_banner.png" alt="Nintendo_banner" />
+                <img class="img-banner" src="/WebBanMayChoiGame/Picture/Nitendo_banner.png" alt="Nintendo_banner" />
             </div>
             <div class="product-in-home-page">
                 <div class="product-top">
                     <span class="product-top-tilte">GAME NINTENDO SWITCH</span>
                     <b class="line"></b>
-                    <a class="product-top-text" href="">Xem Tất Cả</a>
+                    <a class="product-top-text" href="./Nintendo\Nintendo_game.php">Xem Tất Cả</a>
                 </div>
                 <div class="product-game">
                     <?php
@@ -261,7 +261,7 @@
             <div class="product-top">
                 <span class="product-top-tilte">TAY CẦM GAME</span>
                 <b class="line"></b>
-                <a class="product-top-text" href="">Xem Tất Cả</a>
+                <a class="product-top-text" href="./Controller/Cotroller_page.php">Xem Tất Cả</a>
             </div>
             <div class="product">
                 <?php

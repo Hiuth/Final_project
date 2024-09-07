@@ -118,7 +118,7 @@
         <div class="page-title-wall">
             <div class="page-title">
                 <div class="left-title">
-                    <h1>PlayStation (PS)</h1>
+                    <h1>PlayStation_4 Game (PS4)</h1>
                 </div>
                 <div class="right-title">
                     <form action="Playstation_page.php" method="GET">
