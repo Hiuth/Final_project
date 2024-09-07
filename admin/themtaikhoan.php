@@ -98,7 +98,8 @@
                         </div>
                         <div class="form-group">
                             <label for="brand">Email</label>
-                            <input type="text" id="admin-email" name="admin-email" required />
+                            <input type="text" id="admin-email" name="admin-email" oninput="CheckEmail_Account()" required />
+                            <p id ="attention">CẢNH BÁO : TÀI KHOẢN EMAIL KHÔNG ĐƯỢC TRÙNG</p>
                         </div>
                         <div class="form-group">
                             <label for="quantity">Mật khẩu tài khoản</label>

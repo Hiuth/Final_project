@@ -364,24 +364,51 @@ function TakeProduct_name() {
       if (!response.ok) {
         throw new Error("Network response was not ok " + response.statusText);
       }
-      return response.json(); // Chuyển đổi phản hồi thành JSON
+      return response.json();
     })
     .then((product_name) => {
       var found = false;
       product_name.forEach(function (product) {
-        // console.log(name);
         if (name === product.trim()) {
           found = true;
         }
       });
       if (found) {
-        attention.style.display = "block"; // Hiển thị thông báo
-        button.disabled = true; // Disable nút
+        attention.style.display = "block";
+        button.disabled = true;
       } else {
-        attention.style.display = "none"; // Ẩn thông báo
-        button.disabled = false; // Enable nút
+        attention.style.display = "none";
+        button.disabled = false;
       }
     })
     .catch((error) => console.log("Đã xảy ra lỗi:", error));
 }
-function checkName() {}
+
+function CheckEmail_Account() {
+  var Email = document.getElementById("admin-email").value.trim();
+  var attention = document.getElementById("attention");
+  var button = document.getElementById("submit-button");
+  fetch("apiCall.php")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+      return response.json();
+    })
+    .then((Admin_email) => {
+      var found = false;
+      Admin_email.forEach(function (admin_account) {
+        if (Email === admin_account.trim()) {
+          found = true;
+        }
+      });
+      if (found) {
+        attention.style.display = "block";
+        button.disabled = true;
+      } else {
+        attention.style.display = "none";
+        button.disabled = false;
+      }
+    })
+    .catch((error) => console.log("Đã xảy ra lỗi:", error));
+}
