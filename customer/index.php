@@ -122,12 +122,12 @@
                         src="/WebBanMayChoiGame/Picture\Home_Banner_Ps5.webp" alt="banner_1" /></a>
             </div>
             <div class="banner_2">
-                <a href="">
+                <a href="./Nintendo\Nintendo_swtich.php">
                     <img class="img-banner" src="/WebBanMayChoiGame/Picture\Home_Banner_Nintendo_lite.png"
                         alt="Nintendo_lite_banner" /></a>
             </div>
             <div class="banner_3">
-                <a href="">
+                <a href="./Nintendo\Nintendo_swtich.php">
                     <img class="img-banner" src="/WebBanMayChoiGame/Picture\Home_Banner_Nintendo.png"
                         alt="Nintendo2_banner" /></a>
             </div>
